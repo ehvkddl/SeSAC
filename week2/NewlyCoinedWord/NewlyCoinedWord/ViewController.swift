@@ -38,7 +38,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func textFieldKeyboardTapped(_ sender: UITextField) {
-        if sender.text?.count == 0 || sender.text?.count == 1 {
+        guard let word = sender.text else {
+            print("text field nil")
+            return
+        }
+        
+        if word.count < 2 {
             let alert = UIAlertController(title: "단어를 입력해주세요", message: "두 글자 이상의 단어를 입력해주세요", preferredStyle: .alert)
 
             let ok = UIAlertAction(title: "확인", style: .default)
