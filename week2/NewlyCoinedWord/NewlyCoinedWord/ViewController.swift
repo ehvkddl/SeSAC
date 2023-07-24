@@ -68,8 +68,8 @@ class ViewController: UIViewController {
     func setWord(buttons: [UIButton]) {
         let words: [String] = chooseWord()
         
-        for (idx, button) in buttons.enumerated() {
-            button.setTitle(words[idx], for: .normal)
+        for button in buttons {
+            button.setTitle(words[button.tag], for: .normal)
         }
     }
     
