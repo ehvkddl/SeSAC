@@ -16,16 +16,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z2a-7j-NPC">
+                                <rect key="frame" x="20" y="79" width="353" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GIN-tX-yPq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0F-hB-PRq">
+                                <rect key="frame" x="323" y="78.333333333333329" width="50" height="51.333333333333329"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="return" catalog="system" title=""/>
+                            </button>
+                            <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="393-fh-Ifz">
+                                <rect key="frame" x="276.66666666666669" y="83.333333333333329" width="41.333333333333314" height="41.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="393-fh-Ifz" secondAttribute="height" multiplier="1:1" id="sqb-rz-nyW"/>
+                                </constraints>
+                            </colorWell>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWK-HH-607">
+                                <rect key="frame" x="20" y="149.66666666666669" width="353" height="648.33333333333326"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CWK-HH-607" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Jy-vx-dhr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CWK-HH-607" secondAttribute="bottom" constant="20" id="4vX-bP-VyL"/>
+                            <constraint firstItem="393-fh-Ifz" firstAttribute="height" secondItem="z2a-7j-NPC" secondAttribute="height" multiplier="0.823529" id="5iW-qx-Kt7"/>
+                            <constraint firstItem="z2a-7j-NPC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KSb-AJ-Fky"/>
+                            <constraint firstItem="Z0F-hB-PRq" firstAttribute="width" secondItem="z2a-7j-NPC" secondAttribute="height" multiplier="1:1" id="Kq3-dD-gwj"/>
+                            <constraint firstItem="393-fh-Ifz" firstAttribute="centerY" secondItem="z2a-7j-NPC" secondAttribute="centerY" id="Kx4-Br-XhJ"/>
+                            <constraint firstItem="CWK-HH-607" firstAttribute="top" secondItem="Z0F-hB-PRq" secondAttribute="bottom" constant="20" id="M7N-Xk-FNW"/>
+                            <constraint firstItem="Z0F-hB-PRq" firstAttribute="centerY" secondItem="z2a-7j-NPC" secondAttribute="centerY" id="PfO-VP-VeQ"/>
+                            <constraint firstItem="Z0F-hB-PRq" firstAttribute="leading" secondItem="393-fh-Ifz" secondAttribute="trailing" constant="5" id="Tjp-FI-Wgu"/>
+                            <constraint firstItem="Z0F-hB-PRq" firstAttribute="height" secondItem="z2a-7j-NPC" secondAttribute="height" multiplier="1.02941" id="azO-aj-dXg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CWK-HH-607" secondAttribute="trailing" constant="20" id="ejg-Zt-oEa"/>
+                            <constraint firstItem="z2a-7j-NPC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pAR-tD-RHD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2a-7j-NPC" secondAttribute="trailing" constant="20" id="vUz-zA-mKm"/>
+                            <constraint firstItem="Z0F-hB-PRq" firstAttribute="trailing" secondItem="z2a-7j-NPC" secondAttribute="trailing" id="zC7-al-HPc"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88" y="-27"/>
+            <point key="canvasLocation" x="87.786259541984734" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <image name="return" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
