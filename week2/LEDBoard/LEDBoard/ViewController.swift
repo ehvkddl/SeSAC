@@ -32,6 +32,22 @@ class ViewController: UIViewController {
         view.endEditing(true)
         print("안뇽")
     }
+    
+    func generateRandomColor() -> UIColor {
+        var redValue: CGFloat
+        var greenValue: CGFloat
+        var blueValue: CGFloat
+        
+        repeat {
+            redValue = CGFloat(drand48())
+            greenValue = CGFloat(drand48())
+            blueValue = CGFloat(drand48())
+        } while redValue == 0 && greenValue == 0 && blueValue == 0
+        
+        let randomColor = UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: 1.0)
+        
+        return randomColor
+    }
 }
 
 extension ViewController {
@@ -54,7 +70,7 @@ extension ViewController {
         label.text = "외치기!!!!"
         
         label.textAlignment = .center
-        label.textColor = .white
+        label.textColor = generateRandomColor()
         
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
