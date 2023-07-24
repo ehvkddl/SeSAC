@@ -16,9 +16,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+        designComponent()
+    }
 
 }
 
+extension ViewController {
+    func designComponent() {
+        view.backgroundColor = .black
+        
+        designReturnBtn(button: returnButton)
+        designResultLabel(label: resultLabel)
+    }
+    
+    func designReturnBtn(button: UIButton) {
+        button.tintColor = .black
+
+        button.layer.borderWidth = 1.0
+        button.layer.cornerRadius = 5
+    }
+    
+    func designResultLabel(label: UILabel) {
+        label.text = "외치기!!!!"
+        
+        label.textAlignment = .center
+        label.textColor = .white
+        
+        label.numberOfLines = 0
+    }
+}
