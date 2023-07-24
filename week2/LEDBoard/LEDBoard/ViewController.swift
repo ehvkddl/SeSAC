@@ -50,11 +50,13 @@ extension ViewController {
     }
     
     func designResultLabel(label: UILabel) {
+        label.font = .systemFont(ofSize: 80, weight: .bold)
         label.text = "외치기!!!!"
         
         label.textAlignment = .center
         label.textColor = .white
         
         label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
     }
 }
