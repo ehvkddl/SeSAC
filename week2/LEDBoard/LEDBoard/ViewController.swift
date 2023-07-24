@@ -10,6 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var textField: UITextField!
+    
+    @IBOutlet var colorPicker: UIColorWell!
     @IBOutlet var randomColorButton: UIButton!
     @IBOutlet var returnButton: UIButton!
     
@@ -23,6 +25,11 @@ class ViewController: UIViewController {
 
     @IBAction func tapGestureTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+        
+        textField.isHidden = textField.isHidden ? false : true
+        randomColorButton.isHidden = randomColorButton.isHidden ? false : true
+        returnButton.isHidden = returnButton.isHidden ? false : true
+        colorPicker.isHidden = colorPicker.isHidden ? false : true
     }
     
     @IBAction func textFieldKeyboardTapped(_ sender: UITextField) {

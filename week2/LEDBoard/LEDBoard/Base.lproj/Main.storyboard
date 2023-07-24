@@ -87,6 +87,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="colorPicker" destination="393-fh-Ifz" id="MDD-Uh-Nlr"/>
                         <outlet property="randomColorButton" destination="71J-s8-CSG" id="Txl-w6-fY7"/>
                         <outlet property="resultLabel" destination="CWK-HH-607" id="Klt-dS-e8x"/>
                         <outlet property="returnButton" destination="Z0F-hB-PRq" id="0Ii-S5-030"/>
