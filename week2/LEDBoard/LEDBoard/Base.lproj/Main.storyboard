@@ -62,6 +62,11 @@
                             <constraint firstItem="Z0F-hB-PRq" firstAttribute="trailing" secondItem="z2a-7j-NPC" secondAttribute="trailing" id="zC7-al-HPc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="CWK-HH-607" id="Klt-dS-e8x"/>
+                        <outlet property="returnButton" destination="Z0F-hB-PRq" id="0Ii-S5-030"/>
+                        <outlet property="textField" destination="z2a-7j-NPC" id="7a0-I6-Wex"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
