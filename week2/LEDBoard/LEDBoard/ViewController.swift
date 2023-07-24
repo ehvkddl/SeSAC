@@ -40,6 +40,7 @@ class ViewController: UIViewController {
         view.endEditing(true)
         
         setLabel()
+        resultLabel.textColor = colorPicker.selectedColor
     }
     
     @IBAction func randomColorBtnClicked(_ sender: UIButton) {

@@ -56,7 +56,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="questionmark.square.dashed" catalog="system" title=""/>
                                 <connections>
-                                    <action selector="randomColorBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Igu-Lj-gSL"/>
+                                    <action selector="randomColorBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76w-j1-hLL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -87,7 +87,7 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="colorPicker" destination="393-fh-Ifz" id="MDD-Uh-Nlr"/>
+                        <outlet property="colorPicker" destination="393-fh-Ifz" id="o4Y-Tx-HdZ"/>
                         <outlet property="randomColorButton" destination="71J-s8-CSG" id="Txl-w6-fY7"/>
                         <outlet property="resultLabel" destination="CWK-HH-607" id="Klt-dS-e8x"/>
                         <outlet property="returnButton" destination="Z0F-hB-PRq" id="0Ii-S5-030"/>
