@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     
     @IBAction func randomColorBtnClicked(_ sender: UIButton) {
         resultLabel.textColor = generateRandomColor()
+        colorPicker.selectedColor = nil
     }
     
     func generateRandomColor() -> UIColor {
