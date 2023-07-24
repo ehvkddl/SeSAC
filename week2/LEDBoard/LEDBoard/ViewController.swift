@@ -20,6 +20,18 @@ class ViewController: UIViewController {
         designComponent()
     }
 
+    @IBAction func tapGestureTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @IBAction func textFieldKeyboardTapped(_ sender: UITextField) {
+        returnBtnClicked(returnButton)
+    }
+    
+    @IBAction func returnBtnClicked(_ sender: UIButton) {
+        view.endEditing(true)
+        print("안뇽")
+    }
 }
 
 extension ViewController {
