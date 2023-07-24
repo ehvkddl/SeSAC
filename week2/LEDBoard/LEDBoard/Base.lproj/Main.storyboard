@@ -55,6 +55,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="questionmark.square.dashed" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="randomColorBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Igu-Lj-gSL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

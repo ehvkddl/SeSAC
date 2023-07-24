@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         print("안뇽")
     }
     
+    @IBAction func randomColorBtnClicked(_ sender: UIButton) {
+        resultLabel.textColor = generateRandomColor()
+    }
+    
     func generateRandomColor() -> UIColor {
         var redValue: CGFloat
         var greenValue: CGFloat
@@ -49,6 +53,7 @@ class ViewController: UIViewController {
         
         return randomColor
     }
+    
 }
 
 extension ViewController {
