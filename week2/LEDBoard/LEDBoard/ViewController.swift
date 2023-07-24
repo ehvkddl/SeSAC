@@ -31,7 +31,8 @@ class ViewController: UIViewController {
     
     @IBAction func returnBtnClicked(_ sender: UIButton) {
         view.endEditing(true)
-        print("안뇽")
+        
+        setLabel()
     }
     
     @IBAction func randomColorBtnClicked(_ sender: UIButton) {
@@ -52,6 +53,10 @@ class ViewController: UIViewController {
         let randomColor = UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: 1.0)
         
         return randomColor
+    }
+    
+    func setLabel() {
+        resultLabel.text = textField.text
     }
     
 }
