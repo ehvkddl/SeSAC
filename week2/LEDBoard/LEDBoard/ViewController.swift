@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var textField: UITextField!
+    @IBOutlet var randomColorButton: UIButton!
     @IBOutlet var returnButton: UIButton!
     
     @IBOutlet var resultLabel: UILabel!
@@ -55,6 +56,7 @@ extension ViewController {
         view.backgroundColor = .black
         
         designReturnBtn(button: returnButton)
+        designRandomColorBtn(button: randomColorButton)
         designResultLabel(label: resultLabel)
     }
     
@@ -63,6 +65,10 @@ extension ViewController {
 
         button.layer.borderWidth = 1.0
         button.layer.cornerRadius = 5
+    }
+    
+    func designRandomColorBtn(button: UIButton) {
+        button.tintColor = .black
     }
     
     func designResultLabel(label: UILabel) {

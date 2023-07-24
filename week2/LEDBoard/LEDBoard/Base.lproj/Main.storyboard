@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="393-fh-Ifz">
-                                <rect key="frame" x="276.66666666666669" y="83.333333333333329" width="41.333333333333314" height="41.333333333333329"/>
+                                <rect key="frame" x="222.66666666666666" y="83.333333333333329" width="41.333333333333343" height="41.333333333333329"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="393-fh-Ifz" secondAttribute="height" multiplier="1:1" id="sqb-rz-nyW"/>
                                 </constraints>
@@ -48,6 +48,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71J-s8-CSG">
+                                <rect key="frame" x="269" y="79.666666666666671" width="49" height="49.000000000000014"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="71J-s8-CSG" secondAttribute="height" multiplier="1:1" id="9uc-ac-uFC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="questionmark.square.dashed" catalog="system" title=""/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,12 +64,15 @@
                             <constraint firstItem="CWK-HH-607" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Jy-vx-dhr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CWK-HH-607" secondAttribute="bottom" constant="20" id="4vX-bP-VyL"/>
                             <constraint firstItem="393-fh-Ifz" firstAttribute="height" secondItem="z2a-7j-NPC" secondAttribute="height" multiplier="0.823529" id="5iW-qx-Kt7"/>
+                            <constraint firstItem="71J-s8-CSG" firstAttribute="leading" secondItem="393-fh-Ifz" secondAttribute="trailing" constant="5" id="8CZ-Dl-Oa5"/>
+                            <constraint firstItem="71J-s8-CSG" firstAttribute="centerY" secondItem="z2a-7j-NPC" secondAttribute="centerY" id="ANu-hT-11H"/>
+                            <constraint firstItem="Z0F-hB-PRq" firstAttribute="leading" secondItem="71J-s8-CSG" secondAttribute="trailing" constant="5" id="K6N-CO-2M7"/>
                             <constraint firstItem="z2a-7j-NPC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KSb-AJ-Fky"/>
                             <constraint firstItem="Z0F-hB-PRq" firstAttribute="width" secondItem="z2a-7j-NPC" secondAttribute="height" multiplier="1:1" id="Kq3-dD-gwj"/>
                             <constraint firstItem="393-fh-Ifz" firstAttribute="centerY" secondItem="z2a-7j-NPC" secondAttribute="centerY" id="Kx4-Br-XhJ"/>
                             <constraint firstItem="CWK-HH-607" firstAttribute="top" secondItem="Z0F-hB-PRq" secondAttribute="bottom" constant="20" id="M7N-Xk-FNW"/>
                             <constraint firstItem="Z0F-hB-PRq" firstAttribute="centerY" secondItem="z2a-7j-NPC" secondAttribute="centerY" id="PfO-VP-VeQ"/>
-                            <constraint firstItem="Z0F-hB-PRq" firstAttribute="leading" secondItem="393-fh-Ifz" secondAttribute="trailing" constant="5" id="Tjp-FI-Wgu"/>
+                            <constraint firstItem="71J-s8-CSG" firstAttribute="height" secondItem="z2a-7j-NPC" secondAttribute="height" multiplier="0.98" id="Wdf-KB-LLP"/>
                             <constraint firstItem="Z0F-hB-PRq" firstAttribute="height" secondItem="z2a-7j-NPC" secondAttribute="height" multiplier="1.02941" id="azO-aj-dXg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CWK-HH-607" secondAttribute="trailing" constant="20" id="ejg-Zt-oEa"/>
                             <constraint firstItem="z2a-7j-NPC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pAR-tD-RHD"/>
@@ -73,6 +84,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="randomColorButton" destination="71J-s8-CSG" id="Txl-w6-fY7"/>
                         <outlet property="resultLabel" destination="CWK-HH-607" id="Klt-dS-e8x"/>
                         <outlet property="returnButton" destination="Z0F-hB-PRq" id="0Ii-S5-030"/>
                         <outlet property="textField" destination="z2a-7j-NPC" id="7a0-I6-Wex"/>
@@ -89,6 +101,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="questionmark.square.dashed" catalog="system" width="128" height="114"/>
         <image name="return" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
