@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EAC996C52A6FD482003A1C7A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC996C42A6FD482003A1C7A /* StatisticsViewController.swift */; };
 		EAEA7BA22A6FAEA500D3D4EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA7BA12A6FAEA500D3D4EC /* AppDelegate.swift */; };
 		EAEA7BA42A6FAEA500D3D4EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA7BA32A6FAEA500D3D4EC /* SceneDelegate.swift */; };
 		EAEA7BA62A6FAEA500D3D4EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEA7BA52A6FAEA500D3D4EC /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EAC996C42A6FD482003A1C7A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		EAEA7B9E2A6FAEA500D3D4EC /* OhMyMood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OhMyMood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAEA7BA12A6FAEA500D3D4EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAEA7BA32A6FAEA500D3D4EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				EAEA7BA12A6FAEA500D3D4EC /* AppDelegate.swift */,
 				EAEA7BA32A6FAEA500D3D4EC /* SceneDelegate.swift */,
 				EAEA7BA52A6FAEA500D3D4EC /* ViewController.swift */,
+				EAC996C42A6FD482003A1C7A /* StatisticsViewController.swift */,
 				EAEA7BA72A6FAEA500D3D4EC /* Main.storyboard */,
 				EAEA7BAA2A6FAEA600D3D4EC /* Assets.xcassets */,
 				EAEA7BAC2A6FAEA600D3D4EC /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				EAEA7BA62A6FAEA500D3D4EC /* ViewController.swift in Sources */,
 				EAEA7BA22A6FAEA500D3D4EC /* AppDelegate.swift in Sources */,
 				EAEA7BA42A6FAEA500D3D4EC /* SceneDelegate.swift in Sources */,
+				EAC996C52A6FD482003A1C7A /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
