@@ -42,12 +42,17 @@ class ViewController: UIViewController {
         
         loadScore()
     }
-
+    
     @IBAction func emotionBtnClicked(_ sender: UIButton) {
-        emotionScore[sender.tag] += 1
+        addScore(idx: sender.tag, score: 1)
+        printScore()
+    }
+    
+    func addScore(idx: Int, score: Int) {
+        emotionScore[idx] += score
         
-        guard let emotion = Emotion(rawValue: sender.tag) else { return }
-        UserDefaults.standard.setValue(emotionScore[sender.tag], forKey: emotion.text)
+        guard let emotion = Emotion(rawValue: idx) else { return }
+        UserDefaults.standard.setValue(emotionScore[idx], forKey: emotion.text)
         
         printScore()
     }
@@ -69,6 +74,15 @@ class ViewController: UIViewController {
         }
     }
     
+    func resetScore(idx: Int) {
+        emotionScore[idx] = 0
+        
+        guard let emotion = Emotion(rawValue: idx) else { return }
+        UserDefaults.standard.setValue(emotionScore[idx], forKey: emotion.text)
+        
+        printScore()
+    }
+    
 }
 
 extension ViewController {
@@ -76,6 +90,7 @@ extension ViewController {
     func designComponent() {
         emotionButtons.forEach { button in
             designEmotionBtn(button: button)
+            setBtnMenu(button: button)
         }
     }
     
@@ -84,6 +99,24 @@ extension ViewController {
         
         button.backgroundColor = UIColor(named: emotion.text)
         button.setImage(UIImage(named: emotion.text), for: .normal)
+    }
+    
+    func setBtnMenu(button: UIButton) {
+        let fiveScore = UIAction(title: "+5",
+                                 image: UIImage(systemName: "5.circle"),
+                                 handler: { _ in self.addScore(idx: button.tag, score: 5) })
+        
+        let tenScore = UIAction(title: "+10",
+                                image: UIImage(systemName: "10.circle"),
+                                handler: { _ in self.addScore(idx: button.tag, score: 10) })
+        
+        let resetScore = UIAction(title: "reset",
+                                  image: UIImage(systemName: "wand.and.stars"),
+                                  handler: { _ in self.resetScore(idx: button.tag)})
+        
+        button.menu = UIMenu(title: "score",
+                             options: .displayInline,
+                             children: [fiveScore, tenScore, resetScore])
     }
     
 }
