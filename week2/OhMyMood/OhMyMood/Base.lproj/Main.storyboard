@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -269,7 +270,9 @@
         <scene sceneID="Yhb-Sv-fNQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d6B-S8-KbC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="작성하기" selectedImage="pencil.circle" catalog="system" id="UAx-IS-6wO"/>
+                    <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="UAx-IS-6wO">
+                        <imageReference key="selectedImage" image="pencil.circle.fill" catalog="system"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gHg-4r-jEd">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -288,7 +291,7 @@
         <scene sceneID="Ec7-Dh-beF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3JH-zW-6Z5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="통계보기" selectedImage="chart.bar" catalog="system" id="eX5-LU-7By"/>
+                    <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" selectedImage="chart.bar.fill" id="eX5-LU-7By"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vk0-BZ-SF0">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -306,7 +309,9 @@
     </scenes>
     <resources>
         <image name="chart.bar" catalog="system" width="128" height="89"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="90"/>
         <image name="pencil.circle" catalog="system" width="128" height="123"/>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
