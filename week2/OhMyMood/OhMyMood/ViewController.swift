@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     
     @IBAction func emotionBtnClicked(_ sender: UIButton) {
         addScore(idx: sender.tag, score: 1)
-        printScore()
     }
     
     func addScore(idx: Int, score: Int) {
