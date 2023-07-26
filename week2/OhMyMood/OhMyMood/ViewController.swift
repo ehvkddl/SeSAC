@@ -39,10 +39,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         designComponent()
+        
+        loadScore()
     }
 
     @IBAction func emotionBtnClicked(_ sender: UIButton) {
         emotionScore[sender.tag] += 1
+        
+        guard let emotion = Emotion(rawValue: sender.tag) else { return }
+        UserDefaults.standard.setValue(emotionScore[sender.tag], forKey: emotion.text)
         
         printScore()
     }
@@ -53,6 +58,15 @@ class ViewController: UIViewController {
             print("\(emotion.krText): \(emotionScore[i])점")
         }
         print("=============")
+    }
+    
+    func loadScore() {
+        for i in 0..<emotionScore.count {
+            guard let emotion = Emotion(rawValue: i) else { return }
+            let value = UserDefaults.standard.integer(forKey: emotion.text)
+            
+            emotionScore[i] = value
+        }
     }
     
 }

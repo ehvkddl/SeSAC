@@ -15,11 +15,24 @@ class StatisticsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         designComponent()
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setScore()
+    }
+    
+    func setScore() {
+        scoreLabels.enumerated().forEach { idx, label in
+            guard let emotion = Emotion(rawValue: idx) else { return }
+            let value = UserDefaults.standard.integer(forKey: emotion.text)
+            
+            label.text = String(value)
+        }
+    }
 
 }
 
