@@ -34,7 +34,11 @@ class Case3ViewController: UIViewController {
         
         tableView.reloadData()
     }
-
+    
+    @IBAction func tapGestureTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
 }
 
 extension Case3ViewController: UITableViewDataSource, UITableViewDelegate {
