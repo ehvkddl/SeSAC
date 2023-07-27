@@ -11,11 +11,15 @@ class Case3ViewController: UIViewController {
 
     var todos: [Todo] = []
     
+    let userdefaults = UserDefaults.standard
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        loadTodos()
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,6 +34,10 @@ class Case3ViewController: UIViewController {
                           isDone: false,
                           isFavorite: false))
         
+        if let data = try? PropertyListEncoder().encode(todos) {
+            userdefaults.set(data, forKey: "todos")
+        }
+        
         textField.text = ""
         
         tableView.reloadData()
@@ -37,6 +45,12 @@ class Case3ViewController: UIViewController {
     
     @IBAction func tapGestureTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
+    }
+    
+    func loadTodos() {
+        if let data = userdefaults.data(forKey: "todos") {
+            todos = try! PropertyListDecoder().decode([Todo].self, from: data)
+        }
     }
     
 }

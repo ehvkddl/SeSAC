@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Todo {
+struct Todo: Codable {
     var todo: String
     var isDone: Bool
     var isFavorite: Bool
