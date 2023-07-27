@@ -20,6 +20,7 @@
 		EA87E7552A725ABC00FE99F5 /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */; };
 		EA87E7572A725EB100FE99F5 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E7562A725EB100FE99F5 /* Setting.swift */; };
 		EA87E7592A72C82E00FE99F5 /* Case3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E7582A72C82E00FE99F5 /* Case3TableViewController.swift */; };
+		EA87E75D2A72C9A300FE99F5 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E75C2A72C9A300FE99F5 /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
 		EA87E7562A725EB100FE99F5 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		EA87E7582A72C82E00FE99F5 /* Case3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case3TableViewController.swift; sourceTree = "<group>"; };
+		EA87E75C2A72C9A300FE99F5 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				EA87E7512A72517600FE99F5 /* Setting.storyboard */,
 				EA87E7582A72C82E00FE99F5 /* Case3TableViewController.swift */,
+				EA87E75C2A72C9A300FE99F5 /* Todo.swift */,
 				EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */,
 				EA87E7562A725EB100FE99F5 /* Setting.swift */,
 			);
@@ -177,6 +180,7 @@
 				EA87E7382A71FFF500FE99F5 /* AppDelegate.swift in Sources */,
 				EA87E7572A725EB100FE99F5 /* Setting.swift in Sources */,
 				EA87E73A2A71FFF500FE99F5 /* SceneDelegate.swift in Sources */,
+				EA87E75D2A72C9A300FE99F5 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
