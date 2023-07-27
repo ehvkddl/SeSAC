@@ -16,6 +16,7 @@
 		EA87E74C2A720FEB00FE99F5 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E74B2A720FEB00FE99F5 /* TodoTableViewController.swift */; };
 		EA87E74E2A7232D900FE99F5 /* StudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E74D2A7232D900FE99F5 /* StudyTableViewController.swift */; };
 		EA87E7502A72496800FE99F5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E74F2A72496800FE99F5 /* Extension.swift */; };
+		EA87E7522A72517600FE99F5 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA87E7512A72517600FE99F5 /* Setting.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		EA87E74B2A720FEB00FE99F5 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		EA87E74D2A7232D900FE99F5 /* StudyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewController.swift; sourceTree = "<group>"; };
 		EA87E74F2A72496800FE99F5 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		EA87E7512A72517600FE99F5 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +70,21 @@
 				EA87E73D2A71FFF500FE99F5 /* Main.storyboard */,
 				EA87E74B2A720FEB00FE99F5 /* TodoTableViewController.swift */,
 				EA87E74D2A7232D900FE99F5 /* StudyTableViewController.swift */,
+				EA87E7532A7251A800FE99F5 /* Assignment */,
 				EA87E7402A71FFF600FE99F5 /* Assets.xcassets */,
 				EA87E7422A71FFF600FE99F5 /* LaunchScreen.storyboard */,
 				EA87E74F2A72496800FE99F5 /* Extension.swift */,
 				EA87E7452A71FFF600FE99F5 /* Info.plist */,
 			);
 			path = SeSACWeek3;
+			sourceTree = "<group>";
+		};
+		EA87E7532A7251A800FE99F5 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				EA87E7512A72517600FE99F5 /* Setting.storyboard */,
+			);
+			path = Assignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 				EA87E7442A71FFF600FE99F5 /* LaunchScreen.storyboard in Resources */,
 				EA87E7412A71FFF600FE99F5 /* Assets.xcassets in Resources */,
 				EA87E73F2A71FFF500FE99F5 /* Main.storyboard in Resources */,
+				EA87E7522A72517600FE99F5 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
