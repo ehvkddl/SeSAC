@@ -17,6 +17,7 @@
 		EA87E74E2A7232D900FE99F5 /* StudyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E74D2A7232D900FE99F5 /* StudyTableViewController.swift */; };
 		EA87E7502A72496800FE99F5 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E74F2A72496800FE99F5 /* Extension.swift */; };
 		EA87E7522A72517600FE99F5 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA87E7512A72517600FE99F5 /* Setting.storyboard */; };
+		EA87E7552A725ABC00FE99F5 /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EA87E74D2A7232D900FE99F5 /* StudyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableViewController.swift; sourceTree = "<group>"; };
 		EA87E74F2A72496800FE99F5 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EA87E7512A72517600FE99F5 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				EA87E7512A72517600FE99F5 /* Setting.storyboard */,
+				EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				EA87E73C2A71FFF500FE99F5 /* ViewController.swift in Sources */,
 				EA87E74C2A720FEB00FE99F5 /* TodoTableViewController.swift in Sources */,
+				EA87E7552A725ABC00FE99F5 /* Case2TableViewController.swift in Sources */,
 				EA87E74E2A7232D900FE99F5 /* StudyTableViewController.swift in Sources */,
 				EA87E7502A72496800FE99F5 /* Extension.swift in Sources */,
 				EA87E7382A71FFF500FE99F5 /* AppDelegate.swift in Sources */,
