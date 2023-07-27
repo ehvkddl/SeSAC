@@ -7,12 +7,30 @@
 
 import Foundation
 
-enum Setting: String, CaseIterable {
-    case all = "전체 설정"
-    case personal = "개인 설정"
-    case etc = "기타"
+enum Setting: Int, CaseIterable {
+    case all = 0
+    case personal = 1
+    case etc = 2
     
-    var text: String { rawValue }
+    var text: String {
+        switch self {
+        case .all: return "전체 설정"
+        case .personal: return "개인 설정"
+        case .etc: return "기타"
+            
+        }
+    }
+    
+    var setting: [String] {
+        switch self {
+        case .all:
+            return All.allCases.map { $0.text }
+        case .personal:
+            return Personal.allCases.map { $0.text }
+        case .etc:
+            return Etc.allCases.map { $0.text }
+        }
+    }
     
     enum All: String, CaseIterable {
         case notice = "공지사항"
@@ -22,7 +40,7 @@ enum Setting: String, CaseIterable {
         var text: String { rawValue }
     }
     
-    enum Peronal: String {
+    enum Personal: String, CaseIterable {
         case personalSecurity = "개인/보안"
         case notification = "알림"
         case chatting = "채팅"
@@ -31,7 +49,7 @@ enum Setting: String, CaseIterable {
         var text: String { rawValue }
     }
     
-    enum Etc: String {
+    enum Etc: String, CaseIterable {
         case help = "고객센터/도움말"
         
         var text: String { rawValue }
