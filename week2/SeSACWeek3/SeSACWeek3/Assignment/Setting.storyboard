@@ -245,7 +245,7 @@
         <!--쇼핑-->
         <scene sceneID="anW-FL-aH0">
             <objects>
-                <tableViewController id="aPE-wl-Efd" sceneMemberID="viewController">
+                <tableViewController id="aPE-wl-Efd" customClass="Case3TableViewController" customModule="SeSACWeek3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9FF-jS-wpo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,6 +264,9 @@
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title=""/>
+                                    <connections>
+                                        <action selector="addBtnClicked:" destination="aPE-wl-Efd" eventType="touchUpInside" id="mKj-Sd-5wr"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -287,6 +290,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <gestureRecognizers/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -295,6 +299,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="쇼핑" id="zpW-DS-uaA"/>
+                    <connections>
+                        <outlet property="textField" destination="KKv-zc-VTG" id="Dpn-5T-MsL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YYh-6n-8af" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
