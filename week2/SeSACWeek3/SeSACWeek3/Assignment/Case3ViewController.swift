@@ -43,10 +43,6 @@ class Case3ViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func tapGestureTapped(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
-    }
-    
     func loadTodos() {
         if let data = userdefaults.data(forKey: "todos") {
             todos = try! PropertyListDecoder().decode([Todo].self, from: data)
@@ -65,10 +61,19 @@ extension Case3ViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as? Case3TableViewCell else { return UITableViewCell() }
 
         cell.todo.text = todos[indexPath.row].todo
+        
+        let isDoneImage = UIImage(systemName: todos[indexPath.row].isDone ? "checkmark.square" : "square")
+        cell.checkBox.setImage(isDoneImage, for: .normal)
 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        todos[indexPath.row].isDone.toggle()
+
+        tableView.reloadData()
+    }
+        
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
