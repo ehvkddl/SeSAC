@@ -7,8 +7,16 @@
 
 import UIKit
 
+protocol ButtonTappedDelegate: AnyObject {
+    func favoriteButtonTapped(for cell: Case3TableViewCell)
+}
+
 class Case3TableViewCell: UITableViewCell {
 
+    weak var delegate: ButtonTappedDelegate?
+    
+    var indexPath: IndexPath?
+    
     @IBOutlet weak var checkBox: UIButton!
     @IBOutlet weak var todo: UILabel!
     @IBOutlet weak var favoriteStar: UIButton!
@@ -24,4 +32,9 @@ class Case3TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func favoriteBtnClicked(_ sender: UIButton) {
+        let currentCell = self
+        delegate?.favoriteButtonTapped(for: currentCell)
+    }
+    
 }

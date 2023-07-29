@@ -302,6 +302,9 @@
                                                     <rect key="frame" x="327" y="10" width="55" height="35"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="star" catalog="system" title=""/>
+                                                    <connections>
+                                                        <action selector="favoriteBtnClicked:" destination="Pr3-IH-gAs" eventType="touchUpInside" id="Na4-Sh-wpH"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8w-DS-6VP">
                                                     <rect key="frame" x="70" y="17" width="42" height="21"/>

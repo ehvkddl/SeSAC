@@ -59,11 +59,17 @@ extension Case3ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as? Case3TableViewCell else { return UITableViewCell() }
-
+        
+        cell.indexPath = indexPath
+        cell.delegate = self
+        
         cell.todo.text = todos[indexPath.row].todo
         
         let isDoneImage = UIImage(systemName: todos[indexPath.row].isDone ? "checkmark.square" : "square")
         cell.checkBox.setImage(isDoneImage, for: .normal)
+        
+        let favoriteImage = UIImage(systemName: todos[indexPath.row].isFavorite ? "star.fill" : "star")
+        cell.favoriteStar.setImage(favoriteImage, for: .normal)
 
         return cell
     }
@@ -78,4 +84,14 @@ extension Case3ViewController: UITableViewDataSource, UITableViewDelegate {
         return 50
     }
     
+}
+
+extension Case3ViewController: ButtonTappedDelegate {
+    func favoriteButtonTapped(for cell: Case3TableViewCell) {
+        guard let indexPath = cell.indexPath else { return }
+        
+        todos[indexPath.row].isFavorite.toggle()
+        
+        tableView.reloadData()
+    }
 }
