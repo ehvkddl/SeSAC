@@ -58,7 +58,7 @@ extension Case3ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as? Case3TableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Case3TableViewCell.indentifier, for: indexPath) as? Case3TableViewCell else { return UITableViewCell() }
         
         cell.indexPath = indexPath
         cell.delegate = self

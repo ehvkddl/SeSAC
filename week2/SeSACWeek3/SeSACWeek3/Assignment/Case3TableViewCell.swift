@@ -13,6 +13,8 @@ protocol ButtonTappedDelegate: AnyObject {
 
 class Case3TableViewCell: UITableViewCell {
 
+    static let indentifier = "Case3TableViewCell"
+    
     weak var delegate: ButtonTappedDelegate?
     
     var indexPath: IndexPath?
