@@ -72,7 +72,7 @@
                                             </subviews>
                                         </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="줄거리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="til-RJ-crN">
-                                            <rect key="frame" x="109.66666666666666" y="60.666666666666664" width="273.33333333333337" height="72.333333333333343"/>
+                                            <rect key="frame" x="109.66666666666666" y="60.666666666666664" width="273.33333333333337" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                         <constraint firstItem="QYe-Iv-2CI" firstAttribute="top" secondItem="i8C-IJ-CfD" secondAttribute="top" constant="10" id="ENw-Nl-N2p"/>
                                         <constraint firstItem="Yhn-7z-Wnx" firstAttribute="top" secondItem="QYe-Iv-2CI" secondAttribute="top" id="ES9-Mh-027"/>
                                         <constraint firstItem="s8F-R0-Zyz" firstAttribute="top" secondItem="Yhn-7z-Wnx" secondAttribute="bottom" constant="5" id="X15-e8-iRW"/>
-                                        <constraint firstItem="til-RJ-crN" firstAttribute="bottom" secondItem="QYe-Iv-2CI" secondAttribute="bottom" id="kH0-jR-nqy"/>
+                                        <constraint firstItem="til-RJ-crN" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="QYe-Iv-2CI" secondAttribute="bottom" id="kH0-jR-nqy"/>
                                         <constraint firstItem="Yhn-7z-Wnx" firstAttribute="leading" secondItem="QYe-Iv-2CI" secondAttribute="trailing" constant="5" id="tA5-Yv-HpJ"/>
                                         <constraint firstItem="QYe-Iv-2CI" firstAttribute="centerY" secondItem="i8C-IJ-CfD" secondAttribute="centerY" id="tjR-73-6Vg"/>
                                         <constraint firstItem="s8F-R0-Zyz" firstAttribute="leading" secondItem="Yhn-7z-Wnx" secondAttribute="leading" id="twn-dj-aQ1"/>
