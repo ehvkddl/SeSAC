@@ -105,13 +105,29 @@
 			isa = PBXGroup;
 			children = (
 				EA87E7512A72517600FE99F5 /* Setting.storyboard */,
-				EA87E7582A72C82E00FE99F5 /* Case3ViewController.swift */,
-				EA87E75E2A72D8B600FE99F5 /* Case3TableViewCell.swift */,
-				EA87E75C2A72C9A300FE99F5 /* Todo.swift */,
+				EAC15E242A7505BC0036DFBC /* Case2 */,
+				EAC15E262A7505D50036DFBC /* Case3 */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
+		EAC15E242A7505BC0036DFBC /* Case2 */ = {
+			isa = PBXGroup;
+			children = (
 				EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */,
 				EA87E7562A725EB100FE99F5 /* Setting.swift */,
 			);
-			path = Assignment;
+			path = Case2;
+			sourceTree = "<group>";
+		};
+		EAC15E262A7505D50036DFBC /* Case3 */ = {
+			isa = PBXGroup;
+			children = (
+				EA87E7582A72C82E00FE99F5 /* Case3ViewController.swift */,
+				EA87E75E2A72D8B600FE99F5 /* Case3TableViewCell.swift */,
+				EA87E75C2A72C9A300FE99F5 /* Todo.swift */,
+			);
+			path = Case3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
