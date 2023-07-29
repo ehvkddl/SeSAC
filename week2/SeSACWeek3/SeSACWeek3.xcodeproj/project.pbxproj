@@ -29,6 +29,7 @@
 		EAC15E292A75066C0036DFBC /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAC15E282A75066C0036DFBC /* Movie.storyboard */; };
 		EAC15E2B2A7506D70036DFBC /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E2A2A7506D70036DFBC /* MovieTableViewController.swift */; };
 		EAC15E2D2A7507750036DFBC /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E2C2A7507750036DFBC /* MovieTableViewCell.swift */; };
+		EAC15E312A750D770036DFBC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E302A750D770036DFBC /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		EAC15E282A75066C0036DFBC /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		EAC15E2A2A7506D70036DFBC /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		EAC15E2C2A7507750036DFBC /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		EAC15E302A750D770036DFBC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				EAC15E282A75066C0036DFBC /* Movie.storyboard */,
 				EAC15E2A2A7506D70036DFBC /* MovieTableViewController.swift */,
 				EAC15E2C2A7507750036DFBC /* MovieTableViewCell.swift */,
+				EAC15E302A750D770036DFBC /* Movie.swift */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAC15E312A750D770036DFBC /* Movie.swift in Sources */,
 				EAC15E2D2A7507750036DFBC /* MovieTableViewCell.swift in Sources */,
 				EAC15E2B2A7506D70036DFBC /* MovieTableViewController.swift in Sources */,
 				EA87E73C2A71FFF500FE99F5 /* ViewController.swift in Sources */,
