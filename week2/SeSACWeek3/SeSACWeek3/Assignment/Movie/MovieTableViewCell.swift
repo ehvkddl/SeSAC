@@ -8,7 +8,6 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
-
     
     static let identifier = "MovieTableViewCell"
     
@@ -21,5 +20,17 @@ class MovieTableViewCell: UITableViewCell {
     @IBOutlet var rateLabel: UILabel!
     
     @IBOutlet var overviewLabel: UILabel!
+    
+    func configureCell(row: Movie) {
+        posterImageView.image = UIImage(named: row.title)
+        
+        titleLabel.text = row.title
+        
+        releaseDateLabel.text = row.releaseDate
+        runtimeLabel.text = "\(row.runtime)분"
+        rateLabel.text = "\(row.rate)점"
+        
+        overviewLabel.text = row.overview
+    }
     
 }
