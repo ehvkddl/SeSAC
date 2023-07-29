@@ -34,18 +34,21 @@ class Case3ViewController: UIViewController {
                           isDone: false,
                           isFavorite: false))
         
-        if let data = try? PropertyListEncoder().encode(todos) {
-            userdefaults.set(data, forKey: "todos")
-        }
-        
         textField.text = ""
         
+        saveTodos()
         tableView.reloadData()
     }
     
     func loadTodos() {
         if let data = userdefaults.data(forKey: "todos") {
             todos = try! PropertyListDecoder().decode([Todo].self, from: data)
+        }
+    }
+    
+    func saveTodos() {
+        if let data = try? PropertyListEncoder().encode(todos) {
+            userdefaults.set(data, forKey: "todos")
         }
     }
     
@@ -73,6 +76,7 @@ extension Case3ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         todos[indexPath.row].isDone.toggle()
 
+        saveTodos()
         tableView.reloadData()
     }
         
@@ -88,6 +92,7 @@ extension Case3ViewController: ButtonTappedDelegate {
         
         todos[indexPath.row].isFavorite.toggle()
         
+        saveTodos()
         tableView.reloadData()
     }
 }
