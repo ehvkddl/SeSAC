@@ -9,4 +9,17 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
 
+    
+    static let identifier = "MovieTableViewCell"
+    
+    @IBOutlet var posterImageView: UIImageView!
+    
+    @IBOutlet var titleLabel: UILabel!
+    
+    @IBOutlet var releaseDateLabel: UILabel!
+    @IBOutlet var runtimeLabel: UILabel!
+    @IBOutlet var rateLabel: UILabel!
+    
+    @IBOutlet var overviewLabel: UILabel!
+    
 }

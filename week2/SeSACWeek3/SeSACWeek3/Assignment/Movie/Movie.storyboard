@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="143" id="66j-XS-jwv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieTableViewCell" rowHeight="143" id="66j-XS-jwv" customClass="MovieTableViewCell" customModule="SeSACWeek3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="143"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="66j-XS-jwv" id="i8C-IJ-CfD">
@@ -93,6 +93,14 @@
                                         <constraint firstItem="til-RJ-crN" firstAttribute="top" secondItem="s8F-R0-Zyz" secondAttribute="bottom" constant="5" id="y22-gY-cGK"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="overviewLabel" destination="til-RJ-crN" id="Iji-Xm-o7g"/>
+                                    <outlet property="posterImageView" destination="QYe-Iv-2CI" id="WTi-N4-HAP"/>
+                                    <outlet property="rateLabel" destination="7eN-mA-aJH" id="IPb-on-fdj"/>
+                                    <outlet property="releaseDateLabel" destination="ei5-uF-amY" id="OLy-md-K2S"/>
+                                    <outlet property="runtimeLabel" destination="vKX-aa-cLb" id="ayF-kb-cYG"/>
+                                    <outlet property="titleLabel" destination="Yhn-7z-Wnx" id="h83-qs-tkB"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
