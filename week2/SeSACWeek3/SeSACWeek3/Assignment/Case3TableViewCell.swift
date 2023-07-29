@@ -31,6 +31,16 @@ class Case3TableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configureCell(row: Todo) {
+        todo.text = row.todo
+        
+        let isDoneImage = UIImage(systemName: row.isDone ? "checkmark.square" : "square")
+        checkBox.setImage(isDoneImage, for: .normal)
+        
+        let favoriteImage = UIImage(systemName: row.isFavorite ? "star.fill" : "star")
+        favoriteStar.setImage(favoriteImage, for: .normal)
+    }
 
     @IBAction func favoriteBtnClicked(_ sender: UIButton) {
         let currentCell = self

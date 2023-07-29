@@ -63,13 +63,9 @@ extension Case3ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.indexPath = indexPath
         cell.delegate = self
         
-        cell.todo.text = todos[indexPath.row].todo
+        let row = todos[indexPath.row]
         
-        let isDoneImage = UIImage(systemName: todos[indexPath.row].isDone ? "checkmark.square" : "square")
-        cell.checkBox.setImage(isDoneImage, for: .normal)
-        
-        let favoriteImage = UIImage(systemName: todos[indexPath.row].isFavorite ? "star.fill" : "star")
-        cell.favoriteStar.setImage(favoriteImage, for: .normal)
+        cell.configureCell(row: row)
 
         return cell
     }
