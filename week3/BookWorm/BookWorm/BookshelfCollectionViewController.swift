@@ -60,4 +60,14 @@ class BookshelfCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        
+        vc.contents = movieInfo.movie[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

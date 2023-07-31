@@ -19,6 +19,7 @@
 		EAEE68BE2A779EE5002BEB95 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */; };
 		EAEE68C02A779EF2002BEB95 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68BF2A779EF2002BEB95 /* Movie.swift */; };
 		EAEE68C22A780EFF002BEB95 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C12A780EFF002BEB95 /* SearchViewController.swift */; };
+		EAEE68C42A78123B002BEB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C32A78123B002BEB95 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		EAEE68BF2A779EF2002BEB95 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EAEE68C12A780EFF002BEB95 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EAEE68C32A78123B002BEB95 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				EAEE68B92A779D09002BEB95 /* BookshelfCollectionViewCell.swift */,
 				EAEE68BA2A779D09002BEB95 /* BookshelfCollectionViewCell.xib */,
 				EAEE68C12A780EFF002BEB95 /* SearchViewController.swift */,
+				EAEE68C32A78123B002BEB95 /* DetailViewController.swift */,
 				EAEE68A92A779AAC002BEB95 /* Main.storyboard */,
 				EAEE68AC2A779AAD002BEB95 /* Assets.xcassets */,
 				EAEE68AE2A779AAD002BEB95 /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEE68C42A78123B002BEB95 /* DetailViewController.swift in Sources */,
 				EAEE68C02A779EF2002BEB95 /* Movie.swift in Sources */,
 				EAEE68A82A779AAC002BEB95 /* ViewController.swift in Sources */,
 				EAEE68C22A780EFF002BEB95 /* SearchViewController.swift in Sources */,
