@@ -20,6 +20,7 @@
 		EAEE68C02A779EF2002BEB95 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68BF2A779EF2002BEB95 /* Movie.swift */; };
 		EAEE68C22A780EFF002BEB95 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C12A780EFF002BEB95 /* SearchViewController.swift */; };
 		EAEE68C42A78123B002BEB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C32A78123B002BEB95 /* DetailViewController.swift */; };
+		EAEE68C62A78157E002BEB95 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C52A78157E002BEB95 /* Extension+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EAEE68BF2A779EF2002BEB95 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EAEE68C12A780EFF002BEB95 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		EAEE68C32A78123B002BEB95 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EAEE68C52A78157E002BEB95 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				EAEE68B12A779AAD002BEB95 /* Info.plist */,
 				EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */,
 				EAEE68BF2A779EF2002BEB95 /* Movie.swift */,
+				EAEE68C52A78157E002BEB95 /* Extension+UIViewController.swift */,
 			);
 			path = BookWorm;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				EAEE68B82A779CD5002BEB95 /* BookshelfCollectionViewController.swift in Sources */,
 				EAEE68A62A779AAC002BEB95 /* SceneDelegate.swift in Sources */,
 				EAEE68BE2A779EE5002BEB95 /* MovieInfo.swift in Sources */,
+				EAEE68C62A78157E002BEB95 /* Extension+UIViewController.swift in Sources */,
 				EAEE68BB2A779D09002BEB95 /* BookshelfCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,8 @@ class BookshelfCollectionViewController: UICollectionViewController {
 
         title = "\(user)님의 상영관"
         
+        setBarButtonItemColor(color: .black)
+        
         let nib = UINib(nibName: "BookshelfCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookshelfCollectionViewCell")
         
