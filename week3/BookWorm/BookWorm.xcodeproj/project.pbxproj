@@ -13,6 +13,8 @@
 		EAEE68AB2A779AAC002BEB95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68A92A779AAC002BEB95 /* Main.storyboard */; };
 		EAEE68AD2A779AAD002BEB95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68AC2A779AAD002BEB95 /* Assets.xcassets */; };
 		EAEE68B02A779AAD002BEB95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68AE2A779AAD002BEB95 /* LaunchScreen.storyboard */; };
+		EAEE68BE2A779EE5002BEB95 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */; };
+		EAEE68C02A779EF2002BEB95 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68BF2A779EF2002BEB95 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EAEE68AC2A779AAD002BEB95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAEE68AF2A779AAD002BEB95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAEE68B12A779AAD002BEB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
+		EAEE68BF2A779EF2002BEB95 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				EAEE68AC2A779AAD002BEB95 /* Assets.xcassets */,
 				EAEE68AE2A779AAD002BEB95 /* LaunchScreen.storyboard */,
 				EAEE68B12A779AAD002BEB95 /* Info.plist */,
+				EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */,
+				EAEE68BF2A779EF2002BEB95 /* Movie.swift */,
 			);
 			path = BookWorm;
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEE68C02A779EF2002BEB95 /* Movie.swift in Sources */,
 				EAEE68A82A779AAC002BEB95 /* ViewController.swift in Sources */,
 				EAEE68A42A779AAC002BEB95 /* AppDelegate.swift in Sources */,
 				EAEE68A62A779AAC002BEB95 /* SceneDelegate.swift in Sources */,
+				EAEE68BE2A779EE5002BEB95 /* MovieInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
