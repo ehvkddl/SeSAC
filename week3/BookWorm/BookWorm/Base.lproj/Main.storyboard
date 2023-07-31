@@ -10,15 +10,27 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BookWorm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" customClass="SearchViewController" customModule="BookWorm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ5-4a-103">
+                                <rect key="frame" x="134" y="418.33333333333331" width="125" height="40.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dZ5-4a-103" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rr0-SJ-IaY"/>
+                            <constraint firstItem="dZ5-4a-103" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pck-gL-BvE"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -54,7 +66,13 @@
                             <outlet property="delegate" destination="ZUC-5T-syg" id="O0V-oi-WIB"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="Ynr-mZ-37l"/>
+                    <navigationItem key="navigationItem" id="Ynr-mZ-37l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="KRb-Sd-nH6">
+                            <connections>
+                                <action selector="searchBarButtonItemClicked:" destination="ZUC-5T-syg" id="xar-QO-XIm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdW-OY-rQY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

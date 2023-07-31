@@ -23,6 +23,18 @@ class BookshelfCollectionViewController: UICollectionViewController {
         searchCollectionViewLayout()
     }
     
+    @IBAction func searchBarButtonItemClicked(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
+    }
+    
     func searchCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 10
