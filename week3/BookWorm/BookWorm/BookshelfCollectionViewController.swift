@@ -9,11 +9,14 @@ import UIKit
 
 class BookshelfCollectionViewController: UICollectionViewController {
 
+    let user = "찹쌀"
     let movieInfo = MovieInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "\(user)님의 상영관"
+        
         let nib = UINib(nibName: "BookshelfCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "BookshelfCollectionViewCell")
         
@@ -39,7 +42,6 @@ class BookshelfCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookshelfCollectionViewCell", for: indexPath) as? BookshelfCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.backgroundColor = .systemTeal
         
         return cell
     }

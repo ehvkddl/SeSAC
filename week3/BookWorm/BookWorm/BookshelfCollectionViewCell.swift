@@ -12,14 +12,20 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     @IBOutlet var moviePosterImageView: UIImageView!
     
     @IBOutlet var movieTitleLabel: UILabel!
-    
+    @IBOutlet var runtimeAndRateLabel: UILabel!
     @IBOutlet var releaseDateLabel: UILabel!
-    @IBOutlet var runtimeLabel: UILabel!
-    @IBOutlet var rateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        designCell()
     }
 
+    func designCell() {
+        movieTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        
+        releaseDateLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        releaseDateLabel.textColor = .gray
+    }
+    
 }
