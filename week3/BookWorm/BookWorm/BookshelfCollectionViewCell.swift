@@ -21,6 +21,14 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
         designCell()
     }
 
+    func configureCell(row: Movie) {
+        moviePosterImageView.image = UIImage(named: row.title)
+        
+        movieTitleLabel.text = row.title
+        runtimeAndRateLabel.text = "\(row.runtime)분 | ⭐️\(row.rate)점"
+        releaseDateLabel.text = "\(row.releaseDate) 개봉"
+    }
+    
     func designCell() {
         movieTitleLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         

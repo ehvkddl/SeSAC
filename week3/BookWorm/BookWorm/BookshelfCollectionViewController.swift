@@ -42,6 +42,8 @@ class BookshelfCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookshelfCollectionViewCell", for: indexPath) as? BookshelfCollectionViewCell else { return UICollectionViewCell() }
         
+        let row = movieInfo.movie[indexPath.row]
+        cell.configureCell(row: row)
         
         return cell
     }
