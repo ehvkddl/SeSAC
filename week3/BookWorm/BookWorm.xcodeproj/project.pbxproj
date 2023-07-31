@@ -14,6 +14,8 @@
 		EAEE68AD2A779AAD002BEB95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68AC2A779AAD002BEB95 /* Assets.xcassets */; };
 		EAEE68B02A779AAD002BEB95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68AE2A779AAD002BEB95 /* LaunchScreen.storyboard */; };
 		EAEE68B82A779CD5002BEB95 /* BookshelfCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68B72A779CD5002BEB95 /* BookshelfCollectionViewController.swift */; };
+		EAEE68BB2A779D09002BEB95 /* BookshelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68B92A779D09002BEB95 /* BookshelfCollectionViewCell.swift */; };
+		EAEE68BC2A779D09002BEB95 /* BookshelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68BA2A779D09002BEB95 /* BookshelfCollectionViewCell.xib */; };
 		EAEE68BE2A779EE5002BEB95 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */; };
 		EAEE68C02A779EF2002BEB95 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68BF2A779EF2002BEB95 /* Movie.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 		EAEE68AF2A779AAD002BEB95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAEE68B12A779AAD002BEB95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAEE68B72A779CD5002BEB95 /* BookshelfCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfCollectionViewController.swift; sourceTree = "<group>"; };
+		EAEE68B92A779D09002BEB95 /* BookshelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAEE68BA2A779D09002BEB95 /* BookshelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookshelfCollectionViewCell.xib; sourceTree = "<group>"; };
 		EAEE68BD2A779EE5002BEB95 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		EAEE68BF2A779EF2002BEB95 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +70,8 @@
 				EAEE68A52A779AAC002BEB95 /* SceneDelegate.swift */,
 				EAEE68A72A779AAC002BEB95 /* ViewController.swift */,
 				EAEE68B72A779CD5002BEB95 /* BookshelfCollectionViewController.swift */,
+				EAEE68B92A779D09002BEB95 /* BookshelfCollectionViewCell.swift */,
+				EAEE68BA2A779D09002BEB95 /* BookshelfCollectionViewCell.xib */,
 				EAEE68A92A779AAC002BEB95 /* Main.storyboard */,
 				EAEE68AC2A779AAD002BEB95 /* Assets.xcassets */,
 				EAEE68AE2A779AAD002BEB95 /* LaunchScreen.storyboard */,
@@ -134,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEE68BC2A779D09002BEB95 /* BookshelfCollectionViewCell.xib in Resources */,
 				EAEE68B02A779AAD002BEB95 /* LaunchScreen.storyboard in Resources */,
 				EAEE68AD2A779AAD002BEB95 /* Assets.xcassets in Resources */,
 				EAEE68AB2A779AAC002BEB95 /* Main.storyboard in Resources */,
@@ -153,6 +160,7 @@
 				EAEE68B82A779CD5002BEB95 /* BookshelfCollectionViewController.swift in Sources */,
 				EAEE68A62A779AAC002BEB95 /* SceneDelegate.swift in Sources */,
 				EAEE68BE2A779EE5002BEB95 /* MovieInfo.swift in Sources */,
+				EAEE68BB2A779D09002BEB95 /* BookshelfCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
