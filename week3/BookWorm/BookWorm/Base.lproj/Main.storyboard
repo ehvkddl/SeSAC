@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="2789" y="-35"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Bookshelf Collection View Controller-->
         <scene sceneID="5Jm-M4-NUT">
             <objects>
-                <collectionViewController id="ZUC-5T-syg" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="BookshelfCollectionViewController" id="ZUC-5T-syg" customClass="BookshelfCollectionViewController" customModule="BookWorm" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6bG-x3-Olw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
