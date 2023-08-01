@@ -45,9 +45,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상세 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2h-DD-w15">
-                                <rect key="frame" x="134" y="418" width="125" height="41"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYq-0K-SZE">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="275"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dpu-Ie-Q4R">
+                                <rect key="frame" x="16" y="75" width="130" height="184"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dpu-Ie-Q4R" secondAttribute="height" multiplier="53:75" id="B9Y-yL-igO"/>
+                                    <constraint firstAttribute="width" constant="130" id="Pgu-42-Klc"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="u32-iA-IhJ">
+                                <rect key="frame" x="156" y="192" width="101" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNF-29-32R">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상영시간 | 평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IO-sM-bh1">
+                                        <rect key="frame" x="0.0" y="23.333333333333343" width="101" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개봉일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBM-AV-knk">
+                                        <rect key="frame" x="0.0" y="46.666666666666657" width="101" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="줄거리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vw-dC-wEN">
+                                <rect key="frame" x="16" y="295" width="44.333333333333343" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-yK-km4">
+                                <rect key="frame" x="16" y="325.33333333333331" width="361" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,14 +95,33 @@
                         <viewLayoutGuide key="safeArea" id="dUt-U0-nQp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="P2h-DD-w15" firstAttribute="centerY" secondItem="dUt-U0-nQp" secondAttribute="centerY" id="r89-LG-ImG"/>
-                            <constraint firstItem="P2h-DD-w15" firstAttribute="centerX" secondItem="dUt-U0-nQp" secondAttribute="centerX" id="yYJ-dB-ozt"/>
+                            <constraint firstItem="dUt-U0-nQp" firstAttribute="trailing" secondItem="4aY-yK-km4" secondAttribute="trailing" constant="16" id="8lY-oK-I5f"/>
+                            <constraint firstItem="dpu-Ie-Q4R" firstAttribute="top" secondItem="dUt-U0-nQp" secondAttribute="top" constant="16" id="ABw-Y8-dnr"/>
+                            <constraint firstItem="2vw-dC-wEN" firstAttribute="leading" secondItem="dpu-Ie-Q4R" secondAttribute="leading" id="Bmd-8O-CEd"/>
+                            <constraint firstItem="JYq-0K-SZE" firstAttribute="leading" secondItem="dUt-U0-nQp" secondAttribute="leading" id="GX6-Ss-HMW"/>
+                            <constraint firstItem="JYq-0K-SZE" firstAttribute="trailing" secondItem="dUt-U0-nQp" secondAttribute="trailing" id="HMN-ve-HuY"/>
+                            <constraint firstItem="u32-iA-IhJ" firstAttribute="leading" secondItem="dpu-Ie-Q4R" secondAttribute="trailing" constant="10" id="JWq-7x-L7Q"/>
+                            <constraint firstItem="JYq-0K-SZE" firstAttribute="top" secondItem="CMV-kr-Oip" secondAttribute="top" id="KVu-En-mrW"/>
+                            <constraint firstItem="4aY-yK-km4" firstAttribute="leading" secondItem="2vw-dC-wEN" secondAttribute="leading" id="a2k-dM-Dgz"/>
+                            <constraint firstItem="dpu-Ie-Q4R" firstAttribute="leading" secondItem="dUt-U0-nQp" secondAttribute="leading" constant="16" id="bV7-L9-2av"/>
+                            <constraint firstItem="2vw-dC-wEN" firstAttribute="top" secondItem="JYq-0K-SZE" secondAttribute="bottom" constant="20" id="djZ-lM-FuF"/>
+                            <constraint firstItem="4aY-yK-km4" firstAttribute="top" secondItem="2vw-dC-wEN" secondAttribute="bottom" constant="10" id="iQo-pu-gZv"/>
+                            <constraint firstItem="u32-iA-IhJ" firstAttribute="bottom" secondItem="dpu-Ie-Q4R" secondAttribute="bottom" id="qXU-In-zEe"/>
+                            <constraint firstItem="JYq-0K-SZE" firstAttribute="bottom" secondItem="dpu-Ie-Q4R" secondAttribute="bottom" constant="16" id="x6S-4w-b4D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="JYq-0K-SZE" id="NAu-TM-umi"/>
+                        <outlet property="moviePosterImageView" destination="dpu-Ie-Q4R" id="rRd-Ry-ogc"/>
+                        <outlet property="movieTitleLabel" destination="UNF-29-32R" id="89m-O4-cDJ"/>
+                        <outlet property="overviewLabel" destination="4aY-yK-km4" id="dFW-bq-h9b"/>
+                        <outlet property="releaseDateLabel" destination="mBM-AV-knk" id="5hI-rg-c2U"/>
+                        <outlet property="runtimeAndRateLabel" destination="4IO-sM-bh1" id="6ET-ND-OiT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3d-3t-Cer" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2789" y="671"/>
+            <point key="canvasLocation" x="2788.5496183206105" y="669.71830985915494"/>
         </scene>
         <!--Bookshelf Collection View Controller-->
         <scene sceneID="5Jm-M4-NUT">
