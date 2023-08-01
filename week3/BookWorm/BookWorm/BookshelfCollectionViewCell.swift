@@ -15,6 +15,8 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     @IBOutlet var runtimeAndRateLabel: UILabel!
     @IBOutlet var releaseDateLabel: UILabel!
     
+    @IBOutlet var likeButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -27,6 +29,8 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
         movieTitleLabel.text = row.title
         runtimeAndRateLabel.text = "\(row.runtime)분 | ⭐️\(row.rate)점"
         releaseDateLabel.text = "\(row.releaseDate) 개봉"
+        
+        likeButton.setImage(UIImage(systemName: row.isLike ? "heart.fill" : "heart"), for: .normal)
     }
     
     func designCell() {
@@ -34,6 +38,8 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
         
         releaseDateLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
         releaseDateLabel.textColor = .gray
+        
+        likeButton.tintColor = .red
     }
     
 }

@@ -10,7 +10,7 @@ import UIKit
 class BookshelfCollectionViewController: UICollectionViewController {
 
     let user = "찹쌀"
-    let movieInfo = MovieInfo()
+    var movieInfo = MovieInfo()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,9 @@ class BookshelfCollectionViewController: UICollectionViewController {
         let row = movieInfo.movie[indexPath.row]
         cell.configureCell(row: row)
         
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+        
         return cell
     }
     
@@ -70,6 +73,15 @@ class BookshelfCollectionViewController: UICollectionViewController {
         vc.contents = movieInfo.movie[indexPath.row]
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc
+    func likeButtonClicked(_ sender: UIButton) {
+        print("HI \(sender.tag)")
+        
+        movieInfo.movie[sender.tag].isLike.toggle()
+        
+        collectionView.reloadData()
     }
     
 }
