@@ -33,6 +33,20 @@ class BrowseViewController: UIViewController {
         recentlyViewCollectionView.showsHorizontalScrollIndicator = false
     }
     
+    func showDetailView(of indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+
+        vc.contents = movieInfo.movie[indexPath.row]
+        vc.transition = .present
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
+    }
 }
 
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,6 +62,12 @@ extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureCell(row: row)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showDetailView(of: indexPath)
+        
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
 }
@@ -79,18 +99,7 @@ extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        
-        guard let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
-
-        vc.contents = movieInfo.movie[indexPath.row]
-        vc.transition = .present
-        
-        let nav = UINavigationController(rootViewController: vc)
-        
-        nav.modalPresentationStyle = .fullScreen
-        
-        present(nav, animated: true)
+        showDetailView(of: indexPath)
     }
     
 }
