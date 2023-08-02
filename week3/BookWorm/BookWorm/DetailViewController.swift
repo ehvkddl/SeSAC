@@ -7,9 +7,15 @@
 
 import UIKit
 
+enum Transition {
+    case present
+    case push
+}
+
 class DetailViewController: UIViewController {
 
     var contents: Movie?
+    var transition: Transition?
     
     @IBOutlet var backgroundView: UIView!
     
@@ -25,10 +31,12 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+
+        let back = UIImage(systemName: transition == .present ? "xmark" : "chevron.backward")
+        let selector = transition == .present ? #selector(closeButtonClicked) : #selector(backButtonClicked)
         
-        let back = UIImage(systemName: "chevron.backward")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: back, style: .plain, target: self, action: selector)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: back, style: .plain, target: self, action: #selector(backButtonClicked))
         setBarButtonItemColor(color: .white)
         
         designCell()
@@ -63,6 +71,11 @@ class DetailViewController: UIViewController {
         overviewLabel.numberOfLines = 0
     }
     
+    @objc
+    func closeButtonClicked() {
+        dismiss(animated: true)
+    }
+
     @objc
     func backButtonClicked() {
         navigationController?.popViewController(animated: true)
