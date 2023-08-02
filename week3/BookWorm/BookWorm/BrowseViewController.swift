@@ -20,9 +20,15 @@ class BrowseViewController: UIViewController {
         recentlyViewCollectionView.delegate = self
         recentlyViewCollectionView.dataSource = self
         
-        let nib = UINib(nibName: RecentlyViewCollectionViewCell.identifier, bundle: nil)
-        recentlyViewCollectionView.register(nib, forCellWithReuseIdentifier: RecentlyViewCollectionViewCell.identifier)
+        popularWorkTableView.delegate = self
+        popularWorkTableView.dataSource = self
         
+        let cvNib = UINib(nibName: RecentlyViewCollectionViewCell.identifier, bundle: nil)
+        recentlyViewCollectionView.register(cvNib, forCellWithReuseIdentifier: RecentlyViewCollectionViewCell.identifier)
+        
+        let tvNib = UINib(nibName: PopularWorkTableViewCell.identifier, bundle: nil)
+        popularWorkTableView.register(tvNib, forCellReuseIdentifier: PopularWorkTableViewCell.identifier)
+
         configureRecentlyViewCollectionViewLayout()
         recentlyViewCollectionView.showsHorizontalScrollIndicator = false
     }
@@ -30,13 +36,20 @@ class BrowseViewController: UIViewController {
 }
 
 extension BrowseViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return movieInfo.movie.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopularWorkTableViewCell", for: indexPath) as? PopularWorkTableViewCell else { return UITableViewCell() }
+        
+        let row = movieInfo.movie[indexPath.row]
+        cell.configureCell(row: row)
+        
+        return cell
     }
+    
 }
 
 extension BrowseViewController: UICollectionViewDelegate, UICollectionViewDataSource {

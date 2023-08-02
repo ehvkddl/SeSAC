@@ -24,6 +24,8 @@
 		EAEE68CE2A7A87F9002BEB95 /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68CD2A7A87F9002BEB95 /* BrowseViewController.swift */; };
 		EAEE68D12A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68CF2A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.swift */; };
 		EAEE68D22A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68D02A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.xib */; };
+		EAEE68D72A7A9ABA002BEB95 /* PopularWorkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68D52A7A9ABA002BEB95 /* PopularWorkTableViewCell.swift */; };
+		EAEE68D82A7A9ABA002BEB95 /* PopularWorkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAEE68D62A7A9ABA002BEB95 /* PopularWorkTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		EAEE68CD2A7A87F9002BEB95 /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		EAEE68CF2A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlyViewCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAEE68D02A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecentlyViewCollectionViewCell.xib; sourceTree = "<group>"; };
+		EAEE68D52A7A9ABA002BEB95 /* PopularWorkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularWorkTableViewCell.swift; sourceTree = "<group>"; };
+		EAEE68D62A7A9ABA002BEB95 /* PopularWorkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularWorkTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				EAEE68CD2A7A87F9002BEB95 /* BrowseViewController.swift */,
 				EAEE68CF2A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.swift */,
 				EAEE68D02A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.xib */,
+				EAEE68D52A7A9ABA002BEB95 /* PopularWorkTableViewCell.swift */,
+				EAEE68D62A7A9ABA002BEB95 /* PopularWorkTableViewCell.xib */,
 				EAEE68C12A780EFF002BEB95 /* SearchViewController.swift */,
 				EAEE68C32A78123B002BEB95 /* DetailViewController.swift */,
 				EAEE68A92A779AAC002BEB95 /* Main.storyboard */,
@@ -162,6 +168,7 @@
 				EAEE68B02A779AAD002BEB95 /* LaunchScreen.storyboard in Resources */,
 				EAEE68AD2A779AAD002BEB95 /* Assets.xcassets in Resources */,
 				EAEE68AB2A779AAC002BEB95 /* Main.storyboard in Resources */,
+				EAEE68D82A7A9ABA002BEB95 /* PopularWorkTableViewCell.xib in Resources */,
 				EAEE68D22A7A8A1A002BEB95 /* RecentlyViewCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +183,7 @@
 				EAEE68C42A78123B002BEB95 /* DetailViewController.swift in Sources */,
 				EAEE68C02A779EF2002BEB95 /* Movie.swift in Sources */,
 				EAEE68A82A779AAC002BEB95 /* ViewController.swift in Sources */,
+				EAEE68D72A7A9ABA002BEB95 /* PopularWorkTableViewCell.swift in Sources */,
 				EAEE68CE2A7A87F9002BEB95 /* BrowseViewController.swift in Sources */,
 				EAEE68C22A780EFF002BEB95 /* SearchViewController.swift in Sources */,
 				EAEE68A42A779AAC002BEB95 /* AppDelegate.swift in Sources */,
