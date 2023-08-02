@@ -20,7 +20,16 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet var likeButton: UIButton!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        mainTitleLabel.font = .boldSystemFont(ofSize: 17)
+        mainTitleLabel.textColor = .brown
+    }
+
     func configureCell(row: ToDo) {
+        backView.backgroundColor = row.color
+        
         mainTitleLabel.text = row.main
         subTitleLabel.text = row.sub
         

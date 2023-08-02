@@ -20,7 +20,7 @@ class CustomTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.rowHeight = 90
         
         searchBar.placeholder = "할 일을 입력해주세요"
@@ -45,9 +45,15 @@ class CustomTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        todo.list[indexPath.row].done.toggle()
+//        todo.list[indexPath.row].done.toggle()
         
-//        tableView.reloadData()
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        vc.data = todo.list[indexPath.row]
+        
+        present(vc, animated: true)
+        
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     // 삭제
@@ -74,7 +80,7 @@ class CustomTableViewController: UITableViewController {
     @objc
     func searchBarReturnTapped() {
         // ToDo 항목을
-        let data = ToDo(main: searchBar.text!, sub: "23.08.01", like: false, done: false)
+        let data = ToDo(main: searchBar.text!, sub: "23.08.01", like: false, done: false, color: ToDoInformation.randomBackgroundColor())
         // list에 추가
         todo.list.insert(data, at: 0)
         //UX

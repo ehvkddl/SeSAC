@@ -31,6 +31,7 @@
 		EAC15E2D2A7507750036DFBC /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E2C2A7507750036DFBC /* MovieTableViewCell.swift */; };
 		EAC15E2F2A750D5F0036DFBC /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E2E2A750D5F0036DFBC /* MovieInfo.swift */; };
 		EAC15E312A750D770036DFBC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E302A750D770036DFBC /* Movie.swift */; };
+		EAEE68CA2A79E7A7002BEB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C92A79E7A7002BEB95 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		EAC15E2C2A7507750036DFBC /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		EAC15E2E2A750D5F0036DFBC /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		EAC15E302A750D770036DFBC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EAEE68C92A79E7A7002BEB95 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				EA1930922A73527F0002CCD4 /* CustomTableViewCell.swift */,
 				EA87E74B2A720FEB00FE99F5 /* TodoTableViewController.swift */,
 				EA87E74D2A7232D900FE99F5 /* StudyTableViewController.swift */,
+				EAEE68C92A79E7A7002BEB95 /* DetailViewController.swift */,
 				EA87E7532A7251A800FE99F5 /* Assignment */,
 				EA87E7402A71FFF600FE99F5 /* Assets.xcassets */,
 				EA87E7422A71FFF600FE99F5 /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 				EAC15E212A7389C30036DFBC /* ToDo.swift in Sources */,
 				EA87E74C2A720FEB00FE99F5 /* TodoTableViewController.swift in Sources */,
 				EA87E7552A725ABC00FE99F5 /* Case2TableViewController.swift in Sources */,
+				EAEE68CA2A79E7A7002BEB95 /* DetailViewController.swift in Sources */,
 				EA87E74E2A7232D900FE99F5 /* StudyTableViewController.swift in Sources */,
 				EA1930912A7350620002CCD4 /* CustomTableViewController.swift in Sources */,
 				EA87E75F2A72D8B600FE99F5 /* Case3TableViewCell.swift in Sources */,
