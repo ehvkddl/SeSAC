@@ -9,6 +9,10 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    @IBOutlet var searchCollectionView: UICollectionView!
+    
+    let searchBar = UISearchBar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,6 +22,11 @@ class SearchViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: xmark, style: .plain, target: self, action: #selector(closeButtonClicked))
         setBarButtonItemColor(color: .black)
+        
+        searchBar.delegate = self
+        searchBar.placeholder = "검색어를 입력해주세요"
+        searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
     }
 
     @objc
@@ -25,4 +34,17 @@ class SearchViewController: UIViewController {
         dismiss(animated: true)
     }
     
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
 }

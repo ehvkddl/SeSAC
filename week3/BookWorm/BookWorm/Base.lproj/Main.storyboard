@@ -18,24 +18,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 화면" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ5-4a-103">
-                                <rect key="frame" x="134" y="418.33333333333331" width="125" height="40.666666666666686"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kI4-Nn-FWs">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qvm-gK-taC">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LlO-v1-iGh">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="8fV-6n-YAJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dZ5-4a-103" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rr0-SJ-IaY"/>
-                            <constraint firstItem="dZ5-4a-103" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="pck-gL-BvE"/>
+                            <constraint firstItem="kI4-Nn-FWs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="33R-aT-3YH"/>
+                            <constraint firstItem="kI4-Nn-FWs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Btv-Dy-IZG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kI4-Nn-FWs" secondAttribute="bottom" id="UIg-6C-wQt"/>
+                            <constraint firstItem="kI4-Nn-FWs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VG7-Ul-1WD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchCollectionView" destination="kI4-Nn-FWs" id="Q3W-VI-Nkf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="-732"/>
+            <point key="canvasLocation" x="1933.5877862595419" y="-732.3943661971831"/>
         </scene>
         <!--Browse View Controller-->
         <scene sceneID="qC2-J2-4tn">
@@ -161,7 +180,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="줄거리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vw-dC-wEN">
-                                <rect key="frame" x="16" y="295" width="44.333333333333343" height="20.333333333333314"/>
+                                <rect key="frame" x="16.000000000000004" y="295" width="44.333333333333343" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -270,6 +289,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="usp-n7-cIB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZCq-NL-acd">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
