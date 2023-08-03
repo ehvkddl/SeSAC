@@ -30,19 +30,8 @@ class SearchViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: xmark, style: .plain, target: self, action: #selector(closeButtonClicked))
         setBarButtonItemColor(color: .black)
         
-        searchBar.delegate = self
-        searchBar.placeholder = "검색어를 입력해주세요"
-        searchBar.showsCancelButton = true
-        navigationItem.titleView = searchBar
-        
-        searchCollectionView.delegate = self
-        searchCollectionView.dataSource = self
-        
-        let nib = UINib(nibName: "BookshelfCollectionViewCell", bundle: nil)
-        
-        searchCollectionView.register(nib, forCellWithReuseIdentifier: "BookshelfCollectionViewCell")
-        
-        searchCollectionViewLayout()
+        configureSearchBar()
+        configureCollectionView()
     }
 
     @objc
@@ -53,6 +42,13 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UISearchBarDelegate {
+    
+    func configureSearchBar() {
+        searchBar.delegate = self
+        searchBar.placeholder = "검색어를 입력해주세요"
+        searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchMovie.removeAll()
@@ -82,6 +78,17 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func configureCollectionView() {
+        searchCollectionView.delegate = self
+        searchCollectionView.dataSource = self
+        
+        let nib = UINib(nibName: "BookshelfCollectionViewCell", bundle: nil)
+        
+        searchCollectionView.register(nib, forCellWithReuseIdentifier: "BookshelfCollectionViewCell")
+        
+        searchCollectionViewLayout()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return searchMovie.count
