@@ -14,7 +14,11 @@ class SearchViewController: UIViewController {
     let searchBar = UISearchBar()
     
     var movies: [Movie] = []
-    var searchMovie: [Movie] = []
+    var searchMovie: [Movie] = [] {
+        didSet {
+            searchCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,23 +53,32 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchMovie.removeAll()
+        
         for movie in movies {
             if movie.title.contains(searchBar.text!) {
                 searchMovie.append(movie)
             }
         }
-        
-        searchCollectionView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
+        searchMovie.removeAll()
+        searchBar.text = ""
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchMovie.removeAll()
         
+        for movie in movies {
+            if movie.title.contains(searchText) {
+                searchMovie.append(movie)
+            }
+        }
     }
+    
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
