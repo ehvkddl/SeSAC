@@ -191,10 +191,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OTF-lv-IIv">
+                                <rect key="frame" x="16" y="718" width="361" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="qGL-zD-Bbe"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zx9-FG-uvz">
+                                <rect key="frame" x="354" y="802.33333333333337" width="23" height="15.666666666666629"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dUt-U0-nQp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dUt-U0-nQp" firstAttribute="bottom" secondItem="OTF-lv-IIv" secondAttribute="bottom" id="7TF-HR-mQV"/>
                             <constraint firstItem="dUt-U0-nQp" firstAttribute="trailing" secondItem="4aY-yK-km4" secondAttribute="trailing" constant="16" id="8lY-oK-I5f"/>
                             <constraint firstItem="dpu-Ie-Q4R" firstAttribute="top" secondItem="dUt-U0-nQp" secondAttribute="top" constant="16" id="ABw-Y8-dnr"/>
                             <constraint firstItem="2vw-dC-wEN" firstAttribute="leading" secondItem="dpu-Ie-Q4R" secondAttribute="leading" id="Bmd-8O-CEd"/>
@@ -202,21 +220,27 @@
                             <constraint firstItem="JYq-0K-SZE" firstAttribute="trailing" secondItem="dUt-U0-nQp" secondAttribute="trailing" id="HMN-ve-HuY"/>
                             <constraint firstItem="u32-iA-IhJ" firstAttribute="leading" secondItem="dpu-Ie-Q4R" secondAttribute="trailing" constant="10" id="JWq-7x-L7Q"/>
                             <constraint firstItem="JYq-0K-SZE" firstAttribute="top" secondItem="CMV-kr-Oip" secondAttribute="top" id="KVu-En-mrW"/>
+                            <constraint firstItem="dUt-U0-nQp" firstAttribute="bottom" secondItem="zx9-FG-uvz" secondAttribute="bottom" id="NKg-4M-N2g"/>
+                            <constraint firstItem="zx9-FG-uvz" firstAttribute="trailing" secondItem="OTF-lv-IIv" secondAttribute="trailing" id="ZEs-T1-FBV"/>
                             <constraint firstItem="4aY-yK-km4" firstAttribute="leading" secondItem="2vw-dC-wEN" secondAttribute="leading" id="a2k-dM-Dgz"/>
                             <constraint firstItem="dpu-Ie-Q4R" firstAttribute="leading" secondItem="dUt-U0-nQp" secondAttribute="leading" constant="16" id="bV7-L9-2av"/>
                             <constraint firstItem="2vw-dC-wEN" firstAttribute="top" secondItem="JYq-0K-SZE" secondAttribute="bottom" constant="20" id="djZ-lM-FuF"/>
                             <constraint firstItem="4aY-yK-km4" firstAttribute="top" secondItem="2vw-dC-wEN" secondAttribute="bottom" constant="10" id="iQo-pu-gZv"/>
+                            <constraint firstItem="OTF-lv-IIv" firstAttribute="leading" secondItem="dUt-U0-nQp" secondAttribute="leading" constant="16" id="ktP-wM-pat"/>
                             <constraint firstItem="u32-iA-IhJ" firstAttribute="bottom" secondItem="dpu-Ie-Q4R" secondAttribute="bottom" id="qXU-In-zEe"/>
                             <constraint firstItem="JYq-0K-SZE" firstAttribute="bottom" secondItem="dpu-Ie-Q4R" secondAttribute="bottom" constant="16" id="x6S-4w-b4D"/>
+                            <constraint firstItem="dUt-U0-nQp" firstAttribute="trailing" secondItem="OTF-lv-IIv" secondAttribute="trailing" constant="16" id="zCN-PA-VwF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="JYq-0K-SZE" id="NAu-TM-umi"/>
+                        <outlet property="memoTextView" destination="OTF-lv-IIv" id="7d2-da-pNO"/>
                         <outlet property="moviePosterImageView" destination="dpu-Ie-Q4R" id="rRd-Ry-ogc"/>
                         <outlet property="movieTitleLabel" destination="UNF-29-32R" id="89m-O4-cDJ"/>
                         <outlet property="overviewLabel" destination="4aY-yK-km4" id="dFW-bq-h9b"/>
                         <outlet property="releaseDateLabel" destination="mBM-AV-knk" id="5hI-rg-c2U"/>
                         <outlet property="runtimeAndRateLabel" destination="4IO-sM-bh1" id="6ET-ND-OiT"/>
+                        <outlet property="textCountLabel" destination="zx9-FG-uvz" id="FGe-J5-NX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3d-3t-Cer" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -325,8 +349,14 @@
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

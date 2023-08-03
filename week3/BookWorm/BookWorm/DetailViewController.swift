@@ -27,6 +27,11 @@ class DetailViewController: UIViewController {
     
     @IBOutlet var overviewLabel: UILabel!
     
+    @IBOutlet var memoTextView: UITextView!
+    @IBOutlet var textCountLabel: UILabel!
+    
+    let textViewPlaceholerText = "내용을 입력해주세요."
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +50,8 @@ class DetailViewController: UIViewController {
         
         title = movie.title
         configureCell(movie: movie)
+        
+        configureTextView()
     }
     
     func configureCell(movie: Movie) {
@@ -81,4 +88,33 @@ class DetailViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
+}
+
+extension DetailViewController: UITextViewDelegate {
+    
+    func configureTextView() {
+        memoTextView.delegate = self
+        
+        memoTextView.text = textViewPlaceholerText
+        memoTextView.textColor = .lightGray
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        textCountLabel.text = "\(textView.text.count)자"
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = textViewPlaceholerText
+            textView.textColor = .lightGray
+        }
+    }
+    
 }
