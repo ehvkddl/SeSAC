@@ -30,6 +30,8 @@ class BookshelfCollectionViewController: UICollectionViewController {
         
         guard let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
         
+        vc.movies = movieInfo.movie
+        
         let nav = UINavigationController(rootViewController: vc)
         
         nav.modalPresentationStyle = .fullScreen

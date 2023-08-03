@@ -7,6 +7,11 @@
 
 import UIKit
 
+enum ViewType {
+    case main
+    case search
+}
+
 class BookshelfCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var moviePosterImageView: UIImageView!
@@ -23,14 +28,19 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
         designCell()
     }
 
-    func configureCell(row: Movie) {
+    func configureCell(row: Movie, type: ViewType = .main) {
         moviePosterImageView.image = UIImage(named: row.title)
         
         movieTitleLabel.text = row.title
         runtimeAndRateLabel.text = "\(row.runtime)분 | ⭐️\(row.rate)점"
         releaseDateLabel.text = "\(row.releaseDate) 개봉"
         
-        likeButton.setImage(UIImage(systemName: row.isLike ? "heart.fill" : "heart"), for: .normal)
+        switch type {
+        case .main:
+            likeButton.setImage(UIImage(systemName: row.isLike ? "heart.fill" : "heart"), for: .normal)
+        case .search:
+            likeButton.isHidden = true
+        }
     }
     
     func designCell() {
