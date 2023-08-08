@@ -100,6 +100,7 @@ extension ViewController {
     func designUI() {
         numberTextField.text = "1079회"
         for lottoNum in lottoNums {
+            lottoNum.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width / 8.8).isActive = true
             lottoNum.text = " "
             circleBackground(lbl: lottoNum)
             setCircleColor(lbl: lottoNum)
