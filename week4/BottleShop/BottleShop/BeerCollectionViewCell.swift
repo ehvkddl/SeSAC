@@ -32,7 +32,11 @@ class BeerCollectionViewCell: UICollectionViewCell {
         
         beerNameLabel.text = row.name
         
-        beerSrmImageView.backgroundColor = .yellow
+        if let srm = row.srm {
+            beerSrmImageView.backgroundColor = UIColor.getBeerColor(srm: srm)
+        } else {
+            beerSrmImageView.isHidden = true
+        }
         
         guard let ibu = row.ibu else {
             beerInfoLabel.text = "\(row.abv)%"
@@ -42,7 +46,6 @@ class BeerCollectionViewCell: UICollectionViewCell {
     }
     
     func designCell() {
-//        beerNameLabel.numberOfLines = 1
         beerNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         beerNameLabel.textAlignment = .center
         
