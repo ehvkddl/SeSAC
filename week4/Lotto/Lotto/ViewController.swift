@@ -13,30 +13,36 @@ class ViewController: UIViewController {
     
     var winningNum: [Int] = []
     
+    var list: [Int] = Array(1...1079).reversed()
+    
     @IBOutlet var numberTextField: UITextField!
     let pickerView = UIPickerView()
+    
     @IBOutlet var lottoNums: [UILabel]!
     @IBOutlet var bonusNum: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        callRequest()
-        designUI()
         numberTextField.inputView = pickerView
         numberTextField.tintColor = .clear
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        callRequest(round: 1079)
+        designUI()
     }
 
-    func callRequest() {
-        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=1079"
+    func callRequest(round drwNo: Int) {
+        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drwNo)"
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                
+                self.winningNum.removeAll()
                 
                 for i in 1...6 {
                     self.winningNum.append(json["drwtNo\(i)"].intValue)
@@ -75,6 +81,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         let round = list[row]
         
+        callRequest(round: round)
         numberTextField.text = "\(round)회"
     }
 
