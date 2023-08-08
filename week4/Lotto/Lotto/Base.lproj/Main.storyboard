@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="gM3-Xu-0hm">
-                                <rect key="frame" x="16" y="99" width="361" height="45.666666666666657"/>
+                                <rect key="frame" x="16" y="213" width="361" height="45.666666666666686"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="csx-Aa-pid">
                                         <rect key="frame" x="0.0" y="0.0" width="289" height="45.666666666666664"/>
@@ -103,17 +103,28 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hCz-91-u1r">
+                                <rect key="frame" x="297" y="159" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="chm-jc-Wpp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hCz-91-u1r" secondAttribute="trailing" constant="16" id="7iz-j1-Fgl"/>
+                            <constraint firstItem="hCz-91-u1r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="F4c-Yk-ZzU"/>
                             <constraint firstItem="gM3-Xu-0hm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Re9-Oh-af0"/>
-                            <constraint firstItem="gM3-Xu-0hm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="VB4-rL-5cT"/>
+                            <constraint firstItem="gM3-Xu-0hm" firstAttribute="top" secondItem="hCz-91-u1r" secondAttribute="bottom" constant="20" id="VB4-rL-5cT"/>
                             <constraint firstAttribute="trailing" secondItem="gM3-Xu-0hm" secondAttribute="trailing" constant="16" id="XAt-oC-eGB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bonusNum" destination="Gkj-T3-Obx" id="w8h-Fr-NK4"/>
+                        <outlet property="numberTextField" destination="hCz-91-u1r" id="i8O-0b-I9y"/>
                         <outletCollection property="lottoNums" destination="48P-2I-Qle" collectionClass="NSMutableArray" id="7SQ-Nj-Bmd"/>
                         <outletCollection property="lottoNums" destination="V3i-Sd-a7T" collectionClass="NSMutableArray" id="xEU-cr-d7G"/>
                         <outletCollection property="lottoNums" destination="tNt-wj-KYj" collectionClass="NSMutableArray" id="c1h-ZW-L80"/>

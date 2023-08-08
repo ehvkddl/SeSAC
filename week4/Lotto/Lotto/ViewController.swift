@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     
     var winningNum: [Int] = []
     
+    @IBOutlet var numberTextField: UITextField!
+    let pickerView = UIPickerView()
     @IBOutlet var lottoNums: [UILabel]!
     @IBOutlet var bonusNum: UILabel!
     
@@ -21,7 +23,11 @@ class ViewController: UIViewController {
         
         callRequest()
         designUI()
+        numberTextField.inputView = pickerView
+        numberTextField.tintColor = .clear
         
+        pickerView.delegate = self
+        pickerView.dataSource = self
     }
 
     func callRequest() {
@@ -52,6 +58,28 @@ class ViewController: UIViewController {
             circleBackground(lbl: lottoNum, color: setCircleColor(num: num))
             lottoNum.text = String(num)
         }
+    }
+    
+}
+
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let round = list[row]
+        
+        numberTextField.text = "\(round)회"
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(list[row])"
     }
     
 }
