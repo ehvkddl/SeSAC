@@ -16,6 +16,7 @@
 		EA4C669A2A827F6E0037F264 /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66982A827F6E0037F264 /* BeerCollectionViewCell.swift */; };
 		EA4C669B2A827F6E0037F264 /* BeerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4C66992A827F6E0037F264 /* BeerCollectionViewCell.xib */; };
 		EA4C669D2A8286300037F264 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C669C2A8286300037F264 /* Beer.swift */; };
+		EA4C66A02A8288110037F264 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA4C669F2A8288110037F264 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4C66A02A8288110037F264 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +94,9 @@
 			dependencies = (
 			);
 			name = BottleShop;
+			packageProductDependencies = (
+				EA4C669F2A8288110037F264 /* Alamofire */,
+			);
 			productName = BottleShop;
 			productReference = EA4C66812A827D4D0037F264 /* BottleShop.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +125,10 @@
 				Base,
 			);
 			mainGroup = EA4C66782A827D4D0037F264;
+			packageReferences = (
+				EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EA4C66A12A82881D0037F264 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = EA4C66822A827D4D0037F264 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -378,6 +387,33 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		EA4C66A12A82881D0037F264 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA4C669F2A8288110037F264 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA4C66792A827D4D0037F264 /* Project object */;
 }
