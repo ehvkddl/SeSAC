@@ -17,6 +17,7 @@
 		EA4C669B2A827F6E0037F264 /* BeerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA4C66992A827F6E0037F264 /* BeerCollectionViewCell.xib */; };
 		EA4C669D2A8286300037F264 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C669C2A8286300037F264 /* Beer.swift */; };
 		EA4C66A02A8288110037F264 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA4C669F2A8288110037F264 /* Alamofire */; };
+		EA4C66A62A82A1E40037F264 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EA4C66A52A82A1E40037F264 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA4C66A62A82A1E40037F264 /* Kingfisher in Frameworks */,
 				EA4C66A02A8288110037F264 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +98,7 @@
 			name = BottleShop;
 			packageProductDependencies = (
 				EA4C669F2A8288110037F264 /* Alamofire */,
+				EA4C66A52A82A1E40037F264 /* Kingfisher */,
 			);
 			productName = BottleShop;
 			productReference = EA4C66812A827D4D0037F264 /* BottleShop.app */;
@@ -128,6 +131,7 @@
 			packageReferences = (
 				EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				EA4C66A12A82881D0037F264 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				EA4C66A42A82A1E40037F264 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = EA4C66822A827D4D0037F264 /* Products */;
 			projectDirPath = "";
@@ -405,6 +409,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		EA4C66A42A82A1E40037F264 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -412,6 +424,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		EA4C66A52A82A1E40037F264 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA4C66A42A82A1E40037F264 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
