@@ -9,12 +9,19 @@ import UIKit
 import Alamofire
 
 class MainViewController: UIViewController {
+    
     var beers: [Beer] = []
 
     @IBOutlet var beerCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        beerCollectionView.delegate = self
+        beerCollectionView.dataSource = self
+        
+        let nib = UINib(nibName: BeerCollectionViewCell.identifier, bundle: nil)
+        beerCollectionView.register(nib, forCellWithReuseIdentifier: BeerCollectionViewCell.identifier)
         
         callRequest()
     }
@@ -29,6 +36,8 @@ class MainViewController: UIViewController {
                 do {
                     let data = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
                     self.beers = try decoder.decode([Beer].self, from: data)
+                    
+                    self.beerCollectionView.reloadData()
                 } catch {
                     print(error.localizedDescription, "ㅠㅠ")
                 }
@@ -43,7 +52,7 @@ class MainViewController: UIViewController {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return beers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
