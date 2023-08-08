@@ -17,11 +17,15 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "beer warehouse"
+        
         beerCollectionView.delegate = self
         beerCollectionView.dataSource = self
         
         let nib = UINib(nibName: BeerCollectionViewCell.identifier, bundle: nil)
         beerCollectionView.register(nib, forCellWithReuseIdentifier: BeerCollectionViewCell.identifier)
+        
+        beerCollectionViewLayout()
         
         callRequest()
     }
@@ -56,7 +60,34 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BeerCollectionViewCell.identifier, for: indexPath) as? BeerCollectionViewCell else { return UICollectionViewCell() }
+        
+        let row = beers[indexPath.row]
+        
+        cell.configureCell(row: row)
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 5
+        cell.layer.borderColor = UIColor.gray.cgColor
+        
+        return cell
     }
     
 }
+
+extension MainViewController {
+    
+    func beerCollectionViewLayout() {
+        let layout = UICollectionViewFlowLayout()
+        let spacing: CGFloat = 16
+        let width = UIScreen.main.bounds.width - (spacing * 3)
+        
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: width / 2, height: (width / 2) * 1.4)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        
+        beerCollectionView.collectionViewLayout = layout
+    }
+    
+}
+

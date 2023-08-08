@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BeerCollectionViewCell: UICollectionViewCell {
     
@@ -15,18 +16,38 @@ class BeerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var beerNameLabel: UILabel!
     
-    @IBOutlet var beerTaglineLabel: UILabel!
-    
     @IBOutlet var beerSrmImageView: UIImageView!
     @IBOutlet var beerInfoLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        designCell()
     }
 
     func configureCell(row: Beer) {
+        let url = URL(string: row.imageURL)
         
+        beerImageView.kf.setImage(with: url)
+        
+        beerNameLabel.text = row.name
+        
+        beerSrmImageView.backgroundColor = .yellow
+        
+        guard let ibu = row.ibu else {
+            beerInfoLabel.text = "\(row.abv)%"
+            return
+        }
+        beerInfoLabel.text = "\(row.abv)% • \(ibu) IBU"
+    }
+    
+    func designCell() {
+//        beerNameLabel.numberOfLines = 1
+        beerNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        beerNameLabel.textAlignment = .center
+        
+        beerInfoLabel.font = UIFont.systemFont(ofSize: 15)
+        beerInfoLabel.textAlignment = .center
     }
     
 }
