@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         for (idx, lottoNum) in lottoNums.enumerated() {
             let num = winningNum[idx]
             
-            circleBackground(lbl: lottoNum, color: setCircleColor(num: num))
+            setCircleColor(lbl: lottoNum, color: ballColor(num: num))
             lottoNum.text = String(num)
         }
     }
@@ -96,6 +96,7 @@ extension ViewController {
     func designUI() {
         for lottoNum in lottoNums {
             circleBackground(lbl: lottoNum)
+            setCircleColor(lbl: lottoNum)
             designLabel(lbl: lottoNum)
         }
     }
@@ -110,13 +111,16 @@ extension ViewController {
         lbl.shadowColor = .gray
     }
     
-    func circleBackground(lbl: UILabel, color: UIColor = .gray) {
-        lbl.backgroundColor = color
+    func circleBackground(lbl: UILabel) {
         lbl.layer.cornerRadius = lbl.frame.width / 2
         lbl.layer.masksToBounds = true
     }
     
-    func setCircleColor(num: Int) -> UIColor {
+    func setCircleColor(lbl: UILabel, color: UIColor = .gray) {
+        lbl.backgroundColor = color
+    }
+    
+    func ballColor(num: Int) -> UIColor {
         switch num {
         case 1...9: return UIColor.LTYellow
         case 10...19: return UIColor.LTBlue
