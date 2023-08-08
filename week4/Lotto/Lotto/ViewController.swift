@@ -34,6 +34,10 @@ class ViewController: UIViewController {
         designUI()
     }
 
+    @IBAction func viewTapGesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     func callRequest(round drwNo: Int) {
         let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drwNo)"
         
@@ -94,7 +98,9 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ViewController {
     
     func designUI() {
+        numberTextField.text = "1079회"
         for lottoNum in lottoNums {
+            lottoNum.text = " "
             circleBackground(lbl: lottoNum)
             setCircleColor(lbl: lottoNum)
             designLabel(lbl: lottoNum)
