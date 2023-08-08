@@ -72,6 +72,16 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
+        
+        vc.beerData = beers[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension MainViewController {

@@ -19,6 +19,7 @@
 		EA4C66A02A8288110037F264 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA4C669F2A8288110037F264 /* Alamofire */; };
 		EA4C66A62A82A1E40037F264 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EA4C66A52A82A1E40037F264 /* Kingfisher */; };
 		EA4C66A82A82AD840037F264 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66A72A82AD840037F264 /* Extension+UIColor.swift */; };
+		EA4C66AA2A82B4750037F264 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66A92A82B4750037F264 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EA4C66992A827F6E0037F264 /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA4C669C2A8286300037F264 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		EA4C66A72A82AD840037F264 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		EA4C66A92A82B4750037F264 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				EA4C66882A827D4D0037F264 /* MainViewController.swift */,
 				EA4C66982A827F6E0037F264 /* BeerCollectionViewCell.swift */,
 				EA4C66992A827F6E0037F264 /* BeerCollectionViewCell.xib */,
+				EA4C66A92A82B4750037F264 /* DetailViewController.swift */,
 				EA4C668A2A827D4D0037F264 /* Main.storyboard */,
 				EA4C668D2A827D4F0037F264 /* Assets.xcassets */,
 				EA4C668F2A827D4F0037F264 /* LaunchScreen.storyboard */,
@@ -170,6 +173,7 @@
 				EA4C66852A827D4D0037F264 /* AppDelegate.swift in Sources */,
 				EA4C66872A827D4D0037F264 /* SceneDelegate.swift in Sources */,
 				EA4C66A82A82AD840037F264 /* Extension+UIColor.swift in Sources */,
+				EA4C66AA2A82B4750037F264 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
