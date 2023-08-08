@@ -37,7 +37,7 @@ class ViewController: UIViewController {
                 }
                 self.winningNum.append(json["bnusNo"].intValue)
                 
-                print(self.winningNum)
+                self.setWinningNumBall()
                 
             case .failure(let error):
                 print(error)
@@ -45,6 +45,15 @@ class ViewController: UIViewController {
         }
     }
 
+    func setWinningNumBall() {
+        for (idx, lottoNum) in lottoNums.enumerated() {
+            let num = winningNum[idx]
+            
+            circleBackground(lbl: lottoNum, color: setCircleColor(num: num))
+            lottoNum.text = String(num)
+        }
+    }
+    
 }
 
 extension ViewController {
