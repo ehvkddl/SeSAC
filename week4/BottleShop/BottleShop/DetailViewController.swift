@@ -77,23 +77,24 @@ extension DetailViewController {
     
     func designView() {
         beerNameLabel.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
-        beerNameLabel.textAlignment = .center
-        beerNameLabel.numberOfLines = 0
+        setLineNumAndAlignment(lbl: beerNameLabel)
         
         beerTaglineLabel.font = UIFont.italicSystemFont(ofSize: 14)
-        beerTaglineLabel.textAlignment = .center
-        beerTaglineLabel.numberOfLines = 0
+        setLineNumAndAlignment(lbl: beerTaglineLabel)
         
-        beerInfoLabel.textAlignment = .center
         beerInfoLabel.textColor = .gray
+        setLineNumAndAlignment(lbl: beerInfoLabel, lineNum: 1)
         
-        beerDescriptionLabel.numberOfLines = 0
-        beerDescriptionLabel.textAlignment = .center
+        setLineNumAndAlignment(lbl: beerDescriptionLabel)
         
-        beerFoodPairingLabel.numberOfLines = 0
-        beerFoodPairingLabel.textAlignment = .center
+        setLineNumAndAlignment(lbl: beerFoodPairingLabel)
         
-        beerBrewersTipsLabel.numberOfLines = 0
-        beerBrewersTipsLabel.textAlignment = .center
+        setLineNumAndAlignment(lbl: beerBrewersTipsLabel)
     }
+    
+    func setLineNumAndAlignment(lbl: UILabel, lineNum: Int = 0, alignment: NSTextAlignment = .center) {
+        lbl.numberOfLines = lineNum
+        lbl.textAlignment = alignment
+    }
+    
 }
