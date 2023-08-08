@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
-
+    
+    var winningNum: [Int] = []
     
     @IBOutlet var lottoNums: [UILabel]!
     @IBOutlet var bonusNum: UILabel!
@@ -16,10 +19,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        callRequest()
         designUI()
         
     }
 
+    func callRequest() {
+        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=1079"
+        
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                for i in 1...6 {
+                    self.winningNum.append(json["drwtNo\(i)"].intValue)
+                }
+                self.winningNum.append(json["bnusNo"].intValue)
+                
+                print(self.winningNum)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 
 }
 
