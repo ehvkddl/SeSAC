@@ -1,24 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lotto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="gM3-Xu-0hm">
+                                <rect key="frame" x="16" y="99" width="361" height="45.666666666666657"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="csx-Aa-pid">
+                                        <rect key="frame" x="0.0" y="0.0" width="289" height="45.666666666666664"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48P-2I-Qle">
+                                                <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="45.666666666666664"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="48P-2I-Qle" secondAttribute="height" multiplier="1:1" id="Vty-LU-rG3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3i-Sd-a7T">
+                                                <rect key="frame" x="48.666666666666671" y="0.0" width="45.666666666666671" height="45.666666666666664"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="V3i-Sd-a7T" secondAttribute="height" multiplier="1:1" id="1Mg-tE-UrQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNt-wj-KYj">
+                                                <rect key="frame" x="97.333333333333329" y="0.0" width="45.666666666666671" height="45.666666666666664"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tNt-wj-KYj" secondAttribute="height" multiplier="1:1" id="JU6-ce-BAo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIw-53-ge4">
+                                                <rect key="frame" x="146" y="0.0" width="45.666666666666657" height="45.666666666666664"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="AIw-53-ge4" secondAttribute="height" multiplier="1:1" id="R3z-le-VWE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tY-pj-Imo">
+                                                <rect key="frame" x="194.66666666666666" y="0.0" width="45.666666666666657" height="45.666666666666664"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="3tY-pj-Imo" secondAttribute="height" multiplier="1:1" id="Am8-zK-dtt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lex-II-wG4">
+                                                <rect key="frame" x="243.33333333333329" y="0.0" width="45.666666666666657" height="45.666666666666664"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Lex-II-wG4" secondAttribute="height" multiplier="1:1" id="vm9-hy-pKp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="AIw-53-ge4" firstAttribute="width" secondItem="AIw-53-ge4" secondAttribute="height" multiplier="1:1" id="JIn-O3-NdP"/>
+                                            <constraint firstItem="3tY-pj-Imo" firstAttribute="width" secondItem="3tY-pj-Imo" secondAttribute="height" multiplier="1:1" id="Nlp-QE-ATv"/>
+                                            <constraint firstItem="tNt-wj-KYj" firstAttribute="width" secondItem="tNt-wj-KYj" secondAttribute="height" multiplier="1:1" id="djO-0t-uR8"/>
+                                            <constraint firstItem="V3i-Sd-a7T" firstAttribute="width" secondItem="V3i-Sd-a7T" secondAttribute="height" multiplier="1:1" id="pKE-Ks-PBl"/>
+                                            <constraint firstItem="Lex-II-wG4" firstAttribute="width" secondItem="Lex-II-wG4" secondAttribute="height" multiplier="1:1" id="yGb-5n-Ur9"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJv-Gp-kSl">
+                                        <rect key="frame" x="296" y="0.0" width="12.333333333333314" height="45.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gkj-T3-Obx">
+                                        <rect key="frame" x="315.33333333333331" y="0.0" width="45.666666666666686" height="45.666666666666664"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Gkj-T3-Obx" secondAttribute="height" multiplier="1:1" id="pHN-ry-VVR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gM3-Xu-0hm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Re9-Oh-af0"/>
+                            <constraint firstItem="gM3-Xu-0hm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="VB4-rL-5cT"/>
+                            <constraint firstAttribute="trailing" secondItem="gM3-Xu-0hm" secondAttribute="trailing" constant="16" id="XAt-oC-eGB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bonusNum" destination="Gkj-T3-Obx" id="w8h-Fr-NK4"/>
+                        <outletCollection property="lottoNums" destination="48P-2I-Qle" collectionClass="NSMutableArray" id="7SQ-Nj-Bmd"/>
+                        <outletCollection property="lottoNums" destination="V3i-Sd-a7T" collectionClass="NSMutableArray" id="xEU-cr-d7G"/>
+                        <outletCollection property="lottoNums" destination="tNt-wj-KYj" collectionClass="NSMutableArray" id="c1h-ZW-L80"/>
+                        <outletCollection property="lottoNums" destination="AIw-53-ge4" collectionClass="NSMutableArray" id="54S-bF-Jma"/>
+                        <outletCollection property="lottoNums" destination="3tY-pj-Imo" collectionClass="NSMutableArray" id="2lj-l0-d5u"/>
+                        <outletCollection property="lottoNums" destination="Lex-II-wG4" collectionClass="NSMutableArray" id="6gB-S4-YkZ"/>
+                        <outletCollection property="lottoNums" destination="Gkj-T3-Obx" collectionClass="NSMutableArray" id="kM1-Kp-Zfo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131" y="-27"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

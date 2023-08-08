@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet var lottoNums: [UILabel]!
+    @IBOutlet var bonusNum: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
