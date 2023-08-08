@@ -18,6 +18,7 @@
 		EA4C669D2A8286300037F264 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C669C2A8286300037F264 /* Beer.swift */; };
 		EA4C66A02A8288110037F264 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA4C669F2A8288110037F264 /* Alamofire */; };
 		EA4C66A62A82A1E40037F264 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EA4C66A52A82A1E40037F264 /* Kingfisher */; };
+		EA4C66A82A82AD840037F264 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66A72A82AD840037F264 /* Extension+UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EA4C66982A827F6E0037F264 /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA4C66992A827F6E0037F264 /* BeerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA4C669C2A8286300037F264 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		EA4C66A72A82AD840037F264 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				EA4C66842A827D4D0037F264 /* AppDelegate.swift */,
 				EA4C66862A827D4D0037F264 /* SceneDelegate.swift */,
+				EA4C66A72A82AD840037F264 /* Extension+UIColor.swift */,
 				EA4C669C2A8286300037F264 /* Beer.swift */,
 				EA4C66882A827D4D0037F264 /* MainViewController.swift */,
 				EA4C66982A827F6E0037F264 /* BeerCollectionViewCell.swift */,
@@ -166,6 +169,7 @@
 				EA4C669D2A8286300037F264 /* Beer.swift in Sources */,
 				EA4C66852A827D4D0037F264 /* AppDelegate.swift in Sources */,
 				EA4C66872A827D4D0037F264 /* SceneDelegate.swift in Sources */,
+				EA4C66A82A82AD840037F264 /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
