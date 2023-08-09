@@ -86,6 +86,18 @@ extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+                
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
+        vc.content = books[indexPath.row]
+        let nav = UINavigationController(rootViewController: vc)
+        
+        nav.modalPresentationStyle = .overFullScreen
+        
+        present(nav, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
             if books.count - 1 == indexPath.row && page < 50 {

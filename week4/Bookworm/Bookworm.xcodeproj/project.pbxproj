@@ -19,6 +19,7 @@
 		EAA6B6FA2A83A97C00C2ECD1 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B6F92A83A97C00C2ECD1 /* Book.swift */; };
 		EAA6B7002A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B6FE2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift */; };
 		EAA6B7012A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA6B6FF2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib */; };
+		EAA6B7032A84098200C2ECD1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B7022A84098200C2ECD1 /* DetailViewController.swift */; };
 		EAA6B7072A84131F00C2ECD1 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B7062A84131F00C2ECD1 /* Extension+Array.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		EAA6B6F92A83A97C00C2ECD1 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		EAA6B6FE2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAA6B6FF2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookshelfCollectionViewCell.xib; sourceTree = "<group>"; };
+		EAA6B7022A84098200C2ECD1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EAA6B7062A84131F00C2ECD1 /* Extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Array.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 				EAA6B6E12A83A0EC00C2ECD1 /* BookshelfViewController.swift */,
 				EAA6B6FE2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift */,
 				EAA6B6FF2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib */,
+				EAA6B7022A84098200C2ECD1 /* DetailViewController.swift */,
 				EAA6B6E32A83A0EC00C2ECD1 /* Main.storyboard */,
 				EAA6B6E62A83A0EE00C2ECD1 /* Assets.xcassets */,
 				EAA6B6E82A83A0EE00C2ECD1 /* LaunchScreen.storyboard */,
@@ -174,6 +177,7 @@
 				EAA6B6F82A83A38700C2ECD1 /* APIKey.swift in Sources */,
 				EAA6B6FA2A83A97C00C2ECD1 /* Book.swift in Sources */,
 				EAA6B6E02A83A0EC00C2ECD1 /* SceneDelegate.swift in Sources */,
+				EAA6B7032A84098200C2ECD1 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
