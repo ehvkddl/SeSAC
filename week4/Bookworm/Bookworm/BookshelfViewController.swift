@@ -11,6 +11,8 @@ import Alamofire
 class BookshelfViewController: UIViewController {
 
     var books: [Book] = []
+    var page = 1
+    var isEnd = false
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var bookCollectionView: UICollectionView!
@@ -20,6 +22,7 @@ class BookshelfViewController: UIViewController {
         
         bookCollectionView.delegate = self
         bookCollectionView.dataSource = self
+        bookCollectionView.prefetchDataSource = self
         
         let nib = UINib(nibName: BookshelfCollectionViewCell.identifier, bundle: nil)
         bookCollectionView.register(nib, forCellWithReuseIdentifier: BookshelfCollectionViewCell.identifier)
@@ -27,9 +30,9 @@ class BookshelfViewController: UIViewController {
         bookCollectionViewLayout()
     }
 
-    func callRequest(query: String) {
+    func callRequest(query: String, page: Int) {
         guard let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-        let url = "https://dapi.kakao.com/v3/search/book?query=\(text)"
+        let url = "https://dapi.kakao.com/v3/search/book?query=\(text)&page=\(page)"
         let header: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakaoKey)"]
         
         AF.request(url, method: .get, headers: header).validate().responseJSON { response in
@@ -41,6 +44,7 @@ class BookshelfViewController: UIViewController {
 
                     let contents = document.documents
                     
+                    self.isEnd = document.meta.isEnd
                     self.books += contents
                     
                     self.bookCollectionView.reloadData()
@@ -68,7 +72,7 @@ extension BookshelfViewController: UISearchBarDelegate {
     
 }
 
-extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return books.count
@@ -79,9 +83,22 @@ extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.configureCell(row: books[indexPath.row])
         
-        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if books.count - 1 == indexPath.row && page < 50 {
+                page += 1
+                callRequest(query: searchBar.text!, page: page)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        
+    }
+    
 }
 
 extension BookshelfViewController {
