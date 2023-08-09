@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KEm-SI-kzU">
-                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6V4-bM-32H">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,11 +38,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Em6-d7-LPp">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EkC-7b-Lth"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6NN-zu-4tO"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KEm-SI-kzU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S2Z-kc-d7G"/>
+                            <constraint firstAttribute="trailing" secondItem="Em6-d7-LPp" secondAttribute="trailing" id="MCf-KR-1aN"/>
+                            <constraint firstItem="Em6-d7-LPp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PDP-1j-UqB"/>
+                            <constraint firstItem="Em6-d7-LPp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QAz-h8-ZTu"/>
+                            <constraint firstItem="KEm-SI-kzU" firstAttribute="top" secondItem="Em6-d7-LPp" secondAttribute="bottom" id="S2Z-kc-d7G"/>
                             <constraint firstItem="KEm-SI-kzU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VSR-JZ-LR1"/>
                             <constraint firstAttribute="bottom" secondItem="KEm-SI-kzU" secondAttribute="bottom" id="aqT-o8-j5z"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KEm-SI-kzU" secondAttribute="trailing" id="vGc-Et-Kvm"/>
@@ -50,6 +63,7 @@
                     </view>
                     <connections>
                         <outlet property="bookCollectionView" destination="KEm-SI-kzU" id="Usy-Ou-OhN"/>
+                        <outlet property="searchBar" destination="Em6-d7-LPp" id="T0b-BQ-5ss"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

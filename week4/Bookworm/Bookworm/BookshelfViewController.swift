@@ -12,6 +12,7 @@ class BookshelfViewController: UIViewController {
 
     var books: [Book] = []
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var bookCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -24,8 +25,6 @@ class BookshelfViewController: UIViewController {
         bookCollectionView.register(nib, forCellWithReuseIdentifier: BookshelfCollectionViewCell.identifier)
         
         bookCollectionViewLayout()
-        
-        callRequest(query: "스위프트")
     }
 
     func callRequest(query: String) {
@@ -40,7 +39,9 @@ class BookshelfViewController: UIViewController {
                     let data = try JSONSerialization.data(withJSONObject: value)
                     let document = try JSONDecoder().decode(Document.self, from: data)
 
-                    self.books = document.documents
+                    let contents = document.documents
+                    
+                    self.books += contents
                     
                     self.bookCollectionView.reloadData()
                 } catch {
@@ -55,6 +56,17 @@ class BookshelfViewController: UIViewController {
 
 }
 
+extension BookshelfViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        page = 1
+        books.removeAll()
+        
+        guard let query = searchBar.text else { return }
+        callRequest(query: query, page: page)
+    }
+    
+}
 
 extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
