@@ -19,6 +19,7 @@
 		EAA6B6FA2A83A97C00C2ECD1 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B6F92A83A97C00C2ECD1 /* Book.swift */; };
 		EAA6B7002A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B6FE2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift */; };
 		EAA6B7012A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA6B6FF2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib */; };
+		EAA6B7072A84131F00C2ECD1 /* Extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B7062A84131F00C2ECD1 /* Extension+Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EAA6B6F92A83A97C00C2ECD1 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		EAA6B6FE2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookshelfCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAA6B6FF2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookshelfCollectionViewCell.xib; sourceTree = "<group>"; };
+		EAA6B7062A84131F00C2ECD1 /* Extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Array.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 			children = (
 				EAA6B6DD2A83A0EC00C2ECD1 /* AppDelegate.swift */,
 				EAA6B6DF2A83A0EC00C2ECD1 /* SceneDelegate.swift */,
+				EAA6B7062A84131F00C2ECD1 /* Extension+Array.swift */,
 				EAA6B6F92A83A97C00C2ECD1 /* Book.swift */,
 				EAA6B6E12A83A0EC00C2ECD1 /* BookshelfViewController.swift */,
 				EAA6B6FE2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift */,
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA6B7072A84131F00C2ECD1 /* Extension+Array.swift in Sources */,
 				EAA6B6E22A83A0EC00C2ECD1 /* BookshelfViewController.swift in Sources */,
 				EAA6B6DE2A83A0EC00C2ECD1 /* AppDelegate.swift in Sources */,
 				EAA6B7002A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift in Sources */,

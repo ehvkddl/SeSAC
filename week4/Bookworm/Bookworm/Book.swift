@@ -27,17 +27,12 @@ struct Book: Codable {
     var url: String
     
     var info: String {
-        var authorStr = ""
+        var authorStr = authors.terminator()
+        var tranlatorStr = translators.terminator()
         
-        for (idx, author) in authors.enumerated() {
-            authorStr.append("\(author)")
-            if idx < authors.count - 1 {
-                authorStr.append(", ")
-            }
-        }
-        return "\(authorStr) 저 | \(publisher)"
+        return "\(authorStr) 저\(translators.isEmpty ? "":"/\(tranlatorStr) 역") | \(publisher)"
     }
-    
+
     enum CodingKeys: String, CodingKey {
         case authors, contents, datetime, isbn, price, publisher
         case salePrice = "sale_price"
