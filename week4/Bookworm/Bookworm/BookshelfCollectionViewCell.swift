@@ -25,8 +25,9 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     }
     
     func configureCell(row: Book) {
-        let url = URL(string: row.thumbnail)!
-        bookImageView.kf.setImage(with: url)
+        if let url = URL(string: row.thumbnail) {
+            bookImageView.kf.setImage(with: url)
+        }
         
         bookTitleLabel.text = row.title
         bookInfoLabel.text = row.info
