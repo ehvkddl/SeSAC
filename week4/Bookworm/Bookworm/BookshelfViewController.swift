@@ -12,8 +12,18 @@ class BookshelfViewController: UIViewController {
 
     var books: [Book] = []
     
+    @IBOutlet var bookCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bookCollectionView.delegate = self
+        bookCollectionView.dataSource = self
+        
+        let nib = UINib(nibName: BookshelfCollectionViewCell.identifier, bundle: nil)
+        bookCollectionView.register(nib, forCellWithReuseIdentifier: BookshelfCollectionViewCell.identifier)
+        
+        bookCollectionViewLayout()
         
         callRequest(query: "스위프트")
     }
@@ -31,6 +41,8 @@ class BookshelfViewController: UIViewController {
                     let document = try JSONDecoder().decode(Document.self, from: data)
 
                     self.books = document.documents
+                    
+                    self.bookCollectionView.reloadData()
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -41,4 +53,38 @@ class BookshelfViewController: UIViewController {
         }
     }
 
+}
+
+
+extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return books.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookshelfCollectionViewCell.identifier, for: indexPath) as? BookshelfCollectionViewCell else { return UICollectionViewCell() }
+        
+        cell.configureCell(row: books[indexPath.row])
+        
+        
+        return cell
+    }
+}
+
+extension BookshelfViewController {
+    
+    func bookCollectionViewLayout() {
+        let layout = UICollectionViewFlowLayout()
+        let spacing: CGFloat = 10
+        let width = UIScreen.main.bounds.width - (spacing * 3)
+        
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: width / 2, height: (width / 2) * 2)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.minimumLineSpacing = spacing
+        
+        bookCollectionView.collectionViewLayout = layout
+    }
+    
 }
