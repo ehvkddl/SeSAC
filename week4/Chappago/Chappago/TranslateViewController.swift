@@ -45,7 +45,7 @@ class TranslateViewController: UIViewController {
         configureUI()
     }
 
-    func callRequest(text: String) {
+    func fetchTranslatedText(text: String) {
         let url = "https://openapi.naver.com/v1/papago/n2mt"
         let header: HTTPHeaders = [
             "X-Naver-Client-Id": APIKey.Naver.ClientID,
@@ -78,7 +78,7 @@ class TranslateViewController: UIViewController {
         guard let text = originalTextView.text else { return }
         
         if !text.isEmpty {
-            callRequest(text: text)
+            fetchTranslatedText(text: text)
         }
         
         view.endEditing(true)
