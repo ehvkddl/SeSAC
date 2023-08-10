@@ -51,12 +51,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/5000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rat-gN-eca">
+                                        <rect key="frame" x="295.66666666666669" y="297.66666666666669" width="47.333333333333314" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="pZb-u0-FWU" firstAttribute="leading" secondItem="XXD-6X-W30" secondAttribute="leading" id="63Q-2Y-Hcr"/>
+                                    <constraint firstItem="Rat-gN-eca" firstAttribute="bottom" secondItem="pZb-u0-FWU" secondAttribute="bottom" constant="-10" id="Cvc-e8-kZT"/>
                                     <constraint firstItem="d4N-9D-PSs" firstAttribute="leading" secondItem="XXD-6X-W30" secondAttribute="leading" id="RXr-at-3gM"/>
                                     <constraint firstAttribute="trailing" secondItem="d4N-9D-PSs" secondAttribute="trailing" id="X57-gN-AIw"/>
+                                    <constraint firstItem="Rat-gN-eca" firstAttribute="trailing" secondItem="pZb-u0-FWU" secondAttribute="trailing" constant="-10" id="at4-7M-8ui"/>
                                     <constraint firstAttribute="trailing" secondItem="pZb-u0-FWU" secondAttribute="trailing" id="e8j-nJ-qfH"/>
                                     <constraint firstItem="pZb-u0-FWU" firstAttribute="top" secondItem="d4N-9D-PSs" secondAttribute="bottom" id="ghk-72-xhz"/>
                                     <constraint firstAttribute="bottom" secondItem="pZb-u0-FWU" secondAttribute="bottom" id="hZ5-Go-Trz"/>
@@ -122,6 +130,7 @@
                         <outlet property="sourceView" destination="XXD-6X-W30" id="KgB-Ui-yvD"/>
                         <outlet property="targetTextField" destination="rIQ-JE-M4u" id="Uve-yx-4Vv"/>
                         <outlet property="targetView" destination="8Qg-BR-fdx" id="sMV-pD-PUA"/>
+                        <outlet property="textLimitLabel" destination="Rat-gN-eca" id="YFa-Sv-mto"/>
                         <outlet property="translateTextView" destination="jZi-JX-eYf" id="cey-uV-Cza"/>
                     </connections>
                 </viewController>

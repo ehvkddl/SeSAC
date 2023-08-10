@@ -10,6 +10,8 @@ import Alamofire
 
 class TranslateViewController: UIViewController {
     
+    let placeholderText = "번역할 내용을 입력하세요."
+    
     var sourceLanguages: [Language] = Language.allCases
     var targetLanguages: [Language] = Language.ko.target
     
@@ -37,6 +39,8 @@ class TranslateViewController: UIViewController {
     @IBOutlet var originalTextView: UITextView!
     @IBOutlet var sourceTextField: UITextField!
     let sourcePickerView = UIPickerView()
+    
+    @IBOutlet var textLimitLabel: UILabel!
     
     @IBOutlet var requestButton: UIButton!
     
@@ -126,6 +130,37 @@ class TranslateViewController: UIViewController {
     
 }
 
+extension TranslateViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        textLimitLabel.text = "\(textView.text.count)/5000"
+    }
+    
+    // 글자수 제한
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (textView.text?.count ?? 0) +  (text.count - range.length) >= 5000 {
+            return false
+        }
+        
+        return true
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == placeholderText {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholderText
+            textView.textColor = .lightGray
+        }
+    }
+    
+}
+
 extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -172,6 +207,7 @@ extension TranslateViewController {
         configureTextField()
         configureButton()
         configurePicker()
+        configureTextView()
     }
     
     func configureView() {
@@ -200,6 +236,16 @@ extension TranslateViewController {
         targetPickerView.delegate = self
         targetPickerView.dataSource = self
         targetPickerView.tag = 2
+    }
+    
+    func configureTextView() {
+        originalTextView.delegate = self
+        
+        originalTextView.text = placeholderText
+        originalTextView.textColor = .lightGray
+
+        originalTextView.font = UIFont.systemFont(ofSize: 20)
+        translateTextView.font = UIFont.systemFont(ofSize: 20)
     }
     
     func configureButton() {
