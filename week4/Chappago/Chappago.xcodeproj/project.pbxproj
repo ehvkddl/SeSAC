@@ -14,6 +14,7 @@
 		EA5A36542A84C408007ECF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5A36532A84C408007ECF41 /* Assets.xcassets */; };
 		EA5A36572A84C408007ECF41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5A36552A84C408007ECF41 /* LaunchScreen.storyboard */; };
 		EA5A36602A84C52A007ECF41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA5A365F2A84C52A007ECF41 /* Alamofire */; };
+		EA5A36622A84CA74007ECF41 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36612A84CA74007ECF41 /* Translator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		EA5A36532A84C408007ECF41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA5A36562A84C408007ECF41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA5A36582A84C408007ECF41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA5A36612A84CA74007ECF41 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				EA5A364A2A84C407007ECF41 /* AppDelegate.swift */,
 				EA5A364C2A84C407007ECF41 /* SceneDelegate.swift */,
+				EA5A36612A84CA74007ECF41 /* Translator.swift */,
 				EA5A364E2A84C407007ECF41 /* ViewController.swift */,
 				EA5A36502A84C407007ECF41 /* Main.storyboard */,
 				EA5A36532A84C408007ECF41 /* Assets.xcassets */,
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5A364F2A84C407007ECF41 /* ViewController.swift in Sources */,
+				EA5A36622A84CA74007ECF41 /* Translator.swift in Sources */,
 				EA5A364B2A84C407007ECF41 /* AppDelegate.swift in Sources */,
 				EA5A364D2A84C407007ECF41 /* SceneDelegate.swift in Sources */,
 			);
