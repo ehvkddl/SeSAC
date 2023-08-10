@@ -133,7 +133,10 @@ extension TranslateViewController {
     }
     
     func configureTextField() {
+        sourceTextField.inputView = sourcePickerView
         setTextField(tf: sourceTextField)
+        
+        targetTextField.inputView = targetPickerView
         setTextField(tf: targetTextField)
     }
     
@@ -152,7 +155,6 @@ extension TranslateViewController {
     }
     
     func setTextField(tf: UITextField) {
-        tf.inputView = sourcePickerView
         tf.tintColor = .clear
         tf.textAlignment = .right
         tf.text = source.text
