@@ -15,17 +15,21 @@ class TranslateViewController: UIViewController {
     
     var source: Language = .ko {
         didSet {
-            sourceTextField.text = source.text
+            sourceTextField.text = "\(source.text) ▼"
             
             targetLanguages = source.target
-            target = source == .detect ? .ko : targetLanguages[0]
+            target = source == .detect ? nil : targetLanguages[0]
             
             requestButton.setTitle("번역하기", for: .normal)
         }
     }
-    var target: Language = .en {
+    var target: Language? = .en {
         didSet {
-            targetTextField.text = target.text
+            guard let lang = target else {
+                targetTextField.text = ""
+                return
+            }
+            targetTextField.text = "\(lang.text) ▼"
         }
     }
     
@@ -77,6 +81,8 @@ class TranslateViewController: UIViewController {
     }
 
     func fetchTranslatedText(text: String) {
+        guard let target = self.target else { return }
+        
         let url = "https://openapi.naver.com/v1/papago/n2mt"
         let header: HTTPHeaders = [
             "X-Naver-Client-Id": APIKey.Naver.ClientID,
@@ -175,9 +181,14 @@ extension TranslateViewController {
     
     func configureTextField() {
         sourceTextField.inputView = sourcePickerView
+        sourceTextField.text = "\(source.text) ▼"
         setTextField(tf: sourceTextField)
         
         targetTextField.inputView = targetPickerView
+        
+        guard let target = self.target else { return }
+        
+        targetTextField.text = "\(target.text) ▼"
         setTextField(tf: targetTextField)
     }
     
@@ -198,7 +209,6 @@ extension TranslateViewController {
     func setTextField(tf: UITextField) {
         tf.tintColor = .clear
         tf.textAlignment = .right
-        tf.text = source.text
     }
     
     func setRoundBorder(view: UIView) {
