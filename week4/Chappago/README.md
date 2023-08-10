@@ -1,7 +1,8 @@
 # Chappago
-|<img width="350" src="https://github.com/ehvkddl/SeSAC-project/assets/57763334/005077f5-632d-4b78-b2b6-276d88d10d63">|<img width="350" src="https://github.com/ehvkddl/SeSAC-project/assets/57763334/80cdb679-f7c2-45d5-98a0-7de884a79fe5">|
-|:-:|:-:|
-|언어감지|번역하기|
+## Run
+|<img width="350" src="https://github.com/ehvkddl/SeSAC-project/assets/57763334/005077f5-632d-4b78-b2b6-276d88d10d63">|<img width="350" src="https://github.com/ehvkddl/SeSAC-project/assets/57763334/80cdb679-f7c2-45d5-98a0-7de884a79fe5">|<img width="350" src="https://github.com/ehvkddl/ios-bible/assets/57763334/697f997c-4682-4c56-8a22-d50bdeed4bc1">|
+|:-:|:-:|:-:|
+|언어감지|번역하기|번역하기|
 
 ## 🤔
 ### 원본 언어에 따라 번역할 수 있는 목적언어가 다 다름
