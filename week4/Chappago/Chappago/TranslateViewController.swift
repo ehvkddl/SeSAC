@@ -118,8 +118,8 @@ class TranslateViewController: UIViewController {
     @IBAction func translateButtonClicked(_ sender: UIButton) {
         guard let text = originalTextView.text else { return }
         guard !text.isEmpty else { return }
-
-        sender.currentTitle == "번역하기" ? fetchTranslatedText(text: text) : fetchDetectLanguage(text: text)
+        
+        source != .detect ? fetchTranslatedText(text: text) : fetchDetectLanguage(text: text)
         
         view.endEditing(true)
     }
