@@ -15,10 +15,12 @@ class TranslateViewController: UIViewController {
     
     var source: Language = .ko {
         didSet {
-            targetLanguages = source.target
-            
-            targetTextField.text = source.text == "언어감지" ? "" : targetLanguages[0].text
             sourceTextField.text = source.text
+            
+            targetLanguages = source.target
+            target = source == .detect ? .ko : targetLanguages[0]
+            
+            requestButton.setTitle("번역하기", for: .normal)
         }
     }
     var target: Language = .en {
@@ -43,6 +45,35 @@ class TranslateViewController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
+    }
+    
+    func fetchDetectLanguage(text: String) {
+        let url = "https://openapi.naver.com/v1/papago/detectLangs"
+        let header: HTTPHeaders = [
+            "X-Naver-Client-Id": APIKey.Naver.ClientID,
+            "X-Naver-Client-Secret": APIKey.Naver.ClientSecret
+        ]
+        let parameter: Parameters = [
+            "query": text
+        ]
+        
+        AF.request(url, method: .post, parameters: parameter, headers: header).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: value)
+                    let decodedData = try JSONDecoder().decode(Detector.self, from: data)
+                    
+                    guard let langCode = Language(rawValue: decodedData.langCode) else { return }
+                    
+                    self.source = langCode
+                } catch {
+                    print(error.localizedDescription)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
     func fetchTranslatedText(text: String) {
@@ -80,10 +111,9 @@ class TranslateViewController: UIViewController {
     
     @IBAction func translateButtonClicked(_ sender: UIButton) {
         guard let text = originalTextView.text else { return }
-        
-        if !text.isEmpty {
-            fetchTranslatedText(text: text)
-        }
+        guard !text.isEmpty else { return }
+
+        sender.currentTitle == "번역하기" ? fetchTranslatedText(text: text) : fetchDetectLanguage(text: text)
         
         view.endEditing(true)
     }
@@ -114,7 +144,14 @@ extension TranslateViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch pickerView.tag {
-        case 1: self.source = sourceLanguages[row]
+        case 1:
+            let pick = sourceLanguages[row]
+            
+            self.source = pick
+            
+            if pick == .detect {
+                requestButton.setTitle("언어감지", for: .normal)
+            }
         case 2: self.target = targetLanguages[row]
         default: print("default")
         }
