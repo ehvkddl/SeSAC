@@ -74,6 +74,10 @@ class TranslateViewController: UIViewController {
         }
     }
     
+    @IBAction func tapGestureTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     @IBAction func translateButtonClicked(_ sender: UIButton) {
         guard let text = originalTextView.text else { return }
         
