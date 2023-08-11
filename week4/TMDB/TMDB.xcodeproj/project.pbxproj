@@ -13,6 +13,7 @@
 		EA5A368D2A861C9E007ECF41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5A368B2A861C9E007ECF41 /* Main.storyboard */; };
 		EA5A368F2A861C9F007ECF41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5A368E2A861C9F007ECF41 /* Assets.xcassets */; };
 		EA5A36922A861C9F007ECF41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5A36902A861C9F007ECF41 /* LaunchScreen.storyboard */; };
+		EA5A369D2A868CD5007ECF41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA5A369C2A868CD5007ECF41 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5A369D2A868CD5007ECF41 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = TMDB;
+			packageProductDependencies = (
+				EA5A369C2A868CD5007ECF41 /* Alamofire */,
+			);
 			productName = TMDB;
 			productReference = EA5A36822A861C9E007ECF41 /* TMDB.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = EA5A36792A861C9E007ECF41;
+			packageReferences = (
+				EA5A369B2A868CD5007ECF41 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = EA5A36832A861C9E007ECF41 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -366,6 +374,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EA5A369B2A868CD5007ECF41 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EA5A369C2A868CD5007ECF41 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA5A369B2A868CD5007ECF41 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA5A367A2A861C9E007ECF41 /* Project object */;
 }
