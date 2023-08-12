@@ -16,13 +16,7 @@ class TrendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        trendCollectionView.delegate = self
-        trendCollectionView.dataSource = self
-        
-        let nib = UINib(nibName: TrendCollectionViewCell.identifier, bundle: nil)
-        trendCollectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
-        
-        trendCollectionViewLayout()
+        configureView()
         
         TmdbAPIManager.shared.fetchTrend(completionHandler: { trend in
             self.trends = trend.results
@@ -62,6 +56,42 @@ extension TrendViewController: ButtonTappedDelegate {
 }
 
 extension TrendViewController {
+    
+    @objc
+    func listButtonTapped() {
+        print("list")
+    }
+    
+    @objc
+    func magnifyingButtonTapped() {
+        print("magnifying")
+    }
+    
+}
+
+extension TrendViewController {
+    
+    func configureView() {
+        configureCollectionView()
+        configureNavigationBar()
+    }
+    
+    func configureCollectionView() {
+        trendCollectionView.delegate = self
+        trendCollectionView.dataSource = self
+        
+        let nib = UINib(nibName: TrendCollectionViewCell.identifier, bundle: nil)
+        trendCollectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
+        
+        trendCollectionViewLayout()
+    }
+    
+    func configureNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(magnifyingButtonTapped))
+        
+        self.navigationController?.navigationBar.tintColor = .black
+    }
     
     func trendCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
