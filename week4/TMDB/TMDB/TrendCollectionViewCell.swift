@@ -8,6 +8,10 @@
 import UIKit
 import Kingfisher
 
+protocol ButtonTappedDelegate: AnyObject {
+    func cellButtonTapped(index: Int)
+}
+
 class TrendCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet var contentsView: UIView!
@@ -24,9 +28,16 @@ class TrendCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var moreDetailButton: UIButton!
     
+    weak var delegate: ButtonTappedDelegate?
+    var index: Int = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    @IBAction func moreDetailButtonClicked(_ sender: UIButton) {
+        delegate?.cellButtonTapped(index: index)
     }
     
     func configureCell(row: Trend) {

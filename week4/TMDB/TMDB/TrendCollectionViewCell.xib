@@ -77,6 +77,9 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="moreDetailButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="8of-Ha-mgM"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s80-pg-UbA">
                                 <rect key="frame" x="17.999999999999996" y="98.333333333333343" width="60.666666666666657" height="25"/>

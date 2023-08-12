@@ -41,11 +41,19 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionViewCell.identifier, for: indexPath) as? TrendCollectionViewCell else { return UICollectionViewCell() }
 
+        cell.delegate = self
+        cell.index = indexPath.row
         cell.configureCell(row: trends[indexPath.row])
         
         return cell
     }
     
+}
+
+extension TrendViewController: ButtonTappedDelegate {
+    func cellButtonTapped(index: Int) {
+        print("\(index) Button Tapped")
+    }
 }
 
 extension TrendViewController {
