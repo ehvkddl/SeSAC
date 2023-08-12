@@ -17,6 +17,7 @@
 		EA5A36A62A86AE14007ECF41 /* TrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */; };
 		EA5A36A72A86AE14007ECF41 /* TrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */; };
 		EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */; };
+		EA5A36B02A87D993007ECF41 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EA5A36AF2A87D993007ECF41 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5A36B02A87D993007ECF41 /* Kingfisher in Frameworks */,
 				EA5A369D2A868CD5007ECF41 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +98,7 @@
 			name = TMDB;
 			packageProductDependencies = (
 				EA5A369C2A868CD5007ECF41 /* Alamofire */,
+				EA5A36AF2A87D993007ECF41 /* Kingfisher */,
 			);
 			productName = TMDB;
 			productReference = EA5A36822A861C9E007ECF41 /* TMDB.app */;
@@ -127,6 +130,7 @@
 			mainGroup = EA5A36792A861C9E007ECF41;
 			packageReferences = (
 				EA5A369B2A868CD5007ECF41 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				EA5A36AE2A87D993007ECF41 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = EA5A36832A861C9E007ECF41 /* Products */;
 			projectDirPath = "";
@@ -396,6 +400,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		EA5A36AE2A87D993007ECF41 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -403,6 +415,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EA5A369B2A868CD5007ECF41 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		EA5A36AF2A87D993007ECF41 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA5A36AE2A87D993007ECF41 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
