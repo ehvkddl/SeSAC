@@ -11,7 +11,7 @@ class TrendViewController: UIViewController {
 
     @IBOutlet var trendCollectionView: UICollectionView!
     
-    var movieManager = MovieManager()
+    var trends: [Trend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,10 @@ class TrendViewController: UIViewController {
         trendCollectionView.register(nib, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
         
         trendCollectionViewLayout()
+        
+        TmdbAPIManager.shared.fetchTrend(completionHandler: { trend in
+            self.trends = trend.results
+            self.trendCollectionView.reloadData()
         })
     }
 
@@ -31,13 +35,13 @@ class TrendViewController: UIViewController {
 extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieManager.movies.count
+        return trends.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrendCollectionViewCell.identifier, for: indexPath) as? TrendCollectionViewCell else { return UICollectionViewCell() }
 
-        cell.configureCell(row: movieManager.movies[indexPath.row])
+        cell.configureCell(row: trends[indexPath.row])
         
         return cell
     }
