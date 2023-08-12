@@ -22,6 +22,7 @@
 		EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */; };
 		EA5A36B02A87D993007ECF41 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EA5A36AF2A87D993007ECF41 /* Kingfisher */; };
 		EA5A36B42A87F7B7007ECF41 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */; };
+		EA5A36B82A88042A007ECF41 /* DetailTrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTrendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
 				EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */,
 				EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */,
+				EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */,
 				EA5A368B2A861C9E007ECF41 /* Main.storyboard */,
 				EA5A368E2A861C9F007ECF41 /* Assets.xcassets */,
 				EA5A36902A861C9F007ECF41 /* LaunchScreen.storyboard */,
@@ -180,6 +183,7 @@
 				EA5A36A62A86AE14007ECF41 /* TrendCollectionViewCell.swift in Sources */,
 				EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */,
 				EA5A36A12A86914B007ECF41 /* APIKey.swift in Sources */,
+				EA5A36B82A88042A007ECF41 /* DetailTrendViewController.swift in Sources */,
 				EA5A369A2A861E13007ECF41 /* TmdbAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

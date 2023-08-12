@@ -52,7 +52,12 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 extension TrendViewController: ButtonTappedDelegate {
     func cellButtonTapped(index: Int) {
-        print("\(index) Button Tapped")
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailTrendViewController.identifier) as? DetailTrendViewController else { return }
+        vc.content = trends[index]
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
