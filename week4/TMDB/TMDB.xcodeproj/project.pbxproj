@@ -21,6 +21,7 @@
 		EA5A36A72A86AE14007ECF41 /* TrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */; };
 		EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */; };
 		EA5A36B02A87D993007ECF41 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EA5A36AF2A87D993007ECF41 /* Kingfisher */; };
+		EA5A36B42A87F7B7007ECF41 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				EA5A36852A861C9E007ECF41 /* AppDelegate.swift */,
 				EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */,
 				EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */,
+				EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */,
 				EA5A369E2A868F40007ECF41 /* Trend.swift */,
 				EA5A36992A861E13007ECF41 /* TmdbAPIManager.swift */,
 				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA5A36B42A87F7B7007ECF41 /* PaddingLabel.swift in Sources */,
 				EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */,
 				EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
