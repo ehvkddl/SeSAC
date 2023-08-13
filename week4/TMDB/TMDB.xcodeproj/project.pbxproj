@@ -65,6 +65,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EA3BE3EE2A8918CF00266342 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		EA3BE3EF2A8918E500266342 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A369E2A868F40007ECF41 /* Trend.swift */,
+				EAADD49A2A88BE42006CB066 /* Credit.swift */,
+				EA5A36A22A869BA3007ECF41 /* Genres.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EA3BE3F02A89190200266342 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A36992A861E13007ECF41 /* TmdbAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EA3BE3F12A8919B300266342 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
+				EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EA3BE3F22A8919CD00266342 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */,
+				EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */,
+				EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */,
+				EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EA3BE3F32A8919ED00266342 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A368B2A861C9E007ECF41 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		EA5A36792A861C9E007ECF41 = {
 			isa = PBXGroup;
 			children = (
@@ -86,18 +140,14 @@
 			children = (
 				EA5A36852A861C9E007ECF41 /* AppDelegate.swift */,
 				EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */,
+				EA5A36B62A880372007ECF41 /* Protocols */,
 				EA5A36B52A880344007ECF41 /* Extensions */,
-				EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */,
-				EA5A369E2A868F40007ECF41 /* Trend.swift */,
-				EAADD49A2A88BE42006CB066 /* Credit.swift */,
-				EA5A36992A861E13007ECF41 /* TmdbAPIManager.swift */,
-				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
-				EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */,
-				EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */,
-				EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */,
-				EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */,
-				EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */,
-				EA5A368B2A861C9E007ECF41 /* Main.storyboard */,
+				EA3BE3EE2A8918CF00266342 /* Classes */,
+				EA3BE3EF2A8918E500266342 /* Models */,
+				EA3BE3F02A89190200266342 /* Network */,
+				EA3BE3F12A8919B300266342 /* ViewControllers */,
+				EA3BE3F22A8919CD00266342 /* Cells */,
+				EA3BE3F32A8919ED00266342 /* Storyboards */,
 				EA5A368E2A861C9F007ECF41 /* Assets.xcassets */,
 				EA5A36902A861C9F007ECF41 /* LaunchScreen.storyboard */,
 				EA5A36932A861C9F007ECF41 /* Info.plist */,

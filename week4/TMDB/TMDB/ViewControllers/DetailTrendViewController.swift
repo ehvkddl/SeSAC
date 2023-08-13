@@ -80,6 +80,7 @@ class DetailTrendViewController: UIViewController {
         castTableView.delegate = self
         castTableView.dataSource = self
         
+        castTableView.isScrollEnabled = false
         castTableView.rowHeight = 75
         
         let nib = UINib(nibName: CastTableViewCell.identifier, bundle: nil)
