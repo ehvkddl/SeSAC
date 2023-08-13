@@ -38,7 +38,7 @@ class DetailTrendViewController: UIViewController {
             self.cast = credit.cast
             self.crew = credit.crew
             
-            print(self.cast)
+            self.castTableView.reloadData()
         }
     }
     
@@ -62,6 +62,7 @@ class DetailTrendViewController: UIViewController {
     func configureView() {
         configureNavigationBar()
         configureOverViewLabel()
+        configureTableView()
         
         setData()
     }
@@ -73,6 +74,16 @@ class DetailTrendViewController: UIViewController {
     
     func configureOverViewLabel() {
         overViewLabel.numberOfLines = 2
+    }
+    
+    func configureTableView() {
+        castTableView.delegate = self
+        castTableView.dataSource = self
+        
+        castTableView.rowHeight = 75
+        
+        let nib = UINib(nibName: CastTableViewCell.identifier, bundle: nil)
+        castTableView.register(nib, forCellReuseIdentifier: CastTableViewCell.identifier)
     }
 
     func setData() {
@@ -103,6 +114,10 @@ extension DetailTrendViewController: UITableViewDelegate, UITableViewDataSource 
         cell.configureCell(row: cast[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
 }
