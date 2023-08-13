@@ -25,6 +25,7 @@
 		EA5A36B82A88042A007ECF41 /* DetailTrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */; };
 		EAADD4982A88BBF6006CB066 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */; };
 		EAADD4992A88BBF6006CB066 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */; };
+		EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAADD49A2A88BE42006CB066 /* Credit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTrendViewController.swift; sourceTree = "<group>"; };
 		EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
+		EAADD49A2A88BE42006CB066 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */,
 				EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */,
 				EA5A369E2A868F40007ECF41 /* Trend.swift */,
+				EAADD49A2A88BE42006CB066 /* Credit.swift */,
 				EA5A36992A861E13007ECF41 /* TmdbAPIManager.swift */,
 				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
 				EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */,
@@ -191,6 +194,7 @@
 			files = (
 				EA5A36B42A87F7B7007ECF41 /* PaddingLabel.swift in Sources */,
 				EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */,
+				EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */,
 				EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
 				EA5A369F2A868F40007ECF41 /* Trend.swift in Sources */,
