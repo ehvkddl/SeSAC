@@ -21,6 +21,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
     @IBOutlet var mediaTypeLabel: UILabel!
     
     @IBOutlet var backdropImageView: UIImageView!
+    @IBOutlet var voteTextLabel: PaddingLabel!
     @IBOutlet var voteAverageLabel: PaddingLabel!
     
     @IBOutlet var titleLabel: UILabel!
@@ -29,7 +30,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
     @IBOutlet var moreDetailButton: UIButton!
     
     weak var delegate: ButtonTappedDelegate?
-    var index: Int = 0
+    var index: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,11 +38,13 @@ class TrendCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func moreDetailButtonClicked(_ sender: UIButton) {
-        delegate?.cellButtonTapped(index: index)
+        guard let idx = index else { return }
+        delegate?.cellButtonTapped(index: idx)
     }
     
     func configureCell(row: Trend) {
         configureImage()
+        configureVoteLabel()
         configureButton()
         configureShadow()
         
@@ -63,6 +66,11 @@ class TrendCollectionViewCell: UICollectionViewCell {
         
         backdropImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         backdropImageView.layer.cornerRadius = 10
+    }
+    
+    func configureVoteLabel() {
+        voteTextLabel.padding = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        voteAverageLabel.padding = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     }
     
     func configureButton() {

@@ -82,10 +82,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s80-pg-UbA">
-                                <rect key="frame" x="17.999999999999996" y="98.333333333333343" width="60.666666666666657" height="25"/>
+                                <rect key="frame" x="17.999999999999996" y="106.33333333333334" width="44.666666666666657" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Isn-I4-j4D" customClass="PaddingLabel" customModule="TMDB" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="32.333333333333336" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="24.333333333333332" height="17"/>
                                         <color key="backgroundColor" red="0.34509804840000002" green="0.33725491169999999" blue="0.81176471709999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,7 +106,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-xe-oZy" customClass="PaddingLabel" customModule="TMDB" customModuleProvider="target">
-                                        <rect key="frame" x="32.333333333333329" y="0.0" width="28.333333333333329" height="25"/>
+                                        <rect key="frame" x="24.333333333333336" y="0.0" width="20.333333333333336" height="17"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -184,19 +184,12 @@
                 <outlet property="overviewLabel" destination="h93-mh-kbR" id="i3e-Qm-fFk"/>
                 <outlet property="releaseDateLabel" destination="10M-ba-eYi" id="Btz-54-5Jd"/>
                 <outlet property="titleLabel" destination="mNv-VA-qbp" id="8jF-Mx-zjy"/>
-                <outlet property="voteAverageLabel" destination="tfA-xe-oZy" id="VOF-uY-nIb"/>
+                <outlet property="voteAverageLabel" destination="tfA-xe-oZy" id="Qai-Rv-rYW"/>
+                <outlet property="voteTextLabel" destination="Isn-I4-j4D" id="248-vy-gUT"/>
             </connections>
             <point key="canvasLocation" x="329.00763358778624" y="83.450704225352112"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="Isn-I4-j4D">
-            <size key="intrinsicContentSize" width="32.333333333333329" height="25"/>
-        </designable>
-        <designable name="tfA-xe-oZy">
-            <size key="intrinsicContentSize" width="28.333333333333332" height="25"/>
-        </designable>
-    </designables>
     <resources>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
         <systemColor name="systemBackgroundColor">
