@@ -17,6 +17,7 @@
 		EA5A369D2A868CD5007ECF41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EA5A369C2A868CD5007ECF41 /* Alamofire */; };
 		EA5A369F2A868F40007ECF41 /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A369E2A868F40007ECF41 /* Trend.swift */; };
 		EA5A36A12A86914B007ECF41 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A02A86914B007ECF41 /* APIKey.swift */; };
+		EA5A36A32A869BA3007ECF41 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A22A869BA3007ECF41 /* Genres.swift */; };
 		EA5A36A62A86AE14007ECF41 /* TrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */; };
 		EA5A36A72A86AE14007ECF41 /* TrendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */; };
 		EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */; };
@@ -41,6 +42,7 @@
 		EA5A36992A861E13007ECF41 /* TmdbAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbAPIManager.swift; sourceTree = "<group>"; };
 		EA5A369E2A868F40007ECF41 /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
 		EA5A36A02A86914B007ECF41 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EA5A36A22A869BA3007ECF41 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */,
 				EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
+				EA5A36A32A869BA3007ECF41 /* Genres.swift in Sources */,
 				EA5A369F2A868F40007ECF41 /* Trend.swift in Sources */,
 				EA5A36A62A86AE14007ECF41 /* TrendCollectionViewCell.swift in Sources */,
 				EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */,
