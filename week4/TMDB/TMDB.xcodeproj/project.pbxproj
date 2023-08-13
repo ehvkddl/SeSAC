@@ -78,7 +78,6 @@
 			children = (
 				EA5A36852A861C9E007ECF41 /* AppDelegate.swift */,
 				EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */,
-				EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */,
 				EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */,
 				EA5A369E2A868F40007ECF41 /* Trend.swift */,
 				EA5A36992A861E13007ECF41 /* TmdbAPIManager.swift */,
@@ -93,6 +92,14 @@
 				EA5A36A02A86914B007ECF41 /* APIKey.swift */,
 			);
 			path = TMDB;
+			sourceTree = "<group>";
+		};
+		EA5A36B62A880372007ECF41 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A36A82A86AE78007ECF41 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
