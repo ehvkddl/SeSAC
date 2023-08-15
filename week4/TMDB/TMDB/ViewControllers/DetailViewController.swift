@@ -120,6 +120,7 @@ extension DetailViewController {
     func configureView() {
         configureNavigationBar()
         configureTableView()
+        configureTableViewHeader()
         
         setData()
     }
@@ -134,7 +135,6 @@ extension DetailViewController {
         movieInfoTableView.dataSource = self
         
         movieInfoTableView.rowHeight = UITableView.automaticDimension
-//        movieInfoTableView.estimatedRowHeight = 130
         
         let overviewCellNib = UINib(nibName: OverviewTableViewCell.identifier, bundle: nil)
         movieInfoTableView.register(overviewCellNib, forCellReuseIdentifier: OverviewTableViewCell.identifier)
