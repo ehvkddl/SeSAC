@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#Mystery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w4I-VM-YTr">
-                        <rect key="frame" x="20" y="31" width="74" height="30"/>
+                        <rect key="frame" x="20" y="31" width="211" height="30"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -152,25 +152,27 @@
                             <constraint firstItem="jem-Ie-dQE" firstAttribute="leading" secondItem="mNv-VA-qbp" secondAttribute="leading" id="uqG-Kx-yV5"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVG-og-0Wg">
-                        <rect key="frame" x="224.66666666666666" y="31" width="46.333333333333343" height="30"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popcorn" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RiN-fy-xzT">
+                        <rect key="frame" x="241" y="29.999999999999996" width="30" height="32.666666666666657"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="RiN-fy-xzT" secondAttribute="height" multiplier="1:1" id="dFX-SV-zM9"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="yRN-Jq-FOt" secondAttribute="bottom" constant="16" id="1XN-NU-eO6"/>
                 <constraint firstItem="w4I-VM-YTr" firstAttribute="leading" secondItem="10M-ba-eYi" secondAttribute="leading" id="2iQ-oN-tCt"/>
+                <constraint firstItem="RiN-fy-xzT" firstAttribute="leading" secondItem="w4I-VM-YTr" secondAttribute="trailing" constant="10" id="47O-Ch-DCD"/>
                 <constraint firstItem="w4I-VM-YTr" firstAttribute="top" secondItem="10M-ba-eYi" secondAttribute="bottom" id="9vV-1a-qnq"/>
+                <constraint firstItem="RiN-fy-xzT" firstAttribute="trailing" secondItem="bIL-yI-4OW" secondAttribute="trailing" id="Ab1-zU-qel"/>
+                <constraint firstItem="RiN-fy-xzT" firstAttribute="bottom" secondItem="w4I-VM-YTr" secondAttribute="bottom" id="G1j-Ly-nK9"/>
                 <constraint firstItem="10M-ba-eYi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Hh2-JQ-NND"/>
-                <constraint firstItem="wVG-og-0Wg" firstAttribute="bottom" secondItem="w4I-VM-YTr" secondAttribute="bottom" id="JaN-mc-cga"/>
+                <constraint firstItem="RiN-fy-xzT" firstAttribute="top" secondItem="w4I-VM-YTr" secondAttribute="top" id="TQu-aU-1BO"/>
                 <constraint firstItem="10M-ba-eYi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="U3U-Wd-3t5"/>
-                <constraint firstItem="wVG-og-0Wg" firstAttribute="top" secondItem="w4I-VM-YTr" secondAttribute="top" id="WqL-Nc-dr6"/>
                 <constraint firstItem="yRN-Jq-FOt" firstAttribute="leading" secondItem="10M-ba-eYi" secondAttribute="leading" id="ZE9-LP-FIB"/>
-                <constraint firstItem="wVG-og-0Wg" firstAttribute="trailing" secondItem="bIL-yI-4OW" secondAttribute="trailing" id="cl3-MZ-HiU"/>
                 <constraint firstItem="yRN-Jq-FOt" firstAttribute="top" secondItem="w4I-VM-YTr" secondAttribute="bottom" constant="7" id="mDB-sM-Tfr"/>
                 <constraint firstAttribute="trailing" secondItem="yRN-Jq-FOt" secondAttribute="trailing" constant="20" id="vhn-1t-kPR"/>
             </constraints>
@@ -179,7 +181,7 @@
                 <outlet property="backdropImageView" destination="bIL-yI-4OW" id="X4b-vQ-0P5"/>
                 <outlet property="contentsView" destination="yRN-Jq-FOt" id="E6F-R9-Qgz"/>
                 <outlet property="genreLabel" destination="w4I-VM-YTr" id="H73-zg-KPg"/>
-                <outlet property="mediaTypeLabel" destination="wVG-og-0Wg" id="goM-zQ-HrH"/>
+                <outlet property="mediaTypeImageView" destination="RiN-fy-xzT" id="HqD-dw-pRc"/>
                 <outlet property="moreDetailButton" destination="jem-Ie-dQE" id="CIO-1l-HJY"/>
                 <outlet property="overviewLabel" destination="h93-mh-kbR" id="i3e-Qm-fFk"/>
                 <outlet property="releaseDateLabel" destination="10M-ba-eYi" id="Btz-54-5Jd"/>
@@ -192,6 +194,7 @@
     </objects>
     <resources>
         <image name="chevron.forward" catalog="system" width="97" height="128"/>
+        <image name="popcorn" catalog="system" width="102" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

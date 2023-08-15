@@ -18,7 +18,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var releaseDateLabel: UILabel!
     @IBOutlet var genreLabel: UILabel!
-    @IBOutlet var mediaTypeLabel: UILabel!
+    @IBOutlet var mediaTypeImageView: UIImageView!
     
     @IBOutlet var backdropImageView: UIImageView!
     @IBOutlet var voteTextLabel: PaddingLabel!
@@ -50,10 +50,11 @@ class TrendCollectionViewCell: UICollectionViewCell {
         
         releaseDateLabel.text = row.releaseDate
         
-        guard let genres = row.genreTexts else { return }
-        genreLabel.text = genres.map { "#\($0)" }.joined(separator: " ")
+        let genreTexts = row.genreIDS.map { GenreManager.shared.convertText(with: $0) }
+        genreLabel.text = genreTexts.map { "#\($0)" }.joined(separator: " ")
         
-        mediaTypeLabel.text = row.mediaType.rawValue
+        let image = row.mediaType == .movie ? UIImage(systemName: "popcorn") : UIImage(systemName: "tv")
+        mediaTypeImageView.image = image
         
         let url = URL(string: URL.imageURL + row.backdropPath)
         backdropImageView.kf.setImage(with: url)

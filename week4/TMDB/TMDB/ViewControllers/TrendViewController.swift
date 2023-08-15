@@ -19,32 +19,16 @@ class TrendViewController: UIViewController {
         
         configureView()
         
-        TmdbAPIManager.shared.fetchTrend(completionHandler: { trend in
-            self.trends = trend.results
-            
+        DispatchQueue.global().sync {
             TmdbAPIManager.shared.fetchGenres { genres in
-                let _ = genres.map { self.genreDict[$0.id] = $0.name }
-                self.setGenresTexts()
+                let _ = genres.map { GenreManager.shared.updateGenreDict(id: $0.id, name: $0.name) }
             }
-            
-            self.trendCollectionView.reloadData()
-        })
-    }
-    
-    func convertGenresText(of ids: [Int]) -> [String] {
-        var texts: [String] = []
-        
-        let _ = ids.map {
-            guard let text = genreDict[$0] else { return }
-            texts.append(text)
         }
         
-        return texts
-    }
-    
-    func setGenresTexts() {
-        for i in 0..<trends.count {
-            trends[i].genreTexts = convertGenresText(of: trends[i].genreIDS)
+        TmdbAPIManager.shared.fetchTrend { trend in
+            self.trends = trend.results
+            
+            self.trendCollectionView.reloadData()
         }
     }
 
