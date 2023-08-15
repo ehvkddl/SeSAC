@@ -52,7 +52,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
         genreLabel.text = row.genreIDS.map { "#\(String($0))" }.joined(separator: " ")
         mediaTypeLabel.text = row.mediaType.rawValue
         
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(row.backdropPath)")
+        let url = URL(string: URL.imageURL + row.backdropPath)
         backdropImageView.kf.setImage(with: url)
         
         voteAverageLabel.text = String(row.voteAverage)

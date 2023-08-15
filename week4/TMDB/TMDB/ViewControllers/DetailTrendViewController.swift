@@ -90,12 +90,12 @@ class DetailTrendViewController: UIViewController {
     func setData() {
         guard let content = self.content else { return }
         
-        let backdrop = URL(string: "https://image.tmdb.org/t/p/w500/" + content.backdropPath)
+        let backdrop = URL(string: URL.imageURL + content.backdropPath)
         backdropImageView.kf.setImage(with: backdrop)
         
         titleLabel.text = content.title != nil ? content.title : content.name
         
-        let poster = URL(string: "https://image.tmdb.org/t/p/w500/" + content.posterPath)
+        let poster = URL(string: URL.imageURL + content.posterPath)
         posterImageView.kf.setImage(with: poster)
         
         overViewLabel.text = content.overview

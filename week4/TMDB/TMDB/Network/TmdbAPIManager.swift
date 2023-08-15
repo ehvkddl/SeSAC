@@ -12,12 +12,20 @@ class TmdbAPIManager {
     static let shared = TmdbAPIManager()
     private init() {}
     
+    let headers: HTTPHeaders = [
+        "accept": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MmFhNTI3ZWZkYjIwZWI5OTlkY2VjMWJmYWE4NWM5NiIsInN1YiI6IjY0ZDEzNzBkZDhkMzI5MDExZTc0YmE0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.b02Ozt3Zntfjrhbw1uoEN-VJtaSF9zPxTkAG9gBIV78"
+    ]
+    
+    let language = URLQueryItem(name: "language", value: "en")
+    let apiKey = URLQueryItem(name: "api_key", value: "\(APIKey.tmdbKey)")
+    
     func fetchTrend(completionHandler: @escaping (TreandResponse) -> Void) {
-        let url = "https://api.themoviedb.org/3/trending/all/day?language=en-US&api_key=\(APIKey.tmdbKey)"
-        let headers: HTTPHeaders = [
-            "accept": "application/json"
-        ]
+        var components = URLComponents(string: Endpoint.trending.requestURL)
+        components?.queryItems = [language, apiKey]
         
+        guard let url = components?.string else { return }
+
         AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
@@ -36,11 +44,10 @@ class TmdbAPIManager {
     }
     
     func fetchCredit(movieID: Int, completionHandler: @escaping (Credit) -> Void) {
-        let url = "https://api.themoviedb.org/3/movie/\(movieID)/credits?language=en-US&api_key=\(APIKey.tmdbKey)"
-        let headers: HTTPHeaders = [
-            "accept": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MmFhNTI3ZWZkYjIwZWI5OTlkY2VjMWJmYWE4NWM5NiIsInN1YiI6IjY0ZDEzNzBkZDhkMzI5MDExZTc0YmE0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.b02Ozt3Zntfjrhbw1uoEN-VJtaSF9zPxTkAG9gBIV78"
-        ]
+        var components = URLComponents(string: Endpoint.movie(movieID: movieID).requestURL)
+        components?.queryItems = [language, apiKey]
+        
+        guard let url = components?.string else { return }
         
         AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
             switch response.result {
@@ -60,11 +67,10 @@ class TmdbAPIManager {
     }
     
     func fetchGenres(completionHandler: @escaping ([Genre]) -> Void) {
-        let url = "https://api.themoviedb.org/3/genre/movie/list?language=en&api_key=\(APIKey.tmdbKey)"
-        let headers: HTTPHeaders = [
-          "accept": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MmFhNTI3ZWZkYjIwZWI5OTlkY2VjMWJmYWE4NWM5NiIsInN1YiI6IjY0ZDEzNzBkZDhkMzI5MDExZTc0YmE0ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.b02Ozt3Zntfjrhbw1uoEN-VJtaSF9zPxTkAG9gBIV78"
-        ]
+        var components = URLComponents(string: Endpoint.genre.requestURL)
+        components?.queryItems = [language, apiKey]
+        
+        guard let url = components?.string else { return }
         
         AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
             switch response.result {

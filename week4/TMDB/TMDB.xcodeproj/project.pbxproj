@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BE3F42A89464E00266342 /* Endpoint.swift */; };
 		EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36852A861C9E007ECF41 /* AppDelegate.swift */; };
 		EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */; };
 		EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36892A861C9E007ECF41 /* TrendViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA3BE3F42A89464E00266342 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EA5A36822A861C9E007ECF41 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5A36852A861C9E007ECF41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		EA3BE3F02A89190200266342 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				EA3BE3F42A89464E00266342 /* Endpoint.swift */,
 				EA5A36992A861E13007ECF41 /* TmdbAPIManager.swift */,
 			);
 			path = Network;
@@ -259,6 +262,7 @@
 				EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */,
 				EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */,
 				EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */,
+				EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
 				EA5A36A32A869BA3007ECF41 /* Genres.swift in Sources */,
 				EA5A369F2A868F40007ECF41 /* Trend.swift in Sources */,
