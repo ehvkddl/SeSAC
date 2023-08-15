@@ -49,7 +49,10 @@ class TrendCollectionViewCell: UICollectionViewCell {
         configureShadow()
         
         releaseDateLabel.text = row.releaseDate
-        genreLabel.text = row.genreIDS.map { "#\(String($0))" }.joined(separator: " ")
+        
+        guard let genres = row.genreTexts else { return }
+        genreLabel.text = genres.map { "#\($0)" }.joined(separator: " ")
+        
         mediaTypeLabel.text = row.mediaType.rawValue
         
         let url = URL(string: URL.imageURL + row.backdropPath)

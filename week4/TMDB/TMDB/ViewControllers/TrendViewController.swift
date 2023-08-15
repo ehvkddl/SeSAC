@@ -12,6 +12,7 @@ class TrendViewController: UIViewController {
     @IBOutlet var trendCollectionView: UICollectionView!
     
     var trends: [Trend] = []
+    var genreDict: [Int: String] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +21,31 @@ class TrendViewController: UIViewController {
         
         TmdbAPIManager.shared.fetchTrend(completionHandler: { trend in
             self.trends = trend.results
+            
+            TmdbAPIManager.shared.fetchGenres { genres in
+                let _ = genres.map { self.genreDict[$0.id] = $0.name }
+                self.setGenresTexts()
+            }
+            
             self.trendCollectionView.reloadData()
         })
+    }
+    
+    func convertGenresText(of ids: [Int]) -> [String] {
+        var texts: [String] = []
+        
+        let _ = ids.map {
+            guard let text = genreDict[$0] else { return }
+            texts.append(text)
+        }
+        
+        return texts
+    }
+    
+    func setGenresTexts() {
+        for i in 0..<trends.count {
+            trends[i].genreTexts = convertGenresText(of: trends[i].genreIDS)
+        }
     }
 
 }

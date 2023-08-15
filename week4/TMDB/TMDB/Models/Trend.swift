@@ -31,6 +31,7 @@ struct Trend: Codable {
     let overview, posterPath: String
     let mediaType: MediaType
     let genreIDS: [Int]
+    var genreTexts: [String]?
     let popularity: Double
     let releaseDate: String?
     let video: Bool?
@@ -49,6 +50,7 @@ struct Trend: Codable {
         case posterPath = "poster_path"
         case mediaType = "media_type"
         case genreIDS = "genre_ids"
+        case genreTexts
         case popularity
         case releaseDate = "release_date"
         case video
