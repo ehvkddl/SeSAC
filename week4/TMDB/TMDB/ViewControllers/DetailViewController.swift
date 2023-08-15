@@ -49,6 +49,8 @@ class DetailViewController: UIViewController {
         TmdbAPIManager.shared.fetchCredit(movieID: content.id) { credit in
             self.cast = credit.cast
             self.crew = credit.crew
+            
+            self.movieInfoTableView.reloadData()
         }
     }
     
@@ -61,10 +63,15 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return ContentInfo.allCases.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 1
-        case 1: return 10
+        case 1: return cast.count
+        case 2: return crew.count
         default: return 0
         }
     }
@@ -84,23 +91,34 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             
             return cell
         case 1:
-            let cell = UITableViewCell()
-            cell.backgroundColor = .red
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else { return UITableViewCell() }
+            
+            cell.configureCell(row: cast[indexPath.row])
+            
+            return cell
+        case 2:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: CastTableViewCell.identifier) as? CastTableViewCell else { return UITableViewCell() }
+            
+            cell.configureCell(row: crew[indexPath.row])
+            
             return cell
         default: return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        isExpand.toggle()
+        if indexPath.section == 0 {
+            isExpand.toggle()
+        }
         tableView.reloadRows(at: [indexPath], with: .none)
     }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return UITableView.automaticDimension
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0: return UITableView.automaticDimension
+        case 1, 2: return 90
+        default: return 0
         }
-        return 0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -136,11 +154,12 @@ extension DetailViewController {
     func configureTableView() {
         movieInfoTableView.delegate = self
         movieInfoTableView.dataSource = self
-        
-        movieInfoTableView.rowHeight = UITableView.automaticDimension
-        
+
         let overviewCellNib = UINib(nibName: OverviewTableViewCell.identifier, bundle: nil)
         movieInfoTableView.register(overviewCellNib, forCellReuseIdentifier: OverviewTableViewCell.identifier)
+        
+        let CastCellnib = UINib(nibName: CastTableViewCell.identifier, bundle: nil)
+        movieInfoTableView.register(CastCellnib, forCellReuseIdentifier: CastTableViewCell.identifier)
     }
     
     func configureTableViewHeader() {

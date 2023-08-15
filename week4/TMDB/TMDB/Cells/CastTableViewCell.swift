@@ -26,6 +26,8 @@ class CastTableViewCell: UITableViewCell {
         } else {
             profileImageView.image = UIImage(named: "blankProfile")
         }
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.layer.cornerRadius = 10
         
         nameLabel.text = row.name
         characterLabel.text = row.character
