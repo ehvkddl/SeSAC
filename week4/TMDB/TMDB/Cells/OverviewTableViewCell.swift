@@ -19,30 +19,27 @@ class OverviewTableViewCell: UITableViewCell {
     weak var delegate: moreOverviewButtonTappedDelegate?
     var indexPath: IndexPath?
     
-    var isDetailed: Bool = false
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     @IBAction func moreOverviewButtonTapped(_ sender: UIButton) {
-        isDetailed.toggle()
-        
-        if isDetailed {
+        guard let idxPath = indexPath else { return }
+        delegate?.buttonTapped(index: idxPath)
+    }
+    
+    func configureCell(overview: String) {
+        overviewLabel.text = overview
+    }
+    
+    func expandCell(isExpand: Bool) {
+        if isExpand {
             overviewLabel.numberOfLines = 0
             overviewButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
         } else {
             overviewLabel.numberOfLines = 2
             overviewButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
         }
-        
-        guard let idxPath = indexPath else { return }
-        delegate?.buttonTapped(index: idxPath)
-    }
-    
-    func configureCell(overview: String) {
-        overviewLabel.numberOfLines = 2
-        overviewLabel.text = overview
     }
     
 }

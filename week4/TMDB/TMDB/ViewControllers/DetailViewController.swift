@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
     var cast: [Cast] = []
     var crew: [Cast] = []
     
-    var isDetailed: Bool = false
+    var isExpand: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +77,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             if let content = self.content {
                 cell.configureCell(overview: content.overview)
             }
+            cell.expandCell(isExpand: isExpand)
             
             cell.delegate = self
             cell.indexPath = indexPath
@@ -91,6 +92,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        isExpand.toggle()
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
@@ -110,6 +112,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
 extension DetailViewController: moreOverviewButtonTappedDelegate {
 
     func buttonTapped(index: IndexPath) {
+        isExpand.toggle()
         movieInfoTableView.reloadRows(at: [index], with: .none)
     }
 

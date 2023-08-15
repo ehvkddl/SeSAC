@@ -31,7 +31,7 @@
                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="17"/>
                         </buttonConfiguration>
                         <connections>
-                            <action selector="moreOverviewButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="28Q-W1-KKo"/>
+                            <action selector="moreOverviewButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="iYZ-2Y-UXz"/>
                         </connections>
                     </button>
                 </subviews>
