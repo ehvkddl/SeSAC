@@ -78,6 +78,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.configureCell(overview: content.overview)
             }
             
+            cell.delegate = self
+            cell.indexPath = indexPath
+            
             return cell
         case 1:
             let cell = UITableViewCell()
@@ -104,6 +107,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension DetailViewController: moreOverviewButtonTappedDelegate {
+
+    func buttonTapped(index: IndexPath) {
+        movieInfoTableView.reloadRows(at: [index], with: .none)
+    }
+
+}
+
 extension DetailViewController {
     
     func configureView() {
@@ -123,7 +134,7 @@ extension DetailViewController {
         movieInfoTableView.dataSource = self
         
         movieInfoTableView.rowHeight = UITableView.automaticDimension
-        movieInfoTableView.estimatedRowHeight = 130
+//        movieInfoTableView.estimatedRowHeight = 130
         
         let overviewCellNib = UINib(nibName: OverviewTableViewCell.identifier, bundle: nil)
         movieInfoTableView.register(overviewCellNib, forCellReuseIdentifier: OverviewTableViewCell.identifier)

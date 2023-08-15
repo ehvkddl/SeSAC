@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol moreOverviewButtonTappedDelegate: AnyObject {
+    func buttonTapped(index: IndexPath)
+}
+
 class OverviewTableViewCell: UITableViewCell {
 
     @IBOutlet var overviewLabel: UILabel!
     @IBOutlet var overviewButton: UIButton!
+    
+    weak var delegate: moreOverviewButtonTappedDelegate?
+    var indexPath: IndexPath?
     
     var isDetailed: Bool = false
     
@@ -18,7 +25,7 @@ class OverviewTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    @IBAction func moreOverViewButtonTapped(_ sender: UIButton) {
+    @IBAction func moreOverviewButtonTapped(_ sender: UIButton) {
         isDetailed.toggle()
         
         if isDetailed {
@@ -28,6 +35,9 @@ class OverviewTableViewCell: UITableViewCell {
             overviewLabel.numberOfLines = 2
             overviewButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
         }
+        
+        guard let idxPath = indexPath else { return }
+        delegate?.buttonTapped(index: idxPath)
     }
     
     func configureCell(overview: String) {
