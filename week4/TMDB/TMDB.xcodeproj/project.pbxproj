@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BE3F42A89464E00266342 /* Endpoint.swift */; };
+		EA3BE3F92A8BD6B400266342 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BE3F82A8BD6B400266342 /* DetailViewController.swift */; };
+		EA3BE3FC2A8BE06F00266342 /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */; };
+		EA3BE3FD2A8BE06F00266342 /* OverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */; };
 		EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36852A861C9E007ECF41 /* AppDelegate.swift */; };
 		EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */; };
 		EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36892A861C9E007ECF41 /* TrendViewController.swift */; };
@@ -33,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		EA3BE3F42A89464E00266342 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		EA3BE3F82A8BD6B400266342 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
+		EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTableViewCell.xib; sourceTree = "<group>"; };
 		EA5A36822A861C9E007ECF41 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5A36852A861C9E007ECF41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,7 @@
 			children = (
 				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
 				EA5A36B72A88042A007ECF41 /* DetailTrendViewController.swift */,
+				EA3BE3F82A8BD6B400266342 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -110,6 +117,8 @@
 			children = (
 				EA5A36A42A86AE14007ECF41 /* TrendCollectionViewCell.swift */,
 				EA5A36A52A86AE14007ECF41 /* TrendCollectionViewCell.xib */,
+				EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */,
+				EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */,
 				EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */,
 				EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */,
 			);
@@ -245,6 +254,7 @@
 			files = (
 				EA5A36A72A86AE14007ECF41 /* TrendCollectionViewCell.xib in Resources */,
 				EA5A36922A861C9F007ECF41 /* LaunchScreen.storyboard in Resources */,
+				EA3BE3FD2A8BE06F00266342 /* OverviewTableViewCell.xib in Resources */,
 				EAADD4992A88BBF6006CB066 /* CastTableViewCell.xib in Resources */,
 				EA5A368F2A861C9F007ECF41 /* Assets.xcassets in Resources */,
 				EA5A368D2A861C9E007ECF41 /* Main.storyboard in Resources */,
@@ -265,7 +275,9 @@
 				EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
 				EA5A36A32A869BA3007ECF41 /* Genres.swift in Sources */,
+				EA3BE3F92A8BD6B400266342 /* DetailViewController.swift in Sources */,
 				EA5A369F2A868F40007ECF41 /* Trend.swift in Sources */,
+				EA3BE3FC2A8BE06F00266342 /* OverviewTableViewCell.swift in Sources */,
 				EA5A36A62A86AE14007ECF41 /* TrendCollectionViewCell.swift in Sources */,
 				EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */,
 				EA5A36B22A87E054007ECF41 /* URL+.swift in Sources */,
