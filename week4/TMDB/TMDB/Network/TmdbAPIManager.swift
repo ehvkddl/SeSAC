@@ -77,4 +77,21 @@ class TmdbAPIManager {
         }
     }
     
+    func fetchRecommendations(type: MediaType, id: Int) {
+        var components = URLComponents(string: Endpoint.recommend(type: type, id: id).requestURL)
+        components?.queryItems = [language, apiKey]
+
+        guard let url = components?.string else { return }
+        
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: RecommendData.self) { response in
+                switch response.result {
+                case .success(let value):
+                    print(value)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
 }
