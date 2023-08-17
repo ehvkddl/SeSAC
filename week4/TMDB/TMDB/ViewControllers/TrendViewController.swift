@@ -11,7 +11,7 @@ class TrendViewController: UIViewController {
 
     @IBOutlet var trendCollectionView: UICollectionView!
     
-    var trends: [Trend] = []
+    var trends: [VideoInfo] = []
     var genreDict: [Int: String] = [:]
     
     override func viewDidLoad() {

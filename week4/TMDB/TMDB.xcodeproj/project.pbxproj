@@ -11,6 +11,7 @@
 		EA3BE3F92A8BD6B400266342 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BE3F82A8BD6B400266342 /* DetailViewController.swift */; };
 		EA3BE3FC2A8BE06F00266342 /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */; };
 		EA3BE3FD2A8BE06F00266342 /* OverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */; };
+		EA5283C92A8E79BF00B0FB4B /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5283C82A8E79BF00B0FB4B /* Recommend.swift */; };
 		EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36852A861C9E007ECF41 /* AppDelegate.swift */; };
 		EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */; };
 		EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36892A861C9E007ECF41 /* TrendViewController.swift */; };
@@ -39,6 +40,7 @@
 		EA3BE3F82A8BD6B400266342 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
 		EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTableViewCell.xib; sourceTree = "<group>"; };
+		EA5283C82A8E79BF00B0FB4B /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
 		EA5A36822A861C9E007ECF41 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5A36852A861C9E007ECF41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				EA5A369E2A868F40007ECF41 /* Trend.swift */,
 				EAADD49A2A88BE42006CB066 /* Credit.swift */,
 				EA5A36A22A869BA3007ECF41 /* Genres.swift */,
+				EA5283C82A8E79BF00B0FB4B /* Recommend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				EA5A36B42A87F7B7007ECF41 /* PaddingLabel.swift in Sources */,
 				EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */,
+				EA5283C92A8E79BF00B0FB4B /* Recommend.swift in Sources */,
 				EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */,
 				EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */,
 				EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */,

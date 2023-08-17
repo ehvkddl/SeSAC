@@ -7,10 +7,10 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - TreandResponse
 struct TreandResponse: Codable {
     let page: Int
-    let results: [Trend]
+    let results: [VideoInfo]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -20,15 +20,16 @@ struct TreandResponse: Codable {
     }
 }
 
-// MARK: - Result
-struct Trend: Codable {
+// MARK: - VideoInfo
+struct VideoInfo: Codable {
     let adult: Bool
-    let backdropPath: String
+    let backdropPath: String?
     let id: Int
     let title: String?
     let originalLanguage: String
     let originalTitle: String?
-    let overview, posterPath: String
+    let overview: String
+    let posterPath: String?
     let mediaType: MediaType
     let genreIDS: [Int]
     let popularity: Double

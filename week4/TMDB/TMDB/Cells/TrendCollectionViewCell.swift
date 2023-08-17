@@ -42,7 +42,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
         delegate?.cellButtonTapped(index: idx)
     }
     
-    func configureCell(row: Trend) {
+    func configureCell(row: VideoInfo) {
         configureImage()
         configureVoteLabel()
         configureButton()
@@ -56,8 +56,10 @@ class TrendCollectionViewCell: UICollectionViewCell {
         let image = row.mediaType == .movie ? UIImage(systemName: "popcorn") : UIImage(systemName: "tv")
         mediaTypeImageView.image = image
         
-        let url = URL(string: URL.imageURL + row.backdropPath)
-        backdropImageView.kf.setImage(with: url)
+        if let backdrop = row.backdropPath {
+            let path = URL(string: URL.imageURL + backdrop)
+            backdropImageView.kf.setImage(with: path)
+        }
         
         voteAverageLabel.text = String(row.voteAverage)
         

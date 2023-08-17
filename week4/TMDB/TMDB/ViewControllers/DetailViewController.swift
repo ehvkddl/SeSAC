@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
     
-    var content: Trend?
+    var content: VideoInfo?
     
     var cast: [Cast] = []
     var crew: [Cast] = []
@@ -45,6 +45,8 @@ class DetailViewController: UIViewController {
         configureView()
         
         guard let content = self.content else { return }
+        
+        TmdbAPIManager.shared.fetchRecommendations(type: content.mediaType, id: content.id)
         
         TmdbAPIManager.shared.fetchCredit(movieID: content.id) { credit in
             self.cast = credit.cast
@@ -169,13 +171,17 @@ extension DetailViewController {
     func setData() {
         guard let content = self.content else { return }
         
-        let backdrop = URL(string: URL.imageURL + content.backdropPath)
-        backdropImageView.kf.setImage(with: backdrop)
+        if let backdrop = content.backdropPath {
+            let path = URL(string: URL.imageURL + backdrop)
+            backdropImageView.kf.setImage(with: path)
+        }
         
         titleLabel.text = content.title != nil ? content.title : content.name
         
-        let poster = URL(string: URL.imageURL + content.posterPath)
-        posterImageView.kf.setImage(with: poster)
+        if let poster = content.posterPath {
+            let path = URL(string: URL.imageURL + poster)
+            posterImageView.kf.setImage(with: path)
+        }
     }
     
 }
