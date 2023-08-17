@@ -19,16 +19,14 @@ class TrendViewController: UIViewController {
         
         configureView()
         
-        DispatchQueue.global().sync {
-            TmdbAPIManager.shared.fetchGenres { genres in
-                let _ = genres.map { GenreManager.shared.updateGenreDict(id: $0.id, name: $0.name) }
-            }
-        }
-        
-        TmdbAPIManager.shared.fetchTrend { trend in
-            self.trends = trend.results
+        TmdbAPIManager.shared.fetchGenres { genres in
+            let _ = genres.map { GenreManager.shared.updateGenreDict(id: $0.id, name: $0.name) }
             
-            self.trendCollectionView.reloadData()
+            TmdbAPIManager.shared.fetchTrend { trend in
+                self.trends = trend.results
+                
+                self.trendCollectionView.reloadData()
+            }
         }
     }
 
