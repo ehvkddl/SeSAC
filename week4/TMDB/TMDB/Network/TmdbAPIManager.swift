@@ -25,18 +25,14 @@ class TmdbAPIManager {
         components?.queryItems = [language, apiKey]
         
         guard let url = components?.string else { return }
-
-        AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
+        
+        AF.request(url, method: .get, headers: headers).validate()
+            .responseDecodable(of: TreandResponse.self) { response in
             switch response.result {
             case .success(let value):
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: value)
-                    let decodedData = try JSONDecoder().decode(TreandResponse.self, from: data)
-                    
-                    completionHandler(decodedData)
-                } catch {
-                    print("[decode fail]", error.localizedDescription)
-                }
+                
+                completionHandler(value)
+                
             case .failure(let error):
                 print("ERROR", error)
             }
@@ -49,17 +45,13 @@ class TmdbAPIManager {
         
         guard let url = components?.string else { return }
         
-        AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
+        AF.request(url, method: .get, headers: headers).validate()
+            .responseDecodable(of: Credit.self) { response in
             switch response.result {
             case .success(let value):
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: value)
-                    let decodedData = try JSONDecoder().decode(Credit.self, from: data)
                     
-                    completionHandler(decodedData)
-                } catch {
-                    print("[decode fail]", error.localizedDescription)
-                }
+                completionHandler(value)
+                
             case .failure(let error):
                 print("ERROR", error)
             }
@@ -72,17 +64,13 @@ class TmdbAPIManager {
         
         guard let url = components?.string else { return }
         
-        AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
+        AF.request(url, method: .get, headers: headers).validate()
+            .responseDecodable(of: Genres.self) { response in
             switch response.result {
             case .success(let value):
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: value)
-                    let decodedData = try JSONDecoder().decode(Genres.self, from: data)
                     
-                    completionHandler(decodedData.genres)
-                } catch {
-                    print(error.localizedDescription)
-                }
+                completionHandler(value.genres)
+                    
             case .failure(let error):
                 print(error)
             }
