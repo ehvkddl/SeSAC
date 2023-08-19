@@ -56,7 +56,9 @@ extension TrendViewController: ButtonTappedDelegate {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         
         guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
-        vc.content = trends[index]
+        
+        vc.type = trends[index].mediaType
+        vc.id = trends[index].id
         
         navigationController?.pushViewController(vc, animated: true)
     }

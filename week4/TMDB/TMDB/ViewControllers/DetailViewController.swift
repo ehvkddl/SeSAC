@@ -12,12 +12,14 @@ enum ContentInfo: CaseIterable {
     case overview
     case cast
     case crew
+    case season
     
     var text: String {
         switch self {
         case .overview: return "OverView"
         case .cast: return "Cast"
         case .crew: return "Crew"
+        case .season: return "Season"
         }
     }
 }
@@ -30,7 +32,11 @@ class DetailViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!
     
+    var type: MediaType?
+    var id: Int?
     var content: VideoInfo?
+    
+    var detail: TvDetails?
     
     var cast: [Cast] = []
     var crew: [Cast] = []
@@ -44,15 +50,25 @@ class DetailViewController: UIViewController {
         
         configureView()
         
-        guard let content = self.content else { return }
+        guard let type = self.type else { return }
+        guard let id = self.id else { return }
         
-        TmdbAPIManager.shared.fetchRecommendations(type: content.mediaType, id: content.id)
-        
-        TmdbAPIManager.shared.fetchCredit(type: content.mediaType, id: content.id) { credit in
+        TmdbAPIManager.shared.fetchCredit(type: type, id: id) { credit in
             self.cast = credit.cast
             self.crew = credit.crew
             
             self.movieInfoTableView.reloadData()
+        }
+        
+        switch type {
+        case .movie:
+            TmdbAPIManager.shared.fetchMovieDetails(id: id) { details in
+                print(details)
+            }
+        case .tv:
+            TmdbAPIManager.shared.fetchTvDetails(id: id) { details in
+                self.detail = details
+            }
         }
     }
     
@@ -66,7 +82,8 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return ContentInfo.allCases.count
+        guard let content = self.content else { return 0 }
+        return content.mediaType == .movie ? ContentInfo.allCases.count - 1 : ContentInfo.allCases.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -74,6 +91,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         case 0: return 1
         case 1: return cast.count
         case 2: return crew.count
+        case 3: return 1
         default: return 0
         }
     }
@@ -104,6 +122,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureCell(row: crew[indexPath.row])
             
             return cell
+        case 3:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SeasonTableViewCell.identifier) as? SeasonTableViewCell else { return UITableViewCell() }
+            
+            cell.details = self.detail
+            
+            cell.configureCell()
+            
+            return cell
         default: return UITableViewCell()
         }
     }
@@ -119,6 +145,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0: return UITableView.automaticDimension
         case 1, 2: return 90
+        case 3: return 200
         default: return 0
         }
     }
@@ -162,6 +189,9 @@ extension DetailViewController {
         
         let CastCellnib = UINib(nibName: CastTableViewCell.identifier, bundle: nil)
         movieInfoTableView.register(CastCellnib, forCellReuseIdentifier: CastTableViewCell.identifier)
+        
+        let seasonCellNib = UINib(nibName: SeasonTableViewCell.identifier, bundle: nil)
+        movieInfoTableView.register(seasonCellNib, forCellReuseIdentifier: SeasonTableViewCell.identifier)
     }
     
     func configureTableViewHeader() {

@@ -12,7 +12,13 @@
 		EA3BE3FC2A8BE06F00266342 /* OverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */; };
 		EA3BE3FD2A8BE06F00266342 /* OverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */; };
 		EA5283C92A8E79BF00B0FB4B /* Recommend.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5283C82A8E79BF00B0FB4B /* Recommend.swift */; };
+		EA5283F72A91004A00B0FB4B /* SeasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5283F52A91004A00B0FB4B /* SeasonTableViewCell.swift */; };
+		EA5283F82A91004A00B0FB4B /* SeasonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5283F62A91004A00B0FB4B /* SeasonTableViewCell.xib */; };
+		EA5283FB2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5283F92A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.swift */; };
+		EA5283FC2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5283FA2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.xib */; };
 		EA5283FE2A91094C00B0FB4B /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5283FD2A91094C00B0FB4B /* Details.swift */; };
+		EA5284012A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5283FF2A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift */; };
+		EA5284022A9112ED00B0FB4B /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA5284002A9112ED00B0FB4B /* EpisodeCollectionViewCell.xib */; };
 		EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36852A861C9E007ECF41 /* AppDelegate.swift */; };
 		EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */; };
 		EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A36892A861C9E007ECF41 /* TrendViewController.swift */; };
@@ -41,7 +47,13 @@
 		EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewCell.swift; sourceTree = "<group>"; };
 		EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverviewTableViewCell.xib; sourceTree = "<group>"; };
 		EA5283C82A8E79BF00B0FB4B /* Recommend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommend.swift; sourceTree = "<group>"; };
+		EA5283F52A91004A00B0FB4B /* SeasonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTableViewCell.swift; sourceTree = "<group>"; };
+		EA5283F62A91004A00B0FB4B /* SeasonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeasonTableViewCell.xib; sourceTree = "<group>"; };
+		EA5283F92A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSeasonCollectionReusableView.swift; sourceTree = "<group>"; };
+		EA5283FA2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderSeasonCollectionReusableView.xib; sourceTree = "<group>"; };
 		EA5283FD2A91094C00B0FB4B /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		EA5283FF2A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA5284002A9112ED00B0FB4B /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
 		EA5A36822A861C9E007ECF41 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5A36852A861C9E007ECF41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA5A36872A861C9E007ECF41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +136,12 @@
 				EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */,
 				EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */,
 				EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */,
+				EA5283F52A91004A00B0FB4B /* SeasonTableViewCell.swift */,
+				EA5283F62A91004A00B0FB4B /* SeasonTableViewCell.xib */,
+				EA5283F92A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.swift */,
+				EA5283FA2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.xib */,
+				EA5283FF2A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift */,
+				EA5284002A9112ED00B0FB4B /* EpisodeCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -258,8 +276,11 @@
 				EA5A36A72A86AE14007ECF41 /* TrendCollectionViewCell.xib in Resources */,
 				EA5A36922A861C9F007ECF41 /* LaunchScreen.storyboard in Resources */,
 				EA3BE3FD2A8BE06F00266342 /* OverviewTableViewCell.xib in Resources */,
+				EA5283FC2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.xib in Resources */,
+				EA5283F82A91004A00B0FB4B /* SeasonTableViewCell.xib in Resources */,
 				EAADD4992A88BBF6006CB066 /* CastTableViewCell.xib in Resources */,
 				EA5A368F2A861C9F007ECF41 /* Assets.xcassets in Resources */,
+				EA5284022A9112ED00B0FB4B /* EpisodeCollectionViewCell.xib in Resources */,
 				EA5A368D2A861C9E007ECF41 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +297,7 @@
 				EA5283C92A8E79BF00B0FB4B /* Recommend.swift in Sources */,
 				EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */,
 				EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */,
+				EA5283F72A91004A00B0FB4B /* SeasonTableViewCell.swift in Sources */,
 				EA5283FE2A91094C00B0FB4B /* Details.swift in Sources */,
 				EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
@@ -285,9 +307,11 @@
 				EA3BE3FC2A8BE06F00266342 /* OverviewTableViewCell.swift in Sources */,
 				EA5A36A62A86AE14007ECF41 /* TrendCollectionViewCell.swift in Sources */,
 				EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */,
+				EA5284012A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift in Sources */,
 				EA5A36B22A87E054007ECF41 /* URL+.swift in Sources */,
 				EA5A36A12A86914B007ECF41 /* APIKey.swift in Sources */,
 				EAADD4982A88BBF6006CB066 /* CastTableViewCell.swift in Sources */,
+				EA5283FB2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.swift in Sources */,
 				EA5A369A2A861E13007ECF41 /* TmdbAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
