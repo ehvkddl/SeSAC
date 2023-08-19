@@ -94,4 +94,43 @@ class TmdbAPIManager {
             }
     }
     
+    func fetchTvDetails(id: Int, completionHandler: @escaping (TvDetails) -> ()) {
+        var components = URLComponents(string: Endpoint.detail(type: .tv, id: id).requestURL)
+        components?.queryItems = [language, apiKey]
+        
+        guard let url = components?.string else { return }
+        
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: TvDetails.self) { response in
+                switch response.result {
+                case .success(let value):
+                    
+                    completionHandler(value)
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        
+    }
+    
+    func fetchMovieDetails(id: Int, completionHandler: @escaping (MovieDetails) -> ()) {
+        var components = URLComponents(string: Endpoint.detail(type: .movie, id: id).requestURL)
+        components?.queryItems = [language, apiKey]
+        
+        guard let url = components?.string else { return }
+        
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: MovieDetails.self) { response in
+                switch response.result {
+                case .success(let value):
+                    
+                    completionHandler(value)
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
 }
