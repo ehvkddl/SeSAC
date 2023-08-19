@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
         
         TmdbAPIManager.shared.fetchRecommendations(type: content.mediaType, id: content.id)
         
-        TmdbAPIManager.shared.fetchCredit(movieID: content.id) { credit in
+        TmdbAPIManager.shared.fetchCredit(type: content.mediaType, id: content.id) { credit in
             self.cast = credit.cast
             self.crew = credit.crew
             

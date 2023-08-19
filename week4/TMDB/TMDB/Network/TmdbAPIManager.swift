@@ -39,8 +39,8 @@ class TmdbAPIManager {
         }
     }
     
-    func fetchCredit(movieID: Int, completionHandler: @escaping (Credit) -> Void) {
-        var components = URLComponents(string: Endpoint.movie(movieID: movieID).requestURL)
+    func fetchCredit(type: MediaType, id: Int, completionHandler: @escaping (Credit) -> Void) {
+        var components = URLComponents(string: Endpoint.credit(type: type, id: id).requestURL)
         components?.queryItems = [language, apiKey]
         
         guard let url = components?.string else { return }
