@@ -13,6 +13,7 @@
 		EA5283E52A90E64C00B0FB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5283E32A90E64C00B0FB4B /* Main.storyboard */; };
 		EA5283E72A90E64D00B0FB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5283E62A90E64D00B0FB4B /* Assets.xcassets */; };
 		EA5283EA2A90E64D00B0FB4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5283E82A90E64D00B0FB4B /* LaunchScreen.storyboard */; };
+		EA7E52162A925EC10019D6B3 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		EA5283E62A90E64D00B0FB4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA5283E92A90E64D00B0FB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA5283EB2A90E64D00B0FB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				EA5283DD2A90E64C00B0FB4B /* AppDelegate.swift */,
 				EA5283DF2A90E64C00B0FB4B /* SceneDelegate.swift */,
+				EA7E52142A925EA80019D6B3 /* Protocols */,
 				EA5283E12A90E64C00B0FB4B /* SearchViewController.swift */,
 				EA5283E32A90E64C00B0FB4B /* Main.storyboard */,
 				EA5283E62A90E64D00B0FB4B /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				EA5283EB2A90E64D00B0FB4B /* Info.plist */,
 			);
 			path = Media;
+			sourceTree = "<group>";
+		};
+		EA7E52142A925EA80019D6B3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			files = (
 				EA5283E22A90E64C00B0FB4B /* SearchViewController.swift in Sources */,
 				EA5283DE2A90E64C00B0FB4B /* AppDelegate.swift in Sources */,
+				EA7E52162A925EC10019D6B3 /* ReusableViewProtocol.swift in Sources */,
 				EA5283E02A90E64C00B0FB4B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
