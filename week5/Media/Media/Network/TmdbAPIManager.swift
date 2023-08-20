@@ -62,4 +62,24 @@ class TmdbAPIManager {
             }
     }
     
+    // MARK: - fetchSimilar
+    func fetchSimilar(id: Int, completionHandler: @escaping ([Movie]) -> Void) {
+        var components = URLComponents(string: EndPoint.similar(id: id).requestURL)
+        components?.queryItems = [language, apiKey]
+        
+        guard let url = components?.string else { return }
+        
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: SimilarData.self) { response in
+                switch response.result {
+                case .success(let value):
+                    
+                    completionHandler(value.results)
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
 }

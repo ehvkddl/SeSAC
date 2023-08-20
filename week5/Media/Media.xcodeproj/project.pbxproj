@@ -30,6 +30,7 @@
 		EA7E52372A926C550019D6B3 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7E52352A926C550019D6B3 /* MovieTableViewCell.xib */; };
 		EA7E52392A9278BE0019D6B3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52382A9278BE0019D6B3 /* DetailViewController.swift */; };
 		EA7E523B2A927D6F0019D6B3 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E523A2A927D6F0019D6B3 /* Video.swift */; };
+		EA7E523D2A927E910019D6B3 /* Similar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E523C2A927E910019D6B3 /* Similar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		EA7E52352A926C550019D6B3 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		EA7E52382A9278BE0019D6B3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EA7E523A2A927D6F0019D6B3 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		EA7E523C2A927E910019D6B3 /* Similar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				EA7E52322A9269710019D6B3 /* Search.swift */,
 				EA7E52302A92690D0019D6B3 /* Movie.swift */,
 				EA7E523A2A927D6F0019D6B3 /* Video.swift */,
+				EA7E523C2A927E910019D6B3 /* Similar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				EA7E52212A9262450019D6B3 /* TmdbAPIManager.swift in Sources */,
 				EA7E522E2A9263F80019D6B3 /* EndPoint.swift in Sources */,
 				EA7E520A2A9255120019D6B3 /* VideoCollectionViewCell.swift in Sources */,
+				EA7E523D2A927E910019D6B3 /* Similar.swift in Sources */,
 				EA7E522C2A9263400019D6B3 /* URL+.swift in Sources */,
 				EA7E52162A925EC10019D6B3 /* ReusableViewProtocol.swift in Sources */,
 				EA5283E02A90E64C00B0FB4B /* SceneDelegate.swift in Sources */,
