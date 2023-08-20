@@ -73,14 +73,9 @@
 				EA5283DD2A90E64C00B0FB4B /* AppDelegate.swift */,
 				EA5283DF2A90E64C00B0FB4B /* SceneDelegate.swift */,
 				EA7E52142A925EA80019D6B3 /* Protocols */,
-				EA5283E12A90E64C00B0FB4B /* SearchViewController.swift */,
-				EA5283E32A90E64C00B0FB4B /* Main.storyboard */,
-				EA7E52102A925CC90019D6B3 /* VideoTableViewCell.swift */,
-				EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */,
-				EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */,
-				EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */,
-				EA7E520C2A925AFA0019D6B3 /* SimilarTableViewCell.swift */,
-				EA7E520D2A925AFA0019D6B3 /* SimilarTableViewCell.xib */,
+				EA7E52172A9260860019D6B3 /* Storyboards */,
+				EA7E52182A9260A10019D6B3 /* ViewContollers */,
+				EA7E52192A9260C20019D6B3 /* Cells */,
 				EA5283E62A90E64D00B0FB4B /* Assets.xcassets */,
 				EA5283E82A90E64D00B0FB4B /* LaunchScreen.storyboard */,
 				EA5283EB2A90E64D00B0FB4B /* Info.plist */,
@@ -94,6 +89,51 @@
 				EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EA7E52172A9260860019D6B3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EA5283E32A90E64C00B0FB4B /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EA7E52182A9260A10019D6B3 /* ViewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				EA5283E12A90E64C00B0FB4B /* SearchViewController.swift */,
+			);
+			path = ViewContollers;
+			sourceTree = "<group>";
+		};
+		EA7E52192A9260C20019D6B3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EA7E521A2A9260FD0019D6B3 /* Video */,
+				EA7E521B2A9261040019D6B3 /* Similar */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EA7E521A2A9260FD0019D6B3 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				EA7E52102A925CC90019D6B3 /* VideoTableViewCell.swift */,
+				EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */,
+				EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */,
+				EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		EA7E521B2A9261040019D6B3 /* Similar */ = {
+			isa = PBXGroup;
+			children = (
+				EA7E520C2A925AFA0019D6B3 /* SimilarTableViewCell.swift */,
+				EA7E520D2A925AFA0019D6B3 /* SimilarTableViewCell.xib */,
+			);
+			path = Similar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
