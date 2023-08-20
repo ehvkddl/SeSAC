@@ -42,4 +42,24 @@ class TmdbAPIManager {
             }
     }
     
+    // MARK: - fetchVideo
+    func fetchVideo(id: Int, completionHandler: @escaping ([Video]) -> Void) {
+        var components = URLComponents(string: EndPoint.video(id: id).requestURL)
+        components?.queryItems = [language, apiKey]
+        
+        guard let url = components?.string else { return }
+        
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: VideoData.self) { response in
+                switch response.result {
+                case .success(let value):
+                    
+                    completionHandler(value.results)
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
 }
