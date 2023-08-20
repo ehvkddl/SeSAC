@@ -11,6 +11,8 @@ class VideoTableViewCell: UITableViewCell {
 
     @IBOutlet var videoCollectionView: UICollectionView!
     
+    var videos: [Video]?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -20,18 +22,28 @@ class VideoTableViewCell: UITableViewCell {
 extension VideoTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        guard let videos = self.videos else { return 0 }
+        
+        return videos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: VideoCollectionViewCell.identifier, for: indexPath) as? VideoCollectionViewCell else { return UICollectionViewCell() }
+        
+        guard let videos = self.videos else { return UICollectionViewCell() }
+        cell.configureCell(video: videos[indexPath.row])
+        cell.backgroundColor = UIColor(red: CGFloat(Int.random(in: 0...1)), green: CGFloat(Int.random(in: 0...1)), blue: CGFloat(Int.random(in: 0...1)), alpha: 1)
+        
+        return cell
     }
     
 }
 
 extension VideoTableViewCell {
     
-    func configureCell() {
+    func configureCell(videos: [Video]) {
+        self.videos = videos
+        
         configureCollectionView()
     }
     
@@ -42,17 +54,19 @@ extension VideoTableViewCell {
         let nib = UINib(nibName: VideoCollectionViewCell.identifier, bundle: nil)
         videoCollectionView.register(nib, forCellWithReuseIdentifier: VideoCollectionViewCell.identifier)
         
+        videoCollectionView.showsHorizontalScrollIndicator = false
+        
         videoCollectionViewLayout()
     }
     
     func videoCollectionViewLayout() {
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 0
-        let width = UIScreen.main.bounds.width * (3 / 4)
+        let spacing: CGFloat = 1
+        let width = UIScreen.main.bounds.width * (4 / 5)
         
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: width, height: width * (300 / 533))
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: width, height: width * (3 / 4))
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         layout.minimumLineSpacing = spacing
         
         videoCollectionView.collectionViewLayout = layout

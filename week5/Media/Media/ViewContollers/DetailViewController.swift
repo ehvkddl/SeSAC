@@ -63,6 +63,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier) as? VideoTableViewCell else { return UITableViewCell() }
             
+            guard let videos = self.videos else { return UITableViewCell() }
+            cell.configureCell(videos: videos)
+            
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier) as? MovieTableViewCell else { return UITableViewCell() }
@@ -81,7 +84,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath.section {
-        case 0: return 150
+        case 0: return UIScreen.main.bounds.width * (4 / 5) * (3 / 4)
         case 1: return 130
         default: return 0
         }

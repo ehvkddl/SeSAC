@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class VideoCollectionViewCell: UICollectionViewCell {
 
@@ -17,4 +18,21 @@ class VideoCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+}
+
+extension VideoCollectionViewCell {
+    
+    func configureCell(video: Video) {
+        let url = URL(string: getYtThumbnailURL(of: video.key))
+        thumbnailImageView.kf.setImage(with: url)
+    }
+    
+}
+
+extension VideoCollectionViewCell {
+    
+    func getYtThumbnailURL(of key: String) -> String {
+        return "https://img.youtube.com/vi/\(key)/0.jpg"
+    }
+    
 }
