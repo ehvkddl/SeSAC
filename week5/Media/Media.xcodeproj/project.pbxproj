@@ -13,6 +13,10 @@
 		EA5283E52A90E64C00B0FB4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5283E32A90E64C00B0FB4B /* Main.storyboard */; };
 		EA5283E72A90E64D00B0FB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA5283E62A90E64D00B0FB4B /* Assets.xcassets */; };
 		EA5283EA2A90E64D00B0FB4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5283E82A90E64D00B0FB4B /* LaunchScreen.storyboard */; };
+		EA7E520A2A9255120019D6B3 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */; };
+		EA7E520B2A9255120019D6B3 /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */; };
+		EA7E52122A925CC90019D6B3 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52102A925CC90019D6B3 /* VideoTableViewCell.swift */; };
+		EA7E52132A925CC90019D6B3 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */; };
 		EA7E52162A925EC10019D6B3 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		EA5283E62A90E64D00B0FB4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA5283E92A90E64D00B0FB4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA5283EB2A90E64D00B0FB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
+		EA7E52102A925CC90019D6B3 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+		EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +71,10 @@
 				EA7E52142A925EA80019D6B3 /* Protocols */,
 				EA5283E12A90E64C00B0FB4B /* SearchViewController.swift */,
 				EA5283E32A90E64C00B0FB4B /* Main.storyboard */,
+				EA7E52102A925CC90019D6B3 /* VideoTableViewCell.swift */,
+				EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */,
+				EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */,
+				EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */,
 				EA5283E62A90E64D00B0FB4B /* Assets.xcassets */,
 				EA5283E82A90E64D00B0FB4B /* LaunchScreen.storyboard */,
 				EA5283EB2A90E64D00B0FB4B /* Info.plist */,
@@ -138,7 +150,9 @@
 			files = (
 				EA5283EA2A90E64D00B0FB4B /* LaunchScreen.storyboard in Resources */,
 				EA5283E72A90E64D00B0FB4B /* Assets.xcassets in Resources */,
+				EA7E520B2A9255120019D6B3 /* VideoCollectionViewCell.xib in Resources */,
 				EA5283E52A90E64C00B0FB4B /* Main.storyboard in Resources */,
+				EA7E52132A925CC90019D6B3 /* VideoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,8 +165,10 @@
 			files = (
 				EA5283E22A90E64C00B0FB4B /* SearchViewController.swift in Sources */,
 				EA5283DE2A90E64C00B0FB4B /* AppDelegate.swift in Sources */,
+				EA7E520A2A9255120019D6B3 /* VideoCollectionViewCell.swift in Sources */,
 				EA7E52162A925EC10019D6B3 /* ReusableViewProtocol.swift in Sources */,
 				EA5283E02A90E64C00B0FB4B /* SceneDelegate.swift in Sources */,
+				EA7E52122A925CC90019D6B3 /* VideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
