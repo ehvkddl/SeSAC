@@ -20,6 +20,12 @@ class SearchViewController: UIViewController {
         configureSearchBar()
         configureTableView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
 
 }
 
@@ -58,6 +64,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
+
+        vc.movie = movies[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
