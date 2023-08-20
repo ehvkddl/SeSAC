@@ -15,6 +15,8 @@
 		EA5283EA2A90E64D00B0FB4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA5283E82A90E64D00B0FB4B /* LaunchScreen.storyboard */; };
 		EA7E520A2A9255120019D6B3 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */; };
 		EA7E520B2A9255120019D6B3 /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */; };
+		EA7E520E2A925AFA0019D6B3 /* SimilarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E520C2A925AFA0019D6B3 /* SimilarTableViewCell.swift */; };
+		EA7E520F2A925AFA0019D6B3 /* SimilarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7E520D2A925AFA0019D6B3 /* SimilarTableViewCell.xib */; };
 		EA7E52122A925CC90019D6B3 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52102A925CC90019D6B3 /* VideoTableViewCell.swift */; };
 		EA7E52132A925CC90019D6B3 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */; };
 		EA7E52162A925EC10019D6B3 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */; };
@@ -31,6 +33,8 @@
 		EA5283EB2A90E64D00B0FB4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
+		EA7E520C2A925AFA0019D6B3 /* SimilarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarTableViewCell.swift; sourceTree = "<group>"; };
+		EA7E520D2A925AFA0019D6B3 /* SimilarTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimilarTableViewCell.xib; sourceTree = "<group>"; };
 		EA7E52102A925CC90019D6B3 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		EA7E52152A925EC10019D6B3 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				EA7E52112A925CC90019D6B3 /* VideoTableViewCell.xib */,
 				EA7E52082A9255120019D6B3 /* VideoCollectionViewCell.swift */,
 				EA7E52092A9255120019D6B3 /* VideoCollectionViewCell.xib */,
+				EA7E520C2A925AFA0019D6B3 /* SimilarTableViewCell.swift */,
+				EA7E520D2A925AFA0019D6B3 /* SimilarTableViewCell.xib */,
 				EA5283E62A90E64D00B0FB4B /* Assets.xcassets */,
 				EA5283E82A90E64D00B0FB4B /* LaunchScreen.storyboard */,
 				EA5283EB2A90E64D00B0FB4B /* Info.plist */,
@@ -149,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5283EA2A90E64D00B0FB4B /* LaunchScreen.storyboard in Resources */,
+				EA7E520F2A925AFA0019D6B3 /* SimilarTableViewCell.xib in Resources */,
 				EA5283E72A90E64D00B0FB4B /* Assets.xcassets in Resources */,
 				EA7E520B2A9255120019D6B3 /* VideoCollectionViewCell.xib in Resources */,
 				EA5283E52A90E64C00B0FB4B /* Main.storyboard in Resources */,
@@ -164,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5283E22A90E64C00B0FB4B /* SearchViewController.swift in Sources */,
+				EA7E520E2A925AFA0019D6B3 /* SimilarTableViewCell.swift in Sources */,
 				EA5283DE2A90E64C00B0FB4B /* AppDelegate.swift in Sources */,
 				EA7E520A2A9255120019D6B3 /* VideoCollectionViewCell.swift in Sources */,
 				EA7E52162A925EC10019D6B3 /* ReusableViewProtocol.swift in Sources */,
