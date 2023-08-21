@@ -43,8 +43,8 @@
                                     <constraint firstAttribute="width" secondItem="bIL-yI-4OW" secondAttribute="height" multiplier="1.778" id="GNU-mk-9KS"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNv-VA-qbp">
-                                <rect key="frame" x="18" y="161.33333333333334" width="215" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Title sdfsfsfsdfsfsfsdf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNv-VA-qbp">
+                                <rect key="frame" x="18" y="161.33333333333334" width="195.66666666666666" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="ua0-gb-DEs"/>
                                 </constraints>
@@ -128,6 +128,15 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Original Title)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aoe-K8-Rpe">
+                                <rect key="frame" x="214.66666666666666" y="161.33333333333334" width="18.333333333333343" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="KKw-Mh-pTb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
@@ -138,13 +147,15 @@
                             <constraint firstItem="s80-pg-UbA" firstAttribute="leading" secondItem="mNv-VA-qbp" secondAttribute="leading" id="FfB-GV-NaV"/>
                             <constraint firstItem="bIL-yI-4OW" firstAttribute="top" secondItem="yRN-Jq-FOt" secondAttribute="top" id="NdT-nU-fca"/>
                             <constraint firstAttribute="bottom" secondItem="jem-Ie-dQE" secondAttribute="bottom" constant="10" id="PUC-Zw-mHg"/>
-                            <constraint firstItem="jem-Ie-dQE" firstAttribute="trailing" secondItem="mNv-VA-qbp" secondAttribute="trailing" id="V7j-Mq-0b2"/>
+                            <constraint firstItem="jem-Ie-dQE" firstAttribute="trailing" secondItem="h93-mh-kbR" secondAttribute="trailing" id="V7j-Mq-0b2"/>
+                            <constraint firstItem="aoe-K8-Rpe" firstAttribute="leading" secondItem="mNv-VA-qbp" secondAttribute="trailing" constant="1" id="VMy-Qi-EY7"/>
                             <constraint firstAttribute="trailing" secondItem="bIL-yI-4OW" secondAttribute="trailing" id="atG-yQ-qS6"/>
+                            <constraint firstAttribute="trailing" secondItem="aoe-K8-Rpe" secondAttribute="trailing" constant="18" id="bf9-pa-evE"/>
+                            <constraint firstItem="aoe-K8-Rpe" firstAttribute="centerY" secondItem="mNv-VA-qbp" secondAttribute="centerY" id="bkE-yb-CEz"/>
                             <constraint firstItem="d6k-po-UQd" firstAttribute="leading" secondItem="mNv-VA-qbp" secondAttribute="leading" id="f8Q-xG-BbR"/>
-                            <constraint firstAttribute="trailing" secondItem="mNv-VA-qbp" secondAttribute="trailing" constant="18" id="ghr-yM-7fK"/>
+                            <constraint firstAttribute="trailing" secondItem="h93-mh-kbR" secondAttribute="trailing" constant="18" id="goq-Xx-BRl"/>
                             <constraint firstItem="h93-mh-kbR" firstAttribute="top" secondItem="mNv-VA-qbp" secondAttribute="bottom" id="iBZ-od-648"/>
-                            <constraint firstItem="d6k-po-UQd" firstAttribute="trailing" secondItem="mNv-VA-qbp" secondAttribute="trailing" id="ifq-da-Dcu"/>
-                            <constraint firstItem="h93-mh-kbR" firstAttribute="trailing" secondItem="mNv-VA-qbp" secondAttribute="trailing" id="khL-b7-cul"/>
+                            <constraint firstItem="d6k-po-UQd" firstAttribute="trailing" secondItem="h93-mh-kbR" secondAttribute="trailing" id="ifq-da-Dcu"/>
                             <constraint firstItem="mNv-VA-qbp" firstAttribute="top" secondItem="bIL-yI-4OW" secondAttribute="bottom" constant="20" id="mmZ-6K-q7Y"/>
                             <constraint firstItem="bIL-yI-4OW" firstAttribute="bottom" secondItem="s80-pg-UbA" secondAttribute="bottom" constant="18" id="nXe-Eh-Z3b"/>
                             <constraint firstItem="jem-Ie-dQE" firstAttribute="top" secondItem="d6k-po-UQd" secondAttribute="bottom" constant="10" id="oMF-jR-8Dp"/>
@@ -183,6 +194,7 @@
                 <outlet property="genreLabel" destination="w4I-VM-YTr" id="H73-zg-KPg"/>
                 <outlet property="mediaTypeImageView" destination="RiN-fy-xzT" id="HqD-dw-pRc"/>
                 <outlet property="moreDetailButton" destination="jem-Ie-dQE" id="CIO-1l-HJY"/>
+                <outlet property="originalTitleLabel" destination="aoe-K8-Rpe" id="2dT-dN-drh"/>
                 <outlet property="overviewLabel" destination="h93-mh-kbR" id="i3e-Qm-fFk"/>
                 <outlet property="releaseDateLabel" destination="10M-ba-eYi" id="Btz-54-5Jd"/>
                 <outlet property="titleLabel" destination="mNv-VA-qbp" id="8jF-Mx-zjy"/>

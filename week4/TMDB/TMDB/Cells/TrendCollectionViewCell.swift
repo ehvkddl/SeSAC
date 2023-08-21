@@ -25,6 +25,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
     @IBOutlet var voteAverageLabel: PaddingLabel!
     
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var originalTitleLabel: UILabel!
     @IBOutlet var overviewLabel: UILabel!
     
     @IBOutlet var moreDetailButton: UIButton!
@@ -64,6 +65,7 @@ class TrendCollectionViewCell: UICollectionViewCell {
         voteAverageLabel.text = String(row.voteAverage)
         
         titleLabel.text = row.title != nil ? row.title : row.name
+        originalTitleLabel.text = row.originalTitle != nil ? "(\(row.originalTitle!))" : ""
         overviewLabel.text = row.overview
     }
     
