@@ -18,11 +18,15 @@ class SeasonTableViewCell: UITableViewCell {
     }
     
     func configureCell() {
+        print("collectionView")
         seasonCollectionView.delegate = self
         seasonCollectionView.dataSource = self
         
-        let nib = UINib(nibName: EpisodeCollectionViewCell.identifier, bundle: nil)
-        seasonCollectionView.register(nib, forCellWithReuseIdentifier: EpisodeCollectionViewCell.identifier)
+        let episodeNib = UINib(nibName: EpisodeCollectionViewCell.identifier, bundle: nil)
+        seasonCollectionView.register(episodeNib, forCellWithReuseIdentifier: EpisodeCollectionViewCell.identifier)
+
+        let headerNib = UINib(nibName: HeaderSeasonCollectionReusableView.identifier, bundle: nil)
+        seasonCollectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderSeasonCollectionReusableView.identifier)
         
         seasonCollectionViewLayout()
     }
@@ -51,6 +55,23 @@ extension SeasonTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            
+            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderSeasonCollectionReusableView.identifier, for: indexPath) as? HeaderSeasonCollectionReusableView else { return UICollectionReusableView() }
+            
+            guard let details = self.details else { return UICollectionReusableView() }
+            
+            view.nameLabel.text = "왜오아니ㅗ니거니댜ㅓㄱ니러"
+//            view.configureCell(row: details.seasons[indexPath.row])
+            
+            return view
+            
+        } else {
+            return UICollectionReusableView()
+        }
+    }
+
 }
 
 extension SeasonTableViewCell {
@@ -64,6 +85,8 @@ extension SeasonTableViewCell {
         layout.itemSize = CGSize(width: width, height: width * 1.2)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
+        layout.scrollDirection = .vertical
+        layout.headerReferenceSize = CGSize(width: 300, height: 50)
         
         seasonCollectionView.collectionViewLayout = layout
     }

@@ -18,4 +18,9 @@ class HeaderSeasonCollectionReusableView: UICollectionReusableView {
         // Initialization code
     }
     
+    func configureCell(row: Season) {
+        nameLabel.text = row.name
+        infoLabel.text = "\(row.voteAverage) • \(row.airDate) • \(row.episodeCount)화" // "평점 공개일 에피소드개수"
+    }
+    
 }

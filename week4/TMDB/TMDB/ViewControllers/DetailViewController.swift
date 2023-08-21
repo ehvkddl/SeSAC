@@ -145,7 +145,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0: return UITableView.automaticDimension
         case 1, 2: return 90
-        case 3: return 200
+        case 3: return 500
         default: return 0
         }
     }
