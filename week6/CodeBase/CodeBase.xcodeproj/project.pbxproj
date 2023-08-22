@@ -17,6 +17,7 @@
 		EA7E52902A94A5640019D6B3 /* Example1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E528F2A94A5640019D6B3 /* Example1ViewController.swift */; };
 		EA7E52922A94A57A0019D6B3 /* Example2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52912A94A57A0019D6B3 /* Example2ViewController.swift */; };
 		EA7E52942A94A5800019D6B3 /* Example3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52932A94A5800019D6B3 /* Example3ViewController.swift */; };
+		EA7E52962A9549860019D6B3 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7E52952A9549860019D6B3 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		EA7E528F2A94A5640019D6B3 /* Example1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example1ViewController.swift; sourceTree = "<group>"; };
 		EA7E52912A94A57A0019D6B3 /* Example2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example2ViewController.swift; sourceTree = "<group>"; };
 		EA7E52932A94A5800019D6B3 /* Example3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example3ViewController.swift; sourceTree = "<group>"; };
+		EA7E52952A9549860019D6B3 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				EA7E52782A9498750019D6B3 /* AppDelegate.swift */,
 				EA7E527A2A9498750019D6B3 /* SceneDelegate.swift */,
+				EA7E52952A9549860019D6B3 /* PaddingLabel.swift */,
 				EA7E527C2A9498750019D6B3 /* ViewController.swift */,
 				EA7E528F2A94A5640019D6B3 /* Example1ViewController.swift */,
 				EA7E52912A94A57A0019D6B3 /* Example2ViewController.swift */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA7E527D2A9498750019D6B3 /* ViewController.swift in Sources */,
+				EA7E52962A9549860019D6B3 /* PaddingLabel.swift in Sources */,
 				EA7E52942A94A5800019D6B3 /* Example3ViewController.swift in Sources */,
 				EA7E52792A9498750019D6B3 /* AppDelegate.swift in Sources */,
 				EA7E52922A94A57A0019D6B3 /* Example2ViewController.swift in Sources */,
