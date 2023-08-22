@@ -32,6 +32,17 @@ class ViewController: UIViewController {
         return button
     }()
     
+    let example3Button = {
+        let button = UIButton()
+        
+        button.setTitle("example 3", for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 10
+        
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +50,6 @@ class ViewController: UIViewController {
     }
     
     }
-
 
 }
 
@@ -65,6 +75,19 @@ extension ViewController {
         NSLayoutConstraint(item: example2Button, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: example2Button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 200).isActive = true
         NSLayoutConstraint(item: example2Button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 80).isActive = true
+        
+        
+        // MARK: NSLayoutAnchor
+        example3Button.translatesAutoresizingMaskIntoConstraints = false
+        
+        example3Button.addTarget(self, action: #selector(example3ButtonCllicked), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            example3Button.topAnchor.constraint(equalTo: example2Button.bottomAnchor, constant: 80),
+            example3Button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            example3Button.widthAnchor.constraint(equalToConstant: 200),
+            example3Button.heightAnchor.constraint(equalToConstant: 80),
+        ])
         
     }
     
