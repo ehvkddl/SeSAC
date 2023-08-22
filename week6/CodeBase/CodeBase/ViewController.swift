@@ -49,6 +49,29 @@ class ViewController: UIViewController {
         configureUI()
     }
     
+    @objc
+    func example1ButtonCllicked() {
+        let vc = Example1ViewController()
+        
+        present(vc, animated: true)
+    }
+    
+    @objc
+    func example2ButtonCllicked() {
+        let vc = Example2ViewController()
+        
+        vc.modalPresentationStyle = .fullScreen
+        
+        present(vc, animated: true)
+    }
+    
+    @objc
+    func example3ButtonCllicked() {
+        let vc = Example3ViewController()
+        
+        vc.modalPresentationStyle = .fullScreen
+        
+        present(vc, animated: true)
     }
 
 }
@@ -60,6 +83,8 @@ extension ViewController {
         
         
         // MARK: SnapKit
+        example1Button.addTarget(self, action: #selector(example1ButtonCllicked), for: .touchUpInside)
+        
         example1Button.snp.makeConstraints { make in
             make.bottom.equalTo(example2Button.snp.top).offset(-80)
             make.centerX.equalTo(view)
@@ -70,6 +95,8 @@ extension ViewController {
         
         // MARK: NSLayoutConstraints
         example2Button.translatesAutoresizingMaskIntoConstraints = false
+        
+        example2Button.addTarget(self, action: #selector(example2ButtonCllicked), for: .touchUpInside)
         
         NSLayoutConstraint(item: example2Button, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: example2Button, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
