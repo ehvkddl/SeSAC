@@ -7,10 +7,14 @@
 
 import UIKit
 import CoreLocation
+import MapKit
+import SnapKit
 
 class ExplorerViewController: UIViewController {
 
     let locationManager = CLLocationManager()
+    
+    let mapView = MKMapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +22,26 @@ class ExplorerViewController: UIViewController {
         locationManager.delegate = self
         
         checkDeviceLocationAuthorization()
+        
+        configureUI()
     }
 
+}
+
+extension ExplorerViewController {
+    
+    func setRegionAndAnnotation(center: CLLocationCoordinate2D) {
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: 400, longitudinalMeters: 400)
+        
+        mapView.setRegion(region, animated: true)
+        
+        let annotation = MKPointAnnotation()
+        annotation.title = "현 위치"
+        annotation.coordinate = center
+        
+        mapView.addAnnotation(annotation)
+    }
+    
 }
 
 extension ExplorerViewController {
@@ -91,9 +113,14 @@ extension ExplorerViewController {
 extension ExplorerViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        
         print("===위치정보 가져오기 성공===")
-        print(locations)
+        print(location.coordinate)
         print("======================")
+        
+        CinemaAPImanager.shared.fetchLocations(around: location.coordinate)
+        setRegionAndAnnotation(center: location.coordinate)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -103,6 +130,18 @@ extension ExplorerViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         print(#function)
         checkDeviceLocationAuthorization()
+    }
+    
+}
+
+extension ExplorerViewController {
+    
+    func configureUI() {
+        [mapView].forEach { view.addSubview($0) }
+        
+        mapView.snp.makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
 }
