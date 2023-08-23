@@ -18,6 +18,7 @@
 		EA740D222A966321007152C7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA740D212A966321007152C7 /* SnapKit */; };
 		EA740D272A966898007152C7 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D262A966898007152C7 /* URL+.swift */; };
 		EA740D292A966917007152C7 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D282A966917007152C7 /* Endpoint.swift */; };
+		EA740D2C2A967055007152C7 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D2B2A967055007152C7 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EA740D1B2A966249007152C7 /* CinemaAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaAPIManager.swift; sourceTree = "<group>"; };
 		EA740D262A966898007152C7 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		EA740D282A966917007152C7 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		EA740D2B2A967055007152C7 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				EA740D082A96457C007152C7 /* SceneDelegate.swift */,
 				EA740D252A96688F007152C7 /* Extensions */,
 				EA740D1A2A96622D007152C7 /* Network */,
+				EA740D2A2A967038007152C7 /* Models */,
 				EA740D0A2A96457C007152C7 /* ExplorerViewController.swift */,
 				EA740D0C2A96457C007152C7 /* Main.storyboard */,
 				EA740D0F2A96457D007152C7 /* Assets.xcassets */,
@@ -94,6 +97,14 @@
 				EA740D262A966898007152C7 /* URL+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA740D2A2A967038007152C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EA740D2B2A967055007152C7 /* Location.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 			files = (
 				EA740D292A966917007152C7 /* Endpoint.swift in Sources */,
 				EA740D0B2A96457C007152C7 /* ExplorerViewController.swift in Sources */,
+				EA740D2C2A967055007152C7 /* Location.swift in Sources */,
 				EA740D272A966898007152C7 /* URL+.swift in Sources */,
 				EA740D072A96457C007152C7 /* AppDelegate.swift in Sources */,
 				EA740D092A96457C007152C7 /* SceneDelegate.swift in Sources */,
