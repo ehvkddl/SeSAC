@@ -16,6 +16,21 @@ class ExplorerViewController: UIViewController {
     
     let mapView = MKMapView()
     
+    let filterButton = {
+        let btn = UIButton()
+        
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 30, weight: .light)
+        let image = UIImage(systemName: "magnifyingglass", withConfiguration: imageConfig)
+        btn.setImage(image, for: .normal)
+        
+        btn.backgroundColor = .black
+        btn.tintColor = .white
+        
+        btn.layer.cornerRadius = 30
+        
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +39,11 @@ class ExplorerViewController: UIViewController {
         checkDeviceLocationAuthorization()
         
         configureUI()
+    }
+    
+    @objc
+    func filterButtonClicked() {
+        print("filterButtonClicked")
     }
 
 }
@@ -142,10 +162,17 @@ extension ExplorerViewController: CLLocationManagerDelegate {
 extension ExplorerViewController {
     
     func configureUI() {
-        [mapView].forEach { view.addSubview($0) }
+        [mapView, filterButton].forEach { view.addSubview($0) }
         
         mapView.snp.makeConstraints { make in
             make.edges.equalTo(view)
+        }
+        
+        filterButton.addTarget(self, action: #selector(filterButtonClicked), for: .touchUpInside)
+        filterButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.trailing.equalTo(view).inset(16)
+            make.size.equalTo(60)
         }
     }
     
