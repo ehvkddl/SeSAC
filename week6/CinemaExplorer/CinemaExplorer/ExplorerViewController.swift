@@ -43,7 +43,29 @@ class ExplorerViewController: UIViewController {
     
     @objc
     func filterButtonClicked() {
-        print("filterButtonClicked")
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let mega = UIAlertAction(title: "메가박스", style: .default) { action in
+            print("메가박스")
+        }
+        let lotte = UIAlertAction(title: "롯데시네마", style: .default) { action in
+            print("롯데시네마")
+        }
+        let cgv = UIAlertAction(title: "CGV", style: .default) { action in
+            print("CGV")
+        }
+        let whole = UIAlertAction(title: "전체보기", style: .default) { action in
+            print("전체보기")
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        actionSheet.addAction(mega)
+        actionSheet.addAction(lotte)
+        actionSheet.addAction(cgv)
+        actionSheet.addAction(whole)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet, animated: true)
     }
 
 }
