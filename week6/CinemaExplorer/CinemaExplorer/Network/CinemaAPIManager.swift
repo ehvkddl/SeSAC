@@ -18,7 +18,11 @@ class CinemaAPImanager {
         "Authorization": "KakaoAK \(APIKey.kakaoKey)"
     ]
     
-    func fetchLocations(around location: CLLocationCoordinate2D) {
+    func fetchLocations(
+        around location: CLLocationCoordinate2D,
+        successCompletionHandler: @escaping ([Cinema]) -> (),
+        failureCompletionHandler: @escaping () -> ()
+    ) {
         let parameters: Parameters = [
             "x": location.longitude,
             "y": location.latitude,
@@ -31,9 +35,14 @@ class CinemaAPImanager {
             .responseDecodable(of: LocationData.self) { response in
                 switch response.result {
                 case .success(let value):
-                    print(value)
+                    
+                    successCompletionHandler(value.documents)
+                    
                 case .failure(let error):
-                    print(error)
+                    
+                    print(error.localizedDescription)
+                    failureCompletionHandler()
+                    
                 }
             }
     }

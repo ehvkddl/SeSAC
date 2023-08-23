@@ -119,7 +119,12 @@ extension ExplorerViewController: CLLocationManagerDelegate {
         print(location.coordinate)
         print("======================")
         
-        CinemaAPImanager.shared.fetchLocations(around: location.coordinate)
+        CinemaAPImanager.shared.fetchLocations(around: location.coordinate) { cinemas in
+            cinemas.forEach { print($0.type.rawValue) }
+        } failureCompletionHandler: {
+            print("fail")
+        }
+        
         setRegionAndAnnotation(center: location.coordinate)
     }
     
