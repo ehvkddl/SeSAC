@@ -57,6 +57,7 @@ extension ExplorerViewController {
             print("restricted")
         case .denied:
             print("denied")
+             showLocationSettingAlert()
         case .authorizedAlways:
             print("authorizedAlways")
             
@@ -67,6 +68,22 @@ extension ExplorerViewController {
             print("authorized")
         @unknown default: print("default") // 위치 권한 종류가 더 샐길 가능성 대비
         }
+    }
+    
+    func showLocationSettingAlert() {
+        let alert = UIAlertController(title: "위치 정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요", preferredStyle: .alert)
+
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        let goSetting = UIAlertAction(title: "설정으로 이동", style: .default) { _ in
+            guard let appSetting = URL(string: UIApplication.openSettingsURLString) else { return }
+            
+            UIApplication.shared.open(appSetting)
+        }
+        
+        alert.addAction(cancel)
+        alert.addAction(goSetting)
+        
+        present(alert, animated: true)
     }
     
 }
