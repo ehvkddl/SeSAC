@@ -16,6 +16,31 @@ class ExplorerViewController: UIViewController {
     
     let mapView = MKMapView()
     
+    let currentMapSearchButton = {
+        let btn = UIButton()
+        
+        var config = UIButton.Configuration.filled() // apple system button
+        config.title = "현 지도에서 검색"
+        config.image = UIImage(systemName: "arrow.clockwise")
+        
+        config.baseForegroundColor = .black
+        config.baseBackgroundColor = .white
+        config.imagePadding = 8
+        config.imagePlacement = .leading
+        config.titleAlignment = .center
+        
+        config.cornerStyle = .capsule
+        
+        btn.configuration = config
+        
+        btn.layer.shadowColor = UIColor.gray.cgColor
+        btn.layer.shadowOpacity = 0.5
+        btn.layer.shadowOffset = CGSize(width: 1, height: 1)
+        btn.layer.shadowRadius = 3
+        
+        return btn
+    }()
+    
     let filterButton = {
         let btn = UIButton()
         
@@ -41,6 +66,16 @@ class ExplorerViewController: UIViewController {
         checkDeviceLocationAuthorization()
         
         configureUI()
+    }
+    
+    @objc
+    func currentMapSearchButtonClicked() {
+        CinemaAPImanager.shared.fetchLocations(around: mapView.region.center) { cinemas in
+            self.cinemas = cinemas
+            self.setAnnotation(type: nil)
+        } failureCompletionHandler: {
+            print("fail")
+        }
     }
     
     @objc
@@ -227,10 +262,16 @@ extension ExplorerViewController: CLLocationManagerDelegate {
 extension ExplorerViewController {
     
     func configureUI() {
-        [mapView, filterButton].forEach { view.addSubview($0) }
+        [mapView, currentMapSearchButton, filterButton].forEach { view.addSubview($0) }
         
         mapView.snp.makeConstraints { make in
             make.edges.equalTo(view)
+        }
+        
+        currentMapSearchButton.addTarget(self, action: #selector(currentMapSearchButtonClicked), for: .touchUpInside)
+        currentMapSearchButton.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(8)
         }
         
         filterButton.addTarget(self, action: #selector(filterButtonClicked), for: .touchUpInside)
