@@ -26,7 +26,7 @@ class CinemaAPImanager {
         let parameters: Parameters = [
             "x": location.longitude,
             "y": location.latitude,
-            "radius": 2000
+            "radius": 5000
         ]
         
         let url = Endpoint.Search.Keyword.cinema.requestURL

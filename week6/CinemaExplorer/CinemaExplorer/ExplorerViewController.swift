@@ -31,6 +31,8 @@ class ExplorerViewController: UIViewController {
         return btn
     }()
     
+    var cinemas: [Cinema] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,16 +48,16 @@ class ExplorerViewController: UIViewController {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let mega = UIAlertAction(title: "메가박스", style: .default) { action in
-            print("메가박스")
+            self.setAnnotation(type: .mega)
         }
         let lotte = UIAlertAction(title: "롯데시네마", style: .default) { action in
-            print("롯데시네마")
+            self.setAnnotation(type: .lotte)
         }
         let cgv = UIAlertAction(title: "CGV", style: .default) { action in
-            print("CGV")
+            self.setAnnotation(type: .cgv)
         }
         let whole = UIAlertAction(title: "전체보기", style: .default) { action in
-            print("전체보기")
+            self.setAnnotation(type: nil)
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         
@@ -80,6 +82,46 @@ extension ExplorerViewController {
         let annotation = MKPointAnnotation()
         annotation.title = "현 위치"
         annotation.coordinate = center
+        
+        mapView.addAnnotation(annotation)
+    }
+    
+    func setAnnotation(type: CinemaType?) {
+        mapView.removeAnnotations(mapView.annotations)
+        
+        // MARK: 내 위치 어노테이션
+        var currentLocation: CLLocationCoordinate2D
+        
+        if let location = locationManager.location {
+            currentLocation = location.coordinate
+        } else {
+            currentLocation = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.88627)
+        }
+        
+        addAnnotation(title: "내 위치", coordinate: currentLocation)
+        
+        // MARK: 영화관 위치 어노테이션
+        var annotationCinema: [Cinema] = []
+        
+        if let type {
+            annotationCinema = self.cinemas.filter { $0.type == type }
+        } else {
+            annotationCinema = self.cinemas
+        }
+        
+        annotationCinema.forEach {
+            guard let lat = Double($0.y) else { return }
+            guard let long = Double($0.x) else { return }
+            
+            addAnnotation(title: $0.placeName, coordinate: CLLocationCoordinate2D(latitude: lat, longitude: long))
+        }
+    }
+    
+    func addAnnotation(title: String, coordinate: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        
+        annotation.title = title
+        annotation.coordinate = coordinate
         
         mapView.addAnnotation(annotation)
     }
@@ -130,7 +172,7 @@ extension ExplorerViewController {
             locationManager.startUpdatingLocation()
         case .authorized:
             print("authorized")
-        @unknown default: print("default") // 위치 권한 종류가 더 샐길 가능성 대비
+        @unknown default: print("default")
         }
     }
     
@@ -162,7 +204,8 @@ extension ExplorerViewController: CLLocationManagerDelegate {
         print("======================")
         
         CinemaAPImanager.shared.fetchLocations(around: location.coordinate) { cinemas in
-            cinemas.forEach { print($0.type.rawValue) }
+            self.cinemas = cinemas
+            self.setAnnotation(type: nil)
         } failureCompletionHandler: {
             print("fail")
         }
