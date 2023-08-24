@@ -41,6 +41,21 @@ class ExplorerViewController: UIViewController {
         return btn
     }()
     
+    let currentLocationButton = {
+        let btn = UIButton()
+        
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light)
+        let image = UIImage(systemName: "scope", withConfiguration: imageConfig)
+        btn.setImage(image, for: .normal)
+        
+        btn.backgroundColor = .white
+        btn.tintColor = .black
+        
+        btn.layer.cornerRadius = 20
+        
+        return btn
+    }()
+    
     let filterButton = {
         let btn = UIButton()
         
@@ -76,6 +91,11 @@ class ExplorerViewController: UIViewController {
         } failureCompletionHandler: {
             print("fail")
         }
+    }
+    
+    @objc
+    func currentLocationButtonClicked() {
+        showLocationSettingAlert()
     }
     
     @objc
@@ -198,7 +218,7 @@ extension ExplorerViewController {
             print("restricted")
         case .denied:
             print("denied")
-             showLocationSettingAlert()
+            setRegionAndAnnotation(center: CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.88627))
         case .authorizedAlways:
             print("authorizedAlways")
             
@@ -262,7 +282,7 @@ extension ExplorerViewController: CLLocationManagerDelegate {
 extension ExplorerViewController {
     
     func configureUI() {
-        [mapView, currentMapSearchButton, filterButton].forEach { view.addSubview($0) }
+        [mapView, currentMapSearchButton, currentLocationButton, filterButton].forEach { view.addSubview($0) }
         
         mapView.snp.makeConstraints { make in
             make.edges.equalTo(view)
@@ -272,6 +292,13 @@ extension ExplorerViewController {
         currentMapSearchButton.snp.makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+        }
+        
+        currentLocationButton.addTarget(self, action: #selector(currentLocationButtonClicked), for: .touchUpInside)
+        currentLocationButton.snp.makeConstraints { make in
+            make.bottom.equalTo(filterButton.snp.top).offset(-10)
+            make.trailing.equalTo(view).inset(26)
+            make.size.equalTo(40)
         }
         
         filterButton.addTarget(self, action: #selector(filterButtonClicked), for: .touchUpInside)
