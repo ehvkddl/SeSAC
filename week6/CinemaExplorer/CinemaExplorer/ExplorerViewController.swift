@@ -95,7 +95,13 @@ class ExplorerViewController: UIViewController {
     
     @objc
     func currentLocationButtonClicked() {
-        showLocationSettingAlert()
+        if locationManager.authorizationStatus == .denied {
+            showLocationSettingAlert()
+        } else {
+            guard let location = locationManager.location else { return }
+            
+            setRegionAndAnnotation(center: location.coordinate)
+        }
     }
     
     @objc
