@@ -44,6 +44,7 @@
 		EA740D4E2A9A40CD007152C7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA740D4D2A9A40CD007152C7 /* SnapKit */; };
 		EA740D512A9A4C8D007152C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EA740D502A9A4C8D007152C7 /* Lottie */; };
 		EA740D572A9A5C52007152C7 /* popular.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D562A9A5C52007152C7 /* popular.json */; };
+		EA740D592A9A6F18007152C7 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D582A9A6F18007152C7 /* OnboardingContentViewController.swift */; };
 		EA740D5B2A9A7C67007152C7 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D5A2A9A7C67007152C7 /* Intro.swift */; };
 		EA740D5F2A9A824F007152C7 /* tv.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5C2A9A824E007152C7 /* tv.json */; };
 		EA740D602A9A824F007152C7 /* watchTV.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5D2A9A824F007152C7 /* watchTV.json */; };
@@ -89,6 +90,7 @@
 		EA740D482A9A3FD8007152C7 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		EA740D4A2A9A3FED007152C7 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		EA740D562A9A5C52007152C7 /* popular.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popular.json; sourceTree = "<group>"; };
+		EA740D582A9A6F18007152C7 /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
 		EA740D5A2A9A7C67007152C7 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		EA740D5C2A9A824E007152C7 /* tv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tv.json; sourceTree = "<group>"; };
 		EA740D5D2A9A824F007152C7 /* watchTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = watchTV.json; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				EA740D422A9A3A89007152C7 /* OnboardingViewController.swift */,
+				EA740D582A9A6F18007152C7 /* OnboardingContentViewController.swift */,
 				EA740D442A9A3FC8007152C7 /* FirstViewController.swift */,
 				EA740D462A9A3FCE007152C7 /* SecondViewController.swift */,
 				EA740D482A9A3FD8007152C7 /* ThirdViewController.swift */,
@@ -384,6 +387,7 @@
 				EA5283FB2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.swift in Sources */,
 				EA740D492A9A3FD8007152C7 /* ThirdViewController.swift in Sources */,
 				EA5A369A2A861E13007ECF41 /* TmdbAPIManager.swift in Sources */,
+				EA740D592A9A6F18007152C7 /* OnboardingContentViewController.swift in Sources */,
 				EA740D452A9A3FC8007152C7 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

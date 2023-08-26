@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingViewController: UIPageViewController {
 
-    let introViewList: [UIViewController] = [FirstViewController(), SecondViewController(), ThirdViewController(), FourthViewController()]
+    var introViewList = [UIViewController]()
     
     override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
@@ -22,13 +22,30 @@ class OnboardingViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configurePage()
+    }
+    
+}
+
+extension OnboardingViewController {
+    
+    func configurePage() {
         delegate = self
         dataSource = self
         
+        Intro.list.forEach {
+            introViewList.append(OnboardingContentViewController(animationName: $0.animationName,
+                                                                 titleText: $0.title,
+                                                                 subtitleText: $0.subTitle))
+        }
+        
         guard let first = introViewList.first else { return }
+        
         setViewControllers([first], direction: .forward, animated: true)
     }
     
+}
+
 extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
