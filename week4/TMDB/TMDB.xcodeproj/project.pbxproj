@@ -39,12 +39,12 @@
 		EA740D432A9A3A89007152C7 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D422A9A3A89007152C7 /* OnboardingViewController.swift */; };
 		EA740D4E2A9A40CD007152C7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA740D4D2A9A40CD007152C7 /* SnapKit */; };
 		EA740D512A9A4C8D007152C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EA740D502A9A4C8D007152C7 /* Lottie */; };
-		EA740D572A9A5C52007152C7 /* popular.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D562A9A5C52007152C7 /* popular.json */; };
 		EA740D592A9A6F18007152C7 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D582A9A6F18007152C7 /* OnboardingContentViewController.swift */; };
 		EA740D5B2A9A7C67007152C7 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D5A2A9A7C67007152C7 /* Intro.swift */; };
 		EA740D5F2A9A824F007152C7 /* tv.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5C2A9A824E007152C7 /* tv.json */; };
 		EA740D602A9A824F007152C7 /* watchTV.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5D2A9A824F007152C7 /* watchTV.json */; };
 		EA740D612A9A824F007152C7 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5E2A9A824F007152C7 /* movie.json */; };
+		EA740D682A9A9450007152C7 /* popular.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D652A9A9450007152C7 /* popular.json */; };
 		EAADD4982A88BBF6006CB066 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */; };
 		EAADD4992A88BBF6006CB066 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */; };
 		EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAADD49A2A88BE42006CB066 /* Credit.swift */; };
@@ -81,12 +81,12 @@
 		EA5A36B12A87E054007ECF41 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 		EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		EA740D422A9A3A89007152C7 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		EA740D562A9A5C52007152C7 /* popular.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popular.json; sourceTree = "<group>"; };
 		EA740D582A9A6F18007152C7 /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
 		EA740D5A2A9A7C67007152C7 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		EA740D5C2A9A824E007152C7 /* tv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tv.json; sourceTree = "<group>"; };
 		EA740D5D2A9A824F007152C7 /* watchTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = watchTV.json; sourceTree = "<group>"; };
 		EA740D5E2A9A824F007152C7 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		EA740D652A9A9450007152C7 /* popular.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popular.json; sourceTree = "<group>"; };
 		EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
 		EAADD49A2A88BE42006CB066 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
@@ -248,7 +248,7 @@
 		EA740D532A9A52CB007152C7 /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				EA740D562A9A5C52007152C7 /* popular.json */,
+				EA740D652A9A9450007152C7 /* popular.json */,
 				EA740D5E2A9A824F007152C7 /* movie.json */,
 				EA740D5C2A9A824E007152C7 /* tv.json */,
 				EA740D5D2A9A824F007152C7 /* watchTV.json */,
@@ -329,11 +329,11 @@
 				EA5A36A72A86AE14007ECF41 /* TrendCollectionViewCell.xib in Resources */,
 				EA5A36922A861C9F007ECF41 /* LaunchScreen.storyboard in Resources */,
 				EA3BE3FD2A8BE06F00266342 /* OverviewTableViewCell.xib in Resources */,
-				EA740D572A9A5C52007152C7 /* popular.json in Resources */,
 				EA5283FC2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.xib in Resources */,
 				EA5283F82A91004A00B0FB4B /* SeasonTableViewCell.xib in Resources */,
 				EAADD4992A88BBF6006CB066 /* CastTableViewCell.xib in Resources */,
 				EA5A368F2A861C9F007ECF41 /* Assets.xcassets in Resources */,
+				EA740D682A9A9450007152C7 /* popular.json in Resources */,
 				EA740D602A9A824F007152C7 /* watchTV.json in Resources */,
 				EA740D5F2A9A824F007152C7 /* tv.json in Resources */,
 				EA5284022A9112ED00B0FB4B /* EpisodeCollectionViewCell.xib in Resources */,
