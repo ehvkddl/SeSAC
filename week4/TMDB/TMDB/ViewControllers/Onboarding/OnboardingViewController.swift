@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnboardingViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class OnboardingViewController: UIPageViewController {
 
     let introViewList: [UIViewController] = [FirstViewController(), SecondViewController(), ThirdViewController(), FourthViewController()]
     
@@ -28,6 +28,8 @@ class OnboardingViewController: UIPageViewController, UIPageViewControllerDelega
         guard let first = introViewList.first else { return }
         setViewControllers([first], direction: .forward, animated: true)
     }
+    
+extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let currentIndex = introViewList.firstIndex(of: viewController) else { return nil }
