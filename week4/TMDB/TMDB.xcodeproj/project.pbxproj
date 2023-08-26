@@ -44,6 +44,7 @@
 		EA740D4E2A9A40CD007152C7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA740D4D2A9A40CD007152C7 /* SnapKit */; };
 		EA740D512A9A4C8D007152C7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EA740D502A9A4C8D007152C7 /* Lottie */; };
 		EA740D572A9A5C52007152C7 /* popular.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D562A9A5C52007152C7 /* popular.json */; };
+		EA740D5B2A9A7C67007152C7 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA740D5A2A9A7C67007152C7 /* Intro.swift */; };
 		EA740D5F2A9A824F007152C7 /* tv.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5C2A9A824E007152C7 /* tv.json */; };
 		EA740D602A9A824F007152C7 /* watchTV.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5D2A9A824F007152C7 /* watchTV.json */; };
 		EA740D612A9A824F007152C7 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = EA740D5E2A9A824F007152C7 /* movie.json */; };
@@ -88,6 +89,7 @@
 		EA740D482A9A3FD8007152C7 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		EA740D4A2A9A3FED007152C7 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		EA740D562A9A5C52007152C7 /* popular.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = popular.json; sourceTree = "<group>"; };
+		EA740D5A2A9A7C67007152C7 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		EA740D5C2A9A824E007152C7 /* tv.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tv.json; sourceTree = "<group>"; };
 		EA740D5D2A9A824F007152C7 /* watchTV.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = watchTV.json; sourceTree = "<group>"; };
 		EA740D5E2A9A824F007152C7 /* movie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				EA5A36A22A869BA3007ECF41 /* Genres.swift */,
 				EA5283C82A8E79BF00B0FB4B /* Recommend.swift */,
 				EA5283FD2A91094C00B0FB4B /* Details.swift */,
+				EA740D5A2A9A7C67007152C7 /* Intro.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				EA5A36A62A86AE14007ECF41 /* TrendCollectionViewCell.swift in Sources */,
 				EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */,
 				EA5284012A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift in Sources */,
+				EA740D5B2A9A7C67007152C7 /* Intro.swift in Sources */,
 				EA740D4B2A9A3FED007152C7 /* FourthViewController.swift in Sources */,
 				EA5A36B22A87E054007ECF41 /* URL+.swift in Sources */,
 				EA5A36A12A86914B007ECF41 /* APIKey.swift in Sources */,
