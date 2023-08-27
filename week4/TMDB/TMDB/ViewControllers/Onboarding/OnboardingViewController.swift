@@ -6,8 +6,20 @@
 //
 
 import UIKit
+import SnapKit
 
 class OnboardingViewController: UIPageViewController {
+    
+    lazy var pageControl = {
+        let control = UIPageControl()
+        
+        control.currentPageIndicatorTintColor = .black
+        control.pageIndicatorTintColor = .systemGray2
+        control.numberOfPages = introViewList.count
+        control.currentPage = 0
+        
+        return control
+    }()
 
     var introViewList = [UIViewController]()
     
@@ -23,6 +35,7 @@ class OnboardingViewController: UIPageViewController {
         super.viewDidLoad()
         
         configurePage()
+        setConstraints()
     }
     
 }
@@ -44,6 +57,14 @@ extension OnboardingViewController {
         setViewControllers([first], direction: .forward, animated: true)
     }
     
+    func setConstraints() {
+        [pageControl, gotoTrendButton].forEach{ view.addSubview($0) }
+        
+        pageControl.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
 }
 
 extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
@@ -63,15 +84,12 @@ extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewCont
         
         return nextIndex >= introViewList.count ? nil : introViewList[nextIndex]
     }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard let viewControllers = pageViewController.viewControllers else { return }
+        guard let currentIndex = introViewList.firstIndex(of: viewControllers[0]) else { return }
 
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return introViewList.count
-    }
-
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        guard let first = viewControllers?.first, let index = introViewList.firstIndex(of: first) else { return 0 }
-
-        return index
+        pageControl.currentPage = currentIndex
     }
     
 }
