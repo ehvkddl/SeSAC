@@ -20,6 +20,32 @@ class OnboardingViewController: UIPageViewController {
         
         return control
     }()
+    
+    let gotoTrendButton = {
+        let btn = UIButton()
+        
+        var config = UIButton.Configuration.filled()
+        config.title = "트렌드 보러가기"
+        
+        config.titleTextAttributesTransformer = UIConfigurationTextAttributesTransformer { incoming in
+            var outgoing = incoming
+            outgoing.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            
+            return outgoing
+        }
+        
+        config.baseForegroundColor = UIColor(red: 216/255, green: 217/255, blue: 218/255, alpha: 1)
+        config.baseBackgroundColor = UIColor(red: 39/255, green: 40/255, blue: 41/255, alpha: 1)
+        
+        config.titleAlignment = .center
+        
+        config.cornerStyle = .capsule
+        config.buttonSize = .large
+        
+        btn.configuration = config
+        
+        return btn
+    }()
 
     var introViewList = [UIViewController]()
     
@@ -36,6 +62,22 @@ class OnboardingViewController: UIPageViewController {
         
         configurePage()
         setConstraints()
+    }
+    
+    @objc
+    func gotoTrendButtonClicked() {
+        UserDefaults.standard.set(true, forKey: "isLaunched")
+        
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: TrendViewController.identifier) as? TrendViewController else { return }
+        
+        let nav = UINavigationController(rootViewController: vc)
+        
+        sceneDelegate?.window?.rootViewController = nav
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
     
 }
@@ -65,6 +107,13 @@ extension OnboardingViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
+        gotoTrendButton.addTarget(self, action: #selector(gotoTrendButtonClicked), for: .touchUpInside)
+        gotoTrendButton.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(60)
+        }
+    }
+    
 }
 
 extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
