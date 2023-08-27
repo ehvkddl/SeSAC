@@ -120,36 +120,6 @@ extension OnboardingViewController {
         hideButton()
     }
     
-}
-
-extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = introViewList.firstIndex(of: viewController) else { return nil }
-        
-        let previousIndex = currentIndex - 1
-        
-        return previousIndex < 0 ? nil : introViewList[previousIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let currentIndex = introViewList.firstIndex(of: viewController) else { return nil }
-        
-        let nextIndex = currentIndex + 1
-        
-        return nextIndex >= introViewList.count ? nil : introViewList[nextIndex]
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        guard let viewControllers = pageViewController.viewControllers else { return }
-        guard let currentIndex = introViewList.firstIndex(of: viewControllers[0]) else { return }
-        guard let previousIndex = introViewList.firstIndex(of: previousViewControllers[0]) else { return }
-        
-        self.previousIndex = previousIndex
-        pageControl.currentPage = currentIndex
-        animatedControlsAndButtonIfNeeded()
-    }
-    
     func animatedControlsAndButtonIfNeeded() {
         let isLastPage = pageControl.currentPage == introViewList.count - 1
 
@@ -192,6 +162,36 @@ extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewCont
             make.centerX.equalTo(view)
             make.bottom.equalTo(view.safeAreaLayoutGuide).inset(60)
         }
+    }
+    
+}
+
+extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let currentIndex = introViewList.firstIndex(of: viewController) else { return nil }
+        
+        let previousIndex = currentIndex - 1
+        
+        return previousIndex < 0 ? nil : introViewList[previousIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let currentIndex = introViewList.firstIndex(of: viewController) else { return nil }
+        
+        let nextIndex = currentIndex + 1
+        
+        return nextIndex >= introViewList.count ? nil : introViewList[nextIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard let viewControllers = pageViewController.viewControllers else { return }
+        guard let currentIndex = introViewList.firstIndex(of: viewControllers[0]) else { return }
+        guard let previousIndex = introViewList.firstIndex(of: previousViewControllers[0]) else { return }
+        
+        self.previousIndex = previousIndex
+        pageControl.currentPage = currentIndex
+        animatedControlsAndButtonIfNeeded()
     }
     
 }
