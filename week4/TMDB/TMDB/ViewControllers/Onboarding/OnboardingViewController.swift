@@ -48,6 +48,7 @@ class OnboardingViewController: UIPageViewController {
     }()
 
     var introViewList = [UIViewController]()
+    var previousIndex = 0
     
     override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
@@ -62,6 +63,15 @@ class OnboardingViewController: UIPageViewController {
         
         configurePage()
         setConstraints()
+    }
+    
+    @objc
+    func pageControlTapped(_ sender: UIPageControl) {
+        let direction: UIPageViewController.NavigationDirection = self.previousIndex < sender.currentPage ? .forward : .reverse
+        
+        setViewControllers([introViewList[sender.currentPage]], direction: direction, animated: true, completion: nil)
+        self.previousIndex = sender.currentPage
+        animatedControlsAndButtonIfNeeded()
     }
     
     @objc
@@ -102,6 +112,7 @@ extension OnboardingViewController {
     func setConstraints() {
         [pageControl, gotoTrendButton].forEach{ view.addSubview($0) }
         
+        pageControl.addTarget(self, action: #selector(pageControlTapped), for: .valueChanged)
         showControl()
 
         
@@ -132,7 +143,9 @@ extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewCont
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard let viewControllers = pageViewController.viewControllers else { return }
         guard let currentIndex = introViewList.firstIndex(of: viewControllers[0]) else { return }
-
+        guard let previousIndex = introViewList.firstIndex(of: previousViewControllers[0]) else { return }
+        
+        self.previousIndex = previousIndex
         pageControl.currentPage = currentIndex
         animatedControlsAndButtonIfNeeded()
     }
