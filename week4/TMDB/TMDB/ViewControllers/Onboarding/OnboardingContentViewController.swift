@@ -31,21 +31,17 @@ class OnboardingContentViewController: UIViewController {
         return view
     }()
     lazy var titleLabel = {
-        let lbl = UILabel()
-        
-        lbl.text = titleText
-        lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
-        lbl.numberOfLines = 0
+        let lbl = OnboardingLabel()
 
+        lbl.setupView(text: titleText)
+        lbl.font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+        
         return lbl
     }()
     lazy var subtitleLabel = {
-        let lbl = UILabel()
-        
-        lbl.text = subtitleText
-        lbl.textAlignment = .center
-        lbl.numberOfLines = 0
+        let lbl = OnboardingLabel()
+                
+        lbl.setupView(text: subtitleText)
 
         return lbl
     }()

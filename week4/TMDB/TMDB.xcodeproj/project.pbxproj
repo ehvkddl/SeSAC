@@ -48,6 +48,7 @@
 		EAADD4982A88BBF6006CB066 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */; };
 		EAADD4992A88BBF6006CB066 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */; };
 		EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAADD49A2A88BE42006CB066 /* Credit.swift */; };
+		EAC0AD792A9B938F00800193 /* OnboardingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AD782A9B938F00800193 /* OnboardingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		EAADD4962A88BBF6006CB066 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		EAADD4972A88BBF6006CB066 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
 		EAADD49A2A88BE42006CB066 /* Credit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credit.swift; sourceTree = "<group>"; };
+		EAC0AD782A9B938F00800193 /* OnboardingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				EA5A36B32A87F7B7007ECF41 /* PaddingLabel.swift */,
+				EAC0AD782A9B938F00800193 /* OnboardingLabel.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				EAADD49B2A88BE42006CB066 /* Credit.swift in Sources */,
 				EA5A36862A861C9E007ECF41 /* AppDelegate.swift in Sources */,
 				EA5283F72A91004A00B0FB4B /* SeasonTableViewCell.swift in Sources */,
+				EAC0AD792A9B938F00800193 /* OnboardingLabel.swift in Sources */,
 				EA5283FE2A91094C00B0FB4B /* Details.swift in Sources */,
 				EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
