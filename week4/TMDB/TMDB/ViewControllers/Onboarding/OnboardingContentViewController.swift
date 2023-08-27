@@ -65,7 +65,7 @@ class OnboardingContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UIColor(red: 97/255, green: 103/255, blue: 122/255, alpha: 1)
         
         setConstraints()
     }
@@ -82,7 +82,6 @@ extension OnboardingContentViewController {
         stackView.snp.makeConstraints { make in
             make.center.equalTo(view)
             make.horizontalEdges.equalTo(view).inset(26)
-            make.height.equalTo(UIScreen.main.bounds.height * 0.5)
         }
         
         animationView.snp.makeConstraints { make in
