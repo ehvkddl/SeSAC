@@ -102,16 +102,11 @@ extension OnboardingViewController {
     func setConstraints() {
         [pageControl, gotoTrendButton].forEach{ view.addSubview($0) }
         
-        pageControl.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
-        }
+        showControl()
+
         
         gotoTrendButton.addTarget(self, action: #selector(gotoTrendButtonClicked), for: .touchUpInside)
-        gotoTrendButton.snp.makeConstraints { make in
-            make.centerX.equalTo(view)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(60)
-        }
+        hideButton()
     }
     
 }
@@ -139,6 +134,51 @@ extension OnboardingViewController: UIPageViewControllerDelegate, UIPageViewCont
         guard let currentIndex = introViewList.firstIndex(of: viewControllers[0]) else { return }
 
         pageControl.currentPage = currentIndex
+        animatedControlsAndButtonIfNeeded()
+    }
+    
+    func animatedControlsAndButtonIfNeeded() {
+        let isLastPage = pageControl.currentPage == introViewList.count - 1
+
+        if isLastPage {
+            hideControl()
+            showButton()
+        } else {
+            showControl()
+            hideButton()
+        }
+
+        UIViewPropertyAnimator.runningPropertyAnimator(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+
+    func hideControl() {
+        pageControl.snp.remakeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(view.snp.bottom)
+        }
+    }
+
+    func showControl() {
+        pageControl.snp.remakeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
+
+    func hideButton() {
+        gotoTrendButton.snp.remakeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(view.snp.bottom)
+        }
+    }
+
+    func showButton() {
+        gotoTrendButton.snp.remakeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(60)
+        }
     }
     
 }
