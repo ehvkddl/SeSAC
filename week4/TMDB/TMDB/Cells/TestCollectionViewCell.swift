@@ -114,6 +114,14 @@ class TestCollectionViewCell: BaseCollectionViewCell {
         return btn
     }()
     
+    var delegate: PassTrendInfoDelegate?
+    var index: Int?
+    
+    @objc func moreDetailButtonClicked() {
+        guard let idx = index else { return }
+        delegate?.moreDetailButtonClicked(index: idx)
+    }
+    
     func setData(row: VideoInfo) {
         releaseDateLabel.text = row.releaseDate
         
@@ -137,6 +145,8 @@ class TestCollectionViewCell: BaseCollectionViewCell {
     
     override func configureView() {
         [contentsView, releaseDateLabel, genreLabel, mediaTypeImageView, backdropImageView, voteTextLabel, voteAverageLabel, titleLabel, originalTitleLabel, overviewLabel, dividerView, moreDetailButton].forEach { addSubview($0) }
+        
+        moreDetailButton.addTarget(self, action: #selector(moreDetailButtonClicked), for: .touchUpInside)
     }
     
     override func setConstraints() {

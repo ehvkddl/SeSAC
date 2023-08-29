@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PassTrendInfoDelegate {
+    func moreDetailButtonClicked(index: Int)
+}
+
 class TrendViewController: BaseViewController {
 
     let mainView = TrendView()
@@ -55,27 +59,14 @@ extension TrendViewController: UICollectionViewDelegate, UICollectionViewDataSou
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TestCollectionViewCell.identifier, for: indexPath) as? TestCollectionViewCell else { return UICollectionViewCell() }
 
         cell.setData(row: trends[indexPath.row])
-//        cell.index = indexPath.row
+        
+        cell.delegate = self
+        cell.index = indexPath.row
 
         return cell
     }
 
 }
-
-//extension TrendViewController: ButtonTappedDelegate {
-//
-//    func cellButtonTapped(index: Int) {
-//        let sb = UIStoryboard(name: "Main", bundle: nil)
-//
-//        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
-//        vc.content = trends[index]
-//        vc.type = trends[index].mediaType
-//        vc.id = trends[index].id
-//
-//        navigationController?.pushViewController(vc, animated: true)
-//    }
-//
-//}
 
 extension TrendViewController {
     
@@ -98,6 +89,26 @@ extension TrendViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(magnifyingButtonTapped))
         
         self.navigationController?.navigationBar.tintColor = .black
+    }
+    
+}
+
+extension TrendViewController: PassTrendInfoDelegate {
+    
+    func moreDetailButtonClicked(index: Int) {
+        // storyboard
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
+        
+        vc.content = trends[index]
+        vc.type = trends[index].mediaType
+        vc.id = trends[index].id
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+        // code
+        // let vc = DetailViewController()
+        // navigationController?.pushViewController(vc, animated: true)
     }
     
 }
