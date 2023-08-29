@@ -11,7 +11,7 @@ class TrendView: BaseView {
     
     lazy var trendCollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: trendCollectionViewLayout())
-        view.register(TestCollectionViewCell.self, forCellWithReuseIdentifier: TestCollectionViewCell.identifier)
+        view.register(TrendCollectionViewCell.self, forCellWithReuseIdentifier: TrendCollectionViewCell.identifier)
         view.collectionViewLayout = trendCollectionViewLayout()
         return view
     }()
