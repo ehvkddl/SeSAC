@@ -78,6 +78,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case .content:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileContentTableViewCell.identifier) as? ProfileContentTableViewCell else { return UITableViewCell() }
             
+            let text = Profile.Content.allCases[indexPath.row].rawValue
+            cell.titleText = text
+            cell.placeholderText = text
+            
             cell.separatorInset = UIEdgeInsets(top: 0, left: view.frame.width * 0.25, bottom: 0, right: 0)
             
             return cell

@@ -23,6 +23,18 @@ class ProfileContentTableViewCell: BaseTableViewCell {
         return tf
     }()
     
+    var titleText: String? {
+        didSet {
+            title.text = titleText
+        }
+    }
+    
+    var placeholderText: String? {
+        didSet {
+            editTextField.placeholder = placeholderText
+        }
+    }
+    
     override func configureView() {
         [title, editTextField].forEach { addSubview($0) }
     }
