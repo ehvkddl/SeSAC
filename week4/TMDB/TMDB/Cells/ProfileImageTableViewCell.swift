@@ -9,9 +9,9 @@ import UIKit
 
 class ProfileImageTableViewCell: BaseTableViewCell {
     
-    lazy var image = {
+    let image = {
         let img = UIImageView()
-        img.image = UIImage(named: "chap")
+        img.image = UIImage(named: "blankProfile")
         img.contentMode = .scaleAspectFill
         img.clipsToBounds = true
         return img
@@ -25,6 +25,12 @@ class ProfileImageTableViewCell: BaseTableViewCell {
         return btn
     }()
     
+    var delegate: ProfileImageEditButtonDelegate?
+    
+    @objc func ProfileImageEditButtonClicked() {
+        delegate?.ProfileImageEditButtonClicked()
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -32,12 +38,14 @@ class ProfileImageTableViewCell: BaseTableViewCell {
     }
     
     override func configureView() {
-        [image, editButton].forEach { addSubview($0) }
+        [image, editButton].forEach { contentView.addSubview($0) }
+        
+        editButton.addTarget(self, action: #selector(ProfileImageEditButtonClicked), for: .touchUpInside)
     }
     
     override func setConstraints() {
         image.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(18)
+            make.top.equalTo(contentView.snp.top).inset(18)
             make.centerX.equalToSuperview()
             make.size.equalTo(80)
         }
@@ -45,7 +53,7 @@ class ProfileImageTableViewCell: BaseTableViewCell {
         editButton.snp.makeConstraints { make in
             make.top.equalTo(image.snp.bottom).offset(5)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(safeAreaLayoutGuide).inset(18)
+            make.bottom.equalTo(contentView.snp.bottom).inset(18)
         }
     }
     

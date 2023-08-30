@@ -27,6 +27,10 @@ enum Profile: CaseIterable {
     }
 }
 
+protocol ProfileImageEditButtonDelegate {
+    func ProfileImageEditButtonClicked()
+}
+
 import UIKit
 
 class ProfileViewController: BaseViewController {
@@ -74,6 +78,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         switch menu {
         case .image:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileImageTableViewCell.identifier) as? ProfileImageTableViewCell else { return UITableViewCell() }
+            cell.delegate = self
             return cell
         case .content:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileContentTableViewCell.identifier) as? ProfileContentTableViewCell else { return UITableViewCell() }
@@ -106,6 +111,14 @@ extension ProfileViewController {
     @objc
     func doneButtonClicked() {
         print("완료")
+    }
+    
+}
+
+extension ProfileViewController: ProfileImageEditButtonDelegate {
+    
+    func ProfileImageEditButtonClicked() {
+        print("ProfileImageEditButtonClicked")
     }
     
 }
