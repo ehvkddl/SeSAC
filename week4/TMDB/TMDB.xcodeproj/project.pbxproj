@@ -52,6 +52,11 @@
 		EAC0ADE92A9CECE500800193 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0ADE82A9CECE500800193 /* BaseCollectionViewCell.swift */; };
 		EAC0ADEB2A9CEE4700800193 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0ADEA2A9CEE4700800193 /* BaseViewController.swift */; };
 		EAC0ADED2A9CF0D100800193 /* TrendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0ADEC2A9CF0D100800193 /* TrendCollectionViewCell.swift */; };
+		EAC0AE412A9F603600800193 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE402A9F603500800193 /* ProfileView.swift */; };
+		EAC0AE462A9F68C200800193 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE452A9F68C200800193 /* ProfileViewController.swift */; };
+		EAC0AE482A9F6D3D00800193 /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE472A9F6D3D00800193 /* ProfileImageTableViewCell.swift */; };
+		EAC0AE4A2A9F6D6400800193 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE492A9F6D6400800193 /* BaseTableViewCell.swift */; };
+		EAC0AE4C2A9F737800800193 /* ProfileContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE4B2A9F737800800193 /* ProfileContentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +103,11 @@
 		EAC0ADE82A9CECE500800193 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAC0ADEA2A9CEE4700800193 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EAC0ADEC2A9CF0D100800193 /* TrendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAC0AE402A9F603500800193 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EAC0AE452A9F68C200800193 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EAC0AE472A9F6D3D00800193 /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
+		EAC0AE492A9F6D6400800193 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		EAC0AE4B2A9F737800800193 /* ProfileContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +163,7 @@
 				EAC0ADEA2A9CEE4700800193 /* BaseViewController.swift */,
 				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
 				EA3BE3F82A8BD6B400266342 /* DetailViewController.swift */,
+				EAC0AE452A9F68C200800193 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				EAC0ADE82A9CECE500800193 /* BaseCollectionViewCell.swift */,
+				EAC0AE492A9F6D6400800193 /* BaseTableViewCell.swift */,
 				EAC0ADEC2A9CF0D100800193 /* TrendCollectionViewCell.swift */,
 				EA3BE3FA2A8BE06F00266342 /* OverviewTableViewCell.swift */,
 				EA3BE3FB2A8BE06F00266342 /* OverviewTableViewCell.xib */,
@@ -172,6 +184,8 @@
 				EA5283FA2A9103C600B0FB4B /* HeaderSeasonCollectionReusableView.xib */,
 				EA5283FF2A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift */,
 				EA5284002A9112ED00B0FB4B /* EpisodeCollectionViewCell.xib */,
+				EAC0AE472A9F6D3D00800193 /* ProfileImageTableViewCell.swift */,
+				EAC0AE4B2A9F737800800193 /* ProfileContentTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -272,6 +286,7 @@
 			children = (
 				EAC0ADE42A9CE82400800193 /* BaseView.swift */,
 				EAC0ADE62A9CE88000800193 /* TrendView.swift */,
+				EAC0AE402A9F603500800193 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -380,16 +395,21 @@
 				EAC0AD792A9B938F00800193 /* OnboardingLabel.swift in Sources */,
 				EA5283FE2A91094C00B0FB4B /* Details.swift in Sources */,
 				EA3BE3F52A89464E00266342 /* Endpoint.swift in Sources */,
+				EAC0AE462A9F68C200800193 /* ProfileViewController.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
 				EA740D432A9A3A89007152C7 /* OnboardingViewController.swift in Sources */,
 				EA5A36A32A869BA3007ECF41 /* Genres.swift in Sources */,
+				EAC0AE4A2A9F6D6400800193 /* BaseTableViewCell.swift in Sources */,
 				EA3BE3F92A8BD6B400266342 /* DetailViewController.swift in Sources */,
+				EAC0AE482A9F6D3D00800193 /* ProfileImageTableViewCell.swift in Sources */,
 				EA5A369F2A868F40007ECF41 /* Trend.swift in Sources */,
 				EA3BE3FC2A8BE06F00266342 /* OverviewTableViewCell.swift in Sources */,
 				EAC0ADE72A9CE88000800193 /* TrendView.swift in Sources */,
 				EA5A36882A861C9E007ECF41 /* SceneDelegate.swift in Sources */,
 				EA5284012A9112ED00B0FB4B /* EpisodeCollectionViewCell.swift in Sources */,
 				EA740D5B2A9A7C67007152C7 /* Intro.swift in Sources */,
+				EAC0AE4C2A9F737800800193 /* ProfileContentTableViewCell.swift in Sources */,
+				EAC0AE412A9F603600800193 /* ProfileView.swift in Sources */,
 				EA5A36B22A87E054007ECF41 /* URL+.swift in Sources */,
 				EA5A36A12A86914B007ECF41 /* APIKey.swift in Sources */,
 				EAADD4982A88BBF6006CB066 /* CastTableViewCell.swift in Sources */,

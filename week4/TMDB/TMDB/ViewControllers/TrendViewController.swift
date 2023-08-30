@@ -77,7 +77,10 @@ extension TrendViewController {
     
     @objc
     func magnifyingButtonTapped() {
-        print("magnifying")
+        let vc = ProfileViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
     
 }
@@ -86,7 +89,7 @@ extension TrendViewController {
     
     func configureNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listButtonTapped))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(magnifyingButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: #selector(magnifyingButtonTapped))
         
         self.navigationController?.navigationBar.tintColor = .black
     }
