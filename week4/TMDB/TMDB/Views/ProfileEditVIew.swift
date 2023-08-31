@@ -19,6 +19,8 @@ class ProfileEditView: BaseView {
     
     let editTextField = {
         let tf = UITextField()
+        tf.becomeFirstResponder()
+        tf.clearButtonMode = .always
         return tf
     }()
     
