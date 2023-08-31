@@ -25,8 +25,6 @@ class TrendViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureView()
-        
         TmdbAPIManager.shared.fetchGenres { genres in
             let _ = genres.map { GenreManager.shared.updateGenreDict(id: $0.id, name: $0.name) }
             

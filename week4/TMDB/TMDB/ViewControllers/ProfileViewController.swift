@@ -44,8 +44,6 @@ class ProfileViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureView()
     }
     
     override func viewDidAppear(_ animated: Bool) {

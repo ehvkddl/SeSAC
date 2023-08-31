@@ -58,6 +58,8 @@
 		EAC0AE4A2A9F6D6400800193 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE492A9F6D6400800193 /* BaseTableViewCell.swift */; };
 		EAC0AE4C2A9F737800800193 /* ProfileContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE4B2A9F737800800193 /* ProfileContentTableViewCell.swift */; };
 		EAC0AE532AA0E98300800193 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE522AA0E98300800193 /* NSNotification+.swift */; };
+		EAC0AE552AA0F83300800193 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE542AA0F83300800193 /* ProfileEditViewController.swift */; };
+		EAC0AE572AA0F83D00800193 /* ProfileEditVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE562AA0F83D00800193 /* ProfileEditVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +112,8 @@
 		EAC0AE492A9F6D6400800193 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EAC0AE4B2A9F737800800193 /* ProfileContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentTableViewCell.swift; sourceTree = "<group>"; };
 		EAC0AE522AA0E98300800193 /* NSNotification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
+		EAC0AE542AA0F83300800193 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		EAC0AE562AA0F83D00800193 /* ProfileEditVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 				EA5A36892A861C9E007ECF41 /* TrendViewController.swift */,
 				EA3BE3F82A8BD6B400266342 /* DetailViewController.swift */,
 				EAC0AE452A9F68C200800193 /* ProfileViewController.swift */,
+				EAC0AE542AA0F83300800193 /* ProfileEditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				EAC0ADE42A9CE82400800193 /* BaseView.swift */,
 				EAC0ADE62A9CE88000800193 /* TrendView.swift */,
 				EAC0AE402A9F603500800193 /* ProfileView.swift */,
+				EAC0AE562AA0F83D00800193 /* ProfileEditVIew.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 			files = (
 				EAC0ADED2A9CF0D100800193 /* TrendCollectionViewCell.swift in Sources */,
 				EA5A36B42A87F7B7007ECF41 /* PaddingLabel.swift in Sources */,
+				EAC0AE572AA0F83D00800193 /* ProfileEditVIew.swift in Sources */,
 				EAC0ADE92A9CECE500800193 /* BaseCollectionViewCell.swift in Sources */,
 				EAC0ADE52A9CE82400800193 /* BaseView.swift in Sources */,
 				EA5A368A2A861C9E007ECF41 /* TrendViewController.swift in Sources */,
@@ -414,6 +421,7 @@
 				EA740D5B2A9A7C67007152C7 /* Intro.swift in Sources */,
 				EAC0AE4C2A9F737800800193 /* ProfileContentTableViewCell.swift in Sources */,
 				EAC0AE412A9F603600800193 /* ProfileView.swift in Sources */,
+				EAC0AE552AA0F83300800193 /* ProfileEditViewController.swift in Sources */,
 				EA5A36B22A87E054007ECF41 /* URL+.swift in Sources */,
 				EA5A36A12A86914B007ECF41 /* APIKey.swift in Sources */,
 				EAADD4982A88BBF6006CB066 /* CastTableViewCell.swift in Sources */,
