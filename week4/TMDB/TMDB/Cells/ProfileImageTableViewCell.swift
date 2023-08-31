@@ -31,6 +31,13 @@ class ProfileImageTableViewCell: BaseTableViewCell {
         delegate?.ProfileImageEditButtonClicked()
     }
     
+    @objc
+    func selectImageNotificationObserver(notification: NSNotification) {
+        guard let img = notification.userInfo?["selectImage"] as? UIImage else { return }
+        
+        self.image.image = img
+    }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
 
@@ -41,6 +48,8 @@ class ProfileImageTableViewCell: BaseTableViewCell {
         [image, editButton].forEach { contentView.addSubview($0) }
         
         editButton.addTarget(self, action: #selector(ProfileImageEditButtonClicked), for: .touchUpInside)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: .selectImage, object: nil)
     }
     
     override func setConstraints() {

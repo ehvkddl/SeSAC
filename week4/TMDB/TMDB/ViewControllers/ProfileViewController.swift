@@ -84,11 +84,11 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     // 사진을 선택하거나 카메라 촬영 직후 호출
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-             // MARK: notification으로 image 변경 해주기
-            
-            dismiss(animated: true)
-        }
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+        NotificationCenter.default.post(name: .selectImage, object: nil, userInfo: ["selectImage": image])
+
+        dismiss(animated: true)
     }
     
 }

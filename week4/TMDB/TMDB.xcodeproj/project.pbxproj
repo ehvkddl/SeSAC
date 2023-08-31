@@ -57,6 +57,7 @@
 		EAC0AE482A9F6D3D00800193 /* ProfileImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE472A9F6D3D00800193 /* ProfileImageTableViewCell.swift */; };
 		EAC0AE4A2A9F6D6400800193 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE492A9F6D6400800193 /* BaseTableViewCell.swift */; };
 		EAC0AE4C2A9F737800800193 /* ProfileContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE4B2A9F737800800193 /* ProfileContentTableViewCell.swift */; };
+		EAC0AE532AA0E98300800193 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE522AA0E98300800193 /* NSNotification+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		EAC0AE472A9F6D3D00800193 /* ProfileImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageTableViewCell.swift; sourceTree = "<group>"; };
 		EAC0AE492A9F6D6400800193 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		EAC0AE4B2A9F737800800193 /* ProfileContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentTableViewCell.swift; sourceTree = "<group>"; };
+		EAC0AE522AA0E98300800193 /* NSNotification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				EA5A36B12A87E054007ECF41 /* URL+.swift */,
+				EAC0AE522AA0E98300800193 /* NSNotification+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				EAC0AE462A9F68C200800193 /* ProfileViewController.swift in Sources */,
 				EA5A36A92A86AE78007ECF41 /* ReusableViewProtocol.swift in Sources */,
 				EA740D432A9A3A89007152C7 /* OnboardingViewController.swift in Sources */,
+				EAC0AE532AA0E98300800193 /* NSNotification+.swift in Sources */,
 				EA5A36A32A869BA3007ECF41 /* Genres.swift in Sources */,
 				EAC0AE4A2A9F6D6400800193 /* BaseTableViewCell.swift in Sources */,
 				EA3BE3F92A8BD6B400266342 /* DetailViewController.swift in Sources */,
