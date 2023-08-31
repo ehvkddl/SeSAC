@@ -35,6 +35,7 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
 
+    let picker = UIImagePickerController()
     let mainView = ProfileView()
     
     override func loadView() {
@@ -45,6 +46,18 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         
         configureView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            print("갤러리 사용 불가, 사용자에게 토스트/얼럿")
+            return
+        }
+        
+        picker.delegate = self
+        picker.sourceType = .photoLibrary
     }
     
     override func configureView() {
@@ -60,6 +73,24 @@ class ProfileViewController: BaseViewController {
         mainView.tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    // 취소 버튼 클릭시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
+    // 사진을 선택하거나 카메라 촬영 직후 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+             // MARK: notification으로 image 변경 해주기
+            
+            dismiss(animated: true)
+        }
+    }
+    
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -118,7 +149,7 @@ extension ProfileViewController {
 extension ProfileViewController: ProfileImageEditButtonDelegate {
     
     func ProfileImageEditButtonClicked() {
-        print("ProfileImageEditButtonClicked")
+        present(picker, animated: true)
     }
     
 }
