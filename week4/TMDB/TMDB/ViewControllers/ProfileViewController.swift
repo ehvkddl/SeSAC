@@ -49,11 +49,6 @@ class ProfileViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
-            print("갤러리 사용 불가, 사용자에게 토스트/얼럿")
-            return
-        }
-        
         picker.delegate = self
         picker.sourceType = .photoLibrary
     }
@@ -163,6 +158,11 @@ extension ProfileViewController {
 extension ProfileViewController: ProfileImageEditButtonDelegate {
     
     func ProfileImageEditButtonClicked() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            print("갤러리 사용 불가, 사용자에게 토스트/얼럿")
+            return
+        }
+        
         present(picker, animated: true)
     }
     
