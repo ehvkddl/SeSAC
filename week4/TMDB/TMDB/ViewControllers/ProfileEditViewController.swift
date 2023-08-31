@@ -14,7 +14,6 @@ class ProfileEditViewController: BaseViewController {
     let mainView = ProfileEditView()
     
     override func loadView() {
-        print("loadView")
         guard let type = self.type else { return }
         mainView.typeLabel.text = type.rawValue
         

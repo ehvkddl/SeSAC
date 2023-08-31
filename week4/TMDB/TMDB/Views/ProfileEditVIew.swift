@@ -29,7 +29,6 @@ class ProfileEditView: BaseView {
     }()
     
     override func configureView() {
-        print("ProfileEditView configureView")
         [typeLabel, editTextField, divider].forEach { addSubview($0) }
     }
     
