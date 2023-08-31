@@ -122,11 +122,27 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.reloadRows(at: [indexPath], with: .none)
+
+        let menu = Profile.allCases[indexPath.section]
+
+        switch menu {
+        case .image: break
+        case .content:
+            let vc = ProfileEditViewController()
+            vc.type = Profile.Content.allCases[indexPath.row]
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+}
+
 extension ProfileViewController {
     
     func configureNavigationBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: #selector(cancelButtonClicked))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(cancelButtonClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneButtonClicked))
         
         self.navigationItem.leftBarButtonItem?.tintColor = .black
         self.navigationItem.rightBarButtonItem?.tintColor = .systemBlue
