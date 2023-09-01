@@ -11,7 +11,6 @@ class ProfileContentTableViewCell: BaseTableViewCell {
     
     let title = {
         let lbl = UILabel()
-        lbl.text = "사용자 이름"
         lbl.textColor = .darkGray
         lbl.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return lbl
@@ -19,19 +18,15 @@ class ProfileContentTableViewCell: BaseTableViewCell {
     
     let editTextField = {
         let tf = UITextField()
-        tf.placeholder = "사용자 이름"
         return tf
     }()
     
-    var titleText: String? {
+    var type: Profile.Content? {
         didSet {
-            title.text = titleText
-        }
-    }
-    
-    var placeholderText: String? {
-        didSet {
-            editTextField.placeholder = placeholderText
+            guard let type = type else { return }
+            
+            title.text = type.rawValue
+            editTextField.placeholder = type.rawValue
         }
     }
     

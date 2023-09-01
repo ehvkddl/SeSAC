@@ -11,12 +11,11 @@ class ProfileEditViewController: BaseViewController {
 
     var type: Profile.Content?
     
+    var dataSendClosure: ((Profile.Content, String) -> Void)?
+    
     let mainView = ProfileEditView()
     
     override func loadView() {
-        guard let type = self.type else { return }
-        mainView.typeLabel.text = type.rawValue
-        
         self.view = mainView
     }
     
@@ -62,7 +61,12 @@ extension ProfileEditViewController {
     
     @objc
     func doneButtonClicked() {
-        print("완료")
+        guard let type = type else { return }
+        guard let text = mainView.editTextField.text else { return }
+        
+        self.dataSendClosure?(type, text)
+        
+        navigationController?.popViewController(animated: true)
     }
     
 }

@@ -109,9 +109,15 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case .content:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileContentTableViewCell.identifier) as? ProfileContentTableViewCell else { return UITableViewCell() }
             
-            let text = Profile.Content.allCases[indexPath.row].rawValue
-            cell.titleText = text
-            cell.placeholderText = text
+            let type = Profile.Content.allCases[indexPath.row]
+            
+            cell.type = type
+            
+            switch type {
+            case .name: cell.editTextField.text = user.name
+            case .nickname: cell.editTextField.text = user.nickname
+            case .introduce: cell.editTextField.text = user.introduce
+            }
             
             cell.separatorInset = UIEdgeInsets(top: 0, left: view.frame.width * 0.25, bottom: 0, right: 0)
             
@@ -129,6 +135,18 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case .content:
             let vc = ProfileEditViewController()
             vc.type = Profile.Content.allCases[indexPath.row]
+            
+            vc.dataSendClosure = { type, data in
+                
+                switch type {
+                case .name: self.user.name = data
+                case .nickname: self.user.nickname = data
+                case .introduce: self.user.introduce = data
+                }
+                
+                tableView.reloadRows(at: [indexPath], with: .none)
+            }
+
             navigationController?.pushViewController(vc, animated: true)
         }
     }
