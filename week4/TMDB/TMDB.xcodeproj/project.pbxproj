@@ -60,6 +60,7 @@
 		EAC0AE532AA0E98300800193 /* NSNotification+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE522AA0E98300800193 /* NSNotification+.swift */; };
 		EAC0AE552AA0F83300800193 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE542AA0F83300800193 /* ProfileEditViewController.swift */; };
 		EAC0AE572AA0F83D00800193 /* ProfileEditVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE562AA0F83D00800193 /* ProfileEditVIew.swift */; };
+		EAC0AE592AA254B800800193 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AE582AA254B800800193 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +115,7 @@
 		EAC0AE522AA0E98300800193 /* NSNotification+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotification+.swift"; sourceTree = "<group>"; };
 		EAC0AE542AA0F83300800193 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		EAC0AE562AA0F83D00800193 /* ProfileEditVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditVIew.swift; sourceTree = "<group>"; };
+		EAC0AE582AA254B800800193 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				EA5283C82A8E79BF00B0FB4B /* Recommend.swift */,
 				EA5283FD2A91094C00B0FB4B /* Details.swift */,
 				EA740D5A2A9A7C67007152C7 /* Intro.swift */,
+				EAC0AE582AA254B800800193 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				EA740D432A9A3A89007152C7 /* OnboardingViewController.swift in Sources */,
 				EAC0AE532AA0E98300800193 /* NSNotification+.swift in Sources */,
 				EA5A36A32A869BA3007ECF41 /* Genres.swift in Sources */,
+				EAC0AE592AA254B800800193 /* User.swift in Sources */,
 				EAC0AE4A2A9F6D6400800193 /* BaseTableViewCell.swift in Sources */,
 				EA3BE3F92A8BD6B400266342 /* DetailViewController.swift in Sources */,
 				EAC0AE482A9F6D3D00800193 /* ProfileImageTableViewCell.swift in Sources */,

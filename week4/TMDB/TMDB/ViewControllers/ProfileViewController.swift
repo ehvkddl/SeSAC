@@ -34,6 +34,8 @@ protocol ProfileImageEditButtonDelegate {
 import UIKit
 
 class ProfileViewController: BaseViewController {
+    
+    var user = User(name: "Chapssal", nickname: "chap", introduce: "Hi, I'm a cute cat")
 
     let picker = UIImagePickerController()
     let mainView = ProfileView()
