@@ -10,6 +10,7 @@ import UIKit
 class ProfileEditViewController: BaseViewController {
 
     var type: Profile.Content?
+    var content: String?
     
     var dataSendClosure: ((Profile.Content, String) -> Void)?
     
@@ -31,6 +32,7 @@ class ProfileEditViewController: BaseViewController {
         
         title = type.rawValue
         mainView.typeLabel.text = type.rawValue
+        mainView.editTextField.text = content
         
         configureNavigationBar()
     }

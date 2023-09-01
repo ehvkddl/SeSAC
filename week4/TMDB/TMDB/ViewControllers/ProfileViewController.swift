@@ -134,7 +134,16 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         case .image: break
         case .content:
             let vc = ProfileEditViewController()
-            vc.type = Profile.Content.allCases[indexPath.row]
+            
+            let type = Profile.Content.allCases[indexPath.row]
+            
+            vc.type = type
+            
+            switch type {
+            case .name: vc.content = user.name
+            case .nickname: vc.content = user.nickname
+            case .introduce: vc.content = user.introduce
+            }
             
             vc.dataSendClosure = { type, data in
                 
