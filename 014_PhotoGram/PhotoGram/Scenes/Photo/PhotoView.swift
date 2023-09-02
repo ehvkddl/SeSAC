@@ -41,12 +41,12 @@ class PhotoView: BaseView {
         photoImage.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide).inset(30)
             make.horizontalEdges.equalToSuperview().inset(14)
+            make.height.equalToSuperview().multipliedBy(0.6)
         }
         
         photoChangeButton.snp.makeConstraints { make in
-            make.top.equalTo(photoImage.snp.bottom).offset(22)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.safeAreaLayoutGuide).inset(22)
+            make.bottom.equalTo(self.safeAreaLayoutGuide).inset(40)
         }
     }
     
