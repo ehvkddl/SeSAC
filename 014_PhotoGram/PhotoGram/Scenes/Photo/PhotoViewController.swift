@@ -9,6 +9,12 @@ import UIKit
 
 class PhotoViewController: BaseViewController {
 
+    let mainView = PhotoView()
+    
+    override func loadView() {
+        self.view = mainView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
