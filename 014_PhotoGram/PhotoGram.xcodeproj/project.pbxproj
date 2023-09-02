@@ -17,6 +17,10 @@
 		EAC0AEA62AA3916E00800193 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEA52AA3916E00800193 /* BaseView.swift */; };
 		EAC0AEA82AA3921F00800193 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEA72AA3921F00800193 /* PhotoViewController.swift */; };
 		EAC0AEAA2AA3931B00800193 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEA92AA3931B00800193 /* PhotoView.swift */; };
+		EAC0AEAD2AA3B51000800193 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEAC2AA3B51000800193 /* UnsplashAPIManager.swift */; };
+		EAC0AEB12AA3B6EC00800193 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEB02AA3B6EC00800193 /* URL+.swift */; };
+		EAC0AEB32AA3B75F00800193 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEB22AA3B75F00800193 /* Endpoint.swift */; };
+		EAC0AEB52AA3BE5000800193 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEB42AA3BE5000800193 /* APIKey.swift */; };
 		EAC0AEB82AA3D8FC00800193 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEB72AA3D8FC00800193 /* Photo.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,10 @@
 		EAC0AEA52AA3916E00800193 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		EAC0AEA72AA3921F00800193 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		EAC0AEA92AA3931B00800193 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		EAC0AEAC2AA3B51000800193 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
+		EAC0AEB02AA3B6EC00800193 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		EAC0AEB22AA3B75F00800193 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		EAC0AEB42AA3BE5000800193 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		EAC0AEB72AA3D8FC00800193 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,12 +76,15 @@
 			children = (
 				EAC0AE892AA38FA900800193 /* AppDelegate.swift */,
 				EAC0AE8B2AA38FA900800193 /* SceneDelegate.swift */,
+				EAC0AEAF2AA3B6E300800193 /* Extensions */,
+				EAC0AEAB2AA3B4A500800193 /* Network */,
 				EAC0AEB62AA3D8D200800193 /* Models */,
 				EAC0AE9D2AA3906C00800193 /* Scenes */,
 				EAC0AE8F2AA38FA900800193 /* Main.storyboard */,
 				EAC0AE922AA38FAA00800193 /* Assets.xcassets */,
 				EAC0AE942AA38FAA00800193 /* LaunchScreen.storyboard */,
 				EAC0AE972AA38FAA00800193 /* Info.plist */,
+				EAC0AEB42AA3BE5000800193 /* APIKey.swift */,
 			);
 			path = PhotoGram;
 			sourceTree = "<group>";
@@ -83,6 +94,7 @@
 			children = (
 				EAC0AE9F2AA390F400800193 /* Base */,
 				EAC0AE9E2AA390B400800193 /* Photo */,
+				EAC0AEAE2AA3B65400800193 /* Search */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -103,6 +115,30 @@
 				EAC0AEA52AA3916E00800193 /* BaseView.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		EAC0AEAB2AA3B4A500800193 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EAC0AEB22AA3B75F00800193 /* Endpoint.swift */,
+				EAC0AEAC2AA3B51000800193 /* UnsplashAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EAC0AEAE2AA3B65400800193 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EAC0AEAF2AA3B6E300800193 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAC0AEB02AA3B6EC00800193 /* URL+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		EAC0AEB62AA3D8D200800193 /* Models */ = {
@@ -191,7 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAC0AEA12AA3910200800193 /* BaseViewController.swift in Sources */,
+				EAC0AEB32AA3B75F00800193 /* Endpoint.swift in Sources */,
 				EAC0AEA62AA3916E00800193 /* BaseView.swift in Sources */,
+				EAC0AEAD2AA3B51000800193 /* UnsplashAPIManager.swift in Sources */,
+				EAC0AEB52AA3BE5000800193 /* APIKey.swift in Sources */,
+				EAC0AEB12AA3B6EC00800193 /* URL+.swift in Sources */,
 				EAC0AE8A2AA38FA900800193 /* AppDelegate.swift in Sources */,
 				EAC0AEB82AA3D8FC00800193 /* Photo.swift in Sources */,
 				EAC0AEAA2AA3931B00800193 /* PhotoView.swift in Sources */,
