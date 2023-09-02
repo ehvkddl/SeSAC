@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UserDefaults.standard.set(false, forKey: "isLaunched")
         
         let isLaunched = UserDefaults.standard.bool(forKey: "isLaunched")
-        print(UserDefaults.standard.bool(forKey: "isLaunched"))
         
         if isLaunched == false {
             let vc = OnboardingViewController()
