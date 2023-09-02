@@ -14,6 +14,28 @@ class UnsplashAPIManager {
     
     let authorizationHeader = ["Authorization": "Client-ID \(APIKey.unsplashKey)"]
     
+    func fetchPhotos(of query: String) {
+        
+        guard var components = URLComponents(string: Endpoint.Search.photos.requestURL) else {
+            print("urlComponents 생성에 실패했습니다.")
+            return
+        }
+        let query = URLQueryItem(name: "query", value: query)
+        let perPage = URLQueryItem(name: "per_page", value: "20")
+        
+        components.queryItems = [query, perPage]
+
+        guard let url = components.url else {
+            print("urlComponents 변환에 실패했습니다.")
+            return
+        }
+        
+        fetchData(from: url) { (photoData: Photo) in
+            
+        }
+        
+    }
+    
     func fetchData<T: Codable>(from url: URL, completionHandler: @escaping (T) -> Void) {
         
         var urlRequest = URLRequest(url: url)
