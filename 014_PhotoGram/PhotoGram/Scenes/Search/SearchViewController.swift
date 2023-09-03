@@ -56,16 +56,8 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
         
-        let thumb = photos[indexPath.item].urls.thumb
-        guard let url = URL(string: thumb) else { return UICollectionViewCell() }
-        
-        DispatchQueue.global().async {
-            let data = try! Data(contentsOf: url)
-            
-            DispatchQueue.main.async {
-                cell.imageView.image = UIImage(data: data)
-            }
-        }
+        let thumbUrl = photos[indexPath.item].urls.thumb
+        cell.imageView.load(from: thumbUrl)
         
         return cell
                 
