@@ -12,7 +12,7 @@ class UnsplashAPIManager {
     static let shared = UnsplashAPIManager()
     private init() {}
     
-    let authorizationHeader = ["Authorization": "Client-ID \(APIKey.unsplashKey)"]
+    private let authorizationHeader = ["Authorization": "Client-ID \(APIKey.unsplashKey)"]
     
     func fetchPhotos(of query: String) {
         
@@ -36,7 +36,7 @@ class UnsplashAPIManager {
         
     }
     
-    func fetchData<T: Codable>(from url: URL, completionHandler: @escaping (T) -> Void) {
+    private func fetchData<T: Codable>(from url: URL, completionHandler: @escaping (T) -> Void) {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.allHTTPHeaderFields = authorizationHeader
