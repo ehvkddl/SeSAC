@@ -12,6 +12,7 @@ class SearchView: BaseView {
     let searchBar = {
         let view = UISearchBar()
         view.placeholder = "어떤 사진을 찾고 싶으신가요?"
+        view.becomeFirstResponder()
         return view
     }()
     

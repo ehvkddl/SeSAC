@@ -33,10 +33,13 @@ class PhotoViewController: BaseViewController {
     func photoChangeButtonClicked() {
         let alert = UIAlertController(title: "사진 가져올 방법을 선택해주세요", message: nil, preferredStyle: .actionSheet)
         
-        let gallery = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { action in
-            self.getPhotoFromGallery()
+        let gallery = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { [weak self] _ in
+            self?.present(self!.phpicker, animated: true)
         }
-        let webSearch = UIAlertAction(title: "웹에서 검색하기", style: .default)
+        let webSearch = UIAlertAction(title: "웹에서 검색하기", style: .default) { [weak self] _ in
+            let vc = SearchViewController()
+            self?.present(vc, animated: true)
+        }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         
         alert.addAction(gallery)
@@ -44,10 +47,6 @@ class PhotoViewController: BaseViewController {
         alert.addAction(cancel)
         
         present(alert, animated: true)
-    }
-    
-    func getPhotoFromGallery() {
-        present(phpicker, animated: true)
     }
     
     override func configureView() {
