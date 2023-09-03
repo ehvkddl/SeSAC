@@ -22,6 +22,7 @@
 		EAC0AEB32AA3B75F00800193 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEB22AA3B75F00800193 /* Endpoint.swift */; };
 		EAC0AEB52AA3BE5000800193 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEB42AA3BE5000800193 /* APIKey.swift */; };
 		EAC0AEB82AA3D8FC00800193 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEB72AA3D8FC00800193 /* Photo.swift */; };
+		EAC0AEC12AA4D76300800193 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEC02AA4D76300800193 /* BaseCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		EAC0AEB22AA3B75F00800193 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		EAC0AEB42AA3BE5000800193 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		EAC0AEB72AA3D8FC00800193 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		EAC0AEC02AA4D76300800193 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				EAC0AEAB2AA3B4A500800193 /* Network */,
 				EAC0AEB62AA3D8D200800193 /* Models */,
 				EAC0AE9D2AA3906C00800193 /* Scenes */,
+				EAC0AEBD2AA4D50600800193 /* Cells */,
 				EAC0AE8F2AA38FA900800193 /* Main.storyboard */,
 				EAC0AE922AA38FAA00800193 /* Assets.xcassets */,
 				EAC0AE942AA38FAA00800193 /* LaunchScreen.storyboard */,
@@ -147,6 +150,15 @@
 				EAC0AEB72AA3D8FC00800193 /* Photo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EAC0AEBD2AA4D50600800193 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EAC0AEC02AA4D76300800193 /* BaseCollectionViewCell.swift */,
+				EAC0AEBE2AA4D57700800193 /* SearchCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +243,7 @@
 				EAC0AEA62AA3916E00800193 /* BaseView.swift in Sources */,
 				EAC0AEAD2AA3B51000800193 /* UnsplashAPIManager.swift in Sources */,
 				EAC0AEB52AA3BE5000800193 /* APIKey.swift in Sources */,
+				EAC0AEC12AA4D76300800193 /* BaseCollectionViewCell.swift in Sources */,
 				EAC0AEB12AA3B6EC00800193 /* URL+.swift in Sources */,
 				EAC0AE8A2AA38FA900800193 /* AppDelegate.swift in Sources */,
 				EAC0AEB82AA3D8FC00800193 /* Photo.swift in Sources */,
