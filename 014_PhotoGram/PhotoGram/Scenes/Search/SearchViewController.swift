@@ -11,6 +11,8 @@ class SearchViewController: BaseViewController {
     
     var photos: [PhotoResult] = []
     
+    var imageSendClosure: ((String) -> Void)?
+    
     let mainView = SearchView()
     
     override func loadView() {
@@ -61,6 +63,14 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         return cell
                 
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let thumbUrl = photos[indexPath.item].urls.thumb
+        
+        self.imageSendClosure?(thumbUrl)
+        
+        dismiss(animated: true)
     }
     
 }

@@ -34,11 +34,10 @@ class PhotoViewController: BaseViewController {
         let alert = UIAlertController(title: "사진 가져올 방법을 선택해주세요", message: nil, preferredStyle: .actionSheet)
         
         let gallery = UIAlertAction(title: "갤러리에서 가져오기", style: .default) { [weak self] _ in
-            self?.present(self!.phpicker, animated: true)
+            self?.getPhotoFromGallery()
         }
         let webSearch = UIAlertAction(title: "웹에서 검색하기", style: .default) { [weak self] _ in
-            let vc = SearchViewController()
-            self?.present(vc, animated: true)
+            self?.getPhotoFromWeb()
         }
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         
@@ -47,6 +46,20 @@ class PhotoViewController: BaseViewController {
         alert.addAction(cancel)
         
         present(alert, animated: true)
+    }
+    
+    func getPhotoFromGallery() {
+        self.present(self.phpicker, animated: true)
+    }
+    
+    func getPhotoFromWeb() {
+        let vc = SearchViewController()
+        
+        vc.imageSendClosure = { url in
+            self.mainView.photoImage.load(from: url)
+        }
+        
+        self.present(vc, animated: true)
     }
     
     override func configureView() {
