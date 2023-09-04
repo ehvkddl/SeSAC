@@ -92,6 +92,23 @@ extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDat
             
             let realm = try! Realm()
             
+            let bookmarks = realm.objects(Bookmark.self)
+            
+            let sameBook = bookmarks.where {
+                $0.isbn == book.isbn
+            }
+            
+            guard sameBook.isEmpty else {
+                let alert = UIAlertController(title: "📚", message: "동일한 책이 이미 북마크 되어있어요!", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "알겠어요", style: .default)
+                
+                alert.addAction(ok)
+                
+                self.present(alert, animated: true)
+                
+                return
+            }
+            
             var authors = List<String>()
             book.authors.forEach { authors.append($0) }
             
