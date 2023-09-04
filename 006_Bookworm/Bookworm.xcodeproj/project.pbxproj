@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA3673E32AA61F170097F2D0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EA3673E22AA61F170097F2D0 /* Realm */; };
 		EA3673E52AA61F170097F2D0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EA3673E42AA61F170097F2D0 /* RealmSwift */; };
+		EA3673E72AA61F9C0097F2D0 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3673E62AA61F9C0097F2D0 /* Bookmark.swift */; };
 		EAA6B6DE2A83A0EC00C2ECD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B6DD2A83A0EC00C2ECD1 /* AppDelegate.swift */; };
 		EAA6B6E02A83A0EC00C2ECD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B6DF2A83A0EC00C2ECD1 /* SceneDelegate.swift */; };
 		EAA6B6E22A83A0EC00C2ECD1 /* BookshelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA6B6E12A83A0EC00C2ECD1 /* BookshelfViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA3673E62AA61F9C0097F2D0 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		EAA6B6DA2A83A0EC00C2ECD1 /* Bookworm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bookworm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA6B6DD2A83A0EC00C2ECD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAA6B6DF2A83A0EC00C2ECD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				EAA6B6DF2A83A0EC00C2ECD1 /* SceneDelegate.swift */,
 				EAA6B7062A84131F00C2ECD1 /* Extension+Array.swift */,
 				EAA6B6F92A83A97C00C2ECD1 /* Book.swift */,
+				EA3673E62AA61F9C0097F2D0 /* Bookmark.swift */,
 				EAA6B6E12A83A0EC00C2ECD1 /* BookshelfViewController.swift */,
 				EAA6B6FE2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift */,
 				EAA6B6FF2A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.xib */,
@@ -180,6 +183,7 @@
 				EAA6B7072A84131F00C2ECD1 /* Extension+Array.swift in Sources */,
 				EAA6B6E22A83A0EC00C2ECD1 /* BookshelfViewController.swift in Sources */,
 				EAA6B6DE2A83A0EC00C2ECD1 /* AppDelegate.swift in Sources */,
+				EA3673E72AA61F9C0097F2D0 /* Bookmark.swift in Sources */,
 				EAA6B7002A83ED0B00C2ECD1 /* BookshelfCollectionViewCell.swift in Sources */,
 				EAA6B6F82A83A38700C2ECD1 /* APIKey.swift in Sources */,
 				EAA6B6FA2A83A97C00C2ECD1 /* Book.swift in Sources */,
