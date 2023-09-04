@@ -74,14 +74,45 @@
         <!--Bookmark-->
         <scene sceneID="e7G-dT-4t5">
             <objects>
-                <viewController id="QlL-VW-ZfV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookmarkViewController" id="QlL-VW-ZfV" customClass="BookmarkViewController" customModule="Bookworm" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eJE-G8-EK9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VkH-ce-sHj">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="UkH-8Q-Wgl">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Sn8-z3-mYS">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="VnT-ea-KSG">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KGW-ze-hGK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KGW-ze-hGK" firstAttribute="trailing" secondItem="VkH-ce-sHj" secondAttribute="trailing" id="3OS-un-j1G"/>
+                            <constraint firstItem="VkH-ce-sHj" firstAttribute="top" secondItem="KGW-ze-hGK" secondAttribute="top" id="iWb-tR-tqB"/>
+                            <constraint firstItem="KGW-ze-hGK" firstAttribute="bottom" secondItem="VkH-ce-sHj" secondAttribute="bottom" id="jpW-2F-SuQ"/>
+                            <constraint firstItem="VkH-ce-sHj" firstAttribute="leading" secondItem="KGW-ze-hGK" secondAttribute="leading" id="ohF-hC-IkM"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bookmark" image="bookmark" catalog="system" selectedImage="bookmark.fill" id="hwR-XQ-tDB"/>
+                    <connections>
+                        <outlet property="bookmarkCollectionView" destination="VkH-ce-sHj" id="OA7-HG-37B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X65-5j-9Co" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
