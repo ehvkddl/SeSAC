@@ -14,14 +14,26 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var bookImageView: UIImageView!
     
+    @IBOutlet var bookMarkButton: UIButton!
+    
     @IBOutlet var bookTitleLabel: UILabel!
     @IBOutlet var bookInfoLabel: UILabel!
     @IBOutlet var bookPriceLabel: UILabel!
+    
+    var bookmarkButtonClickedClosure: ((Book) -> Void)?
+    
+    var book: Book?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         designCell()
+    }
+    
+    @IBAction func bookMarkButtonClicked(_ sender: UIButton) {
+        guard let book = self.book else { return }
+        
+        bookmarkButtonClickedClosure?(book)
     }
     
     func configureCell(row: Book) {

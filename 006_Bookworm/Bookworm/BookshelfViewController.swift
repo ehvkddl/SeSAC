@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class BookshelfViewController: UIViewController {
 
@@ -83,7 +84,37 @@ extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookshelfCollectionViewCell.identifier, for: indexPath) as? BookshelfCollectionViewCell else { return UICollectionViewCell() }
         
+        cell.book = books[indexPath.row]
         cell.configureCell(row: books[indexPath.row])
+        
+        cell.bookmarkButtonClickedClosure = { book in
+            print(book)
+            
+            let realm = try! Realm()
+            
+            var authors = List<String>()
+            book.authors.forEach { authors.append($0) }
+            
+            var translators = List<String>()
+            book.translators.forEach { translators.append($0) }
+            
+            let task = Bookmark(authors: authors,
+                                contents: book.contents,
+                                datetime: book.datetime,
+                                isbn: book.isbn,
+                                price: book.price,
+                                publisher: book.publisher,
+                                salePrice: book.salePrice,
+                                status: book.status,
+                                thumbnail: book.thumbnail,
+                                title: book.title,
+                                translators: translators,
+                                url: book.url)
+            
+            try! realm.write {
+                realm.add(task)
+            }
+        }
         
         return cell
     }
