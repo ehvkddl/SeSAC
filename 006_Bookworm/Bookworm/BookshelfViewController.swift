@@ -68,6 +68,8 @@ extension BookshelfViewController: UISearchBarDelegate {
         
         guard let query = searchBar.text else { return }
         callRequest(query: query, page: page)
+        
+        searchBar.resignFirstResponder()
     }
     
 }
