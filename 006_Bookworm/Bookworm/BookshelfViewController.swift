@@ -88,7 +88,7 @@ extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.configureCell(row: books[indexPath.row])
         
         cell.bookmarkButtonClickedClosure = { book in
-            print(book)
+            guard let book = book else { return }
             
             let realm = try! Realm()
             

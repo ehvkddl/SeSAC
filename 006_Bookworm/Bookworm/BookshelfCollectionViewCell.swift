@@ -20,7 +20,7 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     @IBOutlet var bookInfoLabel: UILabel!
     @IBOutlet var bookPriceLabel: UILabel!
     
-    var bookmarkButtonClickedClosure: ((Book) -> Void)?
+    var bookmarkButtonClickedClosure: ((Book?) -> Void)?
     
     var book: Book?
     
@@ -31,12 +31,13 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func bookMarkButtonClicked(_ sender: UIButton) {
-        guard let book = self.book else { return }
         
         bookmarkButtonClickedClosure?(book)
+        
     }
     
     func configureCell(row: Book) {
+        print("cellcellcell")
         if let url = URL(string: row.thumbnail) {
             bookImageView.kf.setImage(with: url)
         }
