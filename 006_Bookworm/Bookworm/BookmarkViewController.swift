@@ -84,7 +84,7 @@ extension BookmarkViewController: UICollectionViewDelegate, UICollectionViewData
 
         cell.configureCell(row: book)
         
-        cell.bookmarkButtonClickedClosure = { _ in
+        cell.bookmarkButtonClickedClosure = { _, _ in
             let data = self.bookmarks[indexPath.item]
 
             try! self.realm.write {

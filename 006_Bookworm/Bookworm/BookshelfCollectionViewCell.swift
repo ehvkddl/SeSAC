@@ -20,7 +20,7 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     @IBOutlet var bookInfoLabel: UILabel!
     @IBOutlet var bookPriceLabel: UILabel!
     
-    var bookmarkButtonClickedClosure: ((Book?) -> Void)?
+    var bookmarkButtonClickedClosure: ((Book?, UIImage?) -> Void)?
     
     var book: Book?
     
@@ -32,7 +32,7 @@ class BookshelfCollectionViewCell: UICollectionViewCell {
     
     @IBAction func bookMarkButtonClicked(_ sender: UIButton) {
         
-        bookmarkButtonClickedClosure?(book)
+        bookmarkButtonClickedClosure?(book, bookImageView.image)
         
     }
     

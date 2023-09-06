@@ -87,7 +87,7 @@ extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDat
         cell.book = books[indexPath.row]
         cell.configureCell(row: books[indexPath.row])
         
-        cell.bookmarkButtonClickedClosure = { book in
+        cell.bookmarkButtonClickedClosure = { book, image in
             guard let book = book else { return }
             
             let realm = try! Realm()
@@ -131,6 +131,10 @@ extension BookshelfViewController: UICollectionViewDelegate, UICollectionViewDat
             try! realm.write {
                 realm.add(task)
             }
+
+            guard let image = image else { return }
+            self.saveImageToDocument(fileName: "Book_\(task._id).jpg", image: image)
+            
         }
         
         return cell
