@@ -86,10 +86,13 @@ extension BookmarkViewController: UICollectionViewDelegate, UICollectionViewData
         
         cell.bookmarkButtonClickedClosure = { _, _ in
             let data = self.bookmarks[indexPath.item]
+            
+            self.removeImageFromDocument(fileName: "Book_\(data._id).jpg")
 
             try! self.realm.write {
                 self.realm.delete(data)
             }
+            
             
             collectionView.reloadData()
         }
