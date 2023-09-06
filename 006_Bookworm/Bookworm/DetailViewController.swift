@@ -35,11 +35,9 @@ class DetailViewController: UIViewController {
         
         title = content?.title
         
-        navigationItem.hidesBackButton = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
-
         memoTextView.delegate = self
         
+        configureNavigation()
         configureView()
     }
 
@@ -86,6 +84,27 @@ extension DetailViewController: UITextViewDelegate {
         if textView.text.isEmpty {
             textView.text = placeholderText
             textView.textColor = .lightGray
+        }
+    }
+    
+extension DetailViewController {
+    
+    func configureNavigation() {
+        navigationItem.hidesBackButton = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        
+        if isBookmark {
+            let editItem = UIAction(title: "수정", image: UIImage(systemName: "pencil")) { action in
+                print("edit button")
+            }
+            
+            let deleteItem = UIAction(title: "삭제", image: UIImage(systemName: "trash")) { action in
+                print("delete button")
+            }
+            
+            let menu = UIMenu(title: "", image: nil, options: .displayInline, children: [editItem, deleteItem])
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "ellipsis.circle"), target: self, action: nil, menu: menu)
         }
     }
     
