@@ -107,6 +107,7 @@ extension BookmarkViewController: UICollectionViewDelegate, UICollectionViewData
                 
         guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         vc.content = book
+        vc.isBookmark = true
         let nav = UINavigationController(rootViewController: vc)
         
         nav.modalPresentationStyle = .overFullScreen
