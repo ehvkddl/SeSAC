@@ -10,7 +10,8 @@ import Kingfisher
 
 class SearchResultViewController: BaseViewController {
     
-    var vm = PhotoViewModel()
+    var vm: PhotoViewModel
+    
     lazy var photoCollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: photoCollectionViewLayout())
         view.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
@@ -19,6 +20,16 @@ class SearchResultViewController: BaseViewController {
         
         return view
     }()
+    
+    init(vm: PhotoViewModel) {
+        self.vm = vm
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

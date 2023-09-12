@@ -9,8 +9,11 @@ import UIKit
 
 class PhotoViewController: BaseViewController {
 
-    let searchController = {
-        let view = UISearchController(searchResultsController: SearchResultViewController())
+    var vm = PhotoViewModel()
+    
+    lazy var searchController = {
+        let view = UISearchController(searchResultsController: SearchResultViewController(vm: self.vm))
+        view.searchBar.delegate = self
         return view
     }()
     
@@ -25,4 +28,15 @@ class PhotoViewController: BaseViewController {
 
 }
 
+extension PhotoViewController: UISearchBarDelegate {
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, !text.isEmpty else { return }
+        vm.fetchPhoto(of: text)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        vm.reset()
+    }
+
+}
