@@ -13,6 +13,11 @@
 		EAA203CC2AB09F9C00F5AE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA203CA2AB09F9C00F5AE62 /* Main.storyboard */; };
 		EAA203CE2AB09F9D00F5AE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAA203CD2AB09F9D00F5AE62 /* Assets.xcassets */; };
 		EAA203D12AB09F9D00F5AE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA203CF2AB09F9D00F5AE62 /* LaunchScreen.storyboard */; };
+		EAA203D92AB0B51600F5AE62 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203D82AB0B51600F5AE62 /* APIKey.swift */; };
+		EAA203DC2AB0B57000F5AE62 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203DB2AB0B57000F5AE62 /* Endpoint.swift */; };
+		EAA203DE2AB0B59100F5AE62 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203DD2AB0B59100F5AE62 /* UnsplashAPIManager.swift */; };
+		EAA203E12AB0B5C800F5AE62 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203E02AB0B5C800F5AE62 /* Photo.swift */; };
+		EAA203E42AB0B60400F5AE62 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203E32AB0B60400F5AE62 /* URL+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		EAA203CD2AB09F9D00F5AE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAA203D02AB09F9D00F5AE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAA203D22AB09F9D00F5AE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAA203D82AB0B51600F5AE62 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		EAA203DB2AB0B57000F5AE62 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		EAA203DD2AB0B59100F5AE62 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
+		EAA203E02AB0B5C800F5AE62 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		EAA203E32AB0B60400F5AE62 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,42 @@
 			children = (
 				EAA203C42AB09F9C00F5AE62 /* AppDelegate.swift */,
 				EAA203C62AB09F9C00F5AE62 /* SceneDelegate.swift */,
+				EAA203E22AB0B5EB00F5AE62 /* Extensions */,
+				EAA203DA2AB0B56500F5AE62 /* Network */,
+				EAA203DF2AB0B5AC00F5AE62 /* Models */,
 				EAA203C82AB09F9C00F5AE62 /* ViewController.swift */,
 				EAA203CA2AB09F9C00F5AE62 /* Main.storyboard */,
 				EAA203CD2AB09F9D00F5AE62 /* Assets.xcassets */,
 				EAA203CF2AB09F9D00F5AE62 /* LaunchScreen.storyboard */,
 				EAA203D22AB09F9D00F5AE62 /* Info.plist */,
+				EAA203D82AB0B51600F5AE62 /* APIKey.swift */,
 			);
 			path = Unsplash;
+			sourceTree = "<group>";
+		};
+		EAA203DA2AB0B56500F5AE62 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EAA203DB2AB0B57000F5AE62 /* Endpoint.swift */,
+				EAA203DD2AB0B59100F5AE62 /* UnsplashAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EAA203DF2AB0B5AC00F5AE62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EAA203E02AB0B5C800F5AE62 /* Photo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EAA203E22AB0B5EB00F5AE62 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAA203E32AB0B60400F5AE62 /* URL+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA203E12AB0B5C800F5AE62 /* Photo.swift in Sources */,
 				EAA203C92AB09F9C00F5AE62 /* ViewController.swift in Sources */,
 				EAA203C52AB09F9C00F5AE62 /* AppDelegate.swift in Sources */,
+				EAA203E42AB0B60400F5AE62 /* URL+.swift in Sources */,
+				EAA203DE2AB0B59100F5AE62 /* UnsplashAPIManager.swift in Sources */,
+				EAA203D92AB0B51600F5AE62 /* APIKey.swift in Sources */,
 				EAA203C72AB09F9C00F5AE62 /* SceneDelegate.swift in Sources */,
+				EAA203DC2AB0B57000F5AE62 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
