@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EAA203C52AB09F9C00F5AE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203C42AB09F9C00F5AE62 /* AppDelegate.swift */; };
 		EAA203C72AB09F9C00F5AE62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203C62AB09F9C00F5AE62 /* SceneDelegate.swift */; };
-		EAA203C92AB09F9C00F5AE62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203C82AB09F9C00F5AE62 /* ViewController.swift */; };
 		EAA203CC2AB09F9C00F5AE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA203CA2AB09F9C00F5AE62 /* Main.storyboard */; };
 		EAA203CE2AB09F9D00F5AE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAA203CD2AB09F9D00F5AE62 /* Assets.xcassets */; };
 		EAA203D12AB09F9D00F5AE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA203CF2AB09F9D00F5AE62 /* LaunchScreen.storyboard */; };
@@ -18,15 +17,19 @@
 		EAA203DE2AB0B59100F5AE62 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203DD2AB0B59100F5AE62 /* UnsplashAPIManager.swift */; };
 		EAA203E12AB0B5C800F5AE62 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203E02AB0B5C800F5AE62 /* Photo.swift */; };
 		EAA203E42AB0B60400F5AE62 /* URL+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203E32AB0B60400F5AE62 /* URL+.swift */; };
-		EAA203EA2AB0B75800F5AE62 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EAA203E92AB0B75800F5AE62 /* SnapKit */; };
-		EAA203EC2AB0B75800F5AE62 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EAA203EB2AB0B75800F5AE62 /* SnapKit-Dynamic */; };
+		EAA203E72AB0B6B200F5AE62 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203E62AB0B6B200F5AE62 /* PhotoViewController.swift */; };
+		EAA203EF2AB0B7CA00F5AE62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203EE2AB0B7CA00F5AE62 /* BaseViewController.swift */; };
+		EAA203F22AB0BCAB00F5AE62 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EAA203F12AB0BCAB00F5AE62 /* SnapKit */; };
+		EAA203F62AB0C4C300F5AE62 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203F52AB0C4C300F5AE62 /* SearchResultViewController.swift */; };
+		EAA203F92AB0C6F300F5AE62 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203F82AB0C6F300F5AE62 /* BaseCollectionViewCell.swift */; };
+		EAA203FB2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203FA2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift */; };
+		EAA203FE2AB0C8D400F5AE62 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203FD2AB0C8D400F5AE62 /* ReusableProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAA203C12AB09F9C00F5AE62 /* Unsplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unsplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA203C42AB09F9C00F5AE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAA203C62AB09F9C00F5AE62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EAA203C82AB09F9C00F5AE62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EAA203CB2AB09F9C00F5AE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAA203CD2AB09F9D00F5AE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAA203D02AB09F9D00F5AE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,12 @@
 		EAA203DD2AB0B59100F5AE62 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
 		EAA203E02AB0B5C800F5AE62 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		EAA203E32AB0B60400F5AE62 /* URL+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+.swift"; sourceTree = "<group>"; };
+		EAA203E62AB0B6B200F5AE62 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		EAA203EE2AB0B7CA00F5AE62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EAA203F52AB0C4C300F5AE62 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		EAA203F82AB0C6F300F5AE62 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAA203FA2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAA203FD2AB0C8D400F5AE62 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,8 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAA203EA2AB0B75800F5AE62 /* SnapKit in Frameworks */,
-				EAA203EC2AB0B75800F5AE62 /* SnapKit-Dynamic in Frameworks */,
+				EAA203F22AB0BCAB00F5AE62 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,10 +80,13 @@
 			children = (
 				EAA203C42AB09F9C00F5AE62 /* AppDelegate.swift */,
 				EAA203C62AB09F9C00F5AE62 /* SceneDelegate.swift */,
+				EAA203FC2AB0C8C900F5AE62 /* Protocols */,
 				EAA203E22AB0B5EB00F5AE62 /* Extensions */,
 				EAA203DA2AB0B56500F5AE62 /* Network */,
 				EAA203DF2AB0B5AC00F5AE62 /* Models */,
-				EAA203C82AB09F9C00F5AE62 /* ViewController.swift */,
+				EAA203ED2AB0B7AC00F5AE62 /* Base */,
+				EAA203E52AB0B65A00F5AE62 /* ViewControllers */,
+				EAA203F72AB0C60100F5AE62 /* Cells */,
 				EAA203CA2AB09F9C00F5AE62 /* Main.storyboard */,
 				EAA203CD2AB09F9D00F5AE62 /* Assets.xcassets */,
 				EAA203CF2AB09F9D00F5AE62 /* LaunchScreen.storyboard */,
@@ -110,6 +121,40 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		EAA203E52AB0B65A00F5AE62 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EAA203E62AB0B6B200F5AE62 /* PhotoViewController.swift */,
+				EAA203F52AB0C4C300F5AE62 /* SearchResultViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EAA203ED2AB0B7AC00F5AE62 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EAA203EE2AB0B7CA00F5AE62 /* BaseViewController.swift */,
+				EAA203F82AB0C6F300F5AE62 /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EAA203F72AB0C60100F5AE62 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EAA203FA2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EAA203FC2AB0C8C900F5AE62 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				EAA203FD2AB0C8D400F5AE62 /* ReusableProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,8 +172,7 @@
 			);
 			name = Unsplash;
 			packageProductDependencies = (
-				EAA203E92AB0B75800F5AE62 /* SnapKit */,
-				EAA203EB2AB0B75800F5AE62 /* SnapKit-Dynamic */,
+				EAA203F12AB0BCAB00F5AE62 /* SnapKit */,
 			);
 			productName = Unsplash;
 			productReference = EAA203C12AB09F9C00F5AE62 /* Unsplash.app */;
@@ -159,7 +203,7 @@
 			);
 			mainGroup = EAA203B82AB09F9C00F5AE62;
 			packageReferences = (
-				EAA203E82AB0B75800F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EAA203F02AB0BCAB00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = EAA203C22AB09F9C00F5AE62 /* Products */;
 			projectDirPath = "";
@@ -189,11 +233,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAA203E12AB0B5C800F5AE62 /* Photo.swift in Sources */,
-				EAA203C92AB09F9C00F5AE62 /* ViewController.swift in Sources */,
 				EAA203C52AB09F9C00F5AE62 /* AppDelegate.swift in Sources */,
 				EAA203E42AB0B60400F5AE62 /* URL+.swift in Sources */,
+				EAA203FE2AB0C8D400F5AE62 /* ReusableProtocol.swift in Sources */,
 				EAA203DE2AB0B59100F5AE62 /* UnsplashAPIManager.swift in Sources */,
+				EAA203F92AB0C6F300F5AE62 /* BaseCollectionViewCell.swift in Sources */,
+				EAA203FB2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift in Sources */,
+				EAA203F62AB0C4C300F5AE62 /* SearchResultViewController.swift in Sources */,
 				EAA203D92AB0B51600F5AE62 /* APIKey.swift in Sources */,
+				EAA203EF2AB0B7CA00F5AE62 /* BaseViewController.swift in Sources */,
+				EAA203E72AB0B6B200F5AE62 /* PhotoViewController.swift in Sources */,
 				EAA203C72AB09F9C00F5AE62 /* SceneDelegate.swift in Sources */,
 				EAA203DC2AB0B57000F5AE62 /* Endpoint.swift in Sources */,
 			);
@@ -423,7 +472,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EAA203E82AB0B75800F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		EAA203F02AB0BCAB00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -434,15 +483,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EAA203E92AB0B75800F5AE62 /* SnapKit */ = {
+		EAA203F12AB0BCAB00F5AE62 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EAA203E82AB0B75800F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = EAA203F02AB0BCAB00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		EAA203EB2AB0B75800F5AE62 /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EAA203E82AB0B75800F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
