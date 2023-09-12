@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class SearchResultViewController: BaseViewController {
     
+    var vm = PhotoViewModel()
     lazy var photoCollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: photoCollectionViewLayout())
         view.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
@@ -20,6 +22,12 @@ class SearchResultViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        vm.photo.bind { _ in
+            DispatchQueue.main.async {
+                self.photoCollectionView.reloadData()
+            }
+        }
     }
     
     override func configureView() {
@@ -39,11 +47,17 @@ class SearchResultViewController: BaseViewController {
 extension SearchResultViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return vm.itemCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
+        
+        let photo = vm.cellForItemAt(at: indexPath)
+        
+        if let url = URL(string: photo.urls.thumb) {
+            cell.imageView.kf.setImage(with: url)
+        }
         
         return cell
     }

@@ -24,6 +24,7 @@
 		EAA203F92AB0C6F300F5AE62 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203F82AB0C6F300F5AE62 /* BaseCollectionViewCell.swift */; };
 		EAA203FB2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203FA2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift */; };
 		EAA203FE2AB0C8D400F5AE62 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203FD2AB0C8D400F5AE62 /* ReusableProtocol.swift */; };
+		EAA204012AB0CD7600F5AE62 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204002AB0CD7600F5AE62 /* PhotoViewModel.swift */; };
 		EAA204032AB0CF3400F5AE62 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204022AB0CF3400F5AE62 /* Observable.swift */; };
 		EAA204062AB0D8AF00F5AE62 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EAA204052AB0D8AF00F5AE62 /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		EAA203F82AB0C6F300F5AE62 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAA203FA2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAA203FD2AB0C8D400F5AE62 /* ReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableProtocol.swift; sourceTree = "<group>"; };
+		EAA204002AB0CD7600F5AE62 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		EAA204022AB0CF3400F5AE62 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +93,7 @@
 				EAA203DF2AB0B5AC00F5AE62 /* Models */,
 				EAA203ED2AB0B7AC00F5AE62 /* Base */,
 				EAA203E52AB0B65A00F5AE62 /* ViewControllers */,
+				EAA203FF2AB0CD2200F5AE62 /* ViewModels */,
 				EAA203F72AB0C60100F5AE62 /* Cells */,
 				EAA203CA2AB09F9C00F5AE62 /* Main.storyboard */,
 				EAA203CD2AB09F9D00F5AE62 /* Assets.xcassets */,
@@ -158,6 +161,14 @@
 				EAA203FD2AB0C8D400F5AE62 /* ReusableProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		EAA203FF2AB0CD2200F5AE62 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EAA204002AB0CD7600F5AE62 /* PhotoViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 				EAA203FB2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift in Sources */,
 				EAA203F62AB0C4C300F5AE62 /* SearchResultViewController.swift in Sources */,
 				EAA203D92AB0B51600F5AE62 /* APIKey.swift in Sources */,
+				EAA204012AB0CD7600F5AE62 /* PhotoViewModel.swift in Sources */,
 				EAA203EF2AB0B7CA00F5AE62 /* BaseViewController.swift in Sources */,
 				EAA203E72AB0B6B200F5AE62 /* PhotoViewController.swift in Sources */,
 				EAA203C72AB09F9C00F5AE62 /* SceneDelegate.swift in Sources */,
