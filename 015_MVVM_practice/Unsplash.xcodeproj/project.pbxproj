@@ -25,6 +25,7 @@
 		EAA203FB2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203FA2AB0C73700F5AE62 /* PhotoCollectionViewCell.swift */; };
 		EAA203FE2AB0C8D400F5AE62 /* ReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA203FD2AB0C8D400F5AE62 /* ReusableProtocol.swift */; };
 		EAA204032AB0CF3400F5AE62 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204022AB0CF3400F5AE62 /* Observable.swift */; };
+		EAA204062AB0D8AF00F5AE62 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EAA204052AB0D8AF00F5AE62 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA204062AB0D8AF00F5AE62 /* Kingfisher in Frameworks */,
 				EAA203F22AB0BCAB00F5AE62 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +178,7 @@
 			name = Unsplash;
 			packageProductDependencies = (
 				EAA203F12AB0BCAB00F5AE62 /* SnapKit */,
+				EAA204052AB0D8AF00F5AE62 /* Kingfisher */,
 			);
 			productName = Unsplash;
 			productReference = EAA203C12AB09F9C00F5AE62 /* Unsplash.app */;
@@ -207,6 +210,7 @@
 			mainGroup = EAA203B82AB09F9C00F5AE62;
 			packageReferences = (
 				EAA203F02AB0BCAB00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EAA204042AB0D8AF00F5AE62 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = EAA203C22AB09F9C00F5AE62 /* Products */;
 			projectDirPath = "";
@@ -484,6 +488,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		EAA204042AB0D8AF00F5AE62 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -491,6 +503,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EAA203F02AB0BCAB00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		EAA204052AB0D8AF00F5AE62 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAA204042AB0D8AF00F5AE62 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
