@@ -31,8 +31,4 @@ class LottoViewModel {
         }
     }
     
-    init() {
-        print("lottoviewmodel")
-    }
-    
 }

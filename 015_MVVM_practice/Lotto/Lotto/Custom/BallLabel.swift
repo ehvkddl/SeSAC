@@ -11,12 +11,8 @@ class BallLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        text = "0"
-        textAlignment = .center
-        textColor = .white
-        font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        backgroundColor = .lightGray
-        layer.masksToBounds = true
+        
+        configurelabel()
     }
     
     override func layoutSubviews() {
@@ -29,8 +25,13 @@ class BallLabel: UILabel {
     
     func configurelabel() {
         text = "0"
+        textAlignment = .center
+        textColor = .white
+        shadowColor = .gray
+        shadowOffset = CGSize(width: 1, height: 1)
+        font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         backgroundColor = .lightGray
-        layer.cornerRadius = frame.width * 0.5
+        layer.masksToBounds = true
     }
     
     func setBall(num: Int) {
