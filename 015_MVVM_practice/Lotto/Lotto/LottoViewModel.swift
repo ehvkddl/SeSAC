@@ -24,6 +24,24 @@ class LottoViewModel {
     }
     
     var data: Observable<Lotto?> = Observable(nil)
+    var lottoNumbers: [Int] {
+        guard let data = data.value else { return [] }
+        return [data.drwtNo1, data.drwtNo2, data.drwtNo3, data.drwtNo4, data.drwtNo5, data.bnusNo]
+    }
+    var lottoMoney: String {
+        guard let data = data.value else { return "당첨금 0원"}
+        return "🎊 당첨금 \(format(for: data.totSellamnt)) 🎊"
+    }
+    
+    func format(for number: Int) -> String {
+        let numberFormat = NumberFormatter()
+        numberFormat.numberStyle = .decimal
+        guard let str = numberFormat.string(for: number) else {
+            print("format string 변환 실패")
+            return "" }
+        
+        return str
+    }
     
     func fetch(_ round: Int) {
         LottoAPIManager.shared.fetchLotto(round: round) { lotto in

@@ -76,6 +76,12 @@ class LottoViewController: UIViewController {
         return lbl
     }()
     
+    let lottoMoney = {
+        let lbl = UILabel()
+        lbl.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        return lbl
+    }()
+    
     let tapGestureRecognizer = {
         let gesture = UITapGestureRecognizer()
         return gesture
@@ -94,21 +100,24 @@ class LottoViewController: UIViewController {
             lottovm.fetch(num)
         }
         
-        lottovm.data.bind { lottoData in
-            guard let lottoData else { return }
-            let numbers = [lottoData.drwtNo1, lottoData.drwtNo2, lottoData.drwtNo3, lottoData.drwtNo4, lottoData.drwtNo5, lottoData.bnusNo]
+        lottovm.data.bind { [self] lottoData in
+            guard lottoData != nil else { return }
             
-            DispatchQueue.main.async {
+            let numbers = lottovm.lottoNumbers
+            
+            DispatchQueue.main.async { [self] in
                 self.balls.enumerated().forEach { index, item in
                     item.setBall(num: numbers[index])
                 }
+                
+                lottoMoney.text = lottovm.lottoMoney
             }
         }
     }
 
     func configureView() {
         [ball1, ball2, ball3, ball4, ball5, plusLabel, bonusBall].forEach { stackView.addArrangedSubview($0)}
-        [roundTextField, stackView].forEach{ view.addSubview($0) }
+        [roundTextField, stackView, lottoMoney].forEach{ view.addSubview($0) }
         view.addGestureRecognizer(tapGestureRecognizer)
         
         tapGestureRecognizer.addTarget(self, action: #selector(didTapView))
@@ -131,6 +140,11 @@ class LottoViewController: UIViewController {
             $0.snp.makeConstraints { make in
                 make.size.equalTo(50)
             }
+        }
+        
+        lottoMoney.snp.makeConstraints { make in
+            make.top.equalTo(stackView.snp.bottom).offset(30)
+            make.centerX.equalTo(view)
         }
     }
     
