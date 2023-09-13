@@ -15,6 +15,7 @@
 		EAA204562AB2003E00F5AE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA204542AB2003E00F5AE62 /* LaunchScreen.storyboard */; };
 		EAA2045F2AB200D300F5AE62 /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2045E2AB200D300F5AE62 /* LottoAPIManager.swift */; };
 		EAA204622AB2032100F5AE62 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204612AB2032100F5AE62 /* Lotto.swift */; };
+		EAA204652AB2096F00F5AE62 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EAA204642AB2096F00F5AE62 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAA204652AB2096F00F5AE62 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +107,9 @@
 			dependencies = (
 			);
 			name = Lotto;
+			packageProductDependencies = (
+				EAA204642AB2096F00F5AE62 /* SnapKit */,
+			);
 			productName = Lotto;
 			productReference = EAA204462AB2003D00F5AE62 /* Lotto.app */;
 			productType = "com.apple.product-type.application";
@@ -133,6 +138,9 @@
 				Base,
 			);
 			mainGroup = EAA2043D2AB2003C00F5AE62;
+			packageReferences = (
+				EAA204632AB2096F00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EAA204472AB2003D00F5AE62 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -390,6 +398,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EAA204632AB2096F00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EAA204642AB2096F00F5AE62 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAA204632AB2096F00F5AE62 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EAA2043E2AB2003D00F5AE62 /* Project object */;
 }
