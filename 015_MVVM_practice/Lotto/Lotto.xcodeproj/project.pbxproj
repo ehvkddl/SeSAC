@@ -9,26 +9,34 @@
 /* Begin PBXBuildFile section */
 		EAA2044A2AB2003D00F5AE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204492AB2003D00F5AE62 /* AppDelegate.swift */; };
 		EAA2044C2AB2003D00F5AE62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2044B2AB2003D00F5AE62 /* SceneDelegate.swift */; };
-		EAA2044E2AB2003D00F5AE62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2044D2AB2003D00F5AE62 /* ViewController.swift */; };
+		EAA2044E2AB2003D00F5AE62 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2044D2AB2003D00F5AE62 /* LottoViewController.swift */; };
 		EAA204512AB2003D00F5AE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA2044F2AB2003D00F5AE62 /* Main.storyboard */; };
 		EAA204532AB2003E00F5AE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAA204522AB2003E00F5AE62 /* Assets.xcassets */; };
 		EAA204562AB2003E00F5AE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA204542AB2003E00F5AE62 /* LaunchScreen.storyboard */; };
 		EAA2045F2AB200D300F5AE62 /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2045E2AB200D300F5AE62 /* LottoAPIManager.swift */; };
 		EAA204622AB2032100F5AE62 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204612AB2032100F5AE62 /* Lotto.swift */; };
 		EAA204652AB2096F00F5AE62 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EAA204642AB2096F00F5AE62 /* SnapKit */; };
+		EAA204672AB20F7B00F5AE62 /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204662AB20F7B00F5AE62 /* LottoViewModel.swift */; };
+		EAA204692AB2102000F5AE62 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204682AB2102000F5AE62 /* Observable.swift */; };
+		EAA2046C2AB214A400F5AE62 /* BallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2046B2AB214A400F5AE62 /* BallLabel.swift */; };
+		EAA2046F2AB215E100F5AE62 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2046E2AB215E100F5AE62 /* UIColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAA204462AB2003D00F5AE62 /* Lotto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lotto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA204492AB2003D00F5AE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAA2044B2AB2003D00F5AE62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EAA2044D2AB2003D00F5AE62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAA2044D2AB2003D00F5AE62 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		EAA204502AB2003D00F5AE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAA204522AB2003E00F5AE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAA204552AB2003E00F5AE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAA204572AB2003E00F5AE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAA2045E2AB200D300F5AE62 /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
 		EAA204612AB2032100F5AE62 /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		EAA204662AB20F7B00F5AE62 /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
+		EAA204682AB2102000F5AE62 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EAA2046B2AB214A400F5AE62 /* BallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallLabel.swift; sourceTree = "<group>"; };
+		EAA2046E2AB215E100F5AE62 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +72,13 @@
 			children = (
 				EAA204492AB2003D00F5AE62 /* AppDelegate.swift */,
 				EAA2044B2AB2003D00F5AE62 /* SceneDelegate.swift */,
+				EAA2046D2AB215C600F5AE62 /* Extensions */,
+				EAA2046A2AB2148B00F5AE62 /* Custom */,
 				EAA204602AB2030800F5AE62 /* Model */,
 				EAA2045D2AB200B100F5AE62 /* Network */,
-				EAA2044D2AB2003D00F5AE62 /* ViewController.swift */,
+				EAA2044D2AB2003D00F5AE62 /* LottoViewController.swift */,
+				EAA204662AB20F7B00F5AE62 /* LottoViewModel.swift */,
+				EAA204682AB2102000F5AE62 /* Observable.swift */,
 				EAA2044F2AB2003D00F5AE62 /* Main.storyboard */,
 				EAA204522AB2003E00F5AE62 /* Assets.xcassets */,
 				EAA204542AB2003E00F5AE62 /* LaunchScreen.storyboard */,
@@ -89,6 +101,22 @@
 				EAA204612AB2032100F5AE62 /* Lotto.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EAA2046A2AB2148B00F5AE62 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				EAA2046B2AB214A400F5AE62 /* BallLabel.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		EAA2046D2AB215C600F5AE62 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EAA2046E2AB215E100F5AE62 /* UIColor+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,11 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAA2044E2AB2003D00F5AE62 /* ViewController.swift in Sources */,
+				EAA2044E2AB2003D00F5AE62 /* LottoViewController.swift in Sources */,
 				EAA204622AB2032100F5AE62 /* Lotto.swift in Sources */,
 				EAA2044A2AB2003D00F5AE62 /* AppDelegate.swift in Sources */,
+				EAA204692AB2102000F5AE62 /* Observable.swift in Sources */,
 				EAA2044C2AB2003D00F5AE62 /* SceneDelegate.swift in Sources */,
+				EAA2046C2AB214A400F5AE62 /* BallLabel.swift in Sources */,
 				EAA2045F2AB200D300F5AE62 /* LottoAPIManager.swift in Sources */,
+				EAA204672AB20F7B00F5AE62 /* LottoViewModel.swift in Sources */,
+				EAA2046F2AB215E100F5AE62 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

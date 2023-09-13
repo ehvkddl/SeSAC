@@ -9,6 +9,9 @@ import Foundation
 
 class LottoAPIManager {
     
+    static let shared = LottoAPIManager()
+    private init() { }
+    
     func fetchLotto(round drwNo: Int, completionHandler: @escaping (Lotto) -> Void) {
         guard let url = URL(string: "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(drwNo)") else {
             print("URL 변환 실패")

@@ -9,13 +9,12 @@ import UIKit
 import SnapKit
 
 class LottoViewController: UIViewController {
-
-    let round: [Int] = (1...1084).reversed()
     
+    let lottovm = LottoViewModel()
+
     lazy var roundTextField = {
         let tf = UITextField()
         tf.inputView = pickerView
-        tf.text = "\(round.first ?? 0)회"
         tf.textAlignment = .right
         tf.borderStyle = .roundedRect
         return tf
@@ -65,6 +64,12 @@ class LottoViewController: UIViewController {
         return lbl
     }()
     
+    let plusLabel = {
+        let lbl = UILabel()
+        lbl.text = "+"
+        return lbl
+    }()
+    
     let bonusBall = {
         let lbl = BallLabel()
         return lbl
@@ -77,10 +82,26 @@ class LottoViewController: UIViewController {
         
         configureView()
         setConstraints()
+        
+        lottovm.selectRound.bind { [self] num in
+            roundTextField.text = lottovm.titleForSelect
+            lottovm.fetch(num)
+        }
+        
+        lottovm.data.bind { lottoData in
+            guard let lottoData else { return }
+            let numbers = [lottoData.drwtNo1, lottoData.drwtNo2, lottoData.drwtNo3, lottoData.drwtNo4, lottoData.drwtNo5, lottoData.bnusNo]
+            
+            DispatchQueue.main.async {
+                self.balls.enumerated().forEach { index, item in
+                    item.setBall(num: numbers[index])
+                }
+            }
+        }
     }
 
     func configureView() {
-        balls.forEach { stackView.addArrangedSubview($0) }
+        [ball1, ball2, ball3, ball4, ball5, plusLabel, bonusBall].forEach { stackView.addArrangedSubview($0)}
         [roundTextField, stackView].forEach{ view.addSubview($0) }
     }
     
@@ -112,15 +133,15 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return round.count
+        return lottovm.numberOfRows
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        roundTextField.text = "\(round[row])회"
+        lottovm.selectRound.value = lottovm.round[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(round[row])"
+        return lottovm.titleForRow(row)
     }
     
 }
