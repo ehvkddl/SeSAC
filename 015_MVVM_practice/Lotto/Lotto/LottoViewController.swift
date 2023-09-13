@@ -17,6 +17,7 @@ class LottoViewController: UIViewController {
         tf.inputView = pickerView
         tf.textAlignment = .right
         tf.borderStyle = .roundedRect
+        tf.tintColor = .clear
         return tf
     }()
     
@@ -75,6 +76,11 @@ class LottoViewController: UIViewController {
         return lbl
     }()
     
+    let tapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        return gesture
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -103,6 +109,9 @@ class LottoViewController: UIViewController {
     func configureView() {
         [ball1, ball2, ball3, ball4, ball5, plusLabel, bonusBall].forEach { stackView.addArrangedSubview($0)}
         [roundTextField, stackView].forEach{ view.addSubview($0) }
+        view.addGestureRecognizer(tapGestureRecognizer)
+        
+        tapGestureRecognizer.addTarget(self, action: #selector(didTapView))
     }
     
     func setConstraints() {
@@ -123,6 +132,10 @@ class LottoViewController: UIViewController {
                 make.size.equalTo(50)
             }
         }
+    }
+    
+    @objc func didTapView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
 }
