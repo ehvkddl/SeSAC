@@ -9,6 +9,8 @@ import UIKit
 import SnapKit
 
 class LoginViewController: UIViewController {
+    
+    var loginvm = LoginViewModel()
 
     let titleLabel = {
         let lbl = UILabel()
@@ -55,6 +57,18 @@ class LoginViewController: UIViewController {
         
         configureView()
         setConstraints()
+        
+        loginvm.id.bind { [self] _ in
+            loginvm.checkValidity()
+        }
+        
+        loginvm.pw.bind { [self] _ in
+            loginvm.checkValidity()
+        }
+        
+        loginvm.isValid.bind { [self] bool in
+            loginButton.backgroundColor = bool ? .white : .lightGray
+        }
     }
     
     func configureView() {
@@ -62,6 +76,9 @@ class LoginViewController: UIViewController {
         
         [idTextField, pwTextField, loginButton].forEach { stackView.addArrangedSubview($0) }
         [titleLabel, stackView].forEach { view.addSubview($0) }
+        
+        idTextField.addTarget(self, action: #selector(idTextFieldChange), for: .editingChanged)
+        pwTextField.addTarget(self, action: #selector(pwTextFieldChange), for: .editingChanged)
     }
     
     func setConstraints() {
@@ -90,3 +107,16 @@ class LoginViewController: UIViewController {
 
 }
 
+extension LoginViewController {
+    
+    @objc func idTextFieldChange() {
+        guard let text = idTextField.text else { return }
+        loginvm.id.value = text
+    }
+    
+    @objc func pwTextFieldChange() {
+        guard let text = pwTextField.text else { return }
+        loginvm.pw.value = text
+    }
+    
+}
