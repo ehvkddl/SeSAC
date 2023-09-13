@@ -36,10 +36,20 @@ class LoginViewController: UIViewController {
         return tf
     }()
     
+    let idValidImage = {
+        let img = ValidityImageView(frame: .zero)
+        return img
+    }()
+    
     let pwTextField = {
         let tf = LoginTextField()
         tf.setupView(placeholder: "비밀번호")
         return tf
+    }()
+    
+    let pwValidImage = {
+        let img = ValidityImageView(frame: .zero)
+        return img
     }()
     
     let loginButton = {
@@ -58,12 +68,16 @@ class LoginViewController: UIViewController {
         configureView()
         setConstraints()
         
-        loginvm.id.bind { [self] _ in
+        loginvm.id.bind { [self] id in
             loginvm.checkValidity()
+            idValidImage.isHidden = id.isEmpty ? true : false
+            loginvm.checkIDValidity() ? idValidImage.setValid() : idValidImage.setInvalid()
         }
         
-        loginvm.pw.bind { [self] _ in
+        loginvm.pw.bind { [self] pw in
             loginvm.checkValidity()
+            pwValidImage.isHidden = pw.isEmpty ? true : false
+            loginvm.checkPWValidity() ? pwValidImage.setValid() : pwValidImage.setInvalid()
         }
         
         loginvm.isValid.bind { [self] bool in
@@ -75,7 +89,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .black
         
         [idTextField, pwTextField, loginButton].forEach { stackView.addArrangedSubview($0) }
-        [titleLabel, stackView].forEach { view.addSubview($0) }
+        [titleLabel, stackView, idValidImage, pwValidImage].forEach { view.addSubview($0) }
         
         idTextField.addTarget(self, action: #selector(idTextFieldChange), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(pwTextFieldChange), for: .editingChanged)
@@ -97,6 +111,18 @@ class LoginViewController: UIViewController {
                 make.height.equalTo(35)
                 make.horizontalEdges.equalToSuperview()
             }
+        }
+        
+        idValidImage.snp.makeConstraints { make in
+            make.centerY.equalTo(idTextField)
+            make.trailing.equalTo(idTextField.snp.trailing).inset(10)
+            make.size.equalTo(20)
+        }
+        
+        pwValidImage.snp.makeConstraints { make in
+            make.centerY.equalTo(pwTextField)
+            make.trailing.equalTo(pwTextField.snp.trailing).inset(10)
+            make.size.equalTo(20)
         }
         
         loginButton.snp.makeConstraints { make in

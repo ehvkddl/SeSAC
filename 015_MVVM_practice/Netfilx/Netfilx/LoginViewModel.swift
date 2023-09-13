@@ -14,17 +14,17 @@ class LoginViewModel {
     var isValid: Observable<Bool> = Observable(false)
     
     func checkValidity() {
-        isValid.value = checkValidity(email: id.value) && checkValidity(pw: pw.value)
+        isValid.value = checkIDValidity() && checkPWValidity()
     }
     
-    private func checkValidity(email str: String) -> Bool {
+    func checkIDValidity() -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: str)
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: id.value)
     }
     
-    private func checkValidity(pw str: String) -> Bool {
+    func checkPWValidity() -> Bool {
         let pwRegex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}"
-        return NSPredicate(format: "SELF MATCHES %@", pwRegex).evaluate(with: str)
+        return NSPredicate(format: "SELF MATCHES %@", pwRegex).evaluate(with: pw.value)
     }
     
 }

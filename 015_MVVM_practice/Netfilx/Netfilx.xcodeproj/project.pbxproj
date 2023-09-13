@@ -17,6 +17,7 @@
 		EAA204342AB1E66C00F5AE62 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204332AB1E66C00F5AE62 /* LoginTextField.swift */; };
 		EAA204382AB1E95700F5AE62 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204372AB1E95700F5AE62 /* LoginViewModel.swift */; };
 		EAA2043A2AB1E96F00F5AE62 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204392AB1E96F00F5AE62 /* Observable.swift */; };
+		EAA2043C2AB1F96D00F5AE62 /* ValidityImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2043B2AB1F96D00F5AE62 /* ValidityImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		EAA204332AB1E66C00F5AE62 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		EAA204372AB1E95700F5AE62 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EAA204392AB1E96F00F5AE62 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		EAA2043B2AB1F96D00F5AE62 /* ValidityImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidityImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				EAA204332AB1E66C00F5AE62 /* LoginTextField.swift */,
+				EAA2043B2AB1F96D00F5AE62 /* ValidityImageView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAA2041F2AB1DCCD00F5AE62 /* LoginViewController.swift in Sources */,
+				EAA2043C2AB1F96D00F5AE62 /* ValidityImageView.swift in Sources */,
 				EAA204342AB1E66C00F5AE62 /* LoginTextField.swift in Sources */,
 				EAA2041B2AB1DCCD00F5AE62 /* AppDelegate.swift in Sources */,
 				EAA204382AB1E95700F5AE62 /* LoginViewModel.swift in Sources */,
