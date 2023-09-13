@@ -13,6 +13,8 @@
 		EAA204512AB2003D00F5AE62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA2044F2AB2003D00F5AE62 /* Main.storyboard */; };
 		EAA204532AB2003E00F5AE62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAA204522AB2003E00F5AE62 /* Assets.xcassets */; };
 		EAA204562AB2003E00F5AE62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA204542AB2003E00F5AE62 /* LaunchScreen.storyboard */; };
+		EAA2045F2AB200D300F5AE62 /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2045E2AB200D300F5AE62 /* LottoAPIManager.swift */; };
+		EAA204622AB2032100F5AE62 /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA204612AB2032100F5AE62 /* Lotto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		EAA204522AB2003E00F5AE62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAA204552AB2003E00F5AE62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAA204572AB2003E00F5AE62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAA2045E2AB200D300F5AE62 /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
+		EAA204612AB2032100F5AE62 /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				EAA204492AB2003D00F5AE62 /* AppDelegate.swift */,
 				EAA2044B2AB2003D00F5AE62 /* SceneDelegate.swift */,
+				EAA204602AB2030800F5AE62 /* Model */,
+				EAA2045D2AB200B100F5AE62 /* Network */,
 				EAA2044D2AB2003D00F5AE62 /* ViewController.swift */,
 				EAA2044F2AB2003D00F5AE62 /* Main.storyboard */,
 				EAA204522AB2003E00F5AE62 /* Assets.xcassets */,
@@ -65,6 +71,22 @@
 				EAA204572AB2003E00F5AE62 /* Info.plist */,
 			);
 			path = Lotto;
+			sourceTree = "<group>";
+		};
+		EAA2045D2AB200B100F5AE62 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EAA2045E2AB200D300F5AE62 /* LottoAPIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EAA204602AB2030800F5AE62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EAA204612AB2032100F5AE62 /* Lotto.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +161,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAA2044E2AB2003D00F5AE62 /* ViewController.swift in Sources */,
+				EAA204622AB2032100F5AE62 /* Lotto.swift in Sources */,
 				EAA2044A2AB2003D00F5AE62 /* AppDelegate.swift in Sources */,
 				EAA2044C2AB2003D00F5AE62 /* SceneDelegate.swift in Sources */,
+				EAA2045F2AB200D300F5AE62 /* LottoAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
