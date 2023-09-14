@@ -10,6 +10,30 @@ import PhotosUI
 
 class PhotoViewController: BaseViewController {
 
+    let photoImage = {
+        let img = UIImageView()
+        img.image = UIImage(systemName: "photo")
+        img.tintColor = .gray
+        img.contentMode = .scaleAspectFit
+        return img
+    }()
+    
+    let photoChangeButton = {
+        let btn = UIButton()
+        
+        var config = UIButton.Configuration.filled()
+        config.title = "사진 가져오기"
+        config.baseForegroundColor = .white
+        config.baseBackgroundColor = .black
+        config.titleAlignment = .center
+        config.contentInsets = .init(top: 14, leading: 10, bottom: 14, trailing: 10)
+        btn.configuration = config
+        
+        btn.layer.cornerRadius = 10
+        
+        return btn
+    }()
+    
     let phpicker = {
         var configuration = PHPickerConfiguration()
         configuration.selectionLimit = 1
@@ -18,12 +42,6 @@ class PhotoViewController: BaseViewController {
         let picker = PHPickerViewController(configuration: configuration)
         return picker
     }()
-    
-    let mainView = PhotoView()
-    
-    override func loadView() {
-        self.view = mainView
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +74,7 @@ class PhotoViewController: BaseViewController {
         let vc = SearchViewController()
         
         vc.imageSendClosure = { url in
-            self.mainView.photoImage.load(from: url)
+            self.photoImage.load(from: url)
         }
         
         self.present(vc, animated: true)
@@ -65,9 +83,24 @@ class PhotoViewController: BaseViewController {
     override func configureView() {
         super.configureView()
         
-        mainView.photoChangeButton.addTarget(self, action: #selector(photoChangeButtonClicked), for: .touchUpInside)
+        [photoImage, photoChangeButton].forEach { view.addSubview($0) }
+        
+        photoChangeButton.addTarget(self, action: #selector(photoChangeButtonClicked), for: .touchUpInside)
         
         phpicker.delegate = self
+    }
+    
+    override func setConstraints() {
+        photoImage.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+            make.horizontalEdges.equalToSuperview().inset(14)
+            make.height.equalToSuperview().multipliedBy(0.6)
+        }
+        
+        photoChangeButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(40)
+        }
     }
     
 }
@@ -80,7 +113,7 @@ extension PhotoViewController: PHPickerViewControllerDelegate {
         result.itemProvider.loadObject(ofClass: UIImage.self) { object, error in
             if let image = object as? UIImage {
                 DispatchQueue.main.async {
-                    self.mainView.photoImage.image = image
+                    self.photoImage.image = image
                 }
             }
         }
