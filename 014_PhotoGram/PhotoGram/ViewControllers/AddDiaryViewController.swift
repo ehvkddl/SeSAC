@@ -10,6 +10,9 @@ import PhotosUI
 
 class AddDiaryViewController: BaseViewController {
 
+    let repository = DiaryRepository()
+    var imageUrl: String?
+    
     let photoImage = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill
@@ -157,13 +160,19 @@ extension AddDiaryViewController {
         
         vc.imageSendClosure = { url in
             self.photoImage.load(from: url)
+            self.imageUrl = url
         }
         
         self.present(vc, animated: true)
     }
     
     @objc func addDiaryButtonClicked() {
-        print("addDiary")
+        let item = Diary(title: titleTextField.text!,
+                         date: datePicker.date,
+                         content: contentTextView.text,
+                         photoURL: self.imageUrl)
+        
+        repository.createItem(item)
     }
     
 }

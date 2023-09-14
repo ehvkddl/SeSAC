@@ -25,8 +25,10 @@
 		EAC0AEC12AA4D76300800193 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEC02AA4D76300800193 /* BaseCollectionViewCell.swift */; };
 		EAC0AEC32AA4EA1800800193 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC0AEC22AA4EA1800800193 /* UIImageView+.swift */; };
 		EAE82EFF2AB39AFE00C69E72 /* WriteTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82EFE2AB39AFE00C69E72 /* WriteTextField.swift */; };
+		EAE82F042AB3A29100C69E72 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82F032AB3A29100C69E72 /* Diary.swift */; };
 		EAE82F072AB3A2B800C69E72 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EAE82F062AB3A2B800C69E72 /* Realm */; };
 		EAE82F092AB3A2B800C69E72 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EAE82F082AB3A2B800C69E72 /* RealmSwift */; };
+		EAE82F0B2AB3A3B000C69E72 /* DiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82F0A2AB3A3B000C69E72 /* DiaryRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		EAC0AEC02AA4D76300800193 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EAC0AEC22AA4EA1800800193 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		EAE82EFE2AB39AFE00C69E72 /* WriteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextField.swift; sourceTree = "<group>"; };
+		EAE82F032AB3A29100C69E72 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		EAE82F0A2AB3A3B000C69E72 /* DiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 				EAC0AE8B2AA38FA900800193 /* SceneDelegate.swift */,
 				EAC0AEAF2AA3B6E300800193 /* Extensions */,
 				EAC0AEAB2AA3B4A500800193 /* Network */,
+				EAE82F002AB3A25800C69E72 /* Database */,
 				EAC0AEB62AA3D8D200800193 /* Models */,
 				EAE82EFD2AB39A8300C69E72 /* View */,
 				EAC0AE9F2AA390F400800193 /* Base */,
@@ -160,6 +165,31 @@
 				EAE82EFE2AB39AFE00C69E72 /* WriteTextField.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EAE82F002AB3A25800C69E72 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EAE82F012AB3A26400C69E72 /* Table */,
+				EAE82F022AB3A26B00C69E72 /* Repository */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		EAE82F012AB3A26400C69E72 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				EAE82F032AB3A29100C69E72 /* Diary.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		EAE82F022AB3A26B00C69E72 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				EAE82F0A2AB3A3B000C69E72 /* DiaryRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE82F0B2AB3A3B000C69E72 /* DiaryRepository.swift in Sources */,
 				EAC0AEA12AA3910200800193 /* BaseViewController.swift in Sources */,
 				EAC0AEB32AA3B75F00800193 /* Endpoint.swift in Sources */,
 				EAC0AEAD2AA3B51000800193 /* UnsplashAPIManager.swift in Sources */,
@@ -256,6 +287,7 @@
 				EAC0AE8C2AA38FA900800193 /* SceneDelegate.swift in Sources */,
 				EAC0AEBF2AA4D57700800193 /* SearchCollectionViewCell.swift in Sources */,
 				EAC0AEA82AA3921F00800193 /* AddDiaryViewController.swift in Sources */,
+				EAE82F042AB3A29100C69E72 /* Diary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
