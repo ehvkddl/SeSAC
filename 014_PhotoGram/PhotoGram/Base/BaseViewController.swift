@@ -15,6 +15,7 @@ class BaseViewController: UIViewController {
 
         configureView()
         setConstraints()
+        configureNavigationBar()
     }
 
     func configureView() {
@@ -23,4 +24,6 @@ class BaseViewController: UIViewController {
     
     func setConstraints() { }
 
+    func configureNavigationBar() { }
+    
 }
