@@ -38,7 +38,7 @@ class LottoViewController: UIViewController {
         return stackView
     }()
     
-    lazy var balls = [ball1, ball2, ball3, ball4, ball5, bonusBall]
+    lazy var balls = [ball1, ball2, ball3, ball4, ball5, ball6, bonusBall]
         
     let ball1 = {
         let lbl = BallLabel()
@@ -61,6 +61,11 @@ class LottoViewController: UIViewController {
     }()
     
     let ball5 = {
+        let lbl = BallLabel()
+        return lbl
+    }()
+    
+    let ball6 = {
         let lbl = BallLabel()
         return lbl
     }()
@@ -116,7 +121,7 @@ class LottoViewController: UIViewController {
     }
 
     func configureView() {
-        [ball1, ball2, ball3, ball4, ball5, plusLabel, bonusBall].forEach { stackView.addArrangedSubview($0)}
+        [ball1, ball2, ball3, ball4, ball5, ball6, plusLabel, bonusBall].forEach { stackView.addArrangedSubview($0)}
         [roundTextField, stackView, lottoMoney].forEach{ view.addSubview($0) }
         view.addGestureRecognizer(tapGestureRecognizer)
         
@@ -138,7 +143,7 @@ class LottoViewController: UIViewController {
         
         balls.forEach {
             $0.snp.makeConstraints { make in
-                make.size.equalTo(50)
+                make.size.equalTo(45)
             }
         }
         

@@ -26,7 +26,7 @@ class LottoViewModel {
     var data: Observable<Lotto?> = Observable(nil)
     var lottoNumbers: [Int] {
         guard let data = data.value else { return [] }
-        return [data.drwtNo1, data.drwtNo2, data.drwtNo3, data.drwtNo4, data.drwtNo5, data.bnusNo]
+        return [data.drwtNo1, data.drwtNo2, data.drwtNo3, data.drwtNo4, data.drwtNo5, data.drwtNo6, data.bnusNo]
     }
     var lottoMoney: String {
         guard let data = data.value else { return "당첨금 0원"}
