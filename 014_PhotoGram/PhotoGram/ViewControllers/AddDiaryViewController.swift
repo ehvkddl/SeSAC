@@ -137,7 +137,6 @@ class AddDiaryViewController: BaseViewController {
     
     override func configureNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(addDiaryButtonClicked))
-        navigationController?.navigationBar.tintColor = .black
     }
     
 }
@@ -189,6 +188,8 @@ extension AddDiaryViewController {
                          photoURL: self.imageUrl)
         
         repository.createItem(item)
+        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func didTapView(_ sender: UITapGestureRecognizer) {

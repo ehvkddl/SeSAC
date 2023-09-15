@@ -52,6 +52,21 @@ class MainDiaryViewController: BaseViewController {
         }
     }
     
+    override func configureNavigationBar() {
+        navigationController?.navigationBar.tintColor = .black
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "doc.badge.plus"), style: .plain, target: self, action: #selector(addDiaryButtonClicked))
+    }
+    
+}
+
+extension MainDiaryViewController {
+    
+    @objc func addDiaryButtonClicked() {
+        let vc = AddDiaryViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 extension MainDiaryViewController {
