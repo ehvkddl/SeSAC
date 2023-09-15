@@ -20,16 +20,24 @@ class MainDiaryViewController: BaseViewController {
     var diary: Results<Diary>!
     
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
-    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, Diary>!
+    var dataSource: UICollectionViewDiffableDataSource<Section, Diary>!
+    
+    enum Section: Int, CaseIterable {
+        case all = 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         diary = repository.fetch()
         
-        collectionView.dataSource = self
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Diary>()
+        snapshot.appendSections(Section.allCases)
+        snapshot.appendItems(diary.map { $0 }, toSection: .all)
         
-        registCell()
+        configureCell()
+        
+        dataSource.apply(snapshot)
     }
     
     override func configureView() {
@@ -46,26 +54,22 @@ class MainDiaryViewController: BaseViewController {
     
 }
 
-extension MainDiaryViewController: UICollectionViewDataSource {
+extension MainDiaryViewController {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return diary.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = diary[indexPath.item]
-        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-        return cell
-    }
-    
-    func registCell() {
-        cellRegistration = UICollectionView.CellRegistration { cell, indexPath, itemIdentifier in
+    func configureCell() {
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Diary> { cell, indexPath, itemIdentifier in
             var content = UIListContentConfiguration.subtitleCell()
             content.image = UIImage(systemName: "book.closed")
             content.text = itemIdentifier.title
             content.secondaryText = "\(itemIdentifier.date)"
+            content.textToSecondaryTextVerticalPadding = 5
             cell.contentConfiguration = content
         }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
     }
     
     func layout() -> UICollectionViewLayout {
