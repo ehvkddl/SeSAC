@@ -29,6 +29,7 @@
 		EAE82F072AB3A2B800C69E72 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = EAE82F062AB3A2B800C69E72 /* Realm */; };
 		EAE82F092AB3A2B800C69E72 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EAE82F082AB3A2B800C69E72 /* RealmSwift */; };
 		EAE82F0B2AB3A3B000C69E72 /* DiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82F0A2AB3A3B000C69E72 /* DiaryRepository.swift */; };
+		EAE82F0D2AB3A6A000C69E72 /* MainDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82F0C2AB3A6A000C69E72 /* MainDiaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		EAE82EFE2AB39AFE00C69E72 /* WriteTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextField.swift; sourceTree = "<group>"; };
 		EAE82F032AB3A29100C69E72 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		EAE82F0A2AB3A3B000C69E72 /* DiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRepository.swift; sourceTree = "<group>"; };
+		EAE82F0C2AB3A6A000C69E72 /* MainDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDiaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		EAE82EFC2AB394F700C69E72 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EAE82F0C2AB3A6A000C69E72 /* MainDiaryViewController.swift */,
 				EAC0AEA72AA3921F00800193 /* AddDiaryViewController.swift */,
 				EAC0AEB92AA4B0F000800193 /* SearchViewController.swift */,
 			);
@@ -278,6 +281,7 @@
 				EAC0AEAD2AA3B51000800193 /* UnsplashAPIManager.swift in Sources */,
 				EAC0AEC32AA4EA1800800193 /* UIImageView+.swift in Sources */,
 				EAC0AEB52AA3BE5000800193 /* APIKey.swift in Sources */,
+				EAE82F0D2AB3A6A000C69E72 /* MainDiaryViewController.swift in Sources */,
 				EAC0AEC12AA4D76300800193 /* BaseCollectionViewCell.swift in Sources */,
 				EAE82EFF2AB39AFE00C69E72 /* WriteTextField.swift in Sources */,
 				EAC0AEB12AA3B6EC00800193 /* URL+.swift in Sources */,
