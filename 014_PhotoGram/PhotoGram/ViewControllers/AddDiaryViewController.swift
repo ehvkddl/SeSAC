@@ -46,6 +46,15 @@ class AddDiaryViewController: BaseViewController {
         return picker
     }()
     
+    lazy var dateTextField = {
+        let view = WriteTextField()
+        view.placeholder = "날짜를 선택해주세요"
+        view.text = Date().description
+        view.inputView = datePicker
+        view.tintColor = .clear
+        return view
+    }()
+    
     let titleTextField = {
         let view = WriteTextField()
         view.placeholder = "제목을 입력해주세요"
@@ -61,13 +70,19 @@ class AddDiaryViewController: BaseViewController {
         return view
     }()
     
-    let phpicker = {
+    lazy var phpicker = {
         var configuration = PHPickerConfiguration()
         configuration.selectionLimit = 1
         configuration.filter = .images
         
         let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
         return picker
+    }()
+    
+    let tapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        return gesture
     }()
     
     override func viewDidLayoutSubviews() {
@@ -81,12 +96,12 @@ class AddDiaryViewController: BaseViewController {
     override func configureView() {
         super.configureView()
         
-        [photoImage, photoChangeButton, datePicker, titleTextField, contentTextView].forEach { view.addSubview($0) }
+        view.addGestureRecognizer(tapGestureRecognizer)
+        [photoImage, photoChangeButton, dateTextField, titleTextField, contentTextView].forEach { view.addSubview($0) }
         
         photoChangeButton.addTarget(self, action: #selector(photoChangeButtonClicked), for: .touchUpInside)
         datePicker.addTarget(self, action: #selector(handleDatePicker(_:)), for: .valueChanged)
-        
-        phpicker.delegate = self
+        tapGestureRecognizer.addTarget(self, action: #selector(didTapView))
     }
     
     override func setConstraints() {
@@ -101,14 +116,14 @@ class AddDiaryViewController: BaseViewController {
             make.size.equalTo(50)
         }
         
-        datePicker.snp.makeConstraints { make in
+        dateTextField.snp.makeConstraints { make in
             make.top.equalTo(photoImage.snp.bottom).offset(15)
             make.horizontalEdges.equalTo(photoImage)
             make.height.equalTo(45)
         }
         
         titleTextField.snp.makeConstraints { make in
-            make.top.equalTo(datePicker.snp.bottom).offset(15)
+            make.top.equalTo(dateTextField.snp.bottom).offset(15)
             make.horizontalEdges.equalTo(photoImage)
             make.height.equalTo(45)
         }
@@ -149,6 +164,7 @@ extension AddDiaryViewController {
     
     @objc func handleDatePicker(_ sender: UIDatePicker) {
         print(sender.date)
+        dateTextField.text = String(sender.date.description)
     }
     
     func getPhotoFromGallery() {
@@ -173,6 +189,10 @@ extension AddDiaryViewController {
                          photoURL: self.imageUrl)
         
         repository.createItem(item)
+    }
+    
+    @objc func didTapView(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
 }
