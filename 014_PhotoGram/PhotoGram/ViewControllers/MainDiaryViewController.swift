@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 struct User {
     var name: String
@@ -14,11 +15,17 @@ struct User {
 
 class MainDiaryViewController: BaseViewController {
     
+    let repository = DiaryRepository()
+    
+    var diary: Results<Diary>!
+    
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
-    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, String>!
+    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, Diary>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        diary = repository.fetch()
         
         collectionView.dataSource = self
         
@@ -42,11 +49,12 @@ class MainDiaryViewController: BaseViewController {
 extension MainDiaryViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return diary.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: "nil")
+        let item = diary[indexPath.item]
+        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
         return cell
     }
     
@@ -54,8 +62,8 @@ extension MainDiaryViewController: UICollectionViewDataSource {
         cellRegistration = UICollectionView.CellRegistration { cell, indexPath, itemIdentifier in
             var content = UIListContentConfiguration.subtitleCell()
             content.image = UIImage(systemName: "book.closed")
-            content.text = "일기 제목"
-            content.secondaryText = "0000.00.00"
+            content.text = itemIdentifier.title
+            content.secondaryText = "\(itemIdentifier.date)"
             cell.contentConfiguration = content
         }
     }

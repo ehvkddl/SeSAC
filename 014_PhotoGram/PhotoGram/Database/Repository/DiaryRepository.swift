@@ -12,6 +12,10 @@ class DiaryRepository {
     
     private let realm = try! Realm()
     
+    func fetch() -> Results<Diary> {
+        return realm.objects(Diary.self)
+    }
+    
     func createItem(_ item: Diary) {
         do {
             try realm.write {
