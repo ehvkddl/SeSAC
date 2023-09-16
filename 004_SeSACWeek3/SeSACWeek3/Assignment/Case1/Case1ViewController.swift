@@ -87,23 +87,20 @@ extension Case1ViewController {
     func configureDataSource() {
         let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Item> { cell, indexPath, itemIdentifier in
             var contentConfiguration = UIListContentConfiguration.valueCell()
-            print("외않되?")
-            print(itemIdentifier.title)
-            contentConfiguration.text = "타이틀"
-//            contentConfiguration.image = itemIdentifier.image
-//            contentConfiguration.imageProperties.tintColor = itemIdentifier.imageColor
-//            contentConfiguration.text = itemIdentifier.title
-//            switch itemIdentifier.isSet {
-//            case .initial: contentConfiguration.secondaryText = "설정"
-//            case .on: contentConfiguration.secondaryText = "켬"
-//            case .off: contentConfiguration.secondaryText = ""
-//            default: break
-//            }
+            contentConfiguration.image = itemIdentifier.image
+            contentConfiguration.imageProperties.tintColor = itemIdentifier.imageColor
+            contentConfiguration.text = itemIdentifier.title
+            switch itemIdentifier.isSet {
+            case .initial: contentConfiguration.secondaryText = "설정"
+            case .on: contentConfiguration.secondaryText = "켬"
+            case .off: contentConfiguration.secondaryText = ""
+            default: break
+            }
+            cell.contentConfiguration = contentConfiguration
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
-            print(itemIdentifier.title)
             return cell
         })
         
