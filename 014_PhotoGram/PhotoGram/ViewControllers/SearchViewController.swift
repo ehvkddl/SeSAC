@@ -95,8 +95,8 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController {
     
     func configureCell() {
-        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, PhotoResult> { cell, indexPath, itemIdentifier in
-            cell.backgroundColor = [.red, .black, .orange, .yellow, .green, .gray, .blue, .brown, .cyan, .magenta].randomElement()!
+        let cellRegistration = UICollectionView.CellRegistration<SearchCollectionViewCell, PhotoResult> { cell, indexPath, itemIdentifier in
+            cell.imageView.load(from: itemIdentifier.urls.thumb)
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
