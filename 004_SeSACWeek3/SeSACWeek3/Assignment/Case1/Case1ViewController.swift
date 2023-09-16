@@ -42,7 +42,7 @@ class Case1ViewController: UIViewController {
     ]
     
     let stateList = [
-        Item(image: nil, imageColor: nil, title: "집중 모드 상태", isSet: nil)
+        Item(image: nil, imageColor: nil, title: "집중 모드 상태", isSet: .on)
     ]
     
     lazy var collectionView = {
@@ -93,10 +93,17 @@ extension Case1ViewController {
             switch itemIdentifier.isSet {
             case .initial: contentConfiguration.secondaryText = "설정"
             case .on: contentConfiguration.secondaryText = "켬"
-            case .off: contentConfiguration.secondaryText = ""
             default: break
             }
             cell.contentConfiguration = contentConfiguration
+            
+            switch indexPath.section {
+            case 0, 2: cell.accessories = [.disclosureIndicator()]
+            case 1: cell.accessories = [.customView(configuration: .init(customView: UISwitch(), placement: .trailing()))]
+            default: break
+            }
+            
+            
         }
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
