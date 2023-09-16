@@ -32,6 +32,7 @@
 		EAC15E2F2A750D5F0036DFBC /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E2E2A750D5F0036DFBC /* MovieInfo.swift */; };
 		EAC15E312A750D770036DFBC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E302A750D770036DFBC /* Movie.swift */; };
 		EAE82F102AB5CFDD00C69E72 /* Case1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82F0F2AB5CFDD00C69E72 /* Case1ViewController.swift */; };
+		EAE82F132AB5DBE900C69E72 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EAE82F122AB5DBE900C69E72 /* SnapKit */; };
 		EAEE68CA2A79E7A7002BEB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C92A79E7A7002BEB95 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAE82F132AB5DBE900C69E72 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +185,9 @@
 			dependencies = (
 			);
 			name = SeSACWeek3;
+			packageProductDependencies = (
+				EAE82F122AB5DBE900C69E72 /* SnapKit */,
+			);
 			productName = SeSACWeek3;
 			productReference = EA87E7342A71FFF500FE99F5 /* SeSACWeek3.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +216,9 @@
 				Base,
 			);
 			mainGroup = EA87E72B2A71FFF500FE99F5;
+			packageReferences = (
+				EAE82F112AB5DBE900C69E72 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = EA87E7352A71FFF500FE99F5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -486,6 +494,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EAE82F112AB5DBE900C69E72 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EAE82F122AB5DBE900C69E72 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAE82F112AB5DBE900C69E72 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA87E72C2A71FFF500FE99F5 /* Project object */;
 }
