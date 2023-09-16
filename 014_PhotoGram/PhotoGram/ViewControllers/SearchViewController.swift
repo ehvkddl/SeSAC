@@ -22,17 +22,22 @@ class SearchViewController: BaseViewController {
     }()
     
     lazy var collectionView = {
-        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
-        view.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "SearchCollectionViewCell")
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout())
         
         view.delegate = self
-        view.dataSource = self
         
         return view
     }()
+    var dataSource: UICollectionViewDiffableDataSource<Section, PhotoResult>!
+    
+    enum Section: Int, CaseIterable {
+        case photo = 1
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureCell()
     }
     
     override func configureView() {
@@ -63,28 +68,19 @@ extension SearchViewController: UISearchBarDelegate {
             self.photos = photos
             
             DispatchQueue.main.async {
-                self.collectionView.reloadData()
+                print(self.photos)
+                
+                var snapshot = NSDiffableDataSourceSnapshot<Section, PhotoResult>()
+                snapshot.appendSections(Section.allCases)
+                snapshot.appendItems(photos, toSection: .photo)
+                self.dataSource.apply(snapshot)
             }
         }
     }
     
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchCollectionViewCell", for: indexPath) as? SearchCollectionViewCell else { return UICollectionViewCell() }
-        
-        let thumbUrl = photos[indexPath.item].urls.thumb
-        cell.imageView.load(from: thumbUrl)
-        
-        return cell
-                
-    }
+extension SearchViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let thumbUrl = photos[indexPath.item].urls.thumb
@@ -94,17 +90,40 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         dismiss(animated: true)
     }
     
-    func collectionViewLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
+}
+
+extension SearchViewController {
+    
+    func configureCell() {
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewCell, PhotoResult> { cell, indexPath, itemIdentifier in
+            cell.backgroundColor = [.red, .black, .orange, .yellow, .green, .gray, .blue, .brown, .cyan, .magenta].randomElement()!
+        }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
+    }
+    
+    func layout() -> UICollectionViewLayout {
         let spacing: CGFloat = 1
-        let width = UIScreen.main.bounds.width - (spacing * 3)
-
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: width / 3, height: width / 3)
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: 0, bottom: spacing, right: 0)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-
+        let width = UIScreen.main.bounds.width
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth((1 - (spacing * 2) / width) / 3),
+                                              heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
+                                               heightDimension: .fractionalWidth(1/3))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                       subitems: [item])
+        group.interItemSpacing = NSCollectionLayoutSpacing.flexible(1)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = 1
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
     

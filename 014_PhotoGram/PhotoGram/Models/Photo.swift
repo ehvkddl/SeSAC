@@ -13,12 +13,13 @@ struct Photo: Codable {
     let results: [PhotoResult]
 }
 
-struct PhotoResult: Codable {
+struct PhotoResult: Codable, Hashable {
+    let identifier = UUID().uuidString
     let id: String
     let urls: PhotoURL
 }
 
-struct PhotoURL: Codable {
+struct PhotoURL: Codable, Hashable {
     let full: String
     let thumb: String
 }
