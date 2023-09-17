@@ -33,6 +33,7 @@
 		EAC15E312A750D770036DFBC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC15E302A750D770036DFBC /* Movie.swift */; };
 		EAE82F102AB5CFDD00C69E72 /* Case1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82F0F2AB5CFDD00C69E72 /* Case1ViewController.swift */; };
 		EAE82F132AB5DBE900C69E72 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EAE82F122AB5DBE900C69E72 /* SnapKit */; };
+		EAE82F152AB7315000C69E72 /* Case2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE82F142AB7315000C69E72 /* Case2ViewController.swift */; };
 		EAEE68CA2A79E7A7002BEB95 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE68C92A79E7A7002BEB95 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		EAC15E2E2A750D5F0036DFBC /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		EAC15E302A750D770036DFBC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EAE82F0F2AB5CFDD00C69E72 /* Case1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case1ViewController.swift; sourceTree = "<group>"; };
+		EAE82F142AB7315000C69E72 /* Case2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2ViewController.swift; sourceTree = "<group>"; };
 		EAEE68C92A79E7A7002BEB95 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 		EAC15E242A7505BC0036DFBC /* Case2 */ = {
 			isa = PBXGroup;
 			children = (
+				EAE82F142AB7315000C69E72 /* Case2ViewController.swift */,
 				EA87E7542A725ABC00FE99F5 /* Case2TableViewController.swift */,
 				EA87E7562A725EB100FE99F5 /* Setting.swift */,
 			);
@@ -269,6 +272,7 @@
 				EA87E73A2A71FFF500FE99F5 /* SceneDelegate.swift in Sources */,
 				EA87E75D2A72C9A300FE99F5 /* Todo.swift in Sources */,
 				EA1930932A73527F0002CCD4 /* CustomTableViewCell.swift in Sources */,
+				EAE82F152AB7315000C69E72 /* Case2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
