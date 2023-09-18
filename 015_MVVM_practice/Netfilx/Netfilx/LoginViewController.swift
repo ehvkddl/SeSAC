@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         view.axis = .vertical
         view.alignment = .center
         view.distribution = .fill
-        view.spacing = 15
+        view.spacing = 25
         return view
     }()
     
@@ -41,6 +41,12 @@ class LoginViewController: UIViewController {
         return img
     }()
     
+    let idLabel = {
+        let lbl = ConditionLabel()
+        lbl.text = "이메일 또는 전화번호 형식이 맞지 않습니다."
+        return lbl
+    }()
+    
     let pwTextField = {
         let tf = LoginTextField()
         tf.setupView(placeholder: "비밀번호")
@@ -50,6 +56,12 @@ class LoginViewController: UIViewController {
     let pwValidImage = {
         let img = ValidityImageView(frame: .zero)
         return img
+    }()
+    
+    let pwLabel = {
+        let lbl = ConditionLabel()
+        lbl.text = "비밀번호는 영어, 숫자, 특수문자가 포함된 8~50자리입니다."
+        return lbl
     }()
     
     let loginButton = {
@@ -70,14 +82,23 @@ class LoginViewController: UIViewController {
         
         loginvm.id.bind { [self] id in
             loginvm.checkValidity()
+            
             idValidImage.isHidden = id.isEmpty ? true : false
-            loginvm.checkIDValidity() ? idValidImage.setValid() : idValidImage.setInvalid()
+            
+            let idIsValid = loginvm.checkIDValidity()
+            idIsValid ? idValidImage.setValid() : idValidImage.setInvalid()
+            idLabel.isHidden = id.isEmpty ? true : idIsValid ? true : false
         }
         
         loginvm.pw.bind { [self] pw in
             loginvm.checkValidity()
+            
             pwValidImage.isHidden = pw.isEmpty ? true : false
-            loginvm.checkPWValidity() ? pwValidImage.setValid() : pwValidImage.setInvalid()
+            
+            let pwIsValid = loginvm.checkPWValidity()
+            pwIsValid ? pwValidImage.setValid() : pwValidImage.setInvalid()
+            pwLabel.isHidden = pw.isEmpty ? true : pwIsValid ? true : false
+        }
         }
         
         loginvm.isValid.bind { [self] bool in
@@ -89,7 +110,7 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .black
         
         [idTextField, pwTextField, loginButton].forEach { stackView.addArrangedSubview($0) }
-        [titleLabel, stackView, idValidImage, pwValidImage].forEach { view.addSubview($0) }
+        [titleLabel, stackView, idValidImage, idLabel, pwValidImage, pwLabel].forEach { view.addSubview($0) }
         
         idTextField.addTarget(self, action: #selector(idTextFieldChange), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(pwTextFieldChange), for: .editingChanged)
@@ -119,12 +140,21 @@ class LoginViewController: UIViewController {
             make.size.equalTo(20)
         }
         
+        idLabel.snp.makeConstraints { make in
+            make.top.equalTo(idTextField.snp.bottom).offset(3)
+            make.horizontalEdges.equalTo(idTextField.snp.horizontalEdges).inset(3)
+        }
+        
         pwValidImage.snp.makeConstraints { make in
             make.centerY.equalTo(pwTextField)
             make.trailing.equalTo(pwTextField.snp.trailing).inset(10)
             make.size.equalTo(20)
         }
         
+        pwLabel.snp.makeConstraints { make in
+            make.top.equalTo(pwTextField.snp.bottom).offset(3)
+            make.horizontalEdges.equalTo(pwTextField.snp.horizontalEdges).inset(3)
+        }
         loginButton.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.horizontalEdges.equalToSuperview()

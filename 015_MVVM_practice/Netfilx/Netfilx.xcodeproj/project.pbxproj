@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA19A9112AB88EF800D085AB /* ConditionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A9102AB88EF800D085AB /* ConditionLabel.swift */; };
 		EAA2041B2AB1DCCD00F5AE62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2041A2AB1DCCD00F5AE62 /* AppDelegate.swift */; };
 		EAA2041D2AB1DCCD00F5AE62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2041C2AB1DCCD00F5AE62 /* SceneDelegate.swift */; };
 		EAA2041F2AB1DCCD00F5AE62 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA2041E2AB1DCCD00F5AE62 /* LoginViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA19A9102AB88EF800D085AB /* ConditionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionLabel.swift; sourceTree = "<group>"; };
 		EAA204172AB1DCCD00F5AE62 /* Netfilx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Netfilx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA2041A2AB1DCCD00F5AE62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAA2041C2AB1DCCD00F5AE62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				EAA204332AB1E66C00F5AE62 /* LoginTextField.swift */,
 				EAA2043B2AB1F96D00F5AE62 /* ValidityImageView.swift */,
+				EA19A9102AB88EF800D085AB /* ConditionLabel.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				EAA2041B2AB1DCCD00F5AE62 /* AppDelegate.swift in Sources */,
 				EAA204382AB1E95700F5AE62 /* LoginViewModel.swift in Sources */,
 				EAA2043A2AB1E96F00F5AE62 /* Observable.swift in Sources */,
+				EA19A9112AB88EF800D085AB /* ConditionLabel.swift in Sources */,
 				EAA2041D2AB1DCCD00F5AE62 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
