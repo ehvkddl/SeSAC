@@ -64,6 +64,46 @@ class LoginViewController: UIViewController {
         return lbl
     }()
     
+    let nicknameTextField = {
+        let tf = LoginTextField()
+        tf.setupView(placeholder: "닉네임")
+        return tf
+    }()
+    
+    let nicknameValidImage = {
+        let img = ValidityImageView(frame: .zero)
+        return img
+    }()
+    
+    let nicknameLabel = {
+        let lbl = ConditionLabel()
+        lbl.text = "닉네임은 2글자 이상 8글자 이하여야 합니다."
+        return lbl
+    }()
+    
+    let locationTextField = {
+        let tf = LoginTextField()
+        tf.setupView(placeholder: "위치(Optional)")
+        return tf
+    }()
+    
+    let recommendCodeTextField = {
+        let tf = LoginTextField()
+        tf.setupView(placeholder: "추천 코드 입력")
+        return tf
+    }()
+    
+    let recommendCodeValidImage = {
+        let img = ValidityImageView(frame: .zero)
+        return img
+    }()
+    
+    let recommendCodeLabel = {
+        let lbl = ConditionLabel()
+        lbl.text = "추천 코드는 6자리 입니다."
+        return lbl
+    }()
+    
     let loginButton = {
         let btn = UIButton()
         btn.setTitle("로그인", for: .normal)
@@ -99,6 +139,25 @@ class LoginViewController: UIViewController {
             pwIsValid ? pwValidImage.setValid() : pwValidImage.setInvalid()
             pwLabel.isHidden = pw.isEmpty ? true : pwIsValid ? true : false
         }
+        
+        loginvm.nickname.bind { [self] nickname in
+            loginvm.checkValidity()
+            
+            nicknameValidImage.isHidden = nickname.isEmpty ? true : false
+            
+            let nicknameIsValid = loginvm.checkNicknameValidity()
+            nicknameIsValid ? nicknameValidImage.setValid() : nicknameValidImage.setInvalid()
+            nicknameLabel.isHidden = nickname.isEmpty ? true : nicknameIsValid ? true : false
+        }
+        
+        loginvm.recommendCode.bind { [self] recommendCode in
+            loginvm.checkValidity()
+            
+            recommendCodeValidImage.isHidden = recommendCode.isEmpty ? true : false
+            
+            let recommendCodeIsValid = loginvm.checkRecommendCodeValidity()
+            recommendCodeIsValid ? recommendCodeValidImage.setValid() : recommendCodeValidImage.setInvalid()
+            recommendCodeLabel.isHidden = recommendCode.isEmpty ? true : recommendCodeIsValid ? true : false
         }
         
         loginvm.isValid.bind { [self] bool in
@@ -109,11 +168,14 @@ class LoginViewController: UIViewController {
     func configureView() {
         view.backgroundColor = .black
         
-        [idTextField, pwTextField, loginButton].forEach { stackView.addArrangedSubview($0) }
-        [titleLabel, stackView, idValidImage, idLabel, pwValidImage, pwLabel].forEach { view.addSubview($0) }
+        [idTextField, pwTextField, nicknameTextField, locationTextField, recommendCodeTextField, loginButton].forEach { stackView.addArrangedSubview($0) }
+        [titleLabel, stackView, idValidImage, idLabel, pwValidImage, pwLabel, nicknameValidImage, nicknameLabel, recommendCodeValidImage, recommendCodeLabel].forEach { view.addSubview($0) }
         
         idTextField.addTarget(self, action: #selector(idTextFieldChange), for: .editingChanged)
         pwTextField.addTarget(self, action: #selector(pwTextFieldChange), for: .editingChanged)
+        nicknameTextField.addTarget(self, action: #selector(nicknameTextFieldChange), for: .editingChanged)
+        locationTextField.addTarget(self, action: #selector(locationTextFieldChange), for: .editingChanged)
+        recommendCodeTextField.addTarget(self, action: #selector(recommendCodeTextFieldChange), for: .editingChanged)
     }
     
     func setConstraints() {
@@ -127,7 +189,7 @@ class LoginViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(30)
         }
         
-        [idTextField, pwTextField].forEach {
+        [idTextField, pwTextField, nicknameTextField, locationTextField, recommendCodeTextField].forEach {
             $0.snp.makeConstraints { make in
                 make.height.equalTo(35)
                 make.horizontalEdges.equalToSuperview()
@@ -155,6 +217,29 @@ class LoginViewController: UIViewController {
             make.top.equalTo(pwTextField.snp.bottom).offset(3)
             make.horizontalEdges.equalTo(pwTextField.snp.horizontalEdges).inset(3)
         }
+        
+        nicknameValidImage.snp.makeConstraints { make in
+            make.centerY.equalTo(nicknameTextField)
+            make.trailing.equalTo(nicknameTextField.snp.trailing).inset(10)
+            make.size.equalTo(20)
+        }
+        
+        nicknameLabel.snp.makeConstraints { make in
+            make.top.equalTo(nicknameTextField.snp.bottom).offset(3)
+            make.horizontalEdges.equalTo(nicknameTextField.snp.horizontalEdges).inset(3)
+        }
+        
+        recommendCodeValidImage.snp.makeConstraints { make in
+            make.centerY.equalTo(recommendCodeTextField)
+            make.trailing.equalTo(recommendCodeTextField.snp.trailing).inset(10)
+            make.size.equalTo(20)
+        }
+        
+        recommendCodeLabel.snp.makeConstraints { make in
+            make.top.equalTo(recommendCodeTextField.snp.bottom).offset(3)
+            make.horizontalEdges.equalTo(recommendCodeTextField.snp.horizontalEdges).inset(3)
+        }
+        
         loginButton.snp.makeConstraints { make in
             make.height.equalTo(40)
             make.horizontalEdges.equalToSuperview()
@@ -173,6 +258,21 @@ extension LoginViewController {
     @objc func pwTextFieldChange() {
         guard let text = pwTextField.text else { return }
         loginvm.pw.value = text
+    }
+    
+    @objc func nicknameTextFieldChange() {
+        guard let text = nicknameTextField.text else { return }
+        loginvm.nickname.value = text
+    }
+    
+    @objc func locationTextFieldChange() {
+        guard let text = nicknameTextField.text else { return }
+        loginvm.location.value = text
+    }
+    
+    @objc func recommendCodeTextFieldChange() {
+        guard let text = recommendCodeTextField.text else { return }
+        loginvm.recommendCode.value = text
     }
     
 }

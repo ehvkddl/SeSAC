@@ -11,10 +11,14 @@ class LoginViewModel {
     
     var id: Observable<String> = Observable("")
     var pw: Observable<String> = Observable("")
+    var nickname: Observable<String> = Observable("")
+    var location: Observable<String> = Observable("")
+    var recommendCode: Observable<String> = Observable("")
+    
     var isValid: Observable<Bool> = Observable(false)
     
     func checkValidity() {
-        isValid.value = checkIDValidity() && checkPWValidity()
+        isValid.value = checkIDValidity() && checkPWValidity() && checkNicknameValidity() && checkRecommendCodeValidity()
     }
     
     func checkIDValidity() -> Bool {
@@ -27,6 +31,14 @@ class LoginViewModel {
     func checkPWValidity() -> Bool {
         let pwRegex = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,50}"
         return NSPredicate(format: "SELF MATCHES %@", pwRegex).evaluate(with: pw.value)
+    }
+    
+    func checkNicknameValidity() -> Bool {
+        return nickname.value.count >= 2 && nickname.value.count <= 8 ? true : false
+    }
+    
+    func checkRecommendCodeValidity() -> Bool {
+        return recommendCode.value.count == 6 || recommendCode.value.isEmpty
     }
     
 }
