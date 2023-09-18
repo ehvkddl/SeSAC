@@ -55,7 +55,6 @@ class PhotoViewModel {
     func fetchRandomPhoto() {
         UnsplashAPIManager.shared.fetchRandomPhoto { photo in
             self.photo.value = photo
-            dump(self.photo.value)
         }
     }
     

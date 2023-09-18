@@ -6,19 +6,28 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotoViewController: BaseViewController {
 
     var vm = PhotoViewModel()
     
     lazy var searchController = {
-        let view = UISearchController(searchResultsController: SearchResultViewController(vm: self.vm))
+        let vc = SearchResultViewController(vm: self.vm)
+        vc.photoClickedClosure = { photo in
+            if let url = URL(string: photo.urls.full) {
+                self.photoImageView.kf.setImage(with: url)
+            }
+        }
+        
+        let view = UISearchController(searchResultsController: vc)
         view.searchBar.delegate = self
         return view
     }()
     
     let photoImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFit
         return view
     }()
     

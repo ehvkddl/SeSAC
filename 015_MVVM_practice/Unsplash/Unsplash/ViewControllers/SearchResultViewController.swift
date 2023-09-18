@@ -12,6 +12,8 @@ class SearchResultViewController: BaseViewController {
     
     var vm: PhotoViewModel
     
+    var photoClickedClosure: ((PhotoResult) -> Void)?
+    
     lazy var photoCollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: photoCollectionViewLayout())
         view.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
@@ -71,6 +73,11 @@ extension SearchResultViewController: UICollectionViewDelegate, UICollectionView
         }
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        photoClickedClosure?(vm.photoList.value.results[indexPath.item])
+        dismiss(animated: true)
     }
     
     func photoCollectionViewLayout() -> UICollectionViewLayout {
