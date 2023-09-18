@@ -34,6 +34,20 @@ class PhotoViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bindData()
+    }
+    
+    private func bindData() {
+        vm.photo.bind { _ in
+            self.vm.getImageAtPhoto { data in
+                guard let data = data else {
+                    self.photoImageView.image = UIImage(systemName: "photo")
+                    return
+                }
+                self.photoImageView.image = UIImage(data: data)
+            }
+        }
     }
     
     override func configureView() {
@@ -64,7 +78,7 @@ class PhotoViewController: BaseViewController {
     }
     
     @objc func refreshButtonClicked() {
-        print("refreshButtonClicked")
+        vm.fetchRandomPhoto()
     }
 
 }
