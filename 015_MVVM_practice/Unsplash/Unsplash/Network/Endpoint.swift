@@ -8,6 +8,16 @@
 import Foundation
 
 enum Endpoint {
+    enum Photos {
+        case random
+        
+        var requestURL: String {
+            switch self {
+            case .random: return URL.makeEndpointString("photos/random")
+            }
+        }
+    }
+    
     enum Search {
         case photos
         

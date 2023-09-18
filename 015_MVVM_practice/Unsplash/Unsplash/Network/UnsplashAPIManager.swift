@@ -38,6 +38,26 @@ class UnsplashAPIManager {
         
     }
     
+    func fetchRandomPhoto(completionHandler: @escaping (PhotoResult) -> Void) {
+        
+        guard let components = URLComponents(string: Endpoint.Photos.random.requestURL) else {
+            print("urlComponents 생성에 실패했습니다.")
+            return
+        }
+
+        guard let url = components.url else {
+            print("urlComponents 변환에 실패했습니다.")
+            return
+        }
+        
+        fetchData(from: url) { (photo: PhotoResult) in
+            
+            completionHandler(photo)
+            
+        }
+        
+    }
+    
     private func fetchData<T: Codable>(from url: URL, completionHandler: @escaping (T) -> Void) {
         
         var urlRequest = URLRequest(url: url)
