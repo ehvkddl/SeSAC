@@ -34,7 +34,7 @@ class SearchResultViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        vm.photo.bind { _ in
+        vm.photoList.bind { _ in
             DispatchQueue.main.async {
                 self.photoCollectionView.reloadData()
             }
