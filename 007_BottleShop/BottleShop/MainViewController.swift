@@ -27,26 +27,15 @@ class MainViewController: UIViewController {
         
         beerCollectionViewLayout()
         
-        callRequest()
-    }
-    
-    func callRequest() {
-        let url = "https://api.punkapi.com/v2/beers"
-
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let decoder = JSONDecoder()
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-                    self.beers = try decoder.decode([Beer].self, from: data)
-                    
+        Network.shared.request(type: [Beer].self, api: .beers(filterType: nil, value: nil)) { response in
+            switch response {
+            case .success(let success):
+                self.beers = success
+                DispatchQueue.main.async {
                     self.beerCollectionView.reloadData()
-                } catch {
-                    print(error.localizedDescription, "ㅠㅠ")
                 }
-            case .failure(let error):
-                print(error)
+            case .failure(let failure):
+                print(failure.errorDescription)
             }
         }
     }
