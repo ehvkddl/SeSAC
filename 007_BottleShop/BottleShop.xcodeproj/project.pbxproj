@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA19A9482ABA054600D085AB /* BeerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A9472ABA054600D085AB /* BeerAPI.swift */; };
 		EA19A94A2ABA105700D085AB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A9492ABA105700D085AB /* Network.swift */; };
+		EA19A94E2ABA1B6A00D085AB /* RecommendBeerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A94D2ABA1B6A00D085AB /* RecommendBeerView.swift */; };
 		EA19A9512ABA1D6300D085AB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA19A9502ABA1D6300D085AB /* SnapKit */; };
 		EA4C66852A827D4D0037F264 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66842A827D4D0037F264 /* AppDelegate.swift */; };
 		EA4C66872A827D4D0037F264 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66862A827D4D0037F264 /* SceneDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		EA19A9472ABA054600D085AB /* BeerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAPI.swift; sourceTree = "<group>"; };
 		EA19A9492ABA105700D085AB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		EA19A94D2ABA1B6A00D085AB /* RecommendBeerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendBeerView.swift; sourceTree = "<group>"; };
 		EA4C66812A827D4D0037F264 /* BottleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BottleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4C66842A827D4D0037F264 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA4C66862A827D4D0037F264 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				EA4C66A72A82AD840037F264 /* Extension+UIColor.swift */,
 				EA4C669C2A8286300037F264 /* Beer.swift */,
 				EA4C66882A827D4D0037F264 /* MainViewController.swift */,
+				EA19A94D2ABA1B6A00D085AB /* RecommendBeerView.swift */,
 				EA4C66982A827F6E0037F264 /* BeerCollectionViewCell.swift */,
 				EA4C66992A827F6E0037F264 /* BeerCollectionViewCell.xib */,
 				EA4C66A92A82B4750037F264 /* DetailViewController.swift */,
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA19A9482ABA054600D085AB /* BeerAPI.swift in Sources */,
+				EA19A94E2ABA1B6A00D085AB /* RecommendBeerView.swift in Sources */,
 				EA4C669A2A827F6E0037F264 /* BeerCollectionViewCell.swift in Sources */,
 				EA4C66892A827D4D0037F264 /* MainViewController.swift in Sources */,
 				EA4C669D2A8286300037F264 /* Beer.swift in Sources */,
