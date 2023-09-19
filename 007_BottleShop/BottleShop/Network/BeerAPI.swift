@@ -11,7 +11,7 @@ import Alamofire
 enum BeerAPI {
     
     case beers(filterType: BeersFilter?, value: String?)
-    case singleBeer
+    case singleBeer(id: Int)
     case randomBeer
     
     private var baseURL: String {
@@ -21,7 +21,7 @@ enum BeerAPI {
     var endpoint: URL {
         switch self {
         case .beers: return URL(string: baseURL + "beers")!
-        case .singleBeer: return URL(string: baseURL + "beers/1")!
+        case .singleBeer(let id): return URL(string: baseURL + "beers/\(id)")!
         case .randomBeer: return URL(string: baseURL + "beers/random")!
         }
     }
