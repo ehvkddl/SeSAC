@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EA19A9482ABA054600D085AB /* BeerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A9472ABA054600D085AB /* BeerAPI.swift */; };
 		EA19A94A2ABA105700D085AB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A9492ABA105700D085AB /* Network.swift */; };
+		EA19A9512ABA1D6300D085AB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA19A9502ABA1D6300D085AB /* SnapKit */; };
 		EA4C66852A827D4D0037F264 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66842A827D4D0037F264 /* AppDelegate.swift */; };
 		EA4C66872A827D4D0037F264 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66862A827D4D0037F264 /* SceneDelegate.swift */; };
 		EA4C66892A827D4D0037F264 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4C66882A827D4D0037F264 /* MainViewController.swift */; };
@@ -47,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA19A9512ABA1D6300D085AB /* SnapKit in Frameworks */,
 				EA4C66A62A82A1E40037F264 /* Kingfisher in Frameworks */,
 				EA4C66A02A8288110037F264 /* Alamofire in Frameworks */,
 			);
@@ -119,6 +121,7 @@
 			packageProductDependencies = (
 				EA4C669F2A8288110037F264 /* Alamofire */,
 				EA4C66A52A82A1E40037F264 /* Kingfisher */,
+				EA19A9502ABA1D6300D085AB /* SnapKit */,
 			);
 			productName = BottleShop;
 			productReference = EA4C66812A827D4D0037F264 /* BottleShop.app */;
@@ -152,6 +155,7 @@
 				EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				EA4C66A12A82881D0037F264 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				EA4C66A42A82A1E40037F264 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EA19A94F2ABA1D6300D085AB /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = EA4C66822A827D4D0037F264 /* Products */;
 			projectDirPath = "";
@@ -417,6 +421,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EA19A94F2ABA1D6300D085AB /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -444,6 +456,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EA19A9502ABA1D6300D085AB /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EA19A94F2ABA1D6300D085AB /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		EA4C669F2A8288110037F264 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EA4C669E2A8288110037F264 /* XCRemoteSwiftPackageReference "Alamofire" */;
