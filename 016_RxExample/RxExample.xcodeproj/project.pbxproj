@@ -23,6 +23,7 @@
 		EAF0339C2AF29E0C006FFF3D /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0339B2AF29E0C006FFF3D /* SwitchViewController.swift */; };
 		EAF0339F2AF2A0EA006FFF3D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0339E2AF2A0EA006FFF3D /* SignInViewController.swift */; };
 		EAF033A12AF2A977006FFF3D /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033A02AF2A977006FFF3D /* NumbersViewController.swift */; };
+		EAF033A32AF2AC9E006FFF3D /* SimpleValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033A22AF2AC9E006FFF3D /* SimpleValidationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		EAF0339B2AF29E0C006FFF3D /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		EAF0339E2AF2A0EA006FFF3D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		EAF033A02AF2A977006FFF3D /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
+		EAF033A22AF2AC9E006FFF3D /* SimpleValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				EAF0339E2AF2A0EA006FFF3D /* SignInViewController.swift */,
+				EAF033A22AF2AC9E006FFF3D /* SimpleValidationViewController.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				EAF033762AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift in Sources */,
 				EAF033A12AF2A977006FFF3D /* NumbersViewController.swift in Sources */,
+				EAF033A32AF2AC9E006FFF3D /* SimpleValidationViewController.swift in Sources */,
 				EAF033962AF1CC72006FFF3D /* TableViewController.swift in Sources */,
 				EAF033902AF1C187006FFF3D /* ObservableExampleViewController.swift in Sources */,
 				EAF033942AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift in Sources */,
