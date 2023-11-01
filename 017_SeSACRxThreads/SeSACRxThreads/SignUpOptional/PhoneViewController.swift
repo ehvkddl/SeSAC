@@ -7,11 +7,19 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class PhoneViewController: UIViewController {
    
     let phoneTextField = SignTextField(placeholderText: "연락처를 입력해주세요")
     let nextButton = PointButton(title: "다음")
+    
+    let phoneNumber = BehaviorSubject(value: "010")
+    let buttonColor = PublishSubject<UIColor>()
+    let buttonEnable = PublishSubject<Bool>()
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +29,42 @@ class PhoneViewController: UIViewController {
         configureLayout()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        
+        bind()
+    }
+    
+    func bind() {
+        phoneNumber
+            .bind(to: phoneTextField.rx.text)
+            .disposed(by: disposeBag)
+        
+        phoneNumber
+            .map { $0.count > 10 }
+            .subscribe(with: self) { owner, value in
+                owner.buttonColor.onNext(value ? .systemGreen : .red)
+                owner.buttonEnable.onNext(value)
+            }
+            .disposed(by: disposeBag)
+        
+        buttonColor
+            .bind(to: nextButton.rx.backgroundColor, phoneTextField.rx.textColor)
+            .disposed(by: disposeBag)
+        
+        buttonColor
+            .map { $0.cgColor }
+            .bind(to: phoneTextField.layer.rx.borderColor)
+            .disposed(by: disposeBag)
+        
+        buttonEnable
+            .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        phoneTextField.rx.text.orEmpty
+            .subscribe(with: self) { owner, value in
+                let result = value.formated(by: "###-####-####")
+                owner.phoneNumber.onNext(result)
+            }
+            .disposed(by: disposeBag)
     }
     
     @objc func nextButtonClicked() {
