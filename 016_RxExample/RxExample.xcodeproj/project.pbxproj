@@ -19,6 +19,7 @@
 		EAF0338E2AF1BB9F006FFF3D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */; };
 		EAF033942AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033932AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift */; };
 		EAF033962AF1CC72006FFF3D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033952AF1CC72006FFF3D /* TableViewController.swift */; };
+		EAF0339C2AF29E0C006FFF3D /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0339B2AF29E0C006FFF3D /* SwitchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		EAF033932AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewExampleViewController.swift; sourceTree = "<group>"; };
 		EAF033952AF1CC72006FFF3D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		EAF0339B2AF29E0C006FFF3D /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				EAF033732AF0DAFA006FFF3D /* SceneDelegate.swift */,
 				EAF033912AF1C67D006FFF3D /* PickerView */,
 				EAF033922AF1C6CE006FFF3D /* TableView */,
+				EAF0339A2AF29DCE006FFF3D /* Switch */,
 				EAF033772AF0DAFA006FFF3D /* Main.storyboard */,
 				EAF0337A2AF0DAFC006FFF3D /* Assets.xcassets */,
 				EAF0337C2AF0DAFC006FFF3D /* LaunchScreen.storyboard */,
@@ -96,6 +99,14 @@
 				EAF033952AF1CC72006FFF3D /* TableViewController.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		EAF0339A2AF29DCE006FFF3D /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				EAF0339B2AF29E0C006FFF3D /* SwitchViewController.swift */,
+			);
+			path = Switch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				EAF033942AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift in Sources */,
 				EAF033722AF0DAFA006FFF3D /* AppDelegate.swift in Sources */,
 				EAF0338E2AF1BB9F006FFF3D /* PickerViewController.swift in Sources */,
+				EAF0339C2AF29E0C006FFF3D /* SwitchViewController.swift in Sources */,
 				EAF033742AF0DAFA006FFF3D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
