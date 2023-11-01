@@ -9,24 +9,26 @@
 /* Begin PBXBuildFile section */
 		EAF033722AF0DAFA006FFF3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033712AF0DAFA006FFF3D /* AppDelegate.swift */; };
 		EAF033742AF0DAFA006FFF3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033732AF0DAFA006FFF3D /* SceneDelegate.swift */; };
-		EAF033762AF0DAFA006FFF3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033752AF0DAFA006FFF3D /* ViewController.swift */; };
+		EAF033762AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033752AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift */; };
 		EAF033792AF0DAFA006FFF3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF033772AF0DAFA006FFF3D /* Main.storyboard */; };
 		EAF0337B2AF0DAFC006FFF3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAF0337A2AF0DAFC006FFF3D /* Assets.xcassets */; };
 		EAF0337E2AF0DAFC006FFF3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF0337C2AF0DAFC006FFF3D /* LaunchScreen.storyboard */; };
 		EAF033872AF0DBA9006FFF3D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EAF033862AF0DBA9006FFF3D /* SnapKit */; };
 		EAF0338A2AF0DBC7006FFF3D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EAF033892AF0DBC7006FFF3D /* RxCocoa */; };
 		EAF0338C2AF0DBC7006FFF3D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0338B2AF0DBC7006FFF3D /* RxSwift */; };
+		EAF0338E2AF1BB9F006FFF3D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EAF0336E2AF0DAFA006FFF3D /* RxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF033712AF0DAFA006FFF3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAF033732AF0DAFA006FFF3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EAF033752AF0DAFA006FFF3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAF033752AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePickerViewExampleViewController.swift; sourceTree = "<group>"; };
 		EAF033782AF0DAFA006FFF3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAF0337A2AF0DAFC006FFF3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAF0337D2AF0DAFC006FFF3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAF0337F2AF0DAFC006FFF3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +66,22 @@
 			children = (
 				EAF033712AF0DAFA006FFF3D /* AppDelegate.swift */,
 				EAF033732AF0DAFA006FFF3D /* SceneDelegate.swift */,
-				EAF033752AF0DAFA006FFF3D /* ViewController.swift */,
+				EAF033912AF1C67D006FFF3D /* PickerView */,
 				EAF033772AF0DAFA006FFF3D /* Main.storyboard */,
 				EAF0337A2AF0DAFC006FFF3D /* Assets.xcassets */,
 				EAF0337C2AF0DAFC006FFF3D /* LaunchScreen.storyboard */,
 				EAF0337F2AF0DAFC006FFF3D /* Info.plist */,
 			);
 			path = RxExample;
+			sourceTree = "<group>";
+		};
+		EAF033912AF1C67D006FFF3D /* PickerView */ = {
+			isa = PBXGroup;
+			children = (
+				EAF033752AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift */,
+				EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */,
+			);
+			path = PickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,8 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAF033762AF0DAFA006FFF3D /* ViewController.swift in Sources */,
+				EAF033762AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift in Sources */,
 				EAF033722AF0DAFA006FFF3D /* AppDelegate.swift in Sources */,
+				EAF0338E2AF1BB9F006FFF3D /* PickerViewController.swift in Sources */,
 				EAF033742AF0DAFA006FFF3D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
