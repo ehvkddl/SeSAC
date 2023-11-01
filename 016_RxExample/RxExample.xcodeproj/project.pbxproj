@@ -17,6 +17,8 @@
 		EAF0338A2AF0DBC7006FFF3D /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EAF033892AF0DBC7006FFF3D /* RxCocoa */; };
 		EAF0338C2AF0DBC7006FFF3D /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EAF0338B2AF0DBC7006FFF3D /* RxSwift */; };
 		EAF0338E2AF1BB9F006FFF3D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */; };
+		EAF033942AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033932AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift */; };
+		EAF033962AF1CC72006FFF3D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033952AF1CC72006FFF3D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		EAF0337D2AF0DAFC006FFF3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAF0337F2AF0DAFC006FFF3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		EAF033932AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewExampleViewController.swift; sourceTree = "<group>"; };
+		EAF033952AF1CC72006FFF3D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 				EAF033712AF0DAFA006FFF3D /* AppDelegate.swift */,
 				EAF033732AF0DAFA006FFF3D /* SceneDelegate.swift */,
 				EAF033912AF1C67D006FFF3D /* PickerView */,
+				EAF033922AF1C6CE006FFF3D /* TableView */,
 				EAF033772AF0DAFA006FFF3D /* Main.storyboard */,
 				EAF0337A2AF0DAFC006FFF3D /* Assets.xcassets */,
 				EAF0337C2AF0DAFC006FFF3D /* LaunchScreen.storyboard */,
@@ -82,6 +87,15 @@
 				EAF0338D2AF1BB9F006FFF3D /* PickerViewController.swift */,
 			);
 			path = PickerView;
+			sourceTree = "<group>";
+		};
+		EAF033922AF1C6CE006FFF3D /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				EAF033932AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift */,
+				EAF033952AF1CC72006FFF3D /* TableViewController.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF033762AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift in Sources */,
+				EAF033962AF1CC72006FFF3D /* TableViewController.swift in Sources */,
+				EAF033942AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift in Sources */,
 				EAF033722AF0DAFA006FFF3D /* AppDelegate.swift in Sources */,
 				EAF0338E2AF1BB9F006FFF3D /* PickerViewController.swift in Sources */,
 				EAF033742AF0DAFA006FFF3D /* SceneDelegate.swift in Sources */,
