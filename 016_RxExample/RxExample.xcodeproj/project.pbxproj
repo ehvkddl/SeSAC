@@ -22,6 +22,7 @@
 		EAF033962AF1CC72006FFF3D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033952AF1CC72006FFF3D /* TableViewController.swift */; };
 		EAF0339C2AF29E0C006FFF3D /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0339B2AF29E0C006FFF3D /* SwitchViewController.swift */; };
 		EAF0339F2AF2A0EA006FFF3D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF0339E2AF2A0EA006FFF3D /* SignInViewController.swift */; };
+		EAF033A12AF2A977006FFF3D /* NumbersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033A02AF2A977006FFF3D /* NumbersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		EAF033952AF1CC72006FFF3D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		EAF0339B2AF29E0C006FFF3D /* SwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		EAF0339E2AF2A0EA006FFF3D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		EAF033A02AF2A977006FFF3D /* NumbersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				EAF033922AF1C6CE006FFF3D /* TableView */,
 				EAF0339A2AF29DCE006FFF3D /* Switch */,
 				EAF0339D2AF2A07A006FFF3D /* SignIn */,
+				EAF033A02AF2A977006FFF3D /* NumbersViewController.swift */,
 				EAF0338F2AF1C187006FFF3D /* ObservableExampleViewController.swift */,
 				EAF033772AF0DAFA006FFF3D /* Main.storyboard */,
 				EAF0337A2AF0DAFC006FFF3D /* Assets.xcassets */,
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF033762AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift in Sources */,
+				EAF033A12AF2A977006FFF3D /* NumbersViewController.swift in Sources */,
 				EAF033962AF1CC72006FFF3D /* TableViewController.swift in Sources */,
 				EAF033902AF1C187006FFF3D /* ObservableExampleViewController.swift in Sources */,
 				EAF033942AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift in Sources */,
