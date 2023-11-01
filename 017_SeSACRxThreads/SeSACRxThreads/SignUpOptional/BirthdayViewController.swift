@@ -7,6 +7,8 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class BirthdayViewController: UIViewController {
     
@@ -66,20 +68,78 @@ class BirthdayViewController: UIViewController {
   
     let nextButton = PointButton(title: "가입하기")
     
+    let birthDay = PublishSubject<Date>()
+    let year = PublishSubject<Int>()
+    let month = PublishSubject<Int>()
+    let day = PublishSubject<Int>()
+    
+    let age = PublishSubject<Int>()
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = Color.white
         
         configureLayout()
+        bind()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+    }
+    
+    func bind() {
+        birthDayPicker.rx.date
+            .bind(to: birthDay)
+            .disposed(by: disposeBag)
+        
+        birthDay
+            .subscribe(with: self) { owner, value in
+                let calendar = Calendar.current
+                let component = calendar.dateComponents([.year, .month, .day], from: value)
+                guard let year = component.year, let month = component.month, let day = component.day else { return }
+                
+                owner.year.onNext(year)
+                owner.month.onNext(month)
+                owner.day.onNext(day)
+                
+                let nowComponent = calendar.dateComponents([.year, .month], from: Date.now)
+                guard let nowYear = nowComponent.year, let nowMonth = nowComponent.month else { return }
+                
+                let age = nowYear - year - (month > nowMonth ? 1 : 0)
+                owner.age.onNext(age)
+                
+            }
+            .disposed(by: disposeBag)
+        
+        age
+            .map { $0 >= 17 }
+            .bind(to: nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        year
+            .map { "\($0)년" }
+            .bind(to: yearLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        month
+            .map { "\($0)월" }
+            .bind(to: monthLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        day
+            .map { "\($0)일" }
+            .bind(to: dayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        birthDay.onNext(Date.now)
+        
+        
     }
     
     @objc func nextButtonClicked() {
         print("가입완료")
     }
-
     
     func configureLayout() {
         view.addSubview(infoLabel)
