@@ -15,9 +15,7 @@ class PhoneViewController: UIViewController {
     let phoneTextField = SignTextField(placeholderText: "연락처를 입력해주세요")
     let nextButton = PointButton(title: "다음")
     
-    let phoneNumber = BehaviorSubject(value: "010")
-    let buttonColor = PublishSubject<UIColor>()
-    let buttonEnable = PublishSubject<Bool>()
+    let vm = PhoneViewModel()
     
     let disposeBag = DisposeBag()
     
@@ -34,35 +32,28 @@ class PhoneViewController: UIViewController {
     }
     
     func bind() {
-        phoneNumber
+        vm.phoneNumber
             .bind(to: phoneTextField.rx.text)
             .disposed(by: disposeBag)
         
-        phoneNumber
-            .map { $0.count > 10 }
-            .subscribe(with: self) { owner, value in
-                owner.buttonColor.onNext(value ? .systemGreen : .red)
-                owner.buttonEnable.onNext(value)
-            }
-            .disposed(by: disposeBag)
-        
-        buttonColor
+        vm.buttonColor
+            .map { UIColor(hexCode: $0) }
             .bind(to: nextButton.rx.backgroundColor, phoneTextField.rx.textColor)
             .disposed(by: disposeBag)
         
-        buttonColor
-            .map { $0.cgColor }
+        vm.buttonColor
+            .map { UIColor(hexCode: $0).cgColor }
             .bind(to: phoneTextField.layer.rx.borderColor)
             .disposed(by: disposeBag)
         
-        buttonEnable
+        vm.buttonEnable
             .bind(to: nextButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
         phoneTextField.rx.text.orEmpty
             .subscribe(with: self) { owner, value in
                 let result = value.formated(by: "###-####-####")
-                owner.phoneNumber.onNext(result)
+                owner.vm.phoneNumber.onNext(result)
             }
             .disposed(by: disposeBag)
     }

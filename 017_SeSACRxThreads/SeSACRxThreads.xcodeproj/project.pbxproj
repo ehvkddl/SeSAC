@@ -29,6 +29,8 @@
 		041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280722AEFAD4B00972552 /* NicknameViewController.swift */; };
 		041280782AF1D14000972552 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041280772AF1D14000972552 /* Resource.swift */; };
 		EA5A697B2AF4130E00E56880 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A697A2AF4130E00E56880 /* BirthdayViewModel.swift */; };
+		EA5A697D2AF41E2F00E56880 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A697C2AF41E2F00E56880 /* PhoneViewModel.swift */; };
+		EA5A69852AF7B42600E56880 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A69842AF7B42600E56880 /* UIColor+hex.swift */; };
 		EAF033A62AF2B6D3006FFF3D /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033A52AF2B6D3006FFF3D /* String+.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		041280722AEFAD4B00972552 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		041280772AF1D14000972552 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		EA5A697A2AF4130E00E56880 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		EA5A697C2AF41E2F00E56880 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		EA5A69842AF7B42600E56880 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		EAF033A52AF2B6D3006FFF3D /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				EA5A697A2AF4130E00E56880 /* BirthdayViewModel.swift */,
+				EA5A697C2AF41E2F00E56880 /* PhoneViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				EAF033A52AF2B6D3006FFF3D /* String+.swift */,
+				EA5A69842AF7B42600E56880 /* UIColor+hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
+				EA5A697D2AF41E2F00E56880 /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
@@ -367,6 +374,7 @@
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
 				EAF033A62AF2B6D3006FFF3D /* String+.swift in Sources */,
+				EA5A69852AF7B42600E56880 /* UIColor+hex.swift in Sources */,
 				041280582AEFA05300972552 /* SignInViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
