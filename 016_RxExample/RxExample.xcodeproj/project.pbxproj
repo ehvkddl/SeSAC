@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA5A69872AF7B98A00E56880 /* SimpleValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A69862AF7B98A00E56880 /* SimpleValidationViewModel.swift */; };
 		EAF033722AF0DAFA006FFF3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033712AF0DAFA006FFF3D /* AppDelegate.swift */; };
 		EAF033742AF0DAFA006FFF3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033732AF0DAFA006FFF3D /* SceneDelegate.swift */; };
 		EAF033762AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033752AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA5A69862AF7B98A00E56880 /* SimpleValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleValidationViewModel.swift; sourceTree = "<group>"; };
 		EAF0336E2AF0DAFA006FFF3D /* RxExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF033712AF0DAFA006FFF3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAF033732AF0DAFA006FFF3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				EAF0339E2AF2A0EA006FFF3D /* SignInViewController.swift */,
 				EAF033A22AF2AC9E006FFF3D /* SimpleValidationViewController.swift */,
+				EA5A69862AF7B98A00E56880 /* SimpleValidationViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				EAF033762AF0DAFA006FFF3D /* SimplePickerViewExampleViewController.swift in Sources */,
 				EAF033A12AF2A977006FFF3D /* NumbersViewController.swift in Sources */,
 				EAF033A32AF2AC9E006FFF3D /* SimpleValidationViewController.swift in Sources */,
+				EA5A69872AF7B98A00E56880 /* SimpleValidationViewModel.swift in Sources */,
 				EAF033962AF1CC72006FFF3D /* TableViewController.swift in Sources */,
 				EAF033902AF1C187006FFF3D /* ObservableExampleViewController.swift in Sources */,
 				EAF033942AF1C715006FFF3D /* SimpleTableViewExampleViewController.swift in Sources */,

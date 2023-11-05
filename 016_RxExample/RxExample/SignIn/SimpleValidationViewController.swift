@@ -15,6 +15,8 @@ private let minimalPasswordLength = 5
 
 class SimpleValidationViewController : UIViewController {
     
+    let vm = SimpleValidationViewModel()
+    
     let disposeBag = DisposeBag()
 
     let username = {
@@ -58,32 +60,29 @@ class SimpleValidationViewController : UIViewController {
         usernameValidLabel.text = "Username은 최소 \(minimalUsernameLength)글자 이상 입력해주세요."
         passwordValidLabel.text = "Password은 최소 \(minimalPasswordLength)글자 이상 입력해주세요."
         
-        let usernameValid = username.rx.text.orEmpty
+        username.rx.text.orEmpty
             .map { $0.count >= minimalUsernameLength }
-            .share(replay: 1)
+            .subscribe(with: self) { owner, value in
+                owner.vm.useranmeValid.onNext(value)
+            }
+            .disposed(by: disposeBag)
         
-        let passwordValid = password.rx.text.orEmpty
+        password.rx.text.orEmpty
             .map { $0.count >= minimalPasswordLength }
-            .share(replay: 1)
-        
-        let everythingValid = Observable.combineLatest(usernameValid, passwordValid) { value1, value2 in
-            return value1 && value2
-        }
-            .share(replay: 1)
-        
-        usernameValid
-            .bind(to: password.rx.isEnabled)
+            .subscribe(with: self) { owner, value in
+                owner.vm.passwordValid.onNext(value)
+            }
             .disposed(by: disposeBag)
         
-        usernameValid
-            .bind(to: usernameValidLabel.rx.isHidden)
+        vm.useranmeValid
+            .bind(to: password.rx.isEnabled, usernameValidLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        passwordValid
+        vm.passwordValid
             .bind(to: passwordValidLabel.rx.isHidden)
             .disposed(by: disposeBag)
         
-        everythingValid
+        vm.everythingValid
             .bind(to: doSomethingButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
