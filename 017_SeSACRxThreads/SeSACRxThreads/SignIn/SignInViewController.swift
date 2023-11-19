@@ -23,13 +23,17 @@ class SignInViewController: UIViewController {
         configureLayout()
         configure()
         
+        signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func signInButtonClicked() {
+        navigationController?.pushViewController(SearchViewController(), animated: true)
     }
     
     @objc func signUpButtonClicked() {
         navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
-    
     
     func configure() {
         signUpButton.setTitle("회원이 아니십니까?", for: .normal)

@@ -31,6 +31,8 @@
 		EA5A697B2AF4130E00E56880 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A697A2AF4130E00E56880 /* BirthdayViewModel.swift */; };
 		EA5A697D2AF41E2F00E56880 /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A697C2AF41E2F00E56880 /* PhoneViewModel.swift */; };
 		EA5A69852AF7B42600E56880 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A69842AF7B42600E56880 /* UIColor+hex.swift */; };
+		EA5A698A2AF7C2C000E56880 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A69892AF7C2C000E56880 /* SearchViewController.swift */; };
+		EA5A698D2AF7C2D000E56880 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A698C2AF7C2D000E56880 /* SearchTableViewCell.swift */; };
 		EAF033A62AF2B6D3006FFF3D /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF033A52AF2B6D3006FFF3D /* String+.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		EA5A697A2AF4130E00E56880 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		EA5A697C2AF41E2F00E56880 /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		EA5A69842AF7B42600E56880 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		EA5A69892AF7C2C000E56880 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		EA5A698C2AF7C2D000E56880 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		EAF033A52AF2B6D3006FFF3D /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +139,8 @@
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
 				0412806D2AEFAD0F00972552 /* SignUpOptional */,
+				EA5A69882AF7C2A800E56880 /* Search */,
+				EA5A698B2AF7C2C400E56880 /* Cells */,
 				041280612AEFA0BE00972552 /* CustomView */,
 				041280232AEF9BAB00972552 /* AppDelegate.swift */,
 				041280252AEF9BAB00972552 /* SceneDelegate.swift */,
@@ -209,6 +215,22 @@
 				EA5A697C2AF41E2F00E56880 /* PhoneViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EA5A69882AF7C2A800E56880 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A69892AF7C2C000E56880 /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		EA5A698B2AF7C2C400E56880 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EA5A698C2AF7C2D000E56880 /* SearchTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		EAF033A42AF2B6CB006FFF3D /* Extensions */ = {
@@ -369,8 +391,10 @@
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				041280732AEFAD4B00972552 /* NicknameViewController.swift in Sources */,
+				EA5A698D2AF7C2D000E56880 /* SearchTableViewCell.swift in Sources */,
 				EA5A697B2AF4130E00E56880 /* BirthdayViewModel.swift in Sources */,
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
+				EA5A698A2AF7C2C000E56880 /* SearchViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
 				EAF033A62AF2B6D3006FFF3D /* String+.swift in Sources */,
