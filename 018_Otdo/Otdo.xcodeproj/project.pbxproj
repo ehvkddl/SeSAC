@@ -13,6 +13,8 @@
 		EA6E90D72B0BD3230042C658 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6E90D52B0BD3230042C658 /* LaunchScreen.storyboard */; };
 		EA6E90E32B0BD5870042C658 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E90E22B0BD5870042C658 /* LoginViewController.swift */; };
 		EA6E90E72B0BD6260042C658 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = EA6E90E62B0BD6260042C658 /* SnapKit */; };
+		EA6E90ED2B0BD7CF0042C658 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E90EC2B0BD7CF0042C658 /* Constants.swift */; };
+		EA6E90EF2B0BD7D40042C658 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E90EE2B0BD7D40042C658 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		EA6E90D62B0BD3230042C658 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA6E90D82B0BD3230042C658 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6E90E22B0BD5870042C658 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		EA6E90EC2B0BD7CF0042C658 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EA6E90EE2B0BD7D40042C658 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			children = (
 				EA6E90DE2B0BD4400042C658 /* App */,
 				EA6E90E02B0BD5450042C658 /* Scene */,
+				EA6E90EB2B0BD7970042C658 /* Utility */,
 				EA6E90DF2B0BD44A0042C658 /* Resource */,
 				EA6E90D82B0BD3230042C658 /* Info.plist */,
 			);
@@ -96,6 +101,15 @@
 				EA6E90E22B0BD5870042C658 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		EA6E90EB2B0BD7970042C658 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				EA6E90EC2B0BD7CF0042C658 /* Constants.swift */,
+				EA6E90EE2B0BD7D40042C658 /* Color.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,9 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA6E90ED2B0BD7CF0042C658 /* Constants.swift in Sources */,
 				EA6E90E32B0BD5870042C658 /* LoginViewController.swift in Sources */,
 				EA6E90CB2B0BD3210042C658 /* AppDelegate.swift in Sources */,
 				EA6E90CD2B0BD3210042C658 /* SceneDelegate.swift in Sources */,
+				EA6E90EF2B0BD7D40042C658 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
