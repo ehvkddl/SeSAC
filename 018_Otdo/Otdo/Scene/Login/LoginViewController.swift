@@ -8,24 +8,9 @@
 import UIKit
 
 class LoginViewController: BaseViewController {
-
-    let emailTextField = {
-        let tf = UITextField()
-        tf.placeholder = "이메일을 입력해주세요"
-        tf.layer.borderWidth = 1
-        tf.layer.borderColor = UIColor.gray.cgColor
-        tf.layer.cornerRadius = Constants.cornerRadius
-        return tf
-    }()
     
-    let passwordTextField = {
-        let tf = UITextField()
-        tf.placeholder = "비밀번호를 입력해주세요"
-        tf.layer.borderWidth = 1
-        tf.layer.borderColor = UIColor.gray.cgColor
-        tf.layer.cornerRadius = Constants.cornerRadius
-        return tf
-    }()
+    let emailTextField = ODTextField(placeholderText: "이메일을 입력해주세요")
+    let passwordTextField = ODTextField(placeholderText: "비밀번호를 입력해주세요")
     
     let loginButton = {
         let btn = UIButton()
