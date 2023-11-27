@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class LoginViewController: BaseViewController {
+    
+    let disposeBag = DisposeBag()
     
     let emailTextField = ODTextField(placeholderText: "이메일을 입력해주세요")
     let passwordTextField = ODTextField(placeholderText: "비밀번호를 입력해주세요")
@@ -49,8 +53,20 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bind()
     }
 
+    private func bind() {
+        signUpButton.rx.tap
+            .subscribe(with: self) { owner, value in
+                let vc = SignUpViewController()
+                vc.modalPresentationStyle = .fullScreen
+                owner.present(vc, animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+    
     override func configureView() {
         super.configureView()
         
