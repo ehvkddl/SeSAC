@@ -10,6 +10,7 @@
 		EA27FCF92B1500FA0080C31C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EA27FCF82B1500FA0080C31C /* RxCocoa */; };
 		EA27FCFB2B1500FA0080C31C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EA27FCFA2B1500FA0080C31C /* RxSwift */; };
 		EA27FD052B150C340080C31C /* ODTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27FD042B150C340080C31C /* ODTextField.swift */; };
+		EA27FDAA2B1E206B0080C31C /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA27FDA92B1E206B0080C31C /* APIManager.swift */; };
 		EA6E90CB2B0BD3210042C658 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E90CA2B0BD3210042C658 /* AppDelegate.swift */; };
 		EA6E90CD2B0BD3210042C658 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6E90CC2B0BD3210042C658 /* SceneDelegate.swift */; };
 		EA6E90D42B0BD3230042C658 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA6E90D32B0BD3230042C658 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		EA27FD042B150C340080C31C /* ODTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ODTextField.swift; sourceTree = "<group>"; };
+		EA27FDA92B1E206B0080C31C /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		EA6E90C72B0BD3210042C658 /* Otdo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otdo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA6E90CA2B0BD3210042C658 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA6E90CC2B0BD3210042C658 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		EA27FDA82B1E1F8C0080C31C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EA27FDA92B1E206B0080C31C /* APIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		EA6E90BE2B0BD3210042C658 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				EA6E90DE2B0BD4400042C658 /* App */,
+				EA27FDA82B1E1F8C0080C31C /* Network */,
 				EA6E90E82B0BD6410042C658 /* Base */,
 				EA27FD032B150C0A0080C31C /* Custom */,
 				EA6E90E02B0BD5450042C658 /* Scene */,
@@ -219,6 +230,7 @@
 			files = (
 				EA27FD052B150C340080C31C /* ODTextField.swift in Sources */,
 				EA6E90ED2B0BD7CF0042C658 /* Constants.swift in Sources */,
+				EA27FDAA2B1E206B0080C31C /* APIManager.swift in Sources */,
 				EA6E90E32B0BD5870042C658 /* LoginViewController.swift in Sources */,
 				EA6E90EA2B0BD65C0042C658 /* BaseViewController.swift in Sources */,
 				EA6E90CB2B0BD3210042C658 /* AppDelegate.swift in Sources */,
